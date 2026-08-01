@@ -43,7 +43,7 @@ export default function About() {
         <div className="about-image">
           <div className="profile-frame">
             <img
-              src="/Adobe(2).jpg"
+              src="/ProfilePic.jpg"
               alt="Aditya Pratap Singh Jadon"
               className="profile-image"
             />
