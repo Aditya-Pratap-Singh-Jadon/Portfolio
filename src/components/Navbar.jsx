@@ -16,7 +16,7 @@ export default function Navbar() {
 
   return (
     <nav className="navbar">
-      <div className="logo">Aditya Pratap Singh Jadon</div>
+      <div className="logo">Aditya P.S. Jadon</div>
 
       <button
         className={`menu-toggle ${isOpen ? 'is-open' : ''}`}
