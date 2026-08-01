@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import './Navbar.css'
 
 const NAV_LINKS = [
@@ -9,13 +10,31 @@ const NAV_LINKS = [
 ]
 
 export default function Navbar() {
+  const [isOpen, setIsOpen] = useState(false)
+
+  const closeMenu = () => setIsOpen(false)
+
   return (
     <nav className="navbar">
       <div className="logo">Aditya Pratap Singh Jadon</div>
-      <ul className="nav-links">
+
+      <button
+        className={`menu-toggle ${isOpen ? 'is-open' : ''}`}
+        onClick={() => setIsOpen((prev) => !prev)}
+        aria-label="Toggle menu"
+        aria-expanded={isOpen}
+      >
+        <span />
+        <span />
+        <span />
+      </button>
+
+      <ul className={`nav-links ${isOpen ? 'is-open' : ''}`}>
         {NAV_LINKS.map((link) => (
           <li key={link.href}>
-            <a href={link.href}>{link.label}</a>
+            <a href={link.href} onClick={closeMenu}>
+              {link.label}
+            </a>
           </li>
         ))}
       </ul>

@@ -85,3 +85,21 @@
   color: var(--primary-dark);
   transform: translateY(-5px);
 }
+@media (max-width: 480px) {
+  .contact-message {
+    font-size: 1.05rem;
+  }
+
+  .contact-info {
+    gap: 2rem;
+  }
+
+  .contact-item a {
+    font-size: 1rem;
+    word-break: break-word;
+  }
+
+  .social-links {
+    gap: 1.25rem;
+  }
+}

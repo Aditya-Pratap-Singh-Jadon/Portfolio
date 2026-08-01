@@ -31,7 +31,7 @@
 
 .about-text h3 {
   color: var(--accent-gold);
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-size: 1.8rem;
   margin: 2rem 0 1rem;
 }
@@ -91,8 +91,9 @@
 } */
 
 .profile-frame {
-  width: 450px;
-  height: 600px;
+  width: min(450px, 80vw);
+  height: min(600px, 106vw);
+  max-height: 550px;
   border-radius: 24px;
   border: 2px solid rgba(212, 175, 55, 0.3);
   overflow: hidden;
@@ -105,13 +106,17 @@
 }
 
 .profile-frame::before {
-  content: '';
+  content: "";
   position: absolute;
   top: -50%;
   left: -50%;
   width: 200%;
   height: 200%;
-  background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(212, 175, 55, 0.1) 0%,
+    transparent 70%
+  );
   animation: rotate 20s linear infinite;
 }
 
@@ -126,4 +131,26 @@
   height: 100%;
   object-fit: cover;
   display: block;
+}
+@media (max-width: 768px) {
+  .about-image {
+    margin-top: 0;
+    order: -1;
+  }
+
+  .about-text h3 {
+    font-size: 1.5rem;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-frame {
+    width: min(320px, 85vw);
+    height: min(420px, 112vw);
+  }
 }

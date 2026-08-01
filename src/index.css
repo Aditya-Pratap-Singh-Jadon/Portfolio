@@ -74,6 +74,11 @@ section {
 }
 
 @media (max-width: 768px) {
+  section {
+    padding: 6rem 6% 4rem;
+    min-height: auto;
+  }
+
   .about-content {
     grid-template-columns: 1fr !important;
     gap: 3rem !important;
@@ -81,5 +86,16 @@ section {
 
   .projects-grid {
     grid-template-columns: 1fr !important;
+  }
+
+  .section-header {
+    font-size: clamp(2rem, 8vw, 2.8rem);
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  section {
+    padding: 5.5rem 5% 3rem;
   }
 }

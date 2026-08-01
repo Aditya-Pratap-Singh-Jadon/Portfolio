@@ -1,7 +1,7 @@
 import './Contact.css'
 
 const CONTACT_ITEMS = [
-  { icon: '✉', label: 'adityapratap2904@gmail.com', href: 'mailto:your.email@example.com' },
+  { icon: '✉', label: 'adityapratap2904@gmail.com', href: 'mailto:adityapratap2904@gmail.com' },
   { icon: 'P.', label: '+91 8319594605', href: 'tel:+918319594605' },
 ]
 
