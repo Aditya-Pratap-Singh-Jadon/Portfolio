@@ -5,12 +5,12 @@ const SKILLS = [
   "HTML5 & CSS3",
   "React.js",
   "JavaScript (ES6+)",
+  "C++",
+  "Python",
   "UI/UX Design",
-  "3D WebGL",
   "Log Analysis",
   "Web Security Fundamentals",
   "Git & GitHub",
-  "Problem Solving",
 ];
 
 export default function About() {
