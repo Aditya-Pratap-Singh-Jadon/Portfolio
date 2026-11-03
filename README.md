@@ -1,0 +1,137 @@
+# Aditya's portfolio
+
+A React/Vite portfolio with a volcanic 3D introduction, spatial navigation, an interactive skill graph, a concise Recruiter Quick View, and a private content studio. The public branding is Aditya's name; MONOLITH // INFERNO is an internal design concept only.
+
+## Run locally
+
+Requires Node.js 22.9+ (24 LTS recommended) and npm. PlayCanvas is pinned to 2.23.3; the lockfile records the remaining dependencies.
+
+```sh
+npm ci
+npm run server
+```
+
+In a second terminal:
+
+```sh
+npm run dev
+```
+
+Open the exact Vite address, normally `http://127.0.0.1:5173`. Vite proxies `/api` to the local API at `127.0.0.1:5174`.
+
+The website source, server, tests, configuration, and runtime assets live directly at the repository root on `v2`. Run these commands from that root; no submodule or nested clone is required.
+
+The PlayCanvas opening code is present, but P6-A cinematic acceptance is still pending. Automated tests cover timeline reversal, exact resets, cancellation, and asset integrity; they do not verify rendered scroll/reverse navigation, responsive framing, reduced-motion rendering, lifecycle behavior, or GPU performance. Those checks require an actual browser review. The repository restructuring does not mark P6-A complete, begin P6-B, or deploy the site.
+
+- `/`: immersive public portfolio.
+- `/quick`: one-page recruiter view; the only view containing a resume download button.
+- `/admin`: owner-only content studio.
+- `/api/resume`: the currently published resume, downloadable by anyone who has the link.
+
+For a production-build review on your computer:
+
+```sh
+npm run build
+npm run server
+```
+
+Open `http://127.0.0.1:5174`. If configuring OAuth on that origin, set `APP_ORIGIN` accordingly and register its callback URL. The Node server serves `dist` and the API together. `npm run preview` previews static files only and requires a matching API proxy; use `npm run server` to review the complete application.
+
+## GitHub OAuth setup
+
+The site works publicly without credentials. Admin editing stays disabled until owner sign-in is configured; there is no development authentication bypass.
+
+1. Copy `.env.example` to `.env`. Never commit `.env`, put credentials in a `VITE_` variable, or paste secrets into chat.
+2. In GitHub **Settings → Developer settings → OAuth Apps**, register an OAuth application.
+3. For normal development, use homepage `http://127.0.0.1:5173` and callback `http://127.0.0.1:5173/api/auth/callback`.
+4. Put the app's client ID and secret in `GITHUB_CLIENT_ID` and `GITHUB_CLIENT_SECRET`.
+5. Get your numeric account ID from `https://api.github.com/users/Aditya-Pratap-Singh-Jadon` and put the `id` value in `GITHUB_OWNER_ID`. Do not use your username in this field. Sign-in rejects every other account, even if its username looks similar.
+6. Set `APP_ORIGIN` to the exact origin you open (scheme, hostname and port). `localhost` and `127.0.0.1` are different origins. Restart the API after changing `.env`.
+
+OAuth requests basic public identity only. Owner sessions last eight hours and are lost when the local server restarts. Cookies are HttpOnly and SameSite=Lax; HTTPS origins also use Secure cookies. OAuth uses expiring, single-use state. All mutations require the correct Origin and the session's CSRF token.
+
+## Where to change content
+
+Sign in at `/admin` and choose the relevant sidebar item:
+
+- **Identity & About:** name, title, introduction, biography, availability, email, social URLs and closing copy.
+- **Education:** VIT details, graduation and CGPA wording.
+- **Projects:** descriptions, contribution/challenge/outcome, team credits, links, categories, screenshots, featured ordering and visibility. Use lower order numbers first. Keep each entry's ID stable because skill evidence refers to it.
+- **Experience / Skills / Achievements:** add and edit entries. Skill project IDs refer to the IDs shown in Projects. Use words such as Currently learning rather than numerical proficiency scores.
+- **LinkedIn posts:** follow the workflow below.
+- **Resume:** upload an approved PDF up to 4 MB. It remains a draft until published. Until then Quick View shows an unavailable state and `/api/resume` returns 404. The local original is never served or bundled; no personal PDF is committed.
+- **Section visibility:** hidden sections are omitted from public responses, Quick View and navigation. Hiding a section is not a way to retract an already downloaded resume or information somebody has previously saved.
+- **GitHub synchronization:** enable periodic refresh, choose an interval from 1 to 168 hours, inspect status, or refresh now.
+- **Revisions & backup:** export the current draft, import a JSON backup, or restore a previous published revision to the draft.
+
+Workflow: **Edit → Save draft → Preview both views → Publish approved content**. Saves do not publish. The Publish button requires the current draft to be saved. Unsaved navigation warns before leaving; simultaneous editor sessions get a conflict rather than silently overwriting each other.
+
+The initial approved public content is in `src/data/portfolio.js`. It seeds a new content store only. After you start using the editor, changes there do not overwrite stored content. Use the editor or import a backup for subsequent updates.
+
+## Add a LinkedIn post
+
+1. Open **Admin → LinkedIn posts → Add LinkedIn post**.
+2. Enter a title, original post text, original LinkedIn URL and original publication date.
+3. Write or paste your short public summary.
+4. Select **Approve this post for publication** when satisfied.
+5. Save, preview, then publish.
+
+The source text is kept private; visitors see the approved summary, date and source link. Duplicate source links are rejected. No AI or scraping is used. There is no Fetch from LinkedIn button: personal-post reading requires restricted LinkedIn application approval, which has not been granted or configured. The manually entered workflow is the approved launch behavior.
+
+## GitHub pinned projects
+
+Set `GITHUB_USERNAME` and a server-only `GITHUB_TOKEN` that can query public GitHub GraphQL data. Use the minimum permissions available for public profile/repository reading; do not grant access to private repositories for this portfolio. The OAuth login token is not reused for background synchronization.
+
+The API queries GitHub's official GraphQL `pinnedItems(first:6, types:REPOSITORY)`, caches results locally, and refreshes on the saved interval while the server is running. It checks due work once a minute. It also provides an authenticated manual refresh.
+
+- GitHub pin order is retained unless a manual project order overrides it.
+- An editorial entry with a matching repository URL overrides imported title, description, images and case-study data.
+- Hide projects in the editor to keep them out of both public views.
+- Select **Keep featured independently of GitHub pins** to retain a project even after unpinning it. The four approved projects start with this selected.
+- Unpinning never deletes the editorial entry.
+- Failed requests retain the last successful snapshot and report the error in admin. Visitors see the last success date and a stale indicator.
+- Private repositories are excluded even if a token could read them.
+
+To edit a newly imported pin, add a project with the same HTTPS repository URL. Give it a stable local ID, then add your editorial description and optional order. No automatic pin webhook is assumed.
+
+## Persistence and backups
+
+Local data lives in `.data/content.json`, or `DATA_DIR` if configured. This includes drafts, published content, the pin cache, uploaded media and the last 20 published revisions. It is intentionally excluded from Git. Writes are serialized and replaced atomically; an invalid existing file is never overwritten by the seed. Short Windows file-sharing conflicts are retried.
+
+Run **one API process per data directory**. The queue protects concurrent requests within that process, not multiple independent processes. This local file adapter is for development/review; hosting needs a durable store with equivalent atomicity and conflict checks before public deployment.
+
+Use **Revisions & backup → Export draft JSON** regularly and keep the file private. It includes draft post source text and uploaded files. To make a complete server backup, stop the API and copy the whole data directory. Restore a copy to a separate directory first, start the server with that `DATA_DIR`, and review it before replacing the active data. Revisions restore to draft and require a separate publish.
+
+## Presentation and accessibility
+
+- Plain section headings with thematic subtitles; no portrait or contact phone in the UI.
+- Published resumes are public downloads. Review their contents before publishing; Quick View is not an authorization boundary.
+- Direct links, native keyboard controls, visible focus, dialog Escape dismissal and touch layouts.
+- System reduced motion plus a remembered **Reduce motion** control. Reduced mode skips the opening, stabilizes panels and renders static scenes.
+- Ambient sound starts off. After opting in, subsequent visits offer **Resume sound**; browsers still require a gesture. Sound suspends when the tab is hidden.
+- Fine-pointer dot cursor; one ring animation per entry to a link, button, expandable control or marked scroll region. Reduced motion uses a static ring. Native touch navigation is unchanged.
+- WebGL is optional: renderer failures retain the CSS monolith fallback and readable content. Quick View never creates a WebGL canvas. Mobile uses fewer embers, a lower pixel ratio, stacked navigation, and the skill list instead of a second 3D canvas.
+- Project identity artwork is decorative typography, not fabricated application screenshots. Upload real screenshots through the editor when available.
+
+Material response rates are in `src/motion.js`; layout/material styling is in `src/index.css`. Three.js is lazy-loaded separately from the core UI. Scenes stop drawing offscreen or in hidden tabs and dispose GPU resources on unmount.
+
+## Verification
+
+```sh
+npm test
+npm run build
+```
+
+Node tests cover link/import validation, visibility, pin/editorial preservation, private post text, revision persistence, stale writes, anonymous access, owner/non-owner OAuth responses, state replay, CSRF, publish/logout, draft resume privacy and failed synchronization.
+
+Browser review covers project filters/dialogs, skill search, mobile menu, reduced motion, Quick View and missing-admin-configuration behavior. Live GitHub OAuth and token-backed synchronization still need your own credentials; fixture tests do not prove those external accounts are configured.
+
+## Deployment and zero-cost constraint
+
+Nothing has been publicly deployed. No provider or paid service has been enabled. No analytics, AI assistant, AI summarizer, contact-form service or paid asset is used.
+
+Hosting remains your decision. The public build is ordinary static output, but the content studio, OAuth, synchronization and editable content require a backend. A free static host alone does not run those features. Before deployment we must select the free backend/persistence option, port the local adapter if necessary, confirm current quotas and hard limits, configure HTTPS and secrets, and verify live authentication. Do not place `.data`, `.env`, server sources or private backups in a public static directory. Dynamic-service limits should stop service rather than trigger paid upgrades.
+
+There is no honest guarantee that another company's free terms will remain unchanged forever. This application creates no subscription or automatic overage billing; keep accounts on free plans and review terms if providers change them.
+
+Deployment handover checklist: choose the provider; configure owner identity and callback for the final free subdomain; migrate the published store and media; set GitHub secrets server-side; configure persistent/scheduled execution; test backups and rollback; set canonical/social URLs for the final origin; run the test suite/build, keyboard/touch/reduced-motion/performance review; obtain authorization before publishing.

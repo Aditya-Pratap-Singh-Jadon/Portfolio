@@ -1,0 +1,41 @@
+node_modules
+dist
+.DS_Store
+.env
+.env.*
+!.env.example
+.data/
+tmp/
+docs/
+
+# Local agent instructions, credentials, and private content
+/AGENTS.md
+/.agents/
+/.codex/
+/.aws/
+/.ssh/
+*.pem
+*.key
+*.p12
+*.pfx
+/server/assets/*.pdf
+
+# Internal development evidence and source exports stay on this computer
+/reports/
+/plans/
+/screenshots/
+/recordings/
+/backups/
+/verification/
+/exports/
+*.log
+*.tmp
+*.bak
+*.blend
+*.blend1
+/public/playcanvas/**/provenance.json
+
+# Keep website runtime scenes, GLBs, textures, and imported controller modules eligible.
+
+# Preserved legacy clone; the website now lives at this repository root.
+/Portfolio@aditya/

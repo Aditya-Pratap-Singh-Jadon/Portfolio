@@ -1,0 +1,72 @@
+{
+    "sceneSha256":  "2806e007b913112dd30b5a874abc75a5b683f8f5121ba44e6f3538854df27c61",
+    "files":  [
+                  {
+                      "id":  "313034834",
+                      "name":  "MI_R1_TEX_MICRO_NORMAL.png",
+                      "md5":  "40cb8825841741e94477452cad646667"
+                  },
+                  {
+                      "id":  "313034835",
+                      "name":  "MI_R1_TEX_MINERAL.png",
+                      "md5":  "2dc9476b0fa4a45900e74bbe528d3f0b"
+                  },
+                  {
+                      "id":  "313034836",
+                      "name":  "MI_P1A_REFINED.glb",
+                      "md5":  "06ae57c2f72c3772b669df63cdd65d18"
+                  },
+                  {
+                      "id":  "313034837",
+                      "name":  "MI_R1_TEX_MOLTEN_STATIC.png",
+                      "md5":  "aebc01eda76f51d3d37bff466de3cc53"
+                  },
+                  {
+                      "id":  "313036044",
+                      "name":  "MI_INFERNAL_PEDESTAL.glb",
+                      "md5":  "3706148f841c8937fd5d63c88cce638c"
+                  },
+                  {
+                      "id":  "313038713",
+                      "name":  "MI_AWAKENING_CRUCIBLE.glb",
+                      "md5":  "5ece36326a63604067082ef6624368b7"
+                  },
+                  {
+                      "id":  "313039504",
+                      "name":  "MI_AWAKENING_POLISHED.glb",
+                      "md5":  "bb72ed05b2b9590c2a114c4ea43dace7"
+                  },
+                  {
+                      "id":  "313043280",
+                      "name":  "MI_ASHEN_VOID.glb",
+                      "md5":  "b8395dca54c79af6f3cd3b14bae234b0"
+                  },
+                  {
+                      "id":  "313043284",
+                      "name":  "MI_ENV_SOFT.png",
+                      "md5":  "4f8b57e1289fc89a40428e4ec52606b2"
+                  }
+              ],
+    "scripts":  [
+                    {
+                        "name":  "mi-awakening.mjs",
+                        "md5":  "1735f24f1b7051e43f855a482e115eae"
+                    },
+                    {
+                        "name":  "mi-awakening-motion.mjs",
+                        "md5":  "d823aeee200b891e13daee55848f23f0"
+                    },
+                    {
+                        "name":  "mi-ashen-void.mjs",
+                        "md5":  "6099ad500de65ab37e8bd7cfd87ede56"
+                    },
+                    {
+                        "name":  "mi-ashen-void-motion.mjs",
+                        "md5":  "8387452cbc9811d94a9861eec6a4c78f"
+                    },
+                    {
+                        "name":  "mi-levitation-proof.mjs",
+                        "md5":  "0a507e5873a4070fe1ccd9f112468984"
+                    }
+                ]
+}

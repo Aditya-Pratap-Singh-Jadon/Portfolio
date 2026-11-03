@@ -1,0 +1,3 @@
+# Integrity tests require the approved runtime package's exact bytes on every platform.
+public/playcanvas/** -text
+src/playcanvas/approved/*.mjs -text
