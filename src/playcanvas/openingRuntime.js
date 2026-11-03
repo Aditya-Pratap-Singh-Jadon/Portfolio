@@ -1,6 +1,7 @@
 import {
   AppBase,
   AppOptions,
+  BatchManager,
   createGraphicsDevice,
   registerScript,
   RenderComponentSystem,
@@ -51,6 +52,21 @@ const callbackPromise = (run, signal) => new Promise((resolve, reject) => {
   } catch (error) { signal.removeEventListener('abort', abort); reject(error); }
 });
 
+// shortcut: pinned 2.23.3 parsers avoid configure's uncancellable XHR; recheck on engine upgrades.
+const configureOpening = (app, config, signal) => callbackPromise(done => {
+  const props = config.application_properties;
+  if (!Array.isArray(props.libraries) || props.libraries.length || props.scripts?.length || props.externalScripts?.length)
+    throw new Error("Opening scripts must be registered locally");
+  app._parseApplicationProperties({ ...props, maxAssetRetries: 0 }, error => {
+    if (signal.aborted) { done(abortError()); return; }
+    if (!error) {
+      app._parseScenes(config.scenes);
+      app._parseAssets(config.assets);
+    }
+    done(error);
+  });
+}, signal);
+
 export async function createOpeningRuntime(
   canvas,
   { signal, reduced = false, onLoad, onState, onError },
@@ -67,8 +83,7 @@ export async function createOpeningRuntime(
     environment,
     resizeObserver,
     intersectionObserver;
-  const urls = [],
-    removers = [],
+  const removers = [],
     progress = new ProgressSpring(),
     samples = [];
   const checkAbort = () => {
@@ -85,9 +100,10 @@ export async function createOpeningRuntime(
     resizeObserver?.disconnect();
     intersectionObserver?.disconnect();
     removers.splice(0).forEach((off) => off());
-    urls.forEach(URL.revokeObjectURL);
     if (app) app.destroy();
     else device?.destroy();
+    awakening = environment = undefined;
+    samples.length = 0;
   };
   const state = () => {
     const s = sampleOpening(progress.value, reduced);
@@ -97,11 +113,11 @@ export async function createOpeningRuntime(
       reduced,
       ready,
       active,
-      entityCount: app ? Object.keys(source.entities).length : 0,
+      entityCount: app && !disposed ? Object.keys(source.entities).length : 0,
       camera: awakening?.camera.getLocalPosition().toArray(),
       main: awakening?.main.getLocalPosition().toArray(),
       masses: awakening?.masses.map((e) => ({
-        id: e.getGuid(),
+        id: e.guid,
         name: e.name,
         position: e.getLocalPosition().toArray(),
         rotation: e.getLocalRotation().toArray(),
@@ -113,7 +129,7 @@ export async function createOpeningRuntime(
             ),
           )
         : null,
-      exposure: app?.scene.exposure,
+      exposure: app?.scene?.exposure,
       controllerMs: samples.length
         ? [...samples].sort((a, b) => a - b)[Math.floor(samples.length * 0.95)]
         : 0,
@@ -137,6 +153,7 @@ export async function createOpeningRuntime(
     app = new AppBase(canvas);
     const options = new AppOptions();
     options.graphicsDevice = device;
+    options.batchManager = BatchManager;
     options.componentSystems = [
       RenderComponentSystem,
       CameraComponentSystem,
@@ -158,15 +175,9 @@ export async function createOpeningRuntime(
     app.init(options);
     registerScript(WebAwakening, WebAwakening.scriptName, app);
     registerScript(WebAshenVoid, WebAshenVoid.scriptName, app);
-    const objectUrl = (data) => {
-      const url = URL.createObjectURL(
-        new Blob([JSON.stringify(data)], { type: "application/json" }),
-      );
-      urls.push(url);
-      return url;
-    };
-    config.application_properties.maxAssetRetries = 0;
-    await callbackPromise((done) => app.configure(objectUrl(config), done), signal);
+    app.scripts.addSchema(WebAwakening.scriptName, { attributes: {} });
+    app.scripts.addSchema(WebAshenVoid.scriptName, { attributes: {} });
+    await configureOpening(app, config, signal);
     checkAbort();
     const assetErrors = [];
     app.assets.on("error", (error) => assetErrors.push(String(error)));
@@ -177,9 +188,9 @@ export async function createOpeningRuntime(
     checkAbort();
     if (assetErrors.length)
       throw new Error("Required opening assets failed to load");
-    await callbackPromise((done) =>
-      app.scenes.loadScene(objectUrl(prepareOpeningScene(source)), done), signal,
-    );
+    const sceneItem = app.scenes.find("MI_01_MONOLITH_GATE");
+    sceneItem.data = prepareOpeningScene(source);
+    await callbackPromise((done) => app.scenes.changeScene(sceneItem, done), signal);
     checkAbort();
     awakening = app.root.findByName("RIG_HERO_ROOT").script.webAwakening;
     environment = app.root.findByName("ASHEN_VOID").script.webAshenVoid;
@@ -221,7 +232,7 @@ export async function createOpeningRuntime(
         aspect = width / height;
       const mobile = width < 700;
       awakening.camera.translateLocal(
-        (mobile ? 1.4 : -2.6) * weight,
+        (mobile ? 1.4 : width < 1000 ? -0.8 : -2.6) * weight,
         (mobile ? 2.0 : 0) * weight,
         Math.max(0, 1.3 / aspect - 1) * 7 * weight,
       );

@@ -21,7 +21,7 @@ Open the exact Vite address, normally `http://127.0.0.1:5173`. Vite proxies `/ap
 
 The website source, server, tests, configuration, and runtime assets live directly at the repository root on `v2`. Run these commands from that root; no submodule or nested clone is required.
 
-The PlayCanvas opening code is present, but P6-A cinematic acceptance is still pending. Automated tests cover timeline reversal, exact resets, cancellation, and asset integrity; they do not verify rendered scroll/reverse navigation, responsive framing, reduced-motion rendering, lifecycle behavior, or GPU performance. Those checks require an actual browser review. The repository restructuring does not mark P6-A complete, begin P6-B, or deploy the site.
+P6-A has been exercised in Chromium at desktop, tablet, and phone viewport sizes: approved scene rendering, scroll/camera passage, exact stone reassembly, keyboard controls, reduced motion, and WebGL-loss fallback/retry. Automated tests cover cancellation, disposed state, asset integrity, and the existing website/server behavior. Visual approval is still pending. Physical mobile hardware, other browsers, screen-reader output, and sustained GPU performance have not been audited. No P6-B or deployment is included.
 
 - `/`: immersive public portfolio.
 - `/quick`: one-page recruiter view; the only view containing a resume download button.

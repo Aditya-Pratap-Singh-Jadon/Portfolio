@@ -90,6 +90,37 @@ test('engine callback waits cancel even when the loader never responds', async (
   await assert.rejects(wait(() => assert.fail('must not start cancelled work'), controller.signal), {name:'AbortError'})
 })
 
+test('runtime state remains safe after context loss destroys the scene', () => {
+  const source = readFileSync(new URL('../src/playcanvas/openingRuntime.js', import.meta.url), 'utf8')
+  const sampler = source.slice(source.indexOf('const state ='), source.indexOf('  let source;'))
+  const make = new Function('app', 'source', 'awakening', 'progress', 'reduced', 'sampleOpening', 'samples', 'disposed', 'ready', 'active', sampler + ';return state')
+  const state = make({ scene: null }, { entities: { old: {} } }, undefined, { value: 0, target: 0 }, false, sampleOpening, [], true, false, false)
+  assert.doesNotThrow(state)
+  assert.equal(state().ready, false)
+  assert.equal(state().entityCount, 0)
+  assert.equal(state().exposure, undefined)
+})
+
+test('cancelled configuration ignores a late engine callback and rejects external scripts', async () => {
+  const source = readFileSync(new URL('../src/playcanvas/openingRuntime.js', import.meta.url), 'utf8')
+  const helpers = source.slice(source.indexOf('const callbackPromise'), source.indexOf('export async function'))
+  const configure = new Function('abortError', helpers + ';return configureOpening')(() => new DOMException('cancelled', 'AbortError'))
+  const controller = new AbortController(), config = { application_properties: { libraries: [] }, scenes: [], assets: {} }
+  let complete, parsed = 0
+  const app = { _parseApplicationProperties(_props, done) { complete = done }, _parseScenes() { parsed++ }, _parseAssets() { parsed++ } }
+  const pending = configure(app, config, controller.signal)
+  controller.abort()
+  await assert.rejects(pending, { name: 'AbortError' })
+  assert.doesNotThrow(() => complete(null))
+  assert.equal(parsed, 0)
+  await assert.rejects(configure(app, { ...config, application_properties: { libraries: ['https://example.com/code.js'] } }, new AbortController().signal), /registered locally/)
+  const clean = new AbortController()
+  const loaded = configure(app, config, clean.signal)
+  complete(null)
+  await loaded
+  assert.equal(parsed, 2)
+})
+
 test('website package retains the approved scene, mesh, texture and controller bytes', async () => {
   const { createHash } = await import('node:crypto')
   const { prepareOpeningScene } = await import('../src/playcanvas/openingControllers.js')

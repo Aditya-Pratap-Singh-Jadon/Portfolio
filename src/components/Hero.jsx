@@ -114,7 +114,7 @@ export default function Hero({ profile, reduced }) {
             className={`awakening-world ${load.state === "ready" ? "is-ready" : ""}`}
             aria-hidden="true"
           >
-            <canvas ref={canvas} />
+            <canvas key={attempt} ref={canvas} />
           </div>
           <div className="awakening-shade" />
           <div className="awakening-copy" ref={copy}>
@@ -191,10 +191,7 @@ export default function Hero({ profile, reduced }) {
             <nav aria-label="Opening controls">
               <button
                 ref={returnControl}
-                onClick={() => {
-                  runtime.current?.reset();
-                  scrollTo(0);
-                }}
+                onClick={() => scrollTo(0)}
               >
                 Return to start
               </button>
