@@ -3,6 +3,7 @@ export const portfolio = {
     name: "Aditya Pratap Singh Jadon",
     title: "Aspiring Software Engineer",
     introduction: "I build for the people on the other side of the screen.",
+    punchline: "",
     summary:
       "Computer science student at VIT Vellore. Building thoughtful web experiences, strengthening my core CS foundations, and growing toward software engineering.",
     about:
@@ -208,13 +209,3 @@ export const portfolio = {
   },
   sync: { enabled: true, intervalHours: 6 },
 };
-
-export const sections = [
-  { id: "about", title: "About", subtitle: "The Origin" },
-  { id: "projects", title: "Projects", subtitle: "The Forge" },
-  { id: "experience", title: "Experience", subtitle: "The Chronicle" },
-  { id: "skills", title: "Skills", subtitle: "The Neural Core" },
-  { id: "updates", title: "Updates", subtitle: "The Signal" },
-  { id: "achievements", title: "Achievements", subtitle: "The Vault" },
-  { id: "contact", title: "Contact", subtitle: "The Nexus" },
-];

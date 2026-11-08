@@ -34,12 +34,19 @@ test('all eight hub panels restore exact transforms after interrupted focus and 
   camera.camera={fov:34,horizontalFov:false};
   const hub=new HubController({root,graphicsDevice:{width:1440,height:900}});
   const rest=hub.panels.map(p=>[p.e.getLocalPosition().toArray(),p.e.getLocalRotation().toArray(),p.e.getLocalScale().toArray()]);
+  let destroyed=0;
+  const original={},clone={update(){},destroy(){destroyed++;}},instance={material:original},texture={};
+  hub.panels[0].materials.push({instance,original,clone,label:true,opacity:1,emission:1});
+  hub.setLabelTexture(texture);
+  assert.equal(clone.emissiveMap,texture);assert.equal(clone.opacityMap,texture);
   for(let i=0;i<8;i++) {hub.hover(i);hub.update(.1);hub.select(i);hub.update(.23);}
   hub.hover(null);hub.select(null);hub.update(10);
   assert.deepEqual(hub.panels.map(p=>[p.e.getLocalPosition().toArray(),p.e.getLocalRotation().toArray(),p.e.getLocalScale().toArray()]),rest);
+  assert.equal(instance.material,clone);
   hub.setReduced(true);hub.select(2);hub.update(0);
   assert.equal(hub.motion.values[2],1);
   hub.dispose();
+  assert.equal(instance.material,original);assert.equal(destroyed,1);
   assert.deepEqual(hub.panels.map(p=>p.e.getLocalPosition().toArray()),rest.map(p=>p[0]));
 });
 

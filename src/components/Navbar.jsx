@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { sectionById } from "../../shared/signals.js";
 export default function Navbar({ quick = false, name, visibility }) {
   const [open, setOpen] = useState(false);
   return (
@@ -23,20 +24,22 @@ export default function Navbar({ quick = false, name, visibility }) {
             if (e.key === "Escape") setOpen(false);
           }}
         >
-          {["Projects", "Experience", "Skills", "Contact"]
-            .filter((label) => visibility[label.toLowerCase()])
-            .map((label) => (
+          {["projects", "experience", "skills", "contact"]
+            .filter((id) => visibility[id])
+            .map((id) => (
               <a
-                key={label}
-                href={(quick ? "/quick" : "/") + "#" + label.toLowerCase()}
+                key={id}
+                href={(quick ? "/quick" : "/") + "#" + id}
+                title={sectionById[id].subtitle}
                 onClick={() => setOpen(false)}
               >
-                {label}
+                {sectionById[id].title}
               </a>
             ))}
           <a className="nav-quick" href={quick ? "/" : "/quick"}>
             {quick ? "Immersive view" : "Quick view"} ↗
           </a>
+          {!quick && <a href="#experience-preferences" onClick={() => setOpen(false)}>Display & sound</a>}
         </div>
       </nav>
     </header>

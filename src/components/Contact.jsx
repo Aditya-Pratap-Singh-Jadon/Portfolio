@@ -1,11 +1,8 @@
-import { ExternalLink } from "./UI";
+import { ExternalLink, SectionHeading } from "./UI";
 export default function Contact({ profile }) {
   return (
     <section id="contact" className="section contact-section">
-      <div>
-        <h2>Contact</h2>
-        <p className="section-subtitle">The Nexus</p>
-      </div>
+      <SectionHeading section="contact" />
       <div className="contact-layout">
         <div>
           <p className="contact-statement">{profile.closing}</p>

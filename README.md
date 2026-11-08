@@ -27,6 +27,23 @@ P6-B connects the opening to the approved MI_02 Command Center. The website load
 
 Chromium checks cover desktop and phone rendering, all eight selections and exact return positions, gateway passage/reassembly, keyboard navigation, reduced-motion links, unavailable-WebGL fallback, and context-loss retry. Automated tests cover cancellation, exact transforms, approved asset integrity, and existing website/server behavior. P6-B awaits user visual approval. Physical touch devices, other browsers, screen-reader output, and sustained GPU performance remain unverified. No P6-C or deployment is included.
 
+P6-B.1 refines that experience into one responsive composition: an enlarged spatial hub, a stable reading area, a command index, and inline display/sound utilities. Canonical signal names and plain-language subtitles live in `shared/signals.js` and are shared by navigation, section headings, Quick View, and runtime captions. The website draws its own caption atlas on cloned label materials; the approved scene, original atlas, meshes and textures remain byte-for-byte intact. The hub introduction and the missing personal punchline are explicitly provisional.
+
+The existing content model is ready for the next content pass; provide only reviewed facts. Old content without a punchline still loads, and the optional field is editable in the content studio. Saving remains a draft operation; publication retains its existing explicit action.
+
+| Content | Field |
+| --- | --- |
+| Introduction | `profile.introduction` |
+| Personal punchline (optional, 240 characters) | `profile.punchline` |
+| Biography | `profile.about` |
+| Project summaries and case studies | `projects[].description`, `contribution`, `challenge`, `outcome`, `credit` |
+| Experience | `experience[]` |
+| Skills and evidence | `skills[]` |
+| Education and achievements | `education`, `achievements[]` |
+| Contact and social links | `profile.email`, `github`, `linkedin`, `availability`, `closing` |
+
+Structural hub microcopy is separate from personal facts in `hubCopy` and `signals` in `shared/signals.js`. Resume publication remains unavailable until explicitly authorized.
+
 - `/`: immersive public portfolio.
 - `/quick`: one-page recruiter view; the only view containing a resume download button.
 - `/admin`: owner-only content studio.

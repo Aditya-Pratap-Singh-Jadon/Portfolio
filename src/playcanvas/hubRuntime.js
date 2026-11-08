@@ -7,9 +7,10 @@ import {
 } from 'playcanvas';
 import { fetchJson, callbackPromise, configureOpening } from './openingRuntime.js';
 import { HubController } from './hubController.js';
+import { createHubLabels } from './hubLabels.js';
 
 export async function createHubRuntime(canvas,{signal,reduced=false,onSelect,onError,enabled}) {
-  let app,device,hub,disposed=false,ready=false,active=false,dirty=true,resizeObserver,observer;
+  let app,device,hub,labels,disposed=false,ready=false,active=false,dirty=true,resizeObserver,observer;
   const removers=[];
   const listen=(target,type,callback)=>{target.addEventListener(type,callback);removers.push(()=>target.removeEventListener(type,callback));};
   const check=()=>{if(signal.aborted)throw new DOMException('Hub load cancelled','AbortError');};
@@ -17,6 +18,7 @@ export async function createHubRuntime(canvas,{signal,reduced=false,onSelect,onE
     if(disposed)return;disposed=true;ready=false;
     resizeObserver?.disconnect();observer?.disconnect();removers.splice(0).forEach(off=>off());
     hub?.dispose();hub=undefined;
+    labels?.destroy();labels=undefined;
     if(app)app.destroy();else device?.destroy();
   };
   const select=index=>{
@@ -44,6 +46,7 @@ export async function createHubRuntime(canvas,{signal,reduced=false,onSelect,onE
     for(const entity of Object.values(item.data.entities))if(entity.components.camera)delete entity.components.camera.offscreen;
     await callbackPromise(done=>app.scenes.changeScene(item,done),signal);check();
     hub=new HubController(app);hub.setReduced(reduced);
+    labels=createHubLabels(device);hub.setLabelTexture(labels);
     hub.panels.forEach((p,i)=>{p.e.enabled=Boolean(enabled[i]);});
     app.autoRender=false;
     const resize=()=>{

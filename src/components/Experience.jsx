@@ -2,7 +2,7 @@ import { SectionHeading, ExternalLink } from "./UI";
 export default function Experience({ experience }) {
   return (
     <section id="experience" className="section">
-      <SectionHeading title="Experience" subtitle="The Chronicle" />
+      <SectionHeading section="experience" />
       <div className="timeline">
         {experience.map((e) => (
           <article key={e.id} className="timeline-entry">

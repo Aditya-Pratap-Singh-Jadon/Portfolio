@@ -1,12 +1,9 @@
 import { Vec3, Quat, Mat4 } from 'playcanvas';
 import { PanelMotion } from './panelMotion.js';
+import { signals } from '../../shared/signals.js';
 
-export const HUB_PANELS = [
-  ['ABOUT', 'Origin', 2.65, 1.6], ['PROJECTS', 'Forge', 3.05, 1.9],
-  ['EXPERIENCE', 'Chronicle', 2.9, 1.65], ['SKILLS', 'Neural Core', 3, 1.9],
-  ['GITHUB', 'GitHub', 2.65, 1.5], ['LINKEDIN', 'Signal', 2.7, 1.5],
-  ['ACHIEVEMENTS', 'Vault', 2.6, 1.5], ['CONTACT', 'Nexus', 2.65, 1.45],
-];
+const panelSizes = [[2.65,1.6],[3.05,1.9],[2.9,1.65],[3,1.9],[2.65,1.5],[2.7,1.5],[2.6,1.5],[2.65,1.45]];
+export const HUB_PANELS = signals.map((s,i) => [s.entity,s.title,...panelSizes[i]]);
 
 // Website-only transforms and cloned materials; the exported scene stays immutable.
 export class HubController {
@@ -26,15 +23,21 @@ export class HubController {
   materials(root) {
     return root.findComponents('render').flatMap(render=>render.meshInstances.map(instance=>{
       const original=instance.material;
-      return {instance,original,clone:original.clone(),opacity:original.opacity,emission:original.emissiveIntensity,face:render.entity.name.endsWith('_GLASS')};
+      return {instance,original,clone:original.clone(),opacity:original.opacity,emission:original.emissiveIntensity,face:render.entity.name.endsWith('_GLASS'),label:render.entity.name.endsWith('_LABEL')};
     }));
   }
   select(index) {this.motion.select(index);this.hoverMotion.select(null);}
+  setLabelTexture(texture) {
+    for(const m of this.panels.flatMap(p=>p.materials).filter(m=>m.label)) {
+      m.clone.emissiveMap=m.clone.opacityMap=texture;m.labelTexture=true;
+      m.clone.update();m.instance.material=m.clone;
+    }
+  }
   hover(index) {this.hoverMotion.select(this.motion.selected===null?index:null);}
   setReduced(value) {this.motion.setReduced(value);this.hoverMotion.setReduced(value);if(value)this.hoverMotion.select(null);}
   resize(width,height) {
     const aspect=width/height;
-    this.camera.setLocalPosition(this.cameraRest.x,this.cameraRest.y,this.cameraRest.z+Math.max(0,1.55/aspect-1)*12);
+    this.camera.setLocalPosition(this.cameraRest.x,this.cameraRest.y,this.cameraRest.z+Math.max(0,1.8/aspect-1)*12);
   }
   pick(clientX,clientY) {
     const {graphicsDevice:device}=this.app,rect=device.canvas.getBoundingClientRect();
@@ -55,7 +58,7 @@ export class HubController {
   }
   shade(entries,focus,background) {
     for(const m of entries) {
-      if(focus===0&&background===0){m.instance.material=m.original;continue;}
+      if(focus===0&&background===0&&!m.labelTexture){m.instance.material=m.original;continue;}
       m.instance.material=m.clone;
       m.clone.opacity=m.opacity*(1-.82*background);
       if(m.face)m.clone.opacity+=Math.max(0,.94-m.opacity)*focus;

@@ -12,7 +12,7 @@ export default function Skills({ skills, projects, experience, reduced }) {
   const current = filtered.find((s) => s.id === selected) || filtered[0];
   return (
     <section id="skills" className="section skills-section">
-      <SectionHeading title="Skills" subtitle="The Neural Core" />
+      <SectionHeading section="skills" />
       <div className="skills-layout">
         {!mobile && (
           <div className="skill-map">

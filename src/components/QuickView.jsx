@@ -1,4 +1,5 @@
 import { ExternalLink } from "./UI";
+import { sectionById } from "../../shared/signals.js";
 export default function QuickView({ content }) {
   const {
     profile: p,
@@ -26,7 +27,8 @@ export default function QuickView({ content }) {
       <div className="quick-grid">
         {s.projects && (
           <section id="projects">
-            <h2>Selected projects</h2>
+            <h2>{sectionById.projects.title}</h2>
+            <p className="section-subtitle">{sectionById.projects.subtitle}</p>
             {projects.map((project) => (
               <article key={project.id}>
                 <h3>{project.title}</h3>
@@ -48,7 +50,8 @@ export default function QuickView({ content }) {
         <div>
           {s.experience && (
             <section id="experience">
-              <h2>Experience</h2>
+              <h2>{sectionById.experience.title}</h2>
+              <p className="section-subtitle">{sectionById.experience.subtitle}</p>
               {experience.map((x) => (
                 <article key={x.id}>
                   <h3>{x.role}</h3>
@@ -67,7 +70,8 @@ export default function QuickView({ content }) {
           )}
           {s.skills && (
             <section id="skills">
-              <h2>Skills & learning</h2>
+              <h2>{sectionById.skills.title}</h2>
+              <p className="section-subtitle">{sectionById.skills.subtitle}</p>
               {skills.map((skill) => (
                 <p key={skill.id}>
                   <strong>{skill.name}</strong> · {skill.status}
@@ -79,7 +83,8 @@ export default function QuickView({ content }) {
           )}
           {s.achievements && (
             <section>
-              <h2>Education & achievements</h2>
+              <h2>{sectionById.achievements.title}</h2>
+              <p className="section-subtitle">{sectionById.achievements.subtitle}</p>
               <p>
                 <strong>{e.institution}</strong>
                 <br />
@@ -102,7 +107,8 @@ export default function QuickView({ content }) {
       </div>
       {s.contact && (
         <section id="contact" className="quick-contact">
-          <h2>Let’s connect</h2>
+          <h2>{sectionById.contact.title}</h2>
+          <p className="section-subtitle">{sectionById.contact.subtitle}</p>
           <a href={"mailto:" + p.email}>{p.email} ↗</a>
           <ExternalLink href={p.github}>GitHub</ExternalLink>
           <ExternalLink href={p.linkedin}>LinkedIn</ExternalLink>

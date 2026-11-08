@@ -127,3 +127,14 @@ export function SoundControl() {
     </div>
   );
 }
+
+export function ExperiencePreferences({ reduced, systemReduced, onToggle }) {
+  return (
+    <div id="experience-preferences" className="experience-preferences" role="group" aria-label="Display and sound">
+      <button className="motion-control" aria-pressed={reduced} disabled={systemReduced} onClick={onToggle}>
+        {systemReduced ? 'Reduced motion · system' : reduced ? 'Motion reduced' : 'Reduce motion'}
+      </button>
+      <SoundControl />
+    </div>
+  );
+}

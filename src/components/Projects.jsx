@@ -9,13 +9,9 @@ export default function Projects({ projects, sync }) {
   );
   return (
     <section id="projects" className="section projects-section">
-      <SectionHeading title="Projects" subtitle="The Forge" />
+      <SectionHeading section="projects" />
       <div className="section-intro">
-        <p>
-          Ideas made tangible.
-          <br />
-          Built, tested, and still evolving.
-        </p>
+        <p>Browse the work. Open a project for the details.</p>
         <div className="filter-bar" aria-label="Filter projects">
           {categories.map((c) => (
             <button

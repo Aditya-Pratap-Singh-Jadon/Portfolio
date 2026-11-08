@@ -2,7 +2,7 @@ import { SectionHeading, ExternalLink } from "./UI";
 export function Updates({ posts, profile }) {
   return (
     <section id="updates" className="section">
-      <SectionHeading title="Updates" subtitle="The Signal" />
+      <SectionHeading section="updates" />
       {posts.length ? (
         <div className="updates-list">
           {posts.map((p) => (
@@ -24,13 +24,9 @@ export function Updates({ posts, profile }) {
         </div>
       ) : (
         <div className="empty-signal">
-          <p>
-            More to build.
-            <br />
-            More to share.
-          </p>
+          <p>No published updates yet.</p>
           <div>
-            <p>Notes from projects and things I’m learning will appear here.</p>
+            <p>Approved notes and progress updates will appear here.</p>
             <ExternalLink href={profile.linkedin}>
               Find me on LinkedIn
             </ExternalLink>
@@ -43,7 +39,7 @@ export function Updates({ posts, profile }) {
 export function Achievements({ education, achievements }) {
   return (
     <section id="achievements" className="section">
-      <SectionHeading title="Achievements" subtitle="The Vault" />
+      <SectionHeading section="achievements" />
       <div className="vault-layout">
         <article className="education-card">
           <h3>{education.institution}</h3>

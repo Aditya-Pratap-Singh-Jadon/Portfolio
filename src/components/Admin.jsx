@@ -25,6 +25,7 @@ const label = (key) =>
     image: "Project screenshot",
     text: "Original post text (private source)",
     summary: "Public summary",
+    punchline: "Punchline (optional, up to 240 characters)",
     url: "Source URL",
     intervalHours: "Refresh interval in hours",
   })[key] ||

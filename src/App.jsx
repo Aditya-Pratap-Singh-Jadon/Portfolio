@@ -14,7 +14,7 @@ import Skills from "./components/Skills";
 import CommandCenter from "./components/CommandCenter";
 import { Updates, Achievements } from "./components/MoreSections";
 import QuickView from "./components/QuickView";
-import { Cursor, SoundControl } from "./components/ExperienceControls";
+import { Cursor, ExperiencePreferences } from "./components/ExperienceControls";
 const Admin = lazy(() => import("./components/Admin"));
 
 export function PortfolioView({
@@ -53,7 +53,13 @@ export function PortfolioView({
       ) : (
         <main id="main">
           <Hero profile={content.profile} reduced={reduced} />
-          <CommandCenter visibility={s} profile={content.profile} reduced={reduced} />
+          <CommandCenter visibility={s} profile={content.profile} reduced={reduced} utilities={!preview && (
+            <ExperiencePreferences reduced={reduced} systemReduced={systemReduced} onToggle={() => {
+              savePreference('portfolio-motion', manualReduced ? 'full' : 'reduced');
+              setManualReduced(!manualReduced);
+            }} />
+          )} />
+          <div className="portfolio-details">
           {s.about && (
             <About profile={content.profile} education={content.education} />
           )}
@@ -77,6 +83,7 @@ export function PortfolioView({
             />
           )}
           {s.contact && <Contact profile={content.profile} />}
+          </div>
         </main>
       )}
       <footer className="site-footer">
@@ -88,25 +95,6 @@ export function PortfolioView({
       </footer>
       {!quick && !preview && (
         <>
-          <SoundControl />
-          <button
-            className="motion-control"
-            aria-pressed={reduced}
-            disabled={systemReduced}
-            onClick={() => {
-              savePreference(
-                "portfolio-motion",
-                manualReduced ? "full" : "reduced",
-              );
-              setManualReduced(!manualReduced);
-            }}
-          >
-            {systemReduced
-              ? "Reduced motion · system"
-              : reduced
-                ? "Motion reduced"
-                : "Reduce motion"}
-          </button>
           <Cursor reduced={reduced} />
         </>
       )}

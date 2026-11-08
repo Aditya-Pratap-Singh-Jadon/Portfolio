@@ -2,15 +2,12 @@ import { SectionHeading } from "./UI";
 export default function About({ profile, education }) {
   return (
     <section id="about" className="section about-section">
-      <SectionHeading title="About" subtitle="The Origin" />
+      <SectionHeading section="about" />
       <div className="about-layout">
-        <p className="about-lead">
-          Understand the problem.
-          <br />
-          Build. Test.
-          <br />
-          <span>Make it better.</span>
-        </p>
+        <div>
+          <p className="about-lead">{profile.punchline || 'The perspective behind the work.'}</p>
+          {!profile.punchline && <p className="content-note">Provisional punchline</p>}
+        </div>
         <div className="about-body">
           {profile.about.split("\n\n").map((p) => (
             <p key={p}>{p}</p>

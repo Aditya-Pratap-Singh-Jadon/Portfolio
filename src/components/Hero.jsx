@@ -209,11 +209,10 @@ export default function Hero({ profile, reduced }) {
         aria-label="Opening complete"
       >
         <div>
-          <p className="awakening-wordmark">THE GATEWAY</p>
-          <h2>The way is open.</h2>
+          <h2>Gateway crossed.</h2>
         </div>
         <a className="text-link" href="#explore">
-          Continue to the portfolio ↓
+          Enter the Command Center ↓
         </a>
       </section>
     </>

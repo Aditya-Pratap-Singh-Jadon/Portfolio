@@ -25,6 +25,7 @@ export function validateContent(input) {
   const unique = rows => { if (new Set(rows.map(r => r.id)).size !== rows.length) throw new Error('Duplicate IDs'); return rows }
   const boolean = v => { if (typeof v !== 'boolean') throw new Error('Invalid visibility flag'); return v }
   const profile = strings(input?.profile, ['name', 'title', 'introduction', 'summary', 'about', 'availability', 'email', 'closing'])
+  profile.punchline = text(input.profile.punchline ?? '', 240)
   if (!profile.name || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(profile.email) || /[\r\n]/.test(profile.email)) throw new Error('Name and valid email are required')
   profile.github = url(input.profile.github); profile.linkedin = url(input.profile.linkedin)
   const projects = unique(list(input.projects, p => {
@@ -64,7 +65,7 @@ export function publicContent(content, pins = []) {
   return {
     ...rest,
     resumeAvailable: Boolean(resume?.data),
-    profile: { ...rest.profile, ...(!s.about ? { about: '' } : {}), ...(!s.contact ? { email: '', github: '', linkedin: '' } : {}) },
+    profile: { ...rest.profile, ...(!s.about ? { about: '', punchline: '' } : {}), ...(!s.contact ? { email: '', github: '', linkedin: '' } : {}) },
     education: s.achievements || s.about ? rest.education : {},
     projects, experience: s.experience ? rest.experience : [],
     skills: s.skills ? rest.skills.map(skill => ({ ...skill, projects: skill.projects.filter(id => projects.some(p => p.id === id)), experience: s.experience ? skill.experience || [] : [] })) : [],

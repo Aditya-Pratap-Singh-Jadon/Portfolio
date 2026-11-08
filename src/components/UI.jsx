@@ -1,4 +1,5 @@
 import { Component, useEffect, useRef } from "react";
+import { sectionById } from "../../shared/signals.js";
 export class SceneBoundary extends Component {
   state = { failed: false };
   static getDerivedStateFromError() {
@@ -20,12 +21,13 @@ export function ExternalLink({ href, children, className = "" }) {
     </a>
   );
 }
-export function SectionHeading({ title, subtitle, children }) {
+export function SectionHeading({ section, children }) {
+  const { title, subtitle, summary } = sectionById[section];
   return (
     <div className="section-heading">
       <div>
         <h2>{title}</h2>
-        <p className="section-subtitle">{subtitle}</p>
+        <p className="section-subtitle">{subtitle} <span aria-hidden="true">/</span> {summary}</p>
       </div>
       {children || (
         <a className="back-hub" href="#explore">
