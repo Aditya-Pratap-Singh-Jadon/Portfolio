@@ -1,0 +1,18 @@
+.hub-eyebrow{font-size:10px;letter-spacing:.18em;color:#ba9574;margin-bottom:14px}
+.command-section{padding-top:72px}.command-section>.section-heading{margin-bottom:32px}
+.hub-stage{position:relative;height:clamp(420px,62svh,660px);background:#080706;isolation:isolate;overflow:hidden;border-top:1px solid #e8e2d918;border-bottom:1px solid #e8e2d918}
+.hub-stage canvas{width:100%;height:100%;display:block;opacity:0;transition:opacity .7s;touch-action:pan-y}
+.hub-stage.is-ready canvas{opacity:1}
+.hub-message{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:30px;text-align:center;font-size:13px;color:#c7bcae;gap:16px}
+.hub-message button,.hub-focus button{border-bottom:1px solid #947353;padding:10px 0;color:#e8e2d9;min-height:44px;font-size:12px}
+.hub-focus{position:absolute;right:24px;bottom:24px;width:255px;padding:24px;background:#15120ff5;border:1px solid #b98a534d;box-shadow:0 12px 60px #0008;display:flex;flex-direction:column;gap:15px}
+.hub-focus .hub-eyebrow{margin:0}.hub-focus h3{font-size:32px}.hub-focus>p:not(.hub-eyebrow){font-size:13px;line-height:1.6;color:#c7bcae}
+.hub-status{font-size:12px;color:#c7bcae;margin:22px 0 12px;min-height:20px}
+.hub-controls{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid #ffffff20}
+.hub-controls button,.hub-controls a{display:flex;align-items:center;gap:14px;width:100%;text-align:left;padding:18px 10px;border-bottom:1px solid #ffffff20;min-height:56px;font-size:14px;color:#e8e2d9}
+.hub-controls span{font-size:10px;color:#ad8a68}.hub-controls button:hover,.hub-controls a:hover,.hub-controls button[aria-pressed=true]{background:#8b59251f;color:#ffb879}
+.hub-controls :focus-visible,.hub-focus :focus-visible{outline:2px solid #ff8c32;outline-offset:3px}
+.hub-footnote{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-top:22px;font-size:11px;color:#ac9f90}
+@media(max-width:760px){.hub-stage{height:480px;margin:0 -10px}.hub-controls{grid-template-columns:repeat(2,1fr)}.hub-focus{right:12px;bottom:12px;width:220px;padding:18px;gap:10px}.hub-focus h3{font-size:26px}.hub-footnote>span{display:none}}
+@media(prefers-reduced-motion:reduce){.hub-stage canvas{transition:none}}
+.reduce-motion .hub-stage canvas{transition:none}

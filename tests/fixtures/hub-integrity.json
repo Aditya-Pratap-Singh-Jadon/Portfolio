@@ -1,0 +1,98 @@
+{
+  "project": 1630005,
+  "scene": 2634123,
+  "checkpoint": "c16e0b5f-d465-4cf4-9499-cd6bf894f2e7",
+  "sceneSha256": "817dcccf1a8898d9757a757f5e804296e23cc8b7131d285ebe722d2777dc96fd",
+  "files": [
+    {
+      "id": "313059113",
+      "name": "MI_HUB_GLASS_REFINEMENT.glb",
+      "md5": "098e86180bccbd891551d2676de9924b",
+      "bytes": 157028
+    },
+    {
+      "id": "313057741",
+      "name": "MI_STATIC_HUB.glb",
+      "md5": "c1ddb8d35bed7534181f6f59932a0b5c",
+      "bytes": 174128
+    },
+    {
+      "id": "313057742",
+      "name": "MI_HUB_LABELS.png",
+      "md5": "61aa38c5910be76fdddcad6dda4a7c29",
+      "bytes": 90627
+    },
+    {
+      "id": "313034836",
+      "name": "MI_P1A_REFINED.glb",
+      "md5": "06ae57c2f72c3772b669df63cdd65d18",
+      "bytes": 590456
+    },
+    {
+      "id": "313034835",
+      "name": "MI_R1_TEX_MINERAL.png",
+      "md5": "2dc9476b0fa4a45900e74bbe528d3f0b",
+      "bytes": 375974
+    },
+    {
+      "id": "313034834",
+      "name": "MI_R1_TEX_MICRO_NORMAL.png",
+      "md5": "40cb8825841741e94477452cad646667",
+      "bytes": 362745
+    },
+    {
+      "id": "313034837",
+      "name": "MI_R1_TEX_MOLTEN_STATIC.png",
+      "md5": "aebc01eda76f51d3d37bff466de3cc53",
+      "bytes": 435891
+    },
+    {
+      "id": "313043280",
+      "name": "MI_ASHEN_VOID.glb",
+      "md5": "b8395dca54c79af6f3cd3b14bae234b0",
+      "bytes": 504884
+    },
+    {
+      "id": "313043284",
+      "name": "MI_ENV_SOFT.png",
+      "md5": "4f8b57e1289fc89a40428e4ec52606b2",
+      "bytes": 9562
+    },
+    {
+      "id": "313057789",
+      "name": "MI_HUB_REFLECTION_px.png",
+      "md5": "6f777efcd4879352cd5328541372daa8",
+      "bytes": 9031
+    },
+    {
+      "id": "313057787",
+      "name": "MI_HUB_REFLECTION_nx.png",
+      "md5": "66a6f7f99c43daf91567c1f935a19557",
+      "bytes": 8840
+    },
+    {
+      "id": "313057791",
+      "name": "MI_HUB_REFLECTION_py.png",
+      "md5": "c06d4cd58656a74c321842287df80998",
+      "bytes": 7199
+    },
+    {
+      "id": "313057790",
+      "name": "MI_HUB_REFLECTION_ny.png",
+      "md5": "63480020203cf6b999785db701d1ad84",
+      "bytes": 1158
+    },
+    {
+      "id": "313057786",
+      "name": "MI_HUB_REFLECTION_pz.png",
+      "md5": "60dd7ec9cb15c0d7e4bbf69f81cee6d4",
+      "bytes": 3534
+    },
+    {
+      "id": "313057788",
+      "name": "MI_HUB_REFLECTION_nz.png",
+      "md5": "678429e0d4dccad730f11efba2823289",
+      "bytes": 7479
+    }
+  ]
+}

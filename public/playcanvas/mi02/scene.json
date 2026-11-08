@@ -1,0 +1,4341 @@
+{
+    "branch_id": "767b4fee-49c1-494d-8a2a-452446444db8",
+    "name": "MI_02_HOLOGRAPHIC_HUB",
+    "settings": {
+        "physics": {
+            "gravity": [
+                0,
+                -9.8,
+                0
+            ]
+        },
+        "render": {
+            "lightmapFilterRange": 10,
+            "fog_end": 1000,
+            "lightmapFilterEnabled": false,
+            "ambientBake": false,
+            "tonemapping": 3,
+            "lightingAreaLightsEnabled": false,
+            "lightingShadowType": 0,
+            "ambientBakeOcclusionContrast": 0,
+            "skybox": null,
+            "lightingCookieAtlasResolution": 2048,
+            "fog_density": 0.012,
+            "lightmapFilterSmoothness": 0.2,
+            "gamma_correction": 1,
+            "exposure": 1.1,
+            "lightingShadowsEnabled": true,
+            "fog_start": 1,
+            "skyboxIntensity": 1,
+            "global_ambient": [
+                0.07,
+                0.063,
+                0.055
+            ],
+            "ambientBakeNumSamples": 1,
+            "fog_color": [
+                0.016,
+                0.014,
+                0.011
+            ],
+            "lightingCells": [
+                10,
+                3,
+                10
+            ],
+            "lightmapMode": 1,
+            "lightingCookiesEnabled": false,
+            "clusteredLightingEnabled": true,
+            "ambientBakeSpherePart": 0.4,
+            "fog": "exp2",
+            "ambientBakeOcclusionBrightness": 0,
+            "lightmapMaxResolution": 2048,
+            "lightingMaxLightsPerCell": 255,
+            "lightingShadowAtlasResolution": 2048,
+            "skyboxMip": 0,
+            "lightmapSizeMultiplier": 16,
+            "skyboxRotation": [
+                0,
+                0,
+                0
+            ],
+            "skyType": "infinite",
+            "skyMeshPosition": [
+                0,
+                0,
+                0
+            ],
+            "skyMeshRotation": [
+                0,
+                0,
+                0
+            ],
+            "skyMeshScale": [
+                100,
+                100,
+                100
+            ],
+            "skyCenter": [
+                0,
+                0.1,
+                0
+            ],
+            "skyDepthWrite": false,
+            "lightingMaxLights": 255,
+            "gsplatRadialSorting": false,
+            "gsplatLodUpdateDistance": 1,
+            "gsplatLodUpdateAngle": 90,
+            "gsplatLodBehindPenalty": 1.5,
+            "gsplatLodUnderfillLimit": 0,
+            "gsplatSplatBudget": 1000000,
+            "gsplatSplatBudgetMode": "target",
+            "gsplatAlphaClip": 0.3,
+            "gsplatAlphaClipForward": 0.00392156862745098,
+            "gsplatMinPixelSize": 2,
+            "gsplatMinContribution": 3,
+            "gsplatFoveationStrength": 0,
+            "gsplatFoveationCenter": 0.3,
+            "gsplatAntiAlias": false,
+            "gsplatUseFog": true,
+            "gsplatColorUpdateAngle": 10,
+            "gsplatCooldownTicks": 100,
+            "gsplatDataFormat": "compact",
+            "gsplatEnableIds": false,
+            "gsplatLodMode": "distance",
+            "gsplatUseTonemap": true
+        },
+        "priority_scripts": null
+    },
+    "entities": {
+        "ccada658-45f1-40ed-afe1-d9c22e0479a0": {
+            "name": "Root",
+            "parent": null,
+            "resource_id": "ccada658-45f1-40ed-afe1-d9c22e0479a0",
+            "tags": [],
+            "enabled": true,
+            "template": null,
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {},
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "children": [
+                "82af7a75-6767-4d94-a81c-0866cbf7ad2e",
+                "c7908f62-7c02-40ed-8128-4aa0aa061c47",
+                "c96d47a8-368d-42db-b056-bb3dc6ae31aa",
+                "ab01262d-ac4a-4494-9bb4-099db7698213",
+                "9090d0fe-c01e-4ad2-bdc4-a2402e4c1777",
+                "5de6ff2c-eaf8-4ecc-8d27-7e1c3f056748",
+                "fcf562c8-b467-45e4-b2b9-3e3096ad4cd1",
+                "5d85d5e4-67ef-4dcd-a5d5-61253181e922",
+                "7cedde06-5dc6-4229-b3a6-fe0241bdc146"
+            ]
+        },
+        "82af7a75-6767-4d94-a81c-0866cbf7ad2e": {
+            "name": "CAMERA_HUB",
+            "parent": "ccada658-45f1-40ed-afe1-d9c22e0479a0",
+            "resource_id": "82af7a75-6767-4d94-a81c-0866cbf7ad2e",
+            "tags": [],
+            "enabled": true,
+            "template": null,
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "camera": {
+                    "fov": 34,
+                    "projection": 0,
+                    "clearColor": [
+                        0.03137,
+                        0.03137,
+                        0.03137,
+                        1
+                    ],
+                    "clearColorBuffer": true,
+                    "clearDepthBuffer": true,
+                    "renderSceneDepthMap": false,
+                    "renderSceneColorMap": false,
+                    "frustumCulling": true,
+                    "enabled": true,
+                    "orthoHeight": 4,
+                    "farClip": 60,
+                    "nearClip": 0.1,
+                    "priority": 0,
+                    "rect": [
+                        0,
+                        0,
+                        1,
+                        1
+                    ],
+                    "offscreen": null,
+                    "layers": [
+                        0,
+                        1,
+                        2,
+                        3,
+                        4
+                    ],
+                    "toneMapping": 3,
+                    "gammaCorrection": 1
+                }
+            },
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "position": [
+                0,
+                0.1,
+                14.6
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "children": []
+        },
+        "c7908f62-7c02-40ed-8128-4aa0aa061c47": {
+            "name": "HUB_KEY_WARM",
+            "parent": "ccada658-45f1-40ed-afe1-d9c22e0479a0",
+            "resource_id": "c7908f62-7c02-40ed-8128-4aa0aa061c47",
+            "tags": [],
+            "enabled": true,
+            "template": null,
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "light": {
+                    "enabled": true,
+                    "bake": false,
+                    "bakeNumSamples": 1,
+                    "bakeArea": 0,
+                    "bakeDir": true,
+                    "affectDynamic": true,
+                    "affectLightmapped": false,
+                    "affectSpecularity": true,
+                    "isStatic": false,
+                    "color": [
+                        1,
+                        0.96,
+                        0.9
+                    ],
+                    "intensity": 2.3,
+                    "type": "directional",
+                    "shadowDistance": 16,
+                    "numCascades": 1,
+                    "cascadeDistribution": 0.5,
+                    "range": 8,
+                    "innerConeAngle": 40,
+                    "outerConeAngle": 45,
+                    "penumbraSize": 1,
+                    "penumbraFalloff": 1,
+                    "shape": 0,
+                    "falloffMode": 0,
+                    "castShadows": false,
+                    "shadowIntensity": 1,
+                    "shadowUpdateMode": 2,
+                    "shadowType": 0,
+                    "shadowResolution": 1024,
+                    "shadowBias": 0.2,
+                    "normalOffsetBias": 0.05,
+                    "vsmBlurMode": 1,
+                    "vsmBlurSize": 11,
+                    "vsmBias": 0.01,
+                    "cookieAsset": null,
+                    "cookie": null,
+                    "cookieIntensity": 1,
+                    "cookieFalloff": true,
+                    "cookieChannel": "rgb",
+                    "cookieAngle": 0,
+                    "cookieScale": [
+                        1,
+                        1
+                    ],
+                    "cookieOffset": [
+                        0,
+                        0
+                    ],
+                    "layers": [
+                        0
+                    ]
+                }
+            },
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "position": [
+                2,
+                2,
+                -2
+            ],
+            "rotation": [
+                27,
+                -28,
+                0
+            ],
+            "children": []
+        },
+        "c96d47a8-368d-42db-b056-bb3dc6ae31aa": {
+            "name": "Box",
+            "parent": "ccada658-45f1-40ed-afe1-d9c22e0479a0",
+            "resource_id": "c96d47a8-368d-42db-b056-bb3dc6ae31aa",
+            "tags": [],
+            "enabled": false,
+            "template": null,
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "box",
+                    "asset": null,
+                    "materialAssets": [
+                        null
+                    ],
+                    "castShadows": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "castShadowsLightmap": true,
+                    "rootBone": null,
+                    "isStatic": false,
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "position": [
+                0,
+                0.5,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "children": []
+        },
+        "ab01262d-ac4a-4494-9bb4-099db7698213": {
+            "name": "Plane",
+            "parent": "ccada658-45f1-40ed-afe1-d9c22e0479a0",
+            "resource_id": "ab01262d-ac4a-4494-9bb4-099db7698213",
+            "tags": [],
+            "enabled": false,
+            "template": null,
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "plane",
+                    "asset": null,
+                    "materialAssets": [
+                        null
+                    ],
+                    "castShadows": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "castShadowsLightmap": true,
+                    "rootBone": null,
+                    "isStatic": false,
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "scale": [
+                8,
+                1,
+                8
+            ],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "children": []
+        },
+        "9090d0fe-c01e-4ad2-bdc4-a2402e4c1777": {
+            "name": "RIG_HUB_ROOT",
+            "tags": [],
+            "enabled": true,
+            "resource_id": "9090d0fe-c01e-4ad2-bdc4-a2402e4c1777",
+            "parent": "ccada658-45f1-40ed-afe1-d9c22e0479a0",
+            "children": [
+                "e2bdf7ee-2436-44f4-ada3-469a5dac59bf",
+                "085a7469-fe22-433a-a6e6-3066eb9aaeca",
+                "0a6fa6ef-6e26-408e-926c-fccdd91d6575",
+                "c22b783c-7d31-4c06-ade4-6c6486e93d5d",
+                "8f7a03a2-8b00-4a7d-a010-5d79f0a88e86",
+                "2ce3f156-ffa2-4684-9c3f-03221f8a028e",
+                "8c779243-88cc-40fc-bfb7-d7b12533eb2d",
+                "cef24544-af2c-4f52-b5b9-06a2882a1c90",
+                "deda8034-00bc-46a9-94ff-9a6e7fafb267"
+            ],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "components": {},
+            "template": null,
+            "template_id": null,
+            "template_ent_ids": null
+        },
+        "e2bdf7ee-2436-44f4-ada3-469a5dac59bf": {
+            "name": "MINI_MONOLITH_CORE",
+            "tags": [],
+            "enabled": true,
+            "resource_id": "e2bdf7ee-2436-44f4-ada3-469a5dac59bf",
+            "parent": "9090d0fe-c01e-4ad2-bdc4-a2402e4c1777",
+            "children": [
+                "12b5aef2-93e0-4207-8b5a-ee8d36841aab",
+                "8c444a59-5751-41a7-aaa3-88aafbae0086",
+                "85847efc-2ab3-48c4-85ad-2f76d1877692",
+                "a8b3a1b1-4cad-47d0-a1a1-7be3c450d61d",
+                "9c512bda-e0be-4158-aaf4-6a1b651caa82",
+                "a159f2c2-07f4-4a0c-b75d-ae23e39358fa",
+                "ca999806-632d-4ba6-ba8a-cb9a04994265",
+                "80b0352b-dea3-473d-bc52-f8a821e83bc1",
+                "d31efeec-1283-4529-96c1-7b56caca1ba8",
+                "131a200f-a454-4688-a67e-d59e87bc2f9c"
+            ],
+            "position": [
+                0,
+                0.35,
+                -0.5
+            ],
+            "rotation": [
+                0,
+                -22,
+                0
+            ],
+            "scale": [
+                0.46,
+                0.46,
+                0.46
+            ],
+            "components": {},
+            "template": null,
+            "template_id": null,
+            "template_ent_ids": null
+        },
+        "5de6ff2c-eaf8-4ecc-8d27-7e1c3f056748": {
+            "name": "HUB_RIM_NEUTRAL",
+            "tags": [],
+            "enabled": true,
+            "resource_id": "5de6ff2c-eaf8-4ecc-8d27-7e1c3f056748",
+            "parent": "ccada658-45f1-40ed-afe1-d9c22e0479a0",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                25,
+                130,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "components": {
+                "light": {
+                    "enabled": true,
+                    "type": "directional",
+                    "bake": false,
+                    "bakeArea": 0,
+                    "bakeNumSamples": 1,
+                    "bakeDir": true,
+                    "affectDynamic": true,
+                    "affectLightmapped": false,
+                    "affectSpecularity": true,
+                    "color": [
+                        0.91,
+                        0.89,
+                        0.85
+                    ],
+                    "intensity": 1.7,
+                    "castShadows": false,
+                    "shadowUpdateMode": 2,
+                    "shadowType": 0,
+                    "vsmBlurMode": 1,
+                    "vsmBlurSize": 11,
+                    "vsmBias": 0.01,
+                    "shadowDistance": 16,
+                    "shadowIntensity": 1,
+                    "shadowResolution": 1024,
+                    "numCascades": 1,
+                    "cascadeDistribution": 0.5,
+                    "shadowBias": 0.2,
+                    "normalOffsetBias": 0.05,
+                    "penumbraSize": 1,
+                    "penumbraFalloff": 1,
+                    "range": 8,
+                    "falloffMode": 0,
+                    "innerConeAngle": 40,
+                    "outerConeAngle": 45,
+                    "shape": 0,
+                    "cookieAsset": null,
+                    "cookie": null,
+                    "cookieIntensity": 1,
+                    "cookieFalloff": true,
+                    "cookieChannel": "rgb",
+                    "cookieAngle": 0,
+                    "cookieScale": [
+                        1,
+                        1
+                    ],
+                    "cookieOffset": [
+                        0,
+                        0
+                    ],
+                    "isStatic": false,
+                    "layers": [
+                        0
+                    ]
+                }
+            },
+            "template": null,
+            "template_id": null,
+            "template_ent_ids": null
+        },
+        "085a7469-fe22-433a-a6e6-3066eb9aaeca": {
+            "name": "PANEL_ABOUT",
+            "tags": [],
+            "enabled": true,
+            "resource_id": "085a7469-fe22-433a-a6e6-3066eb9aaeca",
+            "parent": "9090d0fe-c01e-4ad2-bdc4-a2402e4c1777",
+            "children": [
+                "002b4a13-f1f4-4a25-b290-bf3fb487c6c1",
+                "af0997c7-b6c8-42c5-ada3-f093ad65331b",
+                "c205282c-fcd4-4a88-a6ce-6a9fea721fc6",
+                "1547580b-a0a0-4df8-b421-d89940bd5977",
+                "6b683a11-f13d-4021-82e4-79d40f8396d6"
+            ],
+            "position": [
+                -3.2,
+                2.05,
+                -0.65
+            ],
+            "rotation": [
+                8,
+                23,
+                -7
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "components": {},
+            "template": null,
+            "template_id": null,
+            "template_ent_ids": null
+        },
+        "002b4a13-f1f4-4a25-b290-bf3fb487c6c1": {
+            "name": "PANEL_ABOUT_GLASS",
+            "tags": [],
+            "enabled": true,
+            "resource_id": "002b4a13-f1f4-4a25-b290-bf3fb487c6c1",
+            "parent": "085a7469-fe22-433a-a6e6-3066eb9aaeca",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313059116,
+                    "materialAssets": [
+                        313059112,
+                        313059111
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": false,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "template": null,
+            "template_id": null,
+            "template_ent_ids": null
+        },
+        "af0997c7-b6c8-42c5-ada3-f093ad65331b": {
+            "name": "PANEL_ABOUT_FRAME",
+            "tags": [],
+            "enabled": true,
+            "resource_id": "af0997c7-b6c8-42c5-ada3-f093ad65331b",
+            "parent": "085a7469-fe22-433a-a6e6-3066eb9aaeca",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1.8
+            ],
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313057745,
+                    "materialAssets": [
+                        313057739
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": false,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "template": null,
+            "template_id": null,
+            "template_ent_ids": null
+        },
+        "c205282c-fcd4-4a88-a6ce-6a9fea721fc6": {
+            "name": "PANEL_ABOUT_INLAY",
+            "tags": [],
+            "enabled": true,
+            "resource_id": "c205282c-fcd4-4a88-a6ce-6a9fea721fc6",
+            "parent": "085a7469-fe22-433a-a6e6-3066eb9aaeca",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0.055
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313057747,
+                    "materialAssets": [
+                        313057738
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": false,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "template": null,
+            "template_id": null,
+            "template_ent_ids": null
+        },
+        "1547580b-a0a0-4df8-b421-d89940bd5977": {
+            "name": "PANEL_ABOUT_LABEL",
+            "tags": [],
+            "enabled": true,
+            "resource_id": "1547580b-a0a0-4df8-b421-d89940bd5977",
+            "parent": "085a7469-fe22-433a-a6e6-3066eb9aaeca",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0.065
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313057746,
+                    "materialAssets": [
+                        313057740
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": false,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "template": null,
+            "template_id": null,
+            "template_ent_ids": null
+        },
+        "0a6fa6ef-6e26-408e-926c-fccdd91d6575": {
+            "name": "PANEL_PROJECTS",
+            "tags": [],
+            "enabled": true,
+            "resource_id": "0a6fa6ef-6e26-408e-926c-fccdd91d6575",
+            "parent": "9090d0fe-c01e-4ad2-bdc4-a2402e4c1777",
+            "children": [
+                "469803e6-0265-4873-8265-720bb3fb3332",
+                "d4e835ec-96c9-43b2-b478-f9fb7e3ceae8",
+                "5f7d3298-3c56-4f05-a254-a745dd42a57c",
+                "63b423cb-a843-42f4-ab3f-c8c86e646383",
+                "abd65f52-35aa-4527-bb79-6f81988b5716"
+            ],
+            "position": [
+                -4.5,
+                -0.25,
+                2.25
+            ],
+            "rotation": [
+                -5,
+                25,
+                -5
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "components": {},
+            "template": null,
+            "template_id": null,
+            "template_ent_ids": null
+        },
+        "469803e6-0265-4873-8265-720bb3fb3332": {
+            "name": "PANEL_PROJECTS_GLASS",
+            "tags": [],
+            "enabled": true,
+            "resource_id": "469803e6-0265-4873-8265-720bb3fb3332",
+            "parent": "0a6fa6ef-6e26-408e-926c-fccdd91d6575",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313059114,
+                    "materialAssets": [
+                        313059112,
+                        313059111
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": false,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "template": null,
+            "template_id": null,
+            "template_ent_ids": null
+        },
+        "d4e835ec-96c9-43b2-b478-f9fb7e3ceae8": {
+            "name": "PANEL_PROJECTS_FRAME",
+            "tags": [],
+            "enabled": true,
+            "resource_id": "d4e835ec-96c9-43b2-b478-f9fb7e3ceae8",
+            "parent": "0a6fa6ef-6e26-408e-926c-fccdd91d6575",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1.8
+            ],
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313057749,
+                    "materialAssets": [
+                        313057739
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": false,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "template": null,
+            "template_id": null,
+            "template_ent_ids": null
+        },
+        "5f7d3298-3c56-4f05-a254-a745dd42a57c": {
+            "name": "PANEL_PROJECTS_INLAY",
+            "tags": [],
+            "enabled": true,
+            "resource_id": "5f7d3298-3c56-4f05-a254-a745dd42a57c",
+            "parent": "0a6fa6ef-6e26-408e-926c-fccdd91d6575",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0.055
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313057750,
+                    "materialAssets": [
+                        313057738
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": false,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "template": null,
+            "template_id": null,
+            "template_ent_ids": null
+        },
+        "63b423cb-a843-42f4-ab3f-c8c86e646383": {
+            "name": "PANEL_PROJECTS_LABEL",
+            "tags": [],
+            "enabled": true,
+            "resource_id": "63b423cb-a843-42f4-ab3f-c8c86e646383",
+            "parent": "0a6fa6ef-6e26-408e-926c-fccdd91d6575",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0.065
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313057751,
+                    "materialAssets": [
+                        313057740
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": false,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "template": null,
+            "template_id": null,
+            "template_ent_ids": null
+        },
+        "c22b783c-7d31-4c06-ade4-6c6486e93d5d": {
+            "name": "PANEL_EXPERIENCE",
+            "tags": [],
+            "enabled": true,
+            "resource_id": "c22b783c-7d31-4c06-ade4-6c6486e93d5d",
+            "parent": "9090d0fe-c01e-4ad2-bdc4-a2402e4c1777",
+            "children": [
+                "8d8ff423-8fed-48cc-b157-533141c2af42",
+                "ce0b2f31-7bdc-4842-aa6b-7d57d05b59bf",
+                "87d86657-0b2e-4a0b-82e3-4870a7092c69",
+                "1ccea346-e6b1-418d-983d-a22d893c371f",
+                "aa1ed8d5-529e-4e5d-b724-9ddd2fc6647b"
+            ],
+            "position": [
+                2.65,
+                2.45,
+                -1.6
+            ],
+            "rotation": [
+                -9,
+                -21,
+                5
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "components": {},
+            "template": null,
+            "template_id": null,
+            "template_ent_ids": null
+        },
+        "8d8ff423-8fed-48cc-b157-533141c2af42": {
+            "name": "PANEL_EXPERIENCE_GLASS",
+            "tags": [],
+            "enabled": true,
+            "resource_id": "8d8ff423-8fed-48cc-b157-533141c2af42",
+            "parent": "c22b783c-7d31-4c06-ade4-6c6486e93d5d",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313059115,
+                    "materialAssets": [
+                        313059112,
+                        313059111
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": false,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "template": null,
+            "template_id": null,
+            "template_ent_ids": null
+        },
+        "ce0b2f31-7bdc-4842-aa6b-7d57d05b59bf": {
+            "name": "PANEL_EXPERIENCE_FRAME",
+            "tags": [],
+            "enabled": true,
+            "resource_id": "ce0b2f31-7bdc-4842-aa6b-7d57d05b59bf",
+            "parent": "c22b783c-7d31-4c06-ade4-6c6486e93d5d",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1.8
+            ],
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313057753,
+                    "materialAssets": [
+                        313057739
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": false,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "template": null,
+            "template_id": null,
+            "template_ent_ids": null
+        },
+        "87d86657-0b2e-4a0b-82e3-4870a7092c69": {
+            "name": "PANEL_EXPERIENCE_INLAY",
+            "tags": [],
+            "enabled": true,
+            "resource_id": "87d86657-0b2e-4a0b-82e3-4870a7092c69",
+            "parent": "c22b783c-7d31-4c06-ade4-6c6486e93d5d",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0.055
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313057754,
+                    "materialAssets": [
+                        313057738
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": false,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "template": null,
+            "template_id": null,
+            "template_ent_ids": null
+        },
+        "1ccea346-e6b1-418d-983d-a22d893c371f": {
+            "name": "PANEL_EXPERIENCE_LABEL",
+            "tags": [],
+            "enabled": true,
+            "resource_id": "1ccea346-e6b1-418d-983d-a22d893c371f",
+            "parent": "c22b783c-7d31-4c06-ade4-6c6486e93d5d",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0.065
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313057755,
+                    "materialAssets": [
+                        313057740
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": false,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "template": null,
+            "template_id": null,
+            "template_ent_ids": null
+        },
+        "8f7a03a2-8b00-4a7d-a010-5d79f0a88e86": {
+            "name": "PANEL_SKILLS",
+            "tags": [],
+            "enabled": true,
+            "resource_id": "8f7a03a2-8b00-4a7d-a010-5d79f0a88e86",
+            "parent": "9090d0fe-c01e-4ad2-bdc4-a2402e4c1777",
+            "children": [
+                "2e2e2c9f-aa62-4e42-a7a5-8c2972903c3f",
+                "357bfec7-c422-4f11-bb5f-75203471157e",
+                "e66ded1e-865d-4537-b604-cae273c9b97b",
+                "46748624-b301-48ad-8e67-1ab2c8638a14",
+                "5bdac04b-8a31-4e00-9da2-0bb104e1daff"
+            ],
+            "position": [
+                4.55,
+                0.35,
+                1.35
+            ],
+            "rotation": [
+                6,
+                -27,
+                7
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "components": {},
+            "template": null,
+            "template_id": null,
+            "template_ent_ids": null
+        },
+        "2e2e2c9f-aa62-4e42-a7a5-8c2972903c3f": {
+            "name": "PANEL_SKILLS_GLASS",
+            "tags": [],
+            "enabled": true,
+            "resource_id": "2e2e2c9f-aa62-4e42-a7a5-8c2972903c3f",
+            "parent": "8f7a03a2-8b00-4a7d-a010-5d79f0a88e86",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313059117,
+                    "materialAssets": [
+                        313059112,
+                        313059111
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": false,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "template": null,
+            "template_id": null,
+            "template_ent_ids": null
+        },
+        "357bfec7-c422-4f11-bb5f-75203471157e": {
+            "name": "PANEL_SKILLS_FRAME",
+            "tags": [],
+            "enabled": true,
+            "resource_id": "357bfec7-c422-4f11-bb5f-75203471157e",
+            "parent": "8f7a03a2-8b00-4a7d-a010-5d79f0a88e86",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1.8
+            ],
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313057757,
+                    "materialAssets": [
+                        313057739
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": false,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "template": null,
+            "template_id": null,
+            "template_ent_ids": null
+        },
+        "e66ded1e-865d-4537-b604-cae273c9b97b": {
+            "name": "PANEL_SKILLS_INLAY",
+            "tags": [],
+            "enabled": true,
+            "resource_id": "e66ded1e-865d-4537-b604-cae273c9b97b",
+            "parent": "8f7a03a2-8b00-4a7d-a010-5d79f0a88e86",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0.055
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313057758,
+                    "materialAssets": [
+                        313057738
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": false,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "template": null,
+            "template_id": null,
+            "template_ent_ids": null
+        },
+        "46748624-b301-48ad-8e67-1ab2c8638a14": {
+            "name": "PANEL_SKILLS_LABEL",
+            "tags": [],
+            "enabled": true,
+            "resource_id": "46748624-b301-48ad-8e67-1ab2c8638a14",
+            "parent": "8f7a03a2-8b00-4a7d-a010-5d79f0a88e86",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0.065
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313057759,
+                    "materialAssets": [
+                        313057740
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": false,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "template": null,
+            "template_id": null,
+            "template_ent_ids": null
+        },
+        "2ce3f156-ffa2-4684-9c3f-03221f8a028e": {
+            "name": "PANEL_GITHUB",
+            "tags": [],
+            "enabled": true,
+            "resource_id": "2ce3f156-ffa2-4684-9c3f-03221f8a028e",
+            "parent": "9090d0fe-c01e-4ad2-bdc4-a2402e4c1777",
+            "children": [
+                "6a7f1e93-f4f1-49a3-9402-7f94766aa703",
+                "632999a5-5394-4792-9f00-a60f3a209b3c",
+                "54327438-a2a4-43ca-9b25-89949b8000d7",
+                "ec7266d6-e4a8-44b9-a113-02fbede060d0",
+                "f70c564a-5712-43cd-91d7-c0d56f5b24a4"
+            ],
+            "position": [
+                -3.05,
+                -2.3,
+                0.1
+            ],
+            "rotation": [
+                12,
+                16,
+                -5
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "components": {},
+            "template": null,
+            "template_id": null,
+            "template_ent_ids": null
+        },
+        "6a7f1e93-f4f1-49a3-9402-7f94766aa703": {
+            "name": "PANEL_GITHUB_GLASS",
+            "tags": [],
+            "enabled": true,
+            "resource_id": "6a7f1e93-f4f1-49a3-9402-7f94766aa703",
+            "parent": "2ce3f156-ffa2-4684-9c3f-03221f8a028e",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313059118,
+                    "materialAssets": [
+                        313059112,
+                        313059111
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": false,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "template": null,
+            "template_id": null,
+            "template_ent_ids": null
+        },
+        "632999a5-5394-4792-9f00-a60f3a209b3c": {
+            "name": "PANEL_GITHUB_FRAME",
+            "tags": [],
+            "enabled": true,
+            "resource_id": "632999a5-5394-4792-9f00-a60f3a209b3c",
+            "parent": "2ce3f156-ffa2-4684-9c3f-03221f8a028e",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1.8
+            ],
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313057761,
+                    "materialAssets": [
+                        313057739
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": false,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "template": null,
+            "template_id": null,
+            "template_ent_ids": null
+        },
+        "54327438-a2a4-43ca-9b25-89949b8000d7": {
+            "name": "PANEL_GITHUB_INLAY",
+            "tags": [],
+            "enabled": true,
+            "resource_id": "54327438-a2a4-43ca-9b25-89949b8000d7",
+            "parent": "2ce3f156-ffa2-4684-9c3f-03221f8a028e",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0.055
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313057762,
+                    "materialAssets": [
+                        313057738
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": false,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "template": null,
+            "template_id": null,
+            "template_ent_ids": null
+        },
+        "ec7266d6-e4a8-44b9-a113-02fbede060d0": {
+            "name": "PANEL_GITHUB_LABEL",
+            "tags": [],
+            "enabled": true,
+            "resource_id": "ec7266d6-e4a8-44b9-a113-02fbede060d0",
+            "parent": "2ce3f156-ffa2-4684-9c3f-03221f8a028e",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0.065
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313057763,
+                    "materialAssets": [
+                        313057740
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": false,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "template": null,
+            "template_id": null,
+            "template_ent_ids": null
+        },
+        "8c779243-88cc-40fc-bfb7-d7b12533eb2d": {
+            "name": "PANEL_LINKEDIN",
+            "tags": [],
+            "enabled": true,
+            "resource_id": "8c779243-88cc-40fc-bfb7-d7b12533eb2d",
+            "parent": "9090d0fe-c01e-4ad2-bdc4-a2402e4c1777",
+            "children": [
+                "5af61d60-6883-4079-9c0e-2ec4ccb1672b",
+                "59660496-3b88-422f-9c44-e9bbce8157de",
+                "1f21062e-05e1-4b13-a03b-9725f085b575",
+                "7caaa969-4268-4cb9-9f1c-40b958007648",
+                "34eaf802-8ca0-4e78-8a23-3300b5ebd2be"
+            ],
+            "position": [
+                3.1,
+                -2.05,
+                -0.9
+            ],
+            "rotation": [
+                -10,
+                -17,
+                4
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "components": {},
+            "template": null,
+            "template_id": null,
+            "template_ent_ids": null
+        },
+        "5af61d60-6883-4079-9c0e-2ec4ccb1672b": {
+            "name": "PANEL_LINKEDIN_GLASS",
+            "tags": [],
+            "enabled": true,
+            "resource_id": "5af61d60-6883-4079-9c0e-2ec4ccb1672b",
+            "parent": "8c779243-88cc-40fc-bfb7-d7b12533eb2d",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313059119,
+                    "materialAssets": [
+                        313059112,
+                        313059111
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": false,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "template": null,
+            "template_id": null,
+            "template_ent_ids": null
+        },
+        "59660496-3b88-422f-9c44-e9bbce8157de": {
+            "name": "PANEL_LINKEDIN_FRAME",
+            "tags": [],
+            "enabled": true,
+            "resource_id": "59660496-3b88-422f-9c44-e9bbce8157de",
+            "parent": "8c779243-88cc-40fc-bfb7-d7b12533eb2d",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1.8
+            ],
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313057765,
+                    "materialAssets": [
+                        313057739
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": false,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "template": null,
+            "template_id": null,
+            "template_ent_ids": null
+        },
+        "1f21062e-05e1-4b13-a03b-9725f085b575": {
+            "name": "PANEL_LINKEDIN_INLAY",
+            "tags": [],
+            "enabled": true,
+            "resource_id": "1f21062e-05e1-4b13-a03b-9725f085b575",
+            "parent": "8c779243-88cc-40fc-bfb7-d7b12533eb2d",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0.055
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313057766,
+                    "materialAssets": [
+                        313057738
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": false,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "template": null,
+            "template_id": null,
+            "template_ent_ids": null
+        },
+        "7caaa969-4268-4cb9-9f1c-40b958007648": {
+            "name": "PANEL_LINKEDIN_LABEL",
+            "tags": [],
+            "enabled": true,
+            "resource_id": "7caaa969-4268-4cb9-9f1c-40b958007648",
+            "parent": "8c779243-88cc-40fc-bfb7-d7b12533eb2d",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0.065
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313057767,
+                    "materialAssets": [
+                        313057740
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": false,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "template": null,
+            "template_id": null,
+            "template_ent_ids": null
+        },
+        "cef24544-af2c-4f52-b5b9-06a2882a1c90": {
+            "name": "PANEL_ACHIEVEMENTS",
+            "tags": [],
+            "enabled": true,
+            "resource_id": "cef24544-af2c-4f52-b5b9-06a2882a1c90",
+            "parent": "9090d0fe-c01e-4ad2-bdc4-a2402e4c1777",
+            "children": [
+                "5d45cc94-50ab-4654-8c9c-54f23034a299",
+                "531e3e69-79ea-4239-b8e6-d916bd5b31cb",
+                "356cda83-938b-4aab-974e-2f35d8844c12",
+                "fdcf61fe-625b-439e-b1f3-0c38aa252f2f",
+                "8c3f1b60-9ad9-4a58-80fb-8be461613f01"
+            ],
+            "position": [
+                -0.6,
+                3.15,
+                -3.45
+            ],
+            "rotation": [
+                9,
+                -12,
+                -7
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "components": {},
+            "template": null,
+            "template_id": null,
+            "template_ent_ids": null
+        },
+        "5d45cc94-50ab-4654-8c9c-54f23034a299": {
+            "name": "PANEL_ACHIEVEMENTS_GLASS",
+            "tags": [],
+            "enabled": true,
+            "resource_id": "5d45cc94-50ab-4654-8c9c-54f23034a299",
+            "parent": "cef24544-af2c-4f52-b5b9-06a2882a1c90",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313059120,
+                    "materialAssets": [
+                        313059112,
+                        313059111
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": false,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "template": null,
+            "template_id": null,
+            "template_ent_ids": null
+        },
+        "531e3e69-79ea-4239-b8e6-d916bd5b31cb": {
+            "name": "PANEL_ACHIEVEMENTS_FRAME",
+            "tags": [],
+            "enabled": true,
+            "resource_id": "531e3e69-79ea-4239-b8e6-d916bd5b31cb",
+            "parent": "cef24544-af2c-4f52-b5b9-06a2882a1c90",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1.8
+            ],
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313057769,
+                    "materialAssets": [
+                        313057739
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": false,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "template": null,
+            "template_id": null,
+            "template_ent_ids": null
+        },
+        "356cda83-938b-4aab-974e-2f35d8844c12": {
+            "name": "PANEL_ACHIEVEMENTS_INLAY",
+            "tags": [],
+            "enabled": true,
+            "resource_id": "356cda83-938b-4aab-974e-2f35d8844c12",
+            "parent": "cef24544-af2c-4f52-b5b9-06a2882a1c90",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0.055
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313057770,
+                    "materialAssets": [
+                        313057738
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": false,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "template": null,
+            "template_id": null,
+            "template_ent_ids": null
+        },
+        "fdcf61fe-625b-439e-b1f3-0c38aa252f2f": {
+            "name": "PANEL_ACHIEVEMENTS_LABEL",
+            "tags": [],
+            "enabled": true,
+            "resource_id": "fdcf61fe-625b-439e-b1f3-0c38aa252f2f",
+            "parent": "cef24544-af2c-4f52-b5b9-06a2882a1c90",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0.065
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313057771,
+                    "materialAssets": [
+                        313057740
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": false,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "template": null,
+            "template_id": null,
+            "template_ent_ids": null
+        },
+        "deda8034-00bc-46a9-94ff-9a6e7fafb267": {
+            "name": "PANEL_CONTACT",
+            "tags": [],
+            "enabled": true,
+            "resource_id": "deda8034-00bc-46a9-94ff-9a6e7fafb267",
+            "parent": "9090d0fe-c01e-4ad2-bdc4-a2402e4c1777",
+            "children": [
+                "dd84818b-2e1a-4cad-bc5d-04e744f39377",
+                "3714fb0d-3514-4c9c-b706-7e2dc6d5a02e",
+                "e129549a-716a-42a3-8a9c-2247ff5800ea",
+                "c17e580a-6cb1-41d6-b758-c4e2783968f4",
+                "f957d370-8100-47e5-a4d9-545ed55a2e9c"
+            ],
+            "position": [
+                0.35,
+                -2.85,
+                1.7
+            ],
+            "rotation": [
+                -12,
+                -9,
+                3
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "components": {},
+            "template": null,
+            "template_id": null,
+            "template_ent_ids": null
+        },
+        "dd84818b-2e1a-4cad-bc5d-04e744f39377": {
+            "name": "PANEL_CONTACT_GLASS",
+            "tags": [],
+            "enabled": true,
+            "resource_id": "dd84818b-2e1a-4cad-bc5d-04e744f39377",
+            "parent": "deda8034-00bc-46a9-94ff-9a6e7fafb267",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313059121,
+                    "materialAssets": [
+                        313059112,
+                        313059111
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": false,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "template": null,
+            "template_id": null,
+            "template_ent_ids": null
+        },
+        "3714fb0d-3514-4c9c-b706-7e2dc6d5a02e": {
+            "name": "PANEL_CONTACT_FRAME",
+            "tags": [],
+            "enabled": true,
+            "resource_id": "3714fb0d-3514-4c9c-b706-7e2dc6d5a02e",
+            "parent": "deda8034-00bc-46a9-94ff-9a6e7fafb267",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1.8
+            ],
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313057773,
+                    "materialAssets": [
+                        313057739
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": false,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "template": null,
+            "template_id": null,
+            "template_ent_ids": null
+        },
+        "e129549a-716a-42a3-8a9c-2247ff5800ea": {
+            "name": "PANEL_CONTACT_INLAY",
+            "tags": [],
+            "enabled": true,
+            "resource_id": "e129549a-716a-42a3-8a9c-2247ff5800ea",
+            "parent": "deda8034-00bc-46a9-94ff-9a6e7fafb267",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0.055
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313057774,
+                    "materialAssets": [
+                        313057738
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": false,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "template": null,
+            "template_id": null,
+            "template_ent_ids": null
+        },
+        "c17e580a-6cb1-41d6-b758-c4e2783968f4": {
+            "name": "PANEL_CONTACT_LABEL",
+            "tags": [],
+            "enabled": true,
+            "resource_id": "c17e580a-6cb1-41d6-b758-c4e2783968f4",
+            "parent": "deda8034-00bc-46a9-94ff-9a6e7fafb267",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0.065
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313057775,
+                    "materialAssets": [
+                        313057740
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": false,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "template": null,
+            "template_id": null,
+            "template_ent_ids": null
+        },
+        "12b5aef2-93e0-4207-8b5a-ee8d36841aab": {
+            "name": "MINI_STONE_MAJOR_01",
+            "tags": [],
+            "enabled": true,
+            "resource_id": "12b5aef2-93e0-4207-8b5a-ee8d36841aab",
+            "parent": "e2bdf7ee-2436-44f4-ada3-469a5dac59bf",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313034838,
+                    "materialAssets": [
+                        313034831,
+                        313034832
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": true,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "template": null,
+            "template_id": null,
+            "template_ent_ids": null
+        },
+        "8c444a59-5751-41a7-aaa3-88aafbae0086": {
+            "name": "MINI_STONE_MAJOR_02",
+            "tags": [],
+            "enabled": true,
+            "resource_id": "8c444a59-5751-41a7-aaa3-88aafbae0086",
+            "parent": "e2bdf7ee-2436-44f4-ada3-469a5dac59bf",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313034839,
+                    "materialAssets": [
+                        313034831,
+                        313034832
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": true,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "template": null,
+            "template_id": null,
+            "template_ent_ids": null
+        },
+        "85847efc-2ab3-48c4-85ad-2f76d1877692": {
+            "name": "MINI_STONE_MAJOR_03",
+            "tags": [],
+            "enabled": true,
+            "resource_id": "85847efc-2ab3-48c4-85ad-2f76d1877692",
+            "parent": "e2bdf7ee-2436-44f4-ada3-469a5dac59bf",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313034841,
+                    "materialAssets": [
+                        313034831,
+                        313034832
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": true,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "template": null,
+            "template_id": null,
+            "template_ent_ids": null
+        },
+        "a8b3a1b1-4cad-47d0-a1a1-7be3c450d61d": {
+            "name": "MINI_STONE_MAJOR_04",
+            "tags": [],
+            "enabled": true,
+            "resource_id": "a8b3a1b1-4cad-47d0-a1a1-7be3c450d61d",
+            "parent": "e2bdf7ee-2436-44f4-ada3-469a5dac59bf",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313034840,
+                    "materialAssets": [
+                        313034831,
+                        313034832
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": true,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "template": null,
+            "template_id": null,
+            "template_ent_ids": null
+        },
+        "9c512bda-e0be-4158-aaf4-6a1b651caa82": {
+            "name": "MINI_STONE_MAJOR_05",
+            "tags": [],
+            "enabled": true,
+            "resource_id": "9c512bda-e0be-4158-aaf4-6a1b651caa82",
+            "parent": "e2bdf7ee-2436-44f4-ada3-469a5dac59bf",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313034842,
+                    "materialAssets": [
+                        313034831,
+                        313034832
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": true,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "template": null,
+            "template_id": null,
+            "template_ent_ids": null
+        },
+        "a159f2c2-07f4-4a0c-b75d-ae23e39358fa": {
+            "name": "MINI_STONE_MAJOR_06",
+            "tags": [],
+            "enabled": true,
+            "resource_id": "a159f2c2-07f4-4a0c-b75d-ae23e39358fa",
+            "parent": "e2bdf7ee-2436-44f4-ada3-469a5dac59bf",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313034843,
+                    "materialAssets": [
+                        313034831,
+                        313034832
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": true,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "template": null,
+            "template_id": null,
+            "template_ent_ids": null
+        },
+        "ca999806-632d-4ba6-ba8a-cb9a04994265": {
+            "name": "MINI_MOLTEN_CORE",
+            "tags": [],
+            "enabled": true,
+            "resource_id": "ca999806-632d-4ba6-ba8a-cb9a04994265",
+            "parent": "e2bdf7ee-2436-44f4-ada3-469a5dac59bf",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313034844,
+                    "materialAssets": [
+                        313034833
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": false,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "template": null,
+            "template_id": null,
+            "template_ent_ids": null
+        },
+        "80b0352b-dea3-473d-bc52-f8a821e83bc1": {
+            "name": "MINI_CORE_LIGHT_FRONT",
+            "tags": [],
+            "enabled": true,
+            "resource_id": "80b0352b-dea3-473d-bc52-f8a821e83bc1",
+            "parent": "e2bdf7ee-2436-44f4-ada3-469a5dac59bf",
+            "children": [],
+            "position": [
+                0.1,
+                0.15,
+                1.05
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "components": {
+                "light": {
+                    "enabled": true,
+                    "type": "omni",
+                    "bake": false,
+                    "bakeArea": 0,
+                    "bakeNumSamples": 1,
+                    "bakeDir": true,
+                    "affectDynamic": true,
+                    "affectLightmapped": false,
+                    "affectSpecularity": true,
+                    "color": [
+                        1,
+                        0.23,
+                        0.04
+                    ],
+                    "intensity": 1.1,
+                    "castShadows": false,
+                    "shadowUpdateMode": 2,
+                    "shadowType": 0,
+                    "vsmBlurMode": 1,
+                    "vsmBlurSize": 11,
+                    "vsmBias": 0.01,
+                    "shadowDistance": 16,
+                    "shadowIntensity": 1,
+                    "shadowResolution": 1024,
+                    "numCascades": 1,
+                    "cascadeDistribution": 0.5,
+                    "shadowBias": 0.2,
+                    "normalOffsetBias": 0.05,
+                    "penumbraSize": 1,
+                    "penumbraFalloff": 1,
+                    "range": 3.3,
+                    "falloffMode": 0,
+                    "innerConeAngle": 40,
+                    "outerConeAngle": 45,
+                    "shape": 0,
+                    "cookieAsset": null,
+                    "cookie": null,
+                    "cookieIntensity": 1,
+                    "cookieFalloff": true,
+                    "cookieChannel": "rgb",
+                    "cookieAngle": 0,
+                    "cookieScale": [
+                        1,
+                        1
+                    ],
+                    "cookieOffset": [
+                        0,
+                        0
+                    ],
+                    "isStatic": false,
+                    "layers": [
+                        0
+                    ]
+                }
+            },
+            "template": null,
+            "template_id": null,
+            "template_ent_ids": null
+        },
+        "d31efeec-1283-4529-96c1-7b56caca1ba8": {
+            "name": "MINI_CORE_LIGHT_SIDE",
+            "tags": [],
+            "enabled": true,
+            "resource_id": "d31efeec-1283-4529-96c1-7b56caca1ba8",
+            "parent": "e2bdf7ee-2436-44f4-ada3-469a5dac59bf",
+            "children": [],
+            "position": [
+                1.2,
+                0.5,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "components": {
+                "light": {
+                    "enabled": true,
+                    "type": "omni",
+                    "bake": false,
+                    "bakeArea": 0,
+                    "bakeNumSamples": 1,
+                    "bakeDir": true,
+                    "affectDynamic": true,
+                    "affectLightmapped": false,
+                    "affectSpecularity": true,
+                    "color": [
+                        1,
+                        0.25,
+                        0.055
+                    ],
+                    "intensity": 0.75,
+                    "castShadows": false,
+                    "shadowUpdateMode": 2,
+                    "shadowType": 0,
+                    "vsmBlurMode": 1,
+                    "vsmBlurSize": 11,
+                    "vsmBias": 0.01,
+                    "shadowDistance": 16,
+                    "shadowIntensity": 1,
+                    "shadowResolution": 1024,
+                    "numCascades": 1,
+                    "cascadeDistribution": 0.5,
+                    "shadowBias": 0.2,
+                    "normalOffsetBias": 0.05,
+                    "penumbraSize": 1,
+                    "penumbraFalloff": 1,
+                    "range": 2.7,
+                    "falloffMode": 0,
+                    "innerConeAngle": 40,
+                    "outerConeAngle": 45,
+                    "shape": 0,
+                    "cookieAsset": null,
+                    "cookie": null,
+                    "cookieIntensity": 1,
+                    "cookieFalloff": true,
+                    "cookieChannel": "rgb",
+                    "cookieAngle": 0,
+                    "cookieScale": [
+                        1,
+                        1
+                    ],
+                    "cookieOffset": [
+                        0,
+                        0
+                    ],
+                    "isStatic": false,
+                    "layers": [
+                        0
+                    ]
+                }
+            },
+            "template": null,
+            "template_id": null,
+            "template_ent_ids": null
+        },
+        "6b683a11-f13d-4021-82e4-79d40f8396d6": {
+            "name": "PANEL_ABOUT_REAR_LAMINATE",
+            "tags": [],
+            "enabled": true,
+            "resource_id": "6b683a11-f13d-4021-82e4-79d40f8396d6",
+            "parent": "085a7469-fe22-433a-a6e6-3066eb9aaeca",
+            "children": [],
+            "position": [
+                0,
+                0,
+                -0.16
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                0.975,
+                0.965,
+                0.48
+            ],
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313057744,
+                    "materialAssets": [
+                        313059125
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": false,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "template": null,
+            "template_id": null,
+            "template_ent_ids": null
+        },
+        "abd65f52-35aa-4527-bb79-6f81988b5716": {
+            "name": "PANEL_PROJECTS_REAR_LAMINATE",
+            "tags": [],
+            "enabled": true,
+            "resource_id": "abd65f52-35aa-4527-bb79-6f81988b5716",
+            "parent": "0a6fa6ef-6e26-408e-926c-fccdd91d6575",
+            "children": [],
+            "position": [
+                0,
+                0,
+                -0.16
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                0.975,
+                0.965,
+                0.48
+            ],
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313057748,
+                    "materialAssets": [
+                        313059125
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": false,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "template": null,
+            "template_id": null,
+            "template_ent_ids": null
+        },
+        "aa1ed8d5-529e-4e5d-b724-9ddd2fc6647b": {
+            "name": "PANEL_EXPERIENCE_REAR_LAMINATE",
+            "tags": [],
+            "enabled": true,
+            "resource_id": "aa1ed8d5-529e-4e5d-b724-9ddd2fc6647b",
+            "parent": "c22b783c-7d31-4c06-ade4-6c6486e93d5d",
+            "children": [],
+            "position": [
+                0,
+                0,
+                -0.16
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                0.975,
+                0.965,
+                0.48
+            ],
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313057752,
+                    "materialAssets": [
+                        313059125
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": false,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "template": null,
+            "template_id": null,
+            "template_ent_ids": null
+        },
+        "5bdac04b-8a31-4e00-9da2-0bb104e1daff": {
+            "name": "PANEL_SKILLS_REAR_LAMINATE",
+            "tags": [],
+            "enabled": true,
+            "resource_id": "5bdac04b-8a31-4e00-9da2-0bb104e1daff",
+            "parent": "8f7a03a2-8b00-4a7d-a010-5d79f0a88e86",
+            "children": [],
+            "position": [
+                0,
+                0,
+                -0.16
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                0.975,
+                0.965,
+                0.48
+            ],
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313057756,
+                    "materialAssets": [
+                        313059125
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": false,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "template": null,
+            "template_id": null,
+            "template_ent_ids": null
+        },
+        "f70c564a-5712-43cd-91d7-c0d56f5b24a4": {
+            "name": "PANEL_GITHUB_REAR_LAMINATE",
+            "tags": [],
+            "enabled": true,
+            "resource_id": "f70c564a-5712-43cd-91d7-c0d56f5b24a4",
+            "parent": "2ce3f156-ffa2-4684-9c3f-03221f8a028e",
+            "children": [],
+            "position": [
+                0,
+                0,
+                -0.16
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                0.975,
+                0.965,
+                0.48
+            ],
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313057760,
+                    "materialAssets": [
+                        313059125
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": false,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "template": null,
+            "template_id": null,
+            "template_ent_ids": null
+        },
+        "34eaf802-8ca0-4e78-8a23-3300b5ebd2be": {
+            "name": "PANEL_LINKEDIN_REAR_LAMINATE",
+            "tags": [],
+            "enabled": true,
+            "resource_id": "34eaf802-8ca0-4e78-8a23-3300b5ebd2be",
+            "parent": "8c779243-88cc-40fc-bfb7-d7b12533eb2d",
+            "children": [],
+            "position": [
+                0,
+                0,
+                -0.16
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                0.975,
+                0.965,
+                0.48
+            ],
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313057764,
+                    "materialAssets": [
+                        313059125
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": false,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "template": null,
+            "template_id": null,
+            "template_ent_ids": null
+        },
+        "8c3f1b60-9ad9-4a58-80fb-8be461613f01": {
+            "name": "PANEL_ACHIEVEMENTS_REAR_LAMINATE",
+            "tags": [],
+            "enabled": true,
+            "resource_id": "8c3f1b60-9ad9-4a58-80fb-8be461613f01",
+            "parent": "cef24544-af2c-4f52-b5b9-06a2882a1c90",
+            "children": [],
+            "position": [
+                0,
+                0,
+                -0.16
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                0.975,
+                0.965,
+                0.48
+            ],
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313057768,
+                    "materialAssets": [
+                        313059125
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": false,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "template": null,
+            "template_id": null,
+            "template_ent_ids": null
+        },
+        "f957d370-8100-47e5-a4d9-545ed55a2e9c": {
+            "name": "PANEL_CONTACT_REAR_LAMINATE",
+            "tags": [],
+            "enabled": true,
+            "resource_id": "f957d370-8100-47e5-a4d9-545ed55a2e9c",
+            "parent": "deda8034-00bc-46a9-94ff-9a6e7fafb267",
+            "children": [],
+            "position": [
+                0,
+                0,
+                -0.16
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                0.975,
+                0.965,
+                0.48
+            ],
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313057772,
+                    "materialAssets": [
+                        313059125
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": false,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "template": null,
+            "template_id": null,
+            "template_ent_ids": null
+        },
+        "fcf562c8-b467-45e4-b2b9-3e3096ad4cd1": {
+            "name": "HUB_WARM_REFLECTION_LEFT",
+            "tags": [],
+            "enabled": true,
+            "resource_id": "fcf562c8-b467-45e4-b2b9-3e3096ad4cd1",
+            "parent": "ccada658-45f1-40ed-afe1-d9c22e0479a0",
+            "children": [],
+            "position": [
+                -1.9,
+                1.4,
+                3
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "components": {
+                "light": {
+                    "enabled": true,
+                    "type": "omni",
+                    "bake": false,
+                    "bakeArea": 0,
+                    "bakeNumSamples": 1,
+                    "bakeDir": true,
+                    "affectDynamic": true,
+                    "affectLightmapped": false,
+                    "affectSpecularity": true,
+                    "color": [
+                        1,
+                        0.45,
+                        0.18
+                    ],
+                    "intensity": 0.13,
+                    "castShadows": false,
+                    "shadowUpdateMode": 2,
+                    "shadowType": 0,
+                    "vsmBlurMode": 1,
+                    "vsmBlurSize": 11,
+                    "vsmBias": 0.01,
+                    "shadowDistance": 16,
+                    "shadowIntensity": 1,
+                    "shadowResolution": 1024,
+                    "numCascades": 1,
+                    "cascadeDistribution": 0.5,
+                    "shadowBias": 0.2,
+                    "normalOffsetBias": 0.05,
+                    "penumbraSize": 1,
+                    "penumbraFalloff": 1,
+                    "range": 7,
+                    "falloffMode": 0,
+                    "innerConeAngle": 40,
+                    "outerConeAngle": 45,
+                    "shape": 0,
+                    "cookieAsset": null,
+                    "cookie": null,
+                    "cookieIntensity": 1,
+                    "cookieFalloff": true,
+                    "cookieChannel": "rgb",
+                    "cookieAngle": 0,
+                    "cookieScale": [
+                        1,
+                        1
+                    ],
+                    "cookieOffset": [
+                        0,
+                        0
+                    ],
+                    "isStatic": false,
+                    "layers": [
+                        0
+                    ]
+                }
+            },
+            "template": null,
+            "template_id": null,
+            "template_ent_ids": null
+        },
+        "5d85d5e4-67ef-4dcd-a5d5-61253181e922": {
+            "name": "HUB_WARM_REFLECTION_RIGHT",
+            "tags": [],
+            "enabled": true,
+            "resource_id": "5d85d5e4-67ef-4dcd-a5d5-61253181e922",
+            "parent": "ccada658-45f1-40ed-afe1-d9c22e0479a0",
+            "children": [],
+            "position": [
+                3,
+                -0.9,
+                4.1
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "components": {
+                "light": {
+                    "enabled": true,
+                    "type": "omni",
+                    "bake": false,
+                    "bakeArea": 0,
+                    "bakeNumSamples": 1,
+                    "bakeDir": true,
+                    "affectDynamic": true,
+                    "affectLightmapped": false,
+                    "affectSpecularity": true,
+                    "color": [
+                        1,
+                        0.48,
+                        0.22
+                    ],
+                    "intensity": 0.1,
+                    "castShadows": false,
+                    "shadowUpdateMode": 2,
+                    "shadowType": 0,
+                    "vsmBlurMode": 1,
+                    "vsmBlurSize": 11,
+                    "vsmBias": 0.01,
+                    "shadowDistance": 16,
+                    "shadowIntensity": 1,
+                    "shadowResolution": 1024,
+                    "numCascades": 1,
+                    "cascadeDistribution": 0.5,
+                    "shadowBias": 0.2,
+                    "normalOffsetBias": 0.05,
+                    "penumbraSize": 1,
+                    "penumbraFalloff": 1,
+                    "range": 5.5,
+                    "falloffMode": 0,
+                    "innerConeAngle": 40,
+                    "outerConeAngle": 45,
+                    "shape": 0,
+                    "cookieAsset": null,
+                    "cookie": null,
+                    "cookieIntensity": 1,
+                    "cookieFalloff": true,
+                    "cookieChannel": "rgb",
+                    "cookieAngle": 0,
+                    "cookieScale": [
+                        1,
+                        1
+                    ],
+                    "cookieOffset": [
+                        0,
+                        0
+                    ],
+                    "isStatic": false,
+                    "layers": [
+                        0
+                    ]
+                }
+            },
+            "template": null,
+            "template_id": null,
+            "template_ent_ids": null
+        },
+        "131a200f-a454-4688-a67e-d59e87bc2f9c": {
+            "name": "MINI_CORE_RIM_WARM",
+            "tags": [],
+            "enabled": true,
+            "resource_id": "131a200f-a454-4688-a67e-d59e87bc2f9c",
+            "parent": "e2bdf7ee-2436-44f4-ada3-469a5dac59bf",
+            "children": [],
+            "position": [
+                -1.5,
+                1.6,
+                -0.8
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "components": {
+                "light": {
+                    "enabled": true,
+                    "type": "omni",
+                    "bake": false,
+                    "bakeArea": 0,
+                    "bakeNumSamples": 1,
+                    "bakeDir": true,
+                    "affectDynamic": true,
+                    "affectLightmapped": false,
+                    "affectSpecularity": true,
+                    "color": [
+                        1,
+                        0.36,
+                        0.09
+                    ],
+                    "intensity": 0.7,
+                    "castShadows": false,
+                    "shadowUpdateMode": 2,
+                    "shadowType": 0,
+                    "vsmBlurMode": 1,
+                    "vsmBlurSize": 11,
+                    "vsmBias": 0.01,
+                    "shadowDistance": 16,
+                    "shadowIntensity": 1,
+                    "shadowResolution": 1024,
+                    "numCascades": 1,
+                    "cascadeDistribution": 0.5,
+                    "shadowBias": 0.2,
+                    "normalOffsetBias": 0.05,
+                    "penumbraSize": 1,
+                    "penumbraFalloff": 1,
+                    "range": 4,
+                    "falloffMode": 0,
+                    "innerConeAngle": 40,
+                    "outerConeAngle": 45,
+                    "shape": 0,
+                    "cookieAsset": null,
+                    "cookie": null,
+                    "cookieIntensity": 1,
+                    "cookieFalloff": true,
+                    "cookieChannel": "rgb",
+                    "cookieAngle": 0,
+                    "cookieScale": [
+                        1,
+                        1
+                    ],
+                    "cookieOffset": [
+                        0,
+                        0
+                    ],
+                    "isStatic": false,
+                    "layers": [
+                        0
+                    ]
+                }
+            },
+            "template": null,
+            "template_id": null,
+            "template_ent_ids": null
+        },
+        "7cedde06-5dc6-4229-b3a6-fe0241bdc146": {
+            "name": "HUB_ATMOSPHERE",
+            "tags": [],
+            "enabled": true,
+            "resource_id": "7cedde06-5dc6-4229-b3a6-fe0241bdc146",
+            "parent": "ccada658-45f1-40ed-afe1-d9c22e0479a0",
+            "children": [
+                "4e6571c0-1352-45eb-80c9-72e921fce9ea",
+                "1d272474-a297-4727-8ce0-d31085382924",
+                "c549218d-29cd-4b81-84fe-805dfce17c4e",
+                "c0a4e559-944c-4b9f-b1a1-6ec61a973da9",
+                "f21fdaa8-aefe-4e38-9dfd-781e45854b3a",
+                "59d85f5b-52b9-4a53-b7d2-43af16fdb32a",
+                "d62d0c95-fe0a-4194-a34a-018bc8e6fb6a",
+                "9d80415b-422c-4583-89e6-fe90cd3e606e",
+                "ce8b57e4-8a4b-425a-b047-1279edb4f630",
+                "a5119077-5f61-43bd-a77e-c3b9ccf5a01d",
+                "27867591-91e8-42c7-aba4-061d4b423bf7",
+                "abbefae0-cc68-4b1e-a91e-db7f5acb93a1",
+                "87d8942c-19fe-4006-a47c-db7c6fefaa64",
+                "016f93e6-9e98-43e9-965b-d5a64e1681bf"
+            ],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "components": {},
+            "template": null,
+            "template_id": null,
+            "template_ent_ids": null
+        },
+        "4e6571c0-1352-45eb-80c9-72e921fce9ea": {
+            "name": "HUB_STATIC_EMBER_01",
+            "tags": [],
+            "enabled": true,
+            "resource_id": "4e6571c0-1352-45eb-80c9-72e921fce9ea",
+            "parent": "7cedde06-5dc6-4229-b3a6-fe0241bdc146",
+            "children": [],
+            "position": [
+                -1.2,
+                1.5,
+                1.9
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                0.02,
+                0.02,
+                1
+            ],
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313043291,
+                    "materialAssets": [
+                        313059123
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": false,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "template": null,
+            "template_id": null,
+            "template_ent_ids": null
+        },
+        "1d272474-a297-4727-8ce0-d31085382924": {
+            "name": "HUB_STATIC_EMBER_02",
+            "tags": [],
+            "enabled": true,
+            "resource_id": "1d272474-a297-4727-8ce0-d31085382924",
+            "parent": "7cedde06-5dc6-4229-b3a6-fe0241bdc146",
+            "children": [],
+            "position": [
+                1.8,
+                1.1,
+                -0.6
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                0.028,
+                0.028,
+                1
+            ],
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313043291,
+                    "materialAssets": [
+                        313059123
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": false,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "template": null,
+            "template_id": null,
+            "template_ent_ids": null
+        },
+        "c549218d-29cd-4b81-84fe-805dfce17c4e": {
+            "name": "HUB_STATIC_EMBER_03",
+            "tags": [],
+            "enabled": true,
+            "resource_id": "c549218d-29cd-4b81-84fe-805dfce17c4e",
+            "parent": "7cedde06-5dc6-4229-b3a6-fe0241bdc146",
+            "children": [],
+            "position": [
+                -0.6,
+                -1.4,
+                2.9
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                0.036000000000000004,
+                0.036000000000000004,
+                1
+            ],
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313043291,
+                    "materialAssets": [
+                        313059123
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": false,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "template": null,
+            "template_id": null,
+            "template_ent_ids": null
+        },
+        "c0a4e559-944c-4b9f-b1a1-6ec61a973da9": {
+            "name": "HUB_STATIC_EMBER_04",
+            "tags": [],
+            "enabled": true,
+            "resource_id": "c0a4e559-944c-4b9f-b1a1-6ec61a973da9",
+            "parent": "7cedde06-5dc6-4229-b3a6-fe0241bdc146",
+            "children": [],
+            "position": [
+                5.6,
+                1.9,
+                -2
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                0.02,
+                0.02,
+                1
+            ],
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313043291,
+                    "materialAssets": [
+                        313059123
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": false,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "template": null,
+            "template_id": null,
+            "template_ent_ids": null
+        },
+        "f21fdaa8-aefe-4e38-9dfd-781e45854b3a": {
+            "name": "HUB_STATIC_EMBER_05",
+            "tags": [],
+            "enabled": true,
+            "resource_id": "f21fdaa8-aefe-4e38-9dfd-781e45854b3a",
+            "parent": "7cedde06-5dc6-4229-b3a6-fe0241bdc146",
+            "children": [],
+            "position": [
+                -5,
+                2.8,
+                -2.9
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                0.028,
+                0.028,
+                1
+            ],
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313043291,
+                    "materialAssets": [
+                        313059123
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": false,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "template": null,
+            "template_id": null,
+            "template_ent_ids": null
+        },
+        "59d85f5b-52b9-4a53-b7d2-43af16fdb32a": {
+            "name": "HUB_STATIC_EMBER_06",
+            "tags": [],
+            "enabled": true,
+            "resource_id": "59d85f5b-52b9-4a53-b7d2-43af16fdb32a",
+            "parent": "7cedde06-5dc6-4229-b3a6-fe0241bdc146",
+            "children": [],
+            "position": [
+                2.6,
+                3.6,
+                -4
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                0.036000000000000004,
+                0.036000000000000004,
+                1
+            ],
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313043291,
+                    "materialAssets": [
+                        313059123
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": false,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "template": null,
+            "template_id": null,
+            "template_ent_ids": null
+        },
+        "d62d0c95-fe0a-4194-a34a-018bc8e6fb6a": {
+            "name": "HUB_STATIC_EMBER_07",
+            "tags": [],
+            "enabled": true,
+            "resource_id": "d62d0c95-fe0a-4194-a34a-018bc8e6fb6a",
+            "parent": "7cedde06-5dc6-4229-b3a6-fe0241bdc146",
+            "children": [],
+            "position": [
+                0.9,
+                2.5,
+                1.4
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                0.02,
+                0.02,
+                1
+            ],
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313043291,
+                    "materialAssets": [
+                        313059123
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": false,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "template": null,
+            "template_id": null,
+            "template_ent_ids": null
+        },
+        "9d80415b-422c-4583-89e6-fe90cd3e606e": {
+            "name": "HUB_STATIC_EMBER_08",
+            "tags": [],
+            "enabled": true,
+            "resource_id": "9d80415b-422c-4583-89e6-fe90cd3e606e",
+            "parent": "7cedde06-5dc6-4229-b3a6-fe0241bdc146",
+            "children": [],
+            "position": [
+                -2.1,
+                -3.1,
+                -1.1
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                0.028,
+                0.028,
+                1
+            ],
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313043291,
+                    "materialAssets": [
+                        313059123
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": false,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "template": null,
+            "template_id": null,
+            "template_ent_ids": null
+        },
+        "ce8b57e4-8a4b-425a-b047-1279edb4f630": {
+            "name": "HUB_STATIC_EMBER_09",
+            "tags": [],
+            "enabled": true,
+            "resource_id": "ce8b57e4-8a4b-425a-b047-1279edb4f630",
+            "parent": "7cedde06-5dc6-4229-b3a6-fe0241bdc146",
+            "children": [],
+            "position": [
+                5,
+                -1.8,
+                1
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                0.036000000000000004,
+                0.036000000000000004,
+                1
+            ],
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313043291,
+                    "materialAssets": [
+                        313059123
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": false,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "template": null,
+            "template_id": null,
+            "template_ent_ids": null
+        },
+        "a5119077-5f61-43bd-a77e-c3b9ccf5a01d": {
+            "name": "HUB_STATIC_EMBER_10",
+            "tags": [],
+            "enabled": true,
+            "resource_id": "a5119077-5f61-43bd-a77e-c3b9ccf5a01d",
+            "parent": "7cedde06-5dc6-4229-b3a6-fe0241bdc146",
+            "children": [],
+            "position": [
+                -5.8,
+                -0.7,
+                0.5
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                0.02,
+                0.02,
+                1
+            ],
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313043291,
+                    "materialAssets": [
+                        313059123
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": false,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "template": null,
+            "template_id": null,
+            "template_ent_ids": null
+        },
+        "27867591-91e8-42c7-aba4-061d4b423bf7": {
+            "name": "HUB_STATIC_EMBER_11",
+            "tags": [],
+            "enabled": true,
+            "resource_id": "27867591-91e8-42c7-aba4-061d4b423bf7",
+            "parent": "7cedde06-5dc6-4229-b3a6-fe0241bdc146",
+            "children": [],
+            "position": [
+                1.2,
+                -2,
+                -3
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                0.028,
+                0.028,
+                1
+            ],
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313043291,
+                    "materialAssets": [
+                        313059123
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": false,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "template": null,
+            "template_id": null,
+            "template_ent_ids": null
+        },
+        "abbefae0-cc68-4b1e-a91e-db7f5acb93a1": {
+            "name": "HUB_STATIC_EMBER_12",
+            "tags": [],
+            "enabled": true,
+            "resource_id": "abbefae0-cc68-4b1e-a91e-db7f5acb93a1",
+            "parent": "7cedde06-5dc6-4229-b3a6-fe0241bdc146",
+            "children": [],
+            "position": [
+                -1.6,
+                3.5,
+                -1.6
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                0.036000000000000004,
+                0.036000000000000004,
+                1
+            ],
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313043291,
+                    "materialAssets": [
+                        313059123
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": false,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "template": null,
+            "template_id": null,
+            "template_ent_ids": null
+        },
+        "87d8942c-19fe-4006-a47c-db7c6fefaa64": {
+            "name": "HUB_HAZE_BACK",
+            "tags": [],
+            "enabled": true,
+            "resource_id": "87d8942c-19fe-4006-a47c-db7c6fefaa64",
+            "parent": "7cedde06-5dc6-4229-b3a6-fe0241bdc146",
+            "children": [],
+            "position": [
+                0.2,
+                0,
+                -4.6
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                13,
+                7,
+                1
+            ],
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313043289,
+                    "materialAssets": [
+                        313059124
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": false,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "template": null,
+            "template_id": null,
+            "template_ent_ids": null
+        },
+        "016f93e6-9e98-43e9-965b-d5a64e1681bf": {
+            "name": "HUB_HAZE_LOW",
+            "tags": [],
+            "enabled": true,
+            "resource_id": "016f93e6-9e98-43e9-965b-d5a64e1681bf",
+            "parent": "7cedde06-5dc6-4229-b3a6-fe0241bdc146",
+            "children": [],
+            "position": [
+                1,
+                -2.4,
+                -2.3
+            ],
+            "rotation": [
+                0,
+                6,
+                0
+            ],
+            "scale": [
+                10,
+                1.6,
+                1
+            ],
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313043290,
+                    "materialAssets": [
+                        313059124
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": false,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "template": null,
+            "template_id": null,
+            "template_ent_ids": null
+        }
+    },
+    "created": "2026-10-26T19:47:06.240Z",
+    "checkpoint_id": "c16e0b5f-d465-4cf4-9499-cd6bf894f2e7",
+    "id": 2634123
+}

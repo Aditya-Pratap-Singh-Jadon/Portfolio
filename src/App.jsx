@@ -33,6 +33,13 @@ export function PortfolioView({
     return () => document.documentElement.classList.remove("reduce-motion");
   }, [reduced]);
   const s = content.sections;
+  useEffect(() => {
+    if (!location.hash || quick) return;
+    const frame = requestAnimationFrame(() => {
+      document.getElementById(location.hash.slice(1))?.scrollIntoView({ behavior: 'instant' });
+    });
+    return () => cancelAnimationFrame(frame);
+  }, [quick]);
   return (
     <>
       <a className="skip-link" href="#main">
@@ -46,7 +53,7 @@ export function PortfolioView({
       ) : (
         <main id="main">
           <Hero profile={content.profile} reduced={reduced} />
-          <CommandCenter visibility={s} reduced={reduced} />
+          <CommandCenter visibility={s} profile={content.profile} reduced={reduced} />
           {s.about && (
             <About profile={content.profile} education={content.education} />
           )}

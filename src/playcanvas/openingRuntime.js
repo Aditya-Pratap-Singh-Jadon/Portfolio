@@ -33,6 +33,8 @@ import {
 } from "./openingTimeline";
 import { sampleAwakening, phase } from "./approved/mi-awakening-motion.mjs";
 
+export { fetchJson, callbackPromise, configureOpening };
+
 const abortError = () =>
   new DOMException("Opening load cancelled", "AbortError");
 const fetchJson = async (url, signal) => {
@@ -66,6 +68,7 @@ const configureOpening = (app, config, signal) => callbackPromise(done => {
     done(error);
   });
 }, signal);
+
 
 export async function createOpeningRuntime(
   canvas,

@@ -21,7 +21,11 @@ Open the exact Vite address, normally `http://127.0.0.1:5173`. Vite proxies `/ap
 
 The website source, server, tests, configuration, and runtime assets live directly at the repository root on `v2`. Run these commands from that root; no submodule or nested clone is required.
 
-P6-A has been exercised in Chromium at desktop, tablet, and phone viewport sizes: approved scene rendering, scroll/camera passage, exact stone reassembly, keyboard controls, reduced motion, and WebGL-loss fallback/retry. Automated tests cover cancellation, disposed state, asset integrity, and the existing website/server behavior. Visual approval is still pending. Physical mobile hardware, other browsers, screen-reader output, and sustained GPU performance have not been audited. No P6-B or deployment is included.
+P6-A received user visual approval at `329a85c` on `v2`.
+
+P6-B connects the opening to the approved MI_02 Command Center. The website loads only the hub's required runtime assets, owns panel hover/focus/return behavior, and keeps navigation and live content in semantic HTML. The eight panel IDs map to About, Projects, Experience, Skills, GitHub, Updates (or LinkedIn), Achievements, and Contact. The opening's handoff event preloads the hub; native scrolling remains reversible. `/quick` remains available throughout.
+
+Chromium checks cover desktop and phone rendering, all eight selections and exact return positions, gateway passage/reassembly, keyboard navigation, reduced-motion links, unavailable-WebGL fallback, and context-loss retry. Automated tests cover cancellation, exact transforms, approved asset integrity, and existing website/server behavior. P6-B awaits user visual approval. Physical touch devices, other browsers, screen-reader output, and sustained GPU performance remain unverified. No P6-C or deployment is included.
 
 - `/`: immersive public portfolio.
 - `/quick`: one-page recruiter view; the only view containing a resume download button.
