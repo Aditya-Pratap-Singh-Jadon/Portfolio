@@ -33,6 +33,15 @@ test('all eight hub panels restore exact transforms after interrupted focus and 
   const camera=root.findByName('CAMERA_HUB');
   camera.camera={fov:34,horizontalFov:false};
   const hub=new HubController({root,graphicsDevice:{width:1440,height:900}});
+  hub.resize(1440,900);
+  const cameraRest=hub.camera.getLocalPosition().toArray();
+  for(const progress of [1,.7,.2,0,.2,.7,1]) {
+    hub.setEmergence(progress);
+    assert(hub.camera.getLocalPosition().z>=cameraRest[2]);
+  }
+  assert.deepEqual(hub.camera.getLocalPosition().toArray(),cameraRest);
+  hub.setEmergence(.4);hub.resize(390,300);hub.setEmergence(1);
+  assert.deepEqual(hub.camera.getLocalPosition().toArray(),hub.cameraBase.toArray());
   const rest=hub.panels.map(p=>[p.e.getLocalPosition().toArray(),p.e.getLocalRotation().toArray(),p.e.getLocalScale().toArray()]);
   let destroyed=0;
   const original={},clone={update(){},destroy(){destroyed++;}},instance={material:original},texture={};

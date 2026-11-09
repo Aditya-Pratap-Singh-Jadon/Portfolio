@@ -29,6 +29,10 @@ Chromium checks cover desktop and phone rendering, all eight selections and exac
 
 P6-B.1 refines that experience into one responsive composition: an enlarged spatial hub, a stable reading area, a command index, and inline display/sound utilities. Canonical signal names and plain-language subtitles live in `shared/signals.js` and are shared by navigation, section headings, Quick View, and runtime captions. The website draws its own caption atlas on cloned label materials; the approved scene, original atlas, meshes and textures remain byte-for-byte intact. The hub introduction and the missing personal punchline are explicitly provisional.
 
+P6-B.2 places the hub inside the opening's sticky stage. Typography, transparent 3D panels and subtle floor light emerge during camera passage on the same reversible progress value; there is no separate gateway boundary section. Panel interaction starts at arrival. Reduced motion and an unavailable opening use ordinary document flow with direct navigation. Approved scene and asset bytes are unchanged. This refinement awaits user visual approval.
+
+Chromium verification covers forward/reverse emergence, exact opening reassembly, all eight panel selections, keyboard selection/Escape, responsive layouts, reduced motion, unavailable WebGL and hub context-loss/retry. Local evidence includes gateway, emergence, arrival and mobile screenshots plus a sampled replay of 18 actual browser frames from one forward/reverse session. This is not a continuous frame-rate or sustained GPU benchmark. The production build still reports a large PlayCanvas chunk.
+
 The existing content model is ready for the next content pass; provide only reviewed facts. Old content without a punchline still loads, and the optional field is editable in the content studio. Saving remains a draft operation; publication retains its existing explicit action.
 
 | Content | Field |

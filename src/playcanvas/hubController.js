@@ -11,6 +11,8 @@ export class HubController {
     this.app=app;
     this.camera=this.required('CAMERA_HUB');
     this.cameraRest=this.camera.getLocalPosition().clone();
+    this.cameraBase=this.cameraRest.clone();
+    this.emergence=1;
     this.motion=new PanelMotion(8);
     this.hoverMotion=new PanelMotion(8);
     this.panels=HUB_PANELS.map(([name,title,width,height])=>{
@@ -37,7 +39,12 @@ export class HubController {
   setReduced(value) {this.motion.setReduced(value);this.hoverMotion.setReduced(value);if(value)this.hoverMotion.select(null);}
   resize(width,height) {
     const aspect=width/height;
-    this.camera.setLocalPosition(this.cameraRest.x,this.cameraRest.y,this.cameraRest.z+Math.max(0,1.8/aspect-1)*12);
+    this.cameraBase.set(this.cameraRest.x,this.cameraRest.y,this.cameraRest.z+Math.max(0,1.8/aspect-1)*12);
+    this.setEmergence(this.emergence);
+  }
+  setEmergence(value) {
+    this.emergence=Math.max(0,Math.min(1,Number.isFinite(value)?value:0));
+    this.camera.setLocalPosition(this.cameraBase.x,this.cameraBase.y+(1-this.emergence)*.5,this.cameraBase.z+(1-this.emergence)*12);
   }
   pick(clientX,clientY) {
     const {graphicsDevice:device}=this.app,rect=device.canvas.getBoundingClientRect();

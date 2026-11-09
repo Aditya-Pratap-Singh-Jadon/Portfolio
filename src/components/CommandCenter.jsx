@@ -2,19 +2,15 @@ import { useEffect, useRef, useState } from 'react';
 import { signalLinks, hubCopy } from '../../shared/signals.js';
 import './commandCenter.css';
 
-export default function CommandCenter({visibility,profile,reduced,utilities}) {
+export default function CommandCenter({visibility,profile,reduced,utilities,preload=true,onRuntime}) {
   const section=useRef(null),canvas=useRef(null),runtime=useRef(null),reducedRef=useRef(reduced),controls=useRef([]),openLink=useRef(null);
   const [entered,setEntered]=useState(false),[attempt,retry]=useState(0),[state,setState]=useState('loading'),[selected,setSelected]=useState(null);
   reducedRef.current=reduced;
   const choices=signalLinks(visibility,profile);
   const enabledKey=choices.map(p=>p.enabled?'1':'0').join('');
   useEffect(()=>{
-    const observer=new IntersectionObserver(([entry])=>{if(entry.isIntersecting)setEntered(true);},{rootMargin:'900px'});
-    observer.observe(section.current);
-    const handoff=e=>{if(e.detail.completed)setEntered(true);};
-    document.addEventListener('mi:opening:handoff',handoff);
-    return()=>{observer.disconnect();document.removeEventListener('mi:opening:handoff',handoff);};
-  },[]);
+    if(preload)setEntered(true);
+  },[preload]);
   useEffect(()=>{
     if(!entered)return;
     const controller=new AbortController();let instance,cancelled=false;
@@ -31,10 +27,11 @@ export default function CommandCenter({visibility,profile,reduced,utilities}) {
       instance=value;
       if(cancelled||controller.signal.aborted){value.dispose();return;}
       clearTimeout(timeout);runtime.current=value;value.setReduced(reducedRef.current);setState('ready');
+      onRuntime?.(value);
       if(import.meta.env.DEV)window.__MI_HUB__=value;
     }).catch(error=>{clearTimeout(timeout);if(!cancelled){console.error('Hub runtime:',error);fail();}});
-    return()=>{cancelled=true;clearTimeout(timeout);controller.abort();instance?.dispose();if(runtime.current===instance)runtime.current=null;if(window.__MI_HUB__===instance)delete window.__MI_HUB__;};
-  },[entered,attempt,enabledKey]);
+    return()=>{cancelled=true;clearTimeout(timeout);controller.abort();instance?.dispose();if(runtime.current===instance){runtime.current=null;onRuntime?.(null);}if(window.__MI_HUB__===instance)delete window.__MI_HUB__;};
+  },[entered,attempt,enabledKey,onRuntime]);
   useEffect(()=>{runtime.current?.setReduced(reduced);},[reduced]);
   useEffect(()=>{
     if(selected===null)return;

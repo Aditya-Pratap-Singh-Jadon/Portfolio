@@ -1,6 +1,7 @@
 ﻿import { useEffect, useRef, useState } from "react";
 import { useOpeningScroll } from "../hooks/useOpeningScroll";
 import "./awakening.css";
+import { scrollToChamber } from '../chamberNavigation.js';
 const labels = {
   void: "The ashen void",
   reveal: "The environment emerges",
@@ -10,7 +11,7 @@ const labels = {
   handoff: "The gateway is open",
   still: "Reduced motion · still view",
 };
-export default function Hero({ profile, reduced }) {
+export default function Hero({ profile, reduced, children, onFrame, onTarget, onMode }) {
   const section = useRef(null),
     canvas = useRef(null),
     runtime = useRef(null),
@@ -18,6 +19,8 @@ export default function Hero({ profile, reduced }) {
     copy = useRef(null),
     returnControl = useRef(null),
     reducedRef = useRef(reduced);
+  const callbacks=useRef({onFrame,onTarget,onMode});
+  callbacks.current={onFrame,onTarget,onMode};
   const [attempt, retry] = useState(0),
     [load, setLoad] = useState({ state: "loading", progress: 0 }),
     [phase, setPhase] = useState("void");
@@ -32,19 +35,24 @@ export default function Hero({ profile, reduced }) {
     section,
     (p) => {
       runtime.current?.setProgress(p);
+      callbacks.current.onTarget?.(p);
       if (meter.current) meter.current.value = p;
       updateCopy(p);
     },
     reduced,
   );
   useEffect(() => { updateCopy(latest.current); }, [reduced, load.state]);
+  useEffect(() => { callbacks.current.onMode?.(load.state); }, [load.state]);
   useEffect(() => {
     const controller = new AbortController();
     let cancelled = false,
       instance;
     setLoad({ state: "loading", progress: 0 });
     const fail = () => {
-      if (!cancelled) setLoad({ state: "error", progress: 0 });
+      if (!cancelled) {
+        callbacks.current.onMode?.('error');
+        setLoad({ state: "error", progress: 0 });
+      }
     };
     const timeout = setTimeout(() => {
       fail();
@@ -62,6 +70,7 @@ export default function Hero({ profile, reduced }) {
           onState: (s) => {
             if (!cancelled) setPhase(s.phase);
           },
+          onFrame: p => callbacks.current.onFrame?.(p),
           onError: fail,
         }),
       )
@@ -73,7 +82,7 @@ export default function Hero({ profile, reduced }) {
         }
         clearTimeout(timeout);
         runtime.current = value;
-        value.setProgress(latest.current);
+        value.setProgress(latest.current, true);
         value.setReduced(reducedRef.current);
         if (import.meta.env.DEV) window.__MI_OPENING__ = value;
         setLoad({ state: "ready", progress: 1 });
@@ -97,19 +106,17 @@ export default function Hero({ profile, reduced }) {
   useEffect(() => {
     runtime.current?.setReduced(reduced);
   }, [reduced]);
-  const skip = () =>
-    document
-      .getElementById("awakening-boundary")
-      ?.scrollIntoView({ behavior: "instant" });
+  const skip = () => scrollToChamber('#explore', 'instant');
   return (
     <>
       <section
         id="home"
         ref={section}
-        className={`awakening-shell ${reduced ? "is-reduced" : ""} ${load.state === "error" ? "has-error" : ""}`}
+        className={`awakening-shell ${children ? 'has-chamber' : ''} ${reduced ? "is-reduced" : ""} ${load.state === "error" ? "has-error" : ""}`}
         aria-label="Monolith awakening"
       >
         <div className="awakening-stage">
+          <div className="opening-screen">
           <div
             className={`awakening-world ${load.state === "ready" ? "is-ready" : ""}`}
             aria-hidden="true"
@@ -201,19 +208,9 @@ export default function Hero({ profile, reduced }) {
           <span className="awakening-cue" aria-hidden="true">
             SCROLL TO AWAKEN ↓
           </span>
+          </div>
+          {children}
         </div>
-      </section>
-      <section
-        id="awakening-boundary"
-        className="awakening-boundary"
-        aria-label="Opening complete"
-      >
-        <div>
-          <h2>Gateway crossed.</h2>
-        </div>
-        <a className="text-link" href="#explore">
-          Enter the Command Center ↓
-        </a>
       </section>
     </>
   );

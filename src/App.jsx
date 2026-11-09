@@ -5,13 +5,13 @@ import {
   savePreference,
 } from "./hooks/usePreferences";
 import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
+import GatewayExperience from "./components/GatewayExperience";
+import { scrollToChamber } from './chamberNavigation.js';
 import About from "./components/About";
 import Projects from "./components/Projects";
 import Experience from "./components/Experience";
 import Contact from "./components/Contact";
 import Skills from "./components/Skills";
-import CommandCenter from "./components/CommandCenter";
 import { Updates, Achievements } from "./components/MoreSections";
 import QuickView from "./components/QuickView";
 import { Cursor, ExperiencePreferences } from "./components/ExperienceControls";
@@ -36,6 +36,7 @@ export function PortfolioView({
   useEffect(() => {
     if (!location.hash || quick) return;
     const frame = requestAnimationFrame(() => {
+      if (scrollToChamber(location.hash, 'instant')) return;
       document.getElementById(location.hash.slice(1))?.scrollIntoView({ behavior: 'instant' });
     });
     return () => cancelAnimationFrame(frame);
@@ -52,8 +53,7 @@ export function PortfolioView({
         <QuickView content={content} />
       ) : (
         <main id="main">
-          <Hero profile={content.profile} reduced={reduced} />
-          <CommandCenter visibility={s} profile={content.profile} reduced={reduced} utilities={!preview && (
+          <GatewayExperience visibility={s} profile={content.profile} reduced={reduced} utilities={!preview && (
             <ExperiencePreferences reduced={reduced} systemReduced={systemReduced} onToggle={() => {
               savePreference('portfolio-motion', manualReduced ? 'full' : 'reduced');
               setManualReduced(!manualReduced);

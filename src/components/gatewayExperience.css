@@ -1,0 +1,20 @@
+.awakening-shell.has-chamber{height:calc(360svh + var(--chamber-height,100svh));background:#080706}
+.has-chamber .awakening-stage{height:var(--chamber-height,100svh);background:#080706}
+.opening-screen{position:absolute;inset:0 0 auto;height:100svh;isolation:isolate;z-index:2}
+.inner-chamber{position:absolute;inset:0 0 auto;min-height:100svh;isolation:isolate;z-index:3;opacity:var(--chamber-reveal,0);visibility:visible;transform:translateY(calc(var(--chamber-depth,1)*12px));transform-origin:50% 40%}
+.inner-chamber[data-phase=gateway]{visibility:hidden}
+.inner-chamber #explore.command-section{position:relative;z-index:1;background:transparent;padding-top:clamp(24px,5svh,50px)}
+.inner-chamber .hub-intro{opacity:var(--chamber-text,0);transform:translateY(calc(var(--chamber-depth,1)*20px)) scale(calc(1 - var(--chamber-depth,1)*.04));transform-origin:left top;filter:blur(calc(var(--chamber-depth,1)*2px))}
+.inner-chamber .hub-stage{background:transparent}
+.inner-chamber .hub-index,.inner-chamber .hub-utilities,.inner-chamber .hub-focus{opacity:var(--chamber-controls,0)}
+.chamber-atmosphere{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.chamber-atmosphere svg{width:100%;height:100%;display:block}
+.chamber-floor-light{opacity:calc(.12 + var(--chamber-depth,1)*.14)}
+.chamber-floor-seams{opacity:calc(.045 + var(--chamber-depth,1)*.035);stroke-width:1.1;filter:blur(.7px)}
+.chamber-embers{opacity:.45;transform:translateY(calc(var(--chamber-depth,1)*34px))}
+.has-chamber.is-reduced,.has-chamber.has-error{height:auto}
+.has-chamber.is-reduced .awakening-stage,.has-chamber.has-error .awakening-stage{height:auto;position:relative;overflow:visible}
+.is-reduced .opening-screen,.has-error .opening-screen{position:relative;opacity:1!important}
+.is-reduced .inner-chamber,.has-error .inner-chamber{position:relative;opacity:1;transform:none;visibility:visible}
+.is-reduced .inner-chamber .hub-intro,.has-error .inner-chamber .hub-intro{transform:none;filter:none;opacity:1}
+@media(max-width:760px){.inner-chamber #explore.command-section{padding-top:22px}}

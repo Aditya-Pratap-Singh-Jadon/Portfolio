@@ -14,7 +14,7 @@ export function useOpeningScroll(section, onProgress, reduced) {
         Math.min(
           1,
           -el.getBoundingClientRect().top /
-            Math.max(1, el.offsetHeight - innerHeight),
+            Math.max(1, el.offsetHeight - (el.querySelector('.awakening-stage')?.offsetHeight || innerHeight)),
         ),
       );
       el.style.setProperty("--opening-progress", latest.current);
@@ -42,7 +42,7 @@ export function useOpeningScroll(section, onProgress, reduced) {
         top:
           scrollY +
           el.getBoundingClientRect().top +
-          (el.offsetHeight - innerHeight) * p,
+          (el.offsetHeight - (el.querySelector('.awakening-stage')?.offsetHeight || innerHeight)) * p,
         behavior: reduced ? "instant" : "smooth",
       });
     },

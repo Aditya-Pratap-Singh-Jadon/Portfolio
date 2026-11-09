@@ -10,7 +10,7 @@ import { HubController } from './hubController.js';
 import { createHubLabels } from './hubLabels.js';
 
 export async function createHubRuntime(canvas,{signal,reduced=false,onSelect,onError,enabled}) {
-  let app,device,hub,labels,disposed=false,ready=false,active=false,dirty=true,resizeObserver,observer;
+  let app,device,hub,labels,emergence=1,disposed=false,ready=false,active=false,dirty=true,resizeObserver,observer;
   const removers=[];
   const listen=(target,type,callback)=>{target.addEventListener(type,callback);removers.push(()=>target.removeEventListener(type,callback));};
   const check=()=>{if(signal.aborted)throw new DOMException('Hub load cancelled','AbortError');};
@@ -30,7 +30,7 @@ export async function createHubRuntime(canvas,{signal,reduced=false,onSelect,onE
     const [config,source]=await Promise.all([fetchJson('/playcanvas/mi02/config.json',signal),fetchJson('/playcanvas/mi02/scene.json',signal)]);
     check();
     if(Object.values(source.entities).some(e=>e.components.script))throw new Error('Hub scripts must be owned by the website');
-    device=await createGraphicsDevice(canvas,{deviceTypes:['webgl2'],alpha:false,antialias:true,powerPreference:'high-performance'});check();
+    device=await createGraphicsDevice(canvas,{deviceTypes:['webgl2'],alpha:true,antialias:true,powerPreference:'high-performance'});check();
     app=new AppBase(canvas);
     const options=new AppOptions();
     Object.assign(options,{graphicsDevice:device,batchManager:BatchManager,
@@ -46,6 +46,7 @@ export async function createHubRuntime(canvas,{signal,reduced=false,onSelect,onE
     for(const entity of Object.values(item.data.entities))if(entity.components.camera)delete entity.components.camera.offscreen;
     await callbackPromise(done=>app.scenes.changeScene(item,done),signal);check();
     hub=new HubController(app);hub.setReduced(reduced);
+    hub.camera.camera.clearColor.set(0,0,0,0);
     labels=createHubLabels(device);hub.setLabelTexture(labels);
     hub.panels.forEach((p,i)=>{p.e.enabled=Boolean(enabled[i]);});
     app.autoRender=false;
@@ -59,7 +60,7 @@ export async function createHubRuntime(canvas,{signal,reduced=false,onSelect,onE
       hub.resize(Math.max(1,width),Math.max(1,height));dirty=true;
     };
     app.on('update',dt=>{
-      if(!ready||disposed||document.hidden||!active)return;
+      if(!ready||disposed||document.hidden||!active||emergence===0)return;
       const moving=[...hub.motion.velocities,...hub.hoverMotion.velocities].some(v=>v!==0);
       if(!dirty&&!moving)return;
       hub.update(Math.min(dt,.1));dirty=false;app.renderNextFrame=true;
@@ -77,9 +78,17 @@ export async function createHubRuntime(canvas,{signal,reduced=false,onSelect,onE
     ready=true;app.start();resize();hub.update(0);app.renderNextFrame=true;
     return {
       app,canvas,select,dispose,
+      setEmergence(value){
+        if(disposed)return;
+        const next=Math.max(0,Math.min(1,Number.isFinite(value)?value:0));
+        if(next===emergence)return;
+        emergence=next;
+        if(emergence<1&&hub.motion.selected!==null)select(null);
+        hub.setEmergence(emergence);dirty=true;
+      },
       hover(index){if(!disposed){hub.hover(index);dirty=true;}},
       setReduced(value){if(!disposed){reduced=Boolean(value);hub.setReduced(reduced);dirty=true;}},
-      getState(){return {ready,disposed,active,reduced,selected:hub?.motion.selected,panels:hub?.panels.map(p=>({id:p.e.name,position:p.e.getLocalPosition().toArray(),rotation:p.e.getLocalRotation().toArray(),rest:p.p.toArray()}))};},
+      getState(){return {ready,disposed,active,reduced,emergence,camera:hub?.camera.getLocalPosition().toArray(),selected:hub?.motion.selected,panels:hub?.panels.map(p=>({id:p.e.name,position:p.e.getLocalPosition().toArray(),rotation:p.e.getLocalRotation().toArray(),rest:p.p.toArray()}))};},
     };
   } catch(error){dispose();throw error;}
 }

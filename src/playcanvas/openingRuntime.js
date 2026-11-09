@@ -72,7 +72,7 @@ const configureOpening = (app, config, signal) => callbackPromise(done => {
 
 export async function createOpeningRuntime(
   canvas,
-  { signal, reduced = false, onLoad, onState, onError },
+  { signal, reduced = false, onLoad, onState, onFrame, onError },
 ) {
   let app,
     device,
@@ -260,9 +260,11 @@ export async function createOpeningRuntime(
           );
         lastHandoff = s.handoff;
       }
+      onFrame?.(s.progress);
     };
     app.on("update", (dt) => {
       if (!ready || disposed || document.hidden || !active) return;
+      if (progress.value === 1 && progress.target === 1 && !dirty) return;
       if (reduced && !dirty && progress.value === progress.target) return;
       const started = performance.now();
       progress.update(dt, reduced);
@@ -304,9 +306,14 @@ export async function createOpeningRuntime(
     apply(0);
     app.renderNextFrame = true;
     return {
-      setProgress(value) {
+      setProgress(value, immediate = false) {
         if (!disposed) {
           progress.target = clampProgress(value);
+          if (immediate) {
+            progress.value = progress.target;
+            progress.velocity = 0;
+            apply(0);
+          }
           dirty = true;
         }
       },
