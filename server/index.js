@@ -11,7 +11,7 @@ const dist = resolve(root, 'dist')
 const types = { '.js': 'text/javascript', '.css': 'text/css', '.html': 'text/html', '.pdf': 'application/pdf', '.svg': 'image/svg+xml', '.png': 'image/png', '.jpg': 'image/jpeg', '.webp': 'image/webp' }
 const server = createServer(async (req, res) => {
   try {
-    const path = new URL(req.url, 'http://localhost').pathname
+    const url = new URL(req.url, 'http://localhost'),path=url.pathname
     if (path.startsWith('/api/')) {
       const chunks = []; let size = 0
       for await (const chunk of req) {
@@ -30,7 +30,7 @@ const server = createServer(async (req, res) => {
     res.writeHead(200, {
       'Content-Type': types[extname(file)] || 'application/octet-stream', 'X-Content-Type-Options': 'nosniff', 'X-Frame-Options': 'DENY', 'Referrer-Policy': 'strict-origin-when-cross-origin',
       'Content-Security-Policy': "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; media-src 'self' blob:; frame-ancestors 'none'; base-uri 'self'; form-action 'self'",
-      'Cache-Control': path.startsWith('/assets/') ? 'public, max-age=31536000, immutable' : 'no-cache',
+      'Cache-Control': path.startsWith('/assets/') || /^\/playcanvas\/mi\d+\/assets\//.test(path) && /^[a-f0-9]{32}$/.test(url.searchParams.get('t') || '') ? 'public, max-age=31536000, immutable' : 'no-cache',
     }); res.end(req.method === 'HEAD' ? undefined : data)
   } catch { res.writeHead(404); res.end('Not found. Run npm run build before serving the production site.') }
 })

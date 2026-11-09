@@ -80,5 +80,43 @@
         "bytes": 504884
       }
     ]
+  },
+  {
+    "folder": "mi05",
+    "scene": 2637190,
+    "sceneSha256": "5e0cba44258b9db920c5a2693137618b6cd58a9f95694f19d40c16d4e9b0e20c",
+    "entities": 100,
+    "files": [
+      {
+        "id": "313653391",
+        "name": "accents-motion-rig.json",
+        "md5": "e2dc2bc836e4b034a8c4d4d937ee4be3",
+        "bytes": 21423
+      },
+      {
+        "id": "313613846",
+        "name": "MI_STATIC_ACCENTS.glb",
+        "md5": "088eebbac364c0de680ef14ae4db3e33",
+        "bytes": 1924884
+      },
+      {
+        "id": "313512180",
+        "name": "MI_FORGE_GRAIN.png",
+        "md5": "3a52239c4d38c7414225bc187ca0941c",
+        "bytes": 81706
+      },
+      {
+        "id": "313034834",
+        "name": "MI_R1_TEX_MICRO_NORMAL.png",
+        "md5": "40cb8825841741e94477452cad646667",
+        "bytes": 362745
+      },
+      {
+        "id": "313646814",
+        "name": "MI_ACCENT_GEOLOGICAL_REFINEMENT.glb",
+        "md5": "5d803a6de2b6c2f483d84345256a62c5",
+        "bytes": 1610600
+      }
+    ]
   }
 ]

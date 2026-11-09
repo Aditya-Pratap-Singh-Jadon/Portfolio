@@ -1,0 +1,4625 @@
+{
+    "branch_id": "767b4fee-49c1-494d-8a2a-452446444db8",
+    "name": "MI_05_ACCENTS",
+    "settings": {
+        "physics": {
+            "gravity": [
+                0,
+                -9.8,
+                0
+            ]
+        },
+        "render": {
+            "lightmapFilterRange": 10,
+            "fog_end": 65,
+            "lightmapFilterEnabled": false,
+            "ambientBake": false,
+            "tonemapping": 0,
+            "lightingAreaLightsEnabled": false,
+            "lightingShadowType": 0,
+            "ambientBakeOcclusionContrast": 0,
+            "skybox": null,
+            "lightingCookieAtlasResolution": 2048,
+            "fog_density": 0.01,
+            "lightmapFilterSmoothness": 0.2,
+            "gamma_correction": 1,
+            "exposure": 1,
+            "lightingShadowsEnabled": true,
+            "fog_start": 25,
+            "skyboxIntensity": 1,
+            "global_ambient": [
+                0.095,
+                0.089,
+                0.08
+            ],
+            "ambientBakeNumSamples": 1,
+            "fog_color": [
+                0.025,
+                0.024,
+                0.022
+            ],
+            "lightingCells": [
+                10,
+                3,
+                10
+            ],
+            "lightmapMode": 1,
+            "lightingCookiesEnabled": false,
+            "clusteredLightingEnabled": true,
+            "ambientBakeSpherePart": 0.4,
+            "fog": "linear",
+            "ambientBakeOcclusionBrightness": 0,
+            "lightmapMaxResolution": 2048,
+            "lightingMaxLightsPerCell": 8,
+            "lightingShadowAtlasResolution": 2048,
+            "skyboxMip": 0,
+            "lightmapSizeMultiplier": 16,
+            "skyboxRotation": [
+                0,
+                0,
+                0
+            ],
+            "skyType": "infinite",
+            "skyMeshPosition": [
+                0,
+                0,
+                0
+            ],
+            "skyMeshRotation": [
+                0,
+                0,
+                0
+            ],
+            "skyMeshScale": [
+                100,
+                100,
+                100
+            ],
+            "skyCenter": [
+                0,
+                0.1,
+                0
+            ],
+            "skyDepthWrite": false,
+            "lightingMaxLights": 255,
+            "gsplatRadialSorting": false,
+            "gsplatLodUpdateDistance": 1,
+            "gsplatLodUpdateAngle": 90,
+            "gsplatLodBehindPenalty": 1.5,
+            "gsplatLodUnderfillLimit": 0,
+            "gsplatSplatBudget": 1000000,
+            "gsplatSplatBudgetMode": "target",
+            "gsplatAlphaClip": 0.3,
+            "gsplatAlphaClipForward": 0.00392156862745098,
+            "gsplatMinPixelSize": 2,
+            "gsplatMinContribution": 3,
+            "gsplatFoveationStrength": 0,
+            "gsplatFoveationCenter": 0.3,
+            "gsplatAntiAlias": false,
+            "gsplatUseFog": true,
+            "gsplatColorUpdateAngle": 10,
+            "gsplatCooldownTicks": 100,
+            "gsplatDataFormat": "compact",
+            "gsplatEnableIds": false,
+            "gsplatLodMode": "distance",
+            "gsplatUseTonemap": true
+        },
+        "priority_scripts": null
+    },
+    "entities": {
+        "63a63d39-77ad-41f7-ad2c-7eeefe1f941f": {
+            "name": "Root",
+            "parent": null,
+            "resource_id": "63a63d39-77ad-41f7-ad2c-7eeefe1f941f",
+            "tags": [],
+            "enabled": true,
+            "template": null,
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {},
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "children": [
+                "bc39b4b6-faaa-48a4-9dcc-c5167834a2ef",
+                "27998721-d9e3-4c85-999b-feed2e47c2c4",
+                "280facf3-d944-4732-9ac8-224dc3e12eec",
+                "007ce8b1-4856-41b6-9db6-35d148366916",
+                "a071e92f-d233-4c99-a5a4-6d9d504272cb",
+                "2d8ceefb-d9cd-4a95-b9ae-7450695ff105"
+            ]
+        },
+        "27998721-d9e3-4c85-999b-feed2e47c2c4": {
+            "name": "CAMERA_ACCENTS",
+            "parent": "63a63d39-77ad-41f7-ad2c-7eeefe1f941f",
+            "resource_id": "27998721-d9e3-4c85-999b-feed2e47c2c4",
+            "tags": [],
+            "enabled": true,
+            "template": null,
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "camera": {
+                    "fov": 36,
+                    "projection": 0,
+                    "clearColor": [
+                        0.022,
+                        0.021,
+                        0.02,
+                        1
+                    ],
+                    "clearColorBuffer": true,
+                    "clearDepthBuffer": true,
+                    "renderSceneDepthMap": false,
+                    "renderSceneColorMap": false,
+                    "frustumCulling": true,
+                    "enabled": true,
+                    "orthoHeight": 4,
+                    "farClip": 1000,
+                    "nearClip": 0.1,
+                    "priority": 0,
+                    "rect": [
+                        0,
+                        0,
+                        1,
+                        1
+                    ],
+                    "offscreen": null,
+                    "layers": [
+                        0,
+                        1,
+                        2,
+                        3,
+                        4
+                    ],
+                    "toneMapping": 0,
+                    "gammaCorrection": 1
+                }
+            },
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "position": [
+                5.6,
+                4.2,
+                17.5
+            ],
+            "rotation": [
+                -13.76,
+                17.74,
+                0
+            ],
+            "children": []
+        },
+        "280facf3-d944-4732-9ac8-224dc3e12eec": {
+            "name": "LIGHT_ACCENTS_ASH_KEY",
+            "parent": "63a63d39-77ad-41f7-ad2c-7eeefe1f941f",
+            "resource_id": "280facf3-d944-4732-9ac8-224dc3e12eec",
+            "tags": [],
+            "enabled": true,
+            "template": null,
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "light": {
+                    "enabled": true,
+                    "bake": false,
+                    "bakeNumSamples": 1,
+                    "bakeArea": 0,
+                    "bakeDir": true,
+                    "affectDynamic": true,
+                    "affectLightmapped": false,
+                    "affectSpecularity": true,
+                    "isStatic": false,
+                    "color": [
+                        1,
+                        0.94,
+                        0.85
+                    ],
+                    "intensity": 1.8,
+                    "type": "directional",
+                    "shadowDistance": 38,
+                    "numCascades": 1,
+                    "cascadeDistribution": 0.5,
+                    "range": 8,
+                    "innerConeAngle": 40,
+                    "outerConeAngle": 45,
+                    "penumbraSize": 1,
+                    "penumbraFalloff": 1,
+                    "shape": 0,
+                    "falloffMode": 0,
+                    "castShadows": true,
+                    "shadowIntensity": 1,
+                    "shadowUpdateMode": 2,
+                    "shadowType": 0,
+                    "shadowResolution": 2048,
+                    "shadowBias": 0.04,
+                    "normalOffsetBias": 0.03,
+                    "vsmBlurMode": 1,
+                    "vsmBlurSize": 11,
+                    "vsmBias": 0.01,
+                    "cookieAsset": null,
+                    "cookie": null,
+                    "cookieIntensity": 1,
+                    "cookieFalloff": true,
+                    "cookieChannel": "rgb",
+                    "cookieAngle": 0,
+                    "cookieScale": [
+                        1,
+                        1
+                    ],
+                    "cookieOffset": [
+                        0,
+                        0
+                    ],
+                    "layers": [
+                        0
+                    ]
+                }
+            },
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "position": [
+                2,
+                2,
+                -2
+            ],
+            "rotation": [
+                45,
+                28,
+                0
+            ],
+            "children": []
+        },
+        "007ce8b1-4856-41b6-9db6-35d148366916": {
+            "name": "Box",
+            "parent": "63a63d39-77ad-41f7-ad2c-7eeefe1f941f",
+            "resource_id": "007ce8b1-4856-41b6-9db6-35d148366916",
+            "tags": [],
+            "enabled": false,
+            "template": null,
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "box",
+                    "asset": null,
+                    "materialAssets": [
+                        null
+                    ],
+                    "castShadows": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "castShadowsLightmap": true,
+                    "rootBone": null,
+                    "isStatic": false,
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "position": [
+                0,
+                0.5,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "children": []
+        },
+        "a071e92f-d233-4c99-a5a4-6d9d504272cb": {
+            "name": "Plane",
+            "parent": "63a63d39-77ad-41f7-ad2c-7eeefe1f941f",
+            "resource_id": "a071e92f-d233-4c99-a5a4-6d9d504272cb",
+            "tags": [],
+            "enabled": false,
+            "template": null,
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "plane",
+                    "asset": null,
+                    "materialAssets": [
+                        null
+                    ],
+                    "castShadows": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "castShadowsLightmap": true,
+                    "rootBone": null,
+                    "isStatic": false,
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "scale": [
+                8,
+                1,
+                8
+            ],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "children": []
+        },
+        "bc39b4b6-faaa-48a4-9dcc-c5167834a2ef": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "63a63d39-77ad-41f7-ad2c-7eeefe1f941f",
+            "children": [
+                "4068929a-6bb8-454c-820d-2ab0ad31f043",
+                "f8683798-53fc-4c92-bdc9-241725bae326",
+                "66959749-bf5b-4f86-9783-84cd0a9b1321"
+            ],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": 313613898,
+            "template_ent_ids": {
+                "bc39b4b6-faaa-48a4-9dcc-c5167834a2ef": "60304677-d45e-4332-ad54-8f44bfdc12f3",
+                "4068929a-6bb8-454c-820d-2ab0ad31f043": "dad39ed0-77d0-4ce7-af4e-c1b940bcfce5",
+                "e336644e-43bf-4970-9d3f-8bf7303600c3": "d36bcde9-f889-4dc7-8eb8-994fb971ce6a",
+                "98332cdf-b5e9-4cb5-a7cc-2030863670f9": "fb656da7-cd77-4f00-86d5-35ce81ad2397",
+                "2133f4e8-a0ad-437c-8215-a118b4804b99": "753dc6b6-5667-455a-a3d8-7f6e7b60237c",
+                "10b224c3-7fe7-454d-866e-974cdbea296d": "aaac034e-93ed-4257-9432-cb074239b1e1",
+                "431884bb-54df-4854-92d5-5d4e04b00847": "8f4c58c6-f5cc-4aed-8b83-4b9a65d8a0f6",
+                "b854f784-dcef-4342-854b-c9861503175a": "dca882af-40c0-4ba9-9903-79deeace46ec",
+                "5af968e8-cf09-4156-bb75-5757bcccf830": "d9e64d02-13e3-4bee-93f4-0121989c3b09",
+                "7d4b17a6-60e2-47b1-9d23-f68ff3970e59": "88223ff8-b90d-4480-a48d-f137fab6fac2",
+                "283f4cfd-4796-4c29-b269-47b3cd6435ba": "4b7c4f1a-e091-4c89-9132-75ce406bcbc6",
+                "081b9e04-288c-4a47-b3a0-305ed04c3174": "225b9efb-58a7-4f67-8f65-54d926a8cb0b",
+                "c5cde225-0b5c-463e-b5f6-44abfdaf107b": "588e62b3-72b8-4a53-900b-87a1db34bc43",
+                "c733bc34-8982-4527-a4ac-32228200e694": "db592ed6-fbac-4eaf-bcd7-22e4255b8ecc",
+                "b33a96ac-66bb-4776-81c0-40b34a418ae0": "bb41d241-3807-49d3-8e16-51d3d7522ba2",
+                "ea2f0154-f7a8-49a4-af9e-0b137e0ad269": "05238085-527f-4e9a-a684-0b772c674a49",
+                "e0adbfa1-a3a5-469d-be5a-5518137e84d1": "448f675e-c701-40a6-8492-a1e1bd9d521c",
+                "378d001c-3422-4537-bb7a-cbe9c42d38fe": "35c40fd1-9173-4576-a290-35c5c679fbe8",
+                "d2b062e5-a911-43a5-9ca1-e73197235fff": "0a265e69-d368-4de3-a4b8-dcd89c30e13e",
+                "6a132874-ec40-4e88-b657-50c6794ff0a2": "39f4f30b-54f7-49ff-b9a2-e2338c914e41",
+                "6c2f4ba8-c29a-450d-b018-784a03230dca": "b8684919-4039-407d-8734-ae70d0414827",
+                "19a26989-faa0-45e4-a658-755f38de7d2e": "7960fa19-d8e7-4142-976b-7d3fe00461eb",
+                "f3fa2ab2-1c33-4936-b994-1b9acd415b68": "e592911d-e05d-41a2-8f4a-3ecfd54358ab",
+                "a15eb66a-aab4-44a5-bf5b-b501da21406d": "486f02aa-5031-4f45-8e0f-92b98df15a38",
+                "62f12480-8341-490d-9908-428767c494f7": "cfb15986-c440-44cf-8818-9f283d122290",
+                "010ba622-05e3-4737-b832-5fb42bc1133a": "377c1321-f95c-428d-b868-bd1b79182e15",
+                "7d68ead5-54d1-408d-bc38-e01f93a20ae1": "001b54f6-43f3-45ee-b6a0-41ffd68149e1",
+                "d9da5caa-0f81-480f-9067-3f8a91a28ef9": "c51495f6-d79b-4373-824e-17e5ba819560",
+                "df710ca9-ab11-4c76-90f9-7b59b593ae77": "a41a798e-93b1-4f7a-97e5-13f9a07d5d46",
+                "5acda35e-fa61-4333-b70f-cd6a1bdb6ce7": "7543f3c2-9875-4891-827e-c613b8419e22",
+                "19619655-dd0e-47e8-9e99-2bc1f600ce66": "d4adc0c6-a101-474a-86ff-c38638e272bd",
+                "faa31726-490a-4e36-9147-0e51db4b7aff": "59ea11c3-51bc-40cb-ac47-2991040a303f",
+                "eaab583f-d756-4ea1-bcbb-21138e0be9c8": "5d1afe19-9495-4551-aa84-7cc46e13198f",
+                "ffc7cc18-e5b8-4a11-92c5-46ac5504a280": "1df9bffe-4070-429c-bd8a-c5eed4508df3",
+                "6d70aeda-f0f7-4a0e-8eb6-0a352751b627": "12506195-e48b-45d3-86e9-8ffdaabe8a5b",
+                "ba9d9070-a049-4a0f-bd64-aea0cad00507": "c123f727-2851-422c-bfa8-c1f686c91799",
+                "f48fd127-9c23-4ee3-bf99-38ca84b483c0": "e527c348-c230-451a-9ada-e1ae17ce825f",
+                "cc422ecf-8b02-481c-95c1-1a558c1c854f": "37c48c25-ac8c-4017-8128-43f0c16c82b0",
+                "110cf765-245f-4664-bdbc-cf9ca5de81d2": "08a9d3e4-a91e-46c6-b24c-3a6d1ec51378",
+                "407cd872-130e-4513-847a-9a84ed0d03cd": "038e86c3-420c-4d8a-982c-c52502067c56",
+                "1260abca-bca9-44da-90f9-72fa9bd3a106": "6da734f7-c676-42a1-8d08-91c99818704c",
+                "bd88ac96-8751-4c2d-ba0c-fe18551a3f99": "f100515a-9948-4d50-bce6-773487d71092",
+                "79d79751-e423-4dda-9564-88d64192fe1a": "3480d890-e816-451a-bfb9-bcf4fd4a61b2",
+                "f8683798-53fc-4c92-bdc9-241725bae326": "4b53c8ce-8b05-42b5-abd1-cef4dcffeccd",
+                "e201ad24-2a93-4079-a5f3-c098adcaef26": "f5390905-5db9-46c4-b8a7-79e221401c31",
+                "80a40057-055c-4772-8ff1-21f1c24f42f7": "4d2a4e9b-7060-4f96-b4f1-08f524e124a0",
+                "dcf5b0fd-10e2-4184-aad3-3c194522c0c2": "03c25b5d-06fd-4865-b0b3-cf3926644243",
+                "d30602f0-2b06-4e93-bf25-84c7996e766e": "bf8cabbd-3687-471b-9605-a6b800f5e66a",
+                "a6356f6f-06ba-4d51-99af-de5c7822dbc0": "54da5bec-5fba-4d60-b102-bef949cca286",
+                "58d2ab3a-27fe-4f04-a689-e58738be9532": "62ef3a88-333b-43d0-ae30-9e07aa38def5",
+                "5dae16b7-a384-4ceb-87a1-3cd6f141ed3f": "a7883a90-ea0a-4d4a-b9bc-b5894049ff1e",
+                "fbc5f8ed-6b71-491b-a4b5-3955647a0753": "e7ecd4a1-71d9-42f6-8797-548c22a5d59a",
+                "eb6266c4-01e3-4281-8b26-d61d204ef92f": "38c358d7-d593-4dbe-9532-c15a7ced06a9",
+                "305fb4a3-399c-404c-acc8-7c356fca9e7e": "9bd2cf40-a3f1-4054-ad04-a961c7e29ef6",
+                "fa9a0c49-e735-4cd0-b035-078a4eedd118": "608e7635-5c55-46d7-b6ff-33338719fd88",
+                "7ca14273-40b4-49ad-9c94-ac38a9df70fa": "4ad4e9d7-56b7-469d-ade8-4e8107b886fe",
+                "7eedd74a-f169-43bf-8696-160ac5df4512": "f2b5db3b-92de-4225-9692-fd08cb8a86e9",
+                "e2b1127c-b4c8-455b-ae2b-f7a15328a711": "f9d0c66e-6617-4f15-b23a-f1afb5528180",
+                "8c2d5368-aa8b-4b4f-9393-f6e0df602002": "0184ee55-06d9-49c0-88f3-21f0bd335d69",
+                "fb44cc0e-42b9-460e-98a7-0d93dcd96f1d": "1f2d8ce6-d253-4754-aee4-2f23b77f9b14",
+                "54bc0766-8606-4cf4-924f-8540abbfcddf": "d0f73fa9-752a-4fe4-b64b-181b015e8107",
+                "d11ee3c5-040f-44bd-9eed-4d947c1d4110": "3a7c98e8-efb5-4552-b40e-ccf0e7dc2c84",
+                "d3a26c92-d244-47d5-a6fa-de39197c8ded": "0f999c9d-e979-445f-8887-8b3f86e9fbc8",
+                "aa43388c-7f7f-4b0d-9144-efc1fd607309": "ea84868d-aee0-4c6f-988a-52fd68994eaa",
+                "69ba9836-bc9e-41d1-8ecd-4544c63fe1f7": "341f1c4b-9770-4f31-a02f-935e04ddb015",
+                "8c2569e5-796d-41b1-8865-fab22c82d3e2": "b2c7248c-1e06-4713-bf8a-dc811616c5da",
+                "087ad28e-75f7-4466-9c39-b16b81a2bb88": "4f06c384-bb62-40b9-9bfd-3975a37ff0fe",
+                "1586cd32-a6bf-4682-877b-0701d09997e0": "751cbefa-2bd9-470b-a351-4d0af5cf52aa",
+                "22c87472-09d1-4130-9f21-b4f332e44142": "da60f4d7-6afa-48a7-950b-b3bb9cdcef4e",
+                "66959749-bf5b-4f86-9783-84cd0a9b1321": "798e1de5-2dfa-4a72-8d1c-cae818809f34",
+                "09cfaa5b-4bd2-41ac-9903-098cccd7487c": "6de15a1c-0511-4cd3-83a8-4f5109e698e0",
+                "94161716-8a08-4282-9299-403543dda3f5": "3e11bed2-5a01-432e-801c-70d224ffa327",
+                "f013ccfc-addf-4415-9a0a-37981bebc592": "5f9e5c2a-82e4-4022-9312-4f2d6a4870a4",
+                "093e3af5-0fd8-48fd-92c7-9da08e34bc76": "7936fbf5-8c8d-4dc3-a91e-4c6f1852d353",
+                "ac082b27-6158-480a-9b9b-3ffe5d523649": "837d789e-bc4f-4d1b-820d-2c20ce87ce35",
+                "d26f16c1-be3e-411c-9380-ff542753c066": "ece43b24-c22d-4a6f-90aa-394475aa6298",
+                "538b2147-c2cc-46d9-b5f9-e77e046dd308": "15debe28-13e0-477e-9c95-b094a2e65774",
+                "5da01903-9f4c-4a27-af7b-9355ed9972eb": "5ff7d8eb-0c94-42d2-9c71-2fce89d0f03c",
+                "66b9968d-8605-4271-aa8c-1ad68ce83871": "0812e729-2eb0-4e34-a11e-6b35b05a656f",
+                "35747a06-f71f-4423-85a0-d5b13110e734": "1cb249f0-128a-4262-bac5-667953069f23",
+                "8744556d-87b5-4dd7-a3a4-9c46a2ea8eb2": "f2810c8e-f391-49d6-8a2b-6511a80a3267",
+                "ad3fc28f-fdf7-4691-9e22-0f4d95577dc5": "43a54bf1-f60a-47d6-b247-f07230f10792",
+                "93b91e0e-5164-474d-9f32-eb2ab4bf3647": "90da295d-5ad1-4894-be47-2e8d8a019e0d",
+                "c5ac056c-3174-419b-98f9-eb3408894f64": "a9aafb78-ffc7-423c-b637-e24b97cfe1c4",
+                "deaf8c7b-188a-4d75-8934-d41303ed1822": "2ac7a3b7-f160-4547-8dd3-9e6d5ddd537e",
+                "245cf68a-5bc9-40a5-a5eb-b0a4621e973e": "4eb2a7a9-544c-4ee0-a7c4-5e1c75fc3c99",
+                "fa61c92c-5158-4c0c-acc3-779d05b9a1af": "8d471b2e-0c8e-4177-b0f8-63593009f532",
+                "5f8d7ddd-4860-4db4-a395-760291c01fcd": "d743b159-45db-4733-b377-9709d03cebdf",
+                "bcac21d0-2c33-4647-a455-626db6108e92": "80e0b311-f34c-4f3a-bbbd-03f996807b2a",
+                "9efbff1e-1e1d-45ba-8db2-6a63c42d69ff": "d4e83acc-5891-417b-92a1-18d926a94cb8",
+                "f87fcb16-9aa6-4562-8d26-1c434c1908c2": "20090cfa-4c1e-416f-a75a-0fe8cd94a74f"
+            },
+            "components": {},
+            "resource_id": "bc39b4b6-faaa-48a4-9dcc-c5167834a2ef",
+            "name": "MI_05_COMPONENTS"
+        },
+        "4068929a-6bb8-454c-820d-2ab0ad31f043": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "bc39b4b6-faaa-48a4-9dcc-c5167834a2ef",
+            "children": [
+                "e336644e-43bf-4970-9d3f-8bf7303600c3",
+                "283f4cfd-4796-4c29-b269-47b3cd6435ba",
+                "e0adbfa1-a3a5-469d-be5a-5518137e84d1",
+                "79d79751-e423-4dda-9564-88d64192fe1a",
+                "e8b75176-ac5e-4490-b30a-a0a0d9b9a2a3"
+            ],
+            "position": [
+                -7.6,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "script": {
+                    "enabled": true,
+                    "order": [
+                        "miChronicleFault"
+                    ],
+                    "scripts": {
+                        "miChronicleFault": {
+                            "enabled": true,
+                            "attributes": {
+                                "rigAsset": 313653391
+                            }
+                        }
+                    }
+                }
+            },
+            "resource_id": "4068929a-6bb8-454c-820d-2ab0ad31f043",
+            "name": "MI_05_CHRONICLE_FAULT"
+        },
+        "e336644e-43bf-4970-9d3f-8bf7303600c3": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "4068929a-6bb8-454c-820d-2ab0ad31f043",
+            "children": [
+                "98332cdf-b5e9-4cb5-a7cc-2030863670f9",
+                "2133f4e8-a0ad-437c-8215-a118b4804b99",
+                "10b224c3-7fe7-454d-866e-974cdbea296d",
+                "431884bb-54df-4854-92d5-5d4e04b00847",
+                "b854f784-dcef-4342-854b-c9861503175a",
+                "5af968e8-cf09-4156-bb75-5757bcccf830",
+                "7d4b17a6-60e2-47b1-9d23-f68ff3970e59"
+            ],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {},
+            "resource_id": "e336644e-43bf-4970-9d3f-8bf7303600c3",
+            "name": "CHRONICLE_GEOLOGICAL_STRUCTURE"
+        },
+        "98332cdf-b5e9-4cb5-a7cc-2030863670f9": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "e336644e-43bf-4970-9d3f-8bf7303600c3",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313613850,
+                    "materialAssets": [
+                        313507273,
+                        313507275
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": true,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "resource_id": "98332cdf-b5e9-4cb5-a7cc-2030863670f9",
+            "name": "CHRONICLE_BANK_01"
+        },
+        "2133f4e8-a0ad-437c-8215-a118b4804b99": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "e336644e-43bf-4970-9d3f-8bf7303600c3",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313613848,
+                    "materialAssets": [
+                        313507273,
+                        313507275
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": true,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "resource_id": "2133f4e8-a0ad-437c-8215-a118b4804b99",
+            "name": "CHRONICLE_BANK_02"
+        },
+        "10b224c3-7fe7-454d-866e-974cdbea296d": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "e336644e-43bf-4970-9d3f-8bf7303600c3",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313613851,
+                    "materialAssets": [
+                        313507273,
+                        313507275
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": true,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "resource_id": "10b224c3-7fe7-454d-866e-974cdbea296d",
+            "name": "CHRONICLE_BANK_03"
+        },
+        "431884bb-54df-4854-92d5-5d4e04b00847": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "e336644e-43bf-4970-9d3f-8bf7303600c3",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313613849,
+                    "materialAssets": [
+                        313507273,
+                        313507275
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": true,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "resource_id": "431884bb-54df-4854-92d5-5d4e04b00847",
+            "name": "CHRONICLE_BANK_04"
+        },
+        "b854f784-dcef-4342-854b-c9861503175a": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "e336644e-43bf-4970-9d3f-8bf7303600c3",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313613852,
+                    "materialAssets": [
+                        313507273,
+                        313507275
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": true,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "resource_id": "b854f784-dcef-4342-854b-c9861503175a",
+            "name": "CHRONICLE_BANK_05"
+        },
+        "5af968e8-cf09-4156-bb75-5757bcccf830": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "e336644e-43bf-4970-9d3f-8bf7303600c3",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313613853,
+                    "materialAssets": [
+                        313507273,
+                        313507275
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": true,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "resource_id": "5af968e8-cf09-4156-bb75-5757bcccf830",
+            "name": "CHRONICLE_BANK_06"
+        },
+        "7d4b17a6-60e2-47b1-9d23-f68ff3970e59": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "e336644e-43bf-4970-9d3f-8bf7303600c3",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313613854,
+                    "materialAssets": [
+                        313499105
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": true,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "resource_id": "7d4b17a6-60e2-47b1-9d23-f68ff3970e59",
+            "name": "CHRONICLE_INTERNAL_EMBER_MASS"
+        },
+        "283f4cfd-4796-4c29-b269-47b3cd6435ba": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "4068929a-6bb8-454c-820d-2ab0ad31f043",
+            "children": [
+                "081b9e04-288c-4a47-b3a0-305ed04c3174",
+                "c5cde225-0b5c-463e-b5f6-44abfdaf107b",
+                "c733bc34-8982-4527-a4ac-32228200e694",
+                "b33a96ac-66bb-4776-81c0-40b34a418ae0",
+                "ea2f0154-f7a8-49a4-af9e-0b137e0ad269"
+            ],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {},
+            "resource_id": "283f4cfd-4796-4c29-b269-47b3cd6435ba",
+            "name": "CHRONICLE_FAULT_SEGMENTS"
+        },
+        "081b9e04-288c-4a47-b3a0-305ed04c3174": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "283f4cfd-4796-4c29-b269-47b3cd6435ba",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313613855,
+                    "materialAssets": [
+                        313552980
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": true,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "resource_id": "081b9e04-288c-4a47-b3a0-305ed04c3174",
+            "name": "CHRONICLE_FRACTURE_SEGMENT_01"
+        },
+        "c5cde225-0b5c-463e-b5f6-44abfdaf107b": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "283f4cfd-4796-4c29-b269-47b3cd6435ba",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313613856,
+                    "materialAssets": [
+                        313552980
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": true,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "resource_id": "c5cde225-0b5c-463e-b5f6-44abfdaf107b",
+            "name": "CHRONICLE_FRACTURE_SEGMENT_02"
+        },
+        "c733bc34-8982-4527-a4ac-32228200e694": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "283f4cfd-4796-4c29-b269-47b3cd6435ba",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313613857,
+                    "materialAssets": [
+                        313552980
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": true,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "resource_id": "c733bc34-8982-4527-a4ac-32228200e694",
+            "name": "CHRONICLE_FRACTURE_SEGMENT_03"
+        },
+        "b33a96ac-66bb-4776-81c0-40b34a418ae0": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "283f4cfd-4796-4c29-b269-47b3cd6435ba",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313613858,
+                    "materialAssets": [
+                        313552980
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": true,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "resource_id": "b33a96ac-66bb-4776-81c0-40b34a418ae0",
+            "name": "CHRONICLE_FRACTURE_SEGMENT_04"
+        },
+        "ea2f0154-f7a8-49a4-af9e-0b137e0ad269": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "283f4cfd-4796-4c29-b269-47b3cd6435ba",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313613859,
+                    "materialAssets": [
+                        313552980
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": true,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "resource_id": "ea2f0154-f7a8-49a4-af9e-0b137e0ad269",
+            "name": "CHRONICLE_FRACTURE_SEGMENT_05"
+        },
+        "e0adbfa1-a3a5-469d-be5a-5518137e84d1": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "4068929a-6bb8-454c-820d-2ab0ad31f043",
+            "children": [
+                "378d001c-3422-4537-bb7a-cbe9c42d38fe",
+                "f3fa2ab2-1c33-4936-b994-1b9acd415b68",
+                "d9da5caa-0f81-480f-9067-3f8a91a28ef9",
+                "eaab583f-d756-4ea1-bcbb-21138e0be9c8",
+                "cc422ecf-8b02-481c-95c1-1a558c1c854f"
+            ],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {},
+            "resource_id": "e0adbfa1-a3a5-469d-be5a-5518137e84d1",
+            "name": "CHRONICLE_MILESTONES"
+        },
+        "378d001c-3422-4537-bb7a-cbe9c42d38fe": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "e0adbfa1-a3a5-469d-be5a-5518137e84d1",
+            "children": [
+                "d2b062e5-a911-43a5-9ca1-e73197235fff",
+                "6a132874-ec40-4e88-b657-50c6794ff0a2",
+                "6c2f4ba8-c29a-450d-b018-784a03230dca",
+                "19a26989-faa0-45e4-a658-755f38de7d2e"
+            ],
+            "position": [
+                -0.306,
+                -2.26,
+                0.44
+            ],
+            "rotation": [
+                -1.49254e-8,
+                4,
+                -2
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {},
+            "resource_id": "378d001c-3422-4537-bb7a-cbe9c42d38fe",
+            "name": "CHRONICLE_MILESTONE_01"
+        },
+        "d2b062e5-a911-43a5-9ca1-e73197235fff": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "378d001c-3422-4537-bb7a-cbe9c42d38fe",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313613860,
+                    "materialAssets": [
+                        313507273,
+                        313507275
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": true,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "resource_id": "d2b062e5-a911-43a5-9ca1-e73197235fff",
+            "name": "CHRONICLE_MILESTONE_01_STONE"
+        },
+        "6a132874-ec40-4e88-b657-50c6794ff0a2": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "378d001c-3422-4537-bb7a-cbe9c42d38fe",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313613861,
+                    "materialAssets": [
+                        313552980
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": true,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "resource_id": "6a132874-ec40-4e88-b657-50c6794ff0a2",
+            "name": "CHRONICLE_MILESTONE_01_RECESSED_AMBER"
+        },
+        "6c2f4ba8-c29a-450d-b018-784a03230dca": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "378d001c-3422-4537-bb7a-cbe9c42d38fe",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0.145
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {},
+            "resource_id": "6c2f4ba8-c29a-450d-b018-784a03230dca",
+            "name": "CHRONICLE_MILESTONE_01_ATTACHMENT"
+        },
+        "19a26989-faa0-45e4-a658-755f38de7d2e": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "378d001c-3422-4537-bb7a-cbe9c42d38fe",
+            "children": [],
+            "position": [
+                0,
+                0.08,
+                0.17
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {},
+            "resource_id": "19a26989-faa0-45e4-a658-755f38de7d2e",
+            "name": "CHRONICLE_MILESTONE_01_CONTENT_ANCHOR"
+        },
+        "f3fa2ab2-1c33-4936-b994-1b9acd415b68": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "e0adbfa1-a3a5-469d-be5a-5518137e84d1",
+            "children": [
+                "a15eb66a-aab4-44a5-bf5b-b501da21406d",
+                "62f12480-8341-490d-9908-428767c494f7",
+                "010ba622-05e3-4737-b832-5fb42bc1133a",
+                "7d68ead5-54d1-408d-bc38-e01f93a20ae1"
+            ],
+            "position": [
+                0.272,
+                -1.12,
+                0.44
+            ],
+            "rotation": [
+                -1.49254e-8,
+                -4,
+                2
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {},
+            "resource_id": "f3fa2ab2-1c33-4936-b994-1b9acd415b68",
+            "name": "CHRONICLE_MILESTONE_02"
+        },
+        "a15eb66a-aab4-44a5-bf5b-b501da21406d": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "f3fa2ab2-1c33-4936-b994-1b9acd415b68",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313613862,
+                    "materialAssets": [
+                        313507273,
+                        313507275
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": true,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "resource_id": "a15eb66a-aab4-44a5-bf5b-b501da21406d",
+            "name": "CHRONICLE_MILESTONE_02_STONE"
+        },
+        "62f12480-8341-490d-9908-428767c494f7": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "f3fa2ab2-1c33-4936-b994-1b9acd415b68",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313613863,
+                    "materialAssets": [
+                        313552980
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": true,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "resource_id": "62f12480-8341-490d-9908-428767c494f7",
+            "name": "CHRONICLE_MILESTONE_02_RECESSED_AMBER"
+        },
+        "010ba622-05e3-4737-b832-5fb42bc1133a": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "f3fa2ab2-1c33-4936-b994-1b9acd415b68",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0.145
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {},
+            "resource_id": "010ba622-05e3-4737-b832-5fb42bc1133a",
+            "name": "CHRONICLE_MILESTONE_02_ATTACHMENT"
+        },
+        "7d68ead5-54d1-408d-bc38-e01f93a20ae1": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "f3fa2ab2-1c33-4936-b994-1b9acd415b68",
+            "children": [],
+            "position": [
+                0,
+                0.08,
+                0.17
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {},
+            "resource_id": "7d68ead5-54d1-408d-bc38-e01f93a20ae1",
+            "name": "CHRONICLE_MILESTONE_02_CONTENT_ANCHOR"
+        },
+        "d9da5caa-0f81-480f-9067-3f8a91a28ef9": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "e0adbfa1-a3a5-469d-be5a-5518137e84d1",
+            "children": [
+                "df710ca9-ab11-4c76-90f9-7b59b593ae77",
+                "5acda35e-fa61-4333-b70f-cd6a1bdb6ce7",
+                "19619655-dd0e-47e8-9e99-2bc1f600ce66",
+                "faa31726-490a-4e36-9147-0e51db4b7aff"
+            ],
+            "position": [
+                -0.27,
+                0,
+                0.44
+            ],
+            "rotation": [
+                -1.49254e-8,
+                4,
+                -2
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {},
+            "resource_id": "d9da5caa-0f81-480f-9067-3f8a91a28ef9",
+            "name": "CHRONICLE_MILESTONE_03"
+        },
+        "df710ca9-ab11-4c76-90f9-7b59b593ae77": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "d9da5caa-0f81-480f-9067-3f8a91a28ef9",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313613864,
+                    "materialAssets": [
+                        313507273,
+                        313507275
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": true,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "resource_id": "df710ca9-ab11-4c76-90f9-7b59b593ae77",
+            "name": "CHRONICLE_MILESTONE_03_STONE"
+        },
+        "5acda35e-fa61-4333-b70f-cd6a1bdb6ce7": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "d9da5caa-0f81-480f-9067-3f8a91a28ef9",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313613865,
+                    "materialAssets": [
+                        313552980
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": true,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "resource_id": "5acda35e-fa61-4333-b70f-cd6a1bdb6ce7",
+            "name": "CHRONICLE_MILESTONE_03_RECESSED_AMBER"
+        },
+        "19619655-dd0e-47e8-9e99-2bc1f600ce66": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "d9da5caa-0f81-480f-9067-3f8a91a28ef9",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0.145
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {},
+            "resource_id": "19619655-dd0e-47e8-9e99-2bc1f600ce66",
+            "name": "CHRONICLE_MILESTONE_03_ATTACHMENT"
+        },
+        "faa31726-490a-4e36-9147-0e51db4b7aff": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "d9da5caa-0f81-480f-9067-3f8a91a28ef9",
+            "children": [],
+            "position": [
+                0,
+                0.08,
+                0.17
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {},
+            "resource_id": "faa31726-490a-4e36-9147-0e51db4b7aff",
+            "name": "CHRONICLE_MILESTONE_03_CONTENT_ANCHOR"
+        },
+        "eaab583f-d756-4ea1-bcbb-21138e0be9c8": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "e0adbfa1-a3a5-469d-be5a-5518137e84d1",
+            "children": [
+                "ffc7cc18-e5b8-4a11-92c5-46ac5504a280",
+                "6d70aeda-f0f7-4a0e-8eb6-0a352751b627",
+                "ba9d9070-a049-4a0f-bd64-aea0cad00507",
+                "f48fd127-9c23-4ee3-bf99-38ca84b483c0"
+            ],
+            "position": [
+                0.308,
+                1.15,
+                0.44
+            ],
+            "rotation": [
+                -1.49254e-8,
+                -4,
+                2
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {},
+            "resource_id": "eaab583f-d756-4ea1-bcbb-21138e0be9c8",
+            "name": "CHRONICLE_MILESTONE_04"
+        },
+        "ffc7cc18-e5b8-4a11-92c5-46ac5504a280": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "eaab583f-d756-4ea1-bcbb-21138e0be9c8",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313613866,
+                    "materialAssets": [
+                        313507273,
+                        313507275
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": true,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "resource_id": "ffc7cc18-e5b8-4a11-92c5-46ac5504a280",
+            "name": "CHRONICLE_MILESTONE_04_STONE"
+        },
+        "6d70aeda-f0f7-4a0e-8eb6-0a352751b627": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "eaab583f-d756-4ea1-bcbb-21138e0be9c8",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313613867,
+                    "materialAssets": [
+                        313552980
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": true,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "resource_id": "6d70aeda-f0f7-4a0e-8eb6-0a352751b627",
+            "name": "CHRONICLE_MILESTONE_04_RECESSED_AMBER"
+        },
+        "ba9d9070-a049-4a0f-bd64-aea0cad00507": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "eaab583f-d756-4ea1-bcbb-21138e0be9c8",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0.145
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {},
+            "resource_id": "ba9d9070-a049-4a0f-bd64-aea0cad00507",
+            "name": "CHRONICLE_MILESTONE_04_ATTACHMENT"
+        },
+        "f48fd127-9c23-4ee3-bf99-38ca84b483c0": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "eaab583f-d756-4ea1-bcbb-21138e0be9c8",
+            "children": [],
+            "position": [
+                0,
+                0.08,
+                0.17
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {},
+            "resource_id": "f48fd127-9c23-4ee3-bf99-38ca84b483c0",
+            "name": "CHRONICLE_MILESTONE_04_CONTENT_ANCHOR"
+        },
+        "cc422ecf-8b02-481c-95c1-1a558c1c854f": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "e0adbfa1-a3a5-469d-be5a-5518137e84d1",
+            "children": [
+                "110cf765-245f-4664-bdbc-cf9ca5de81d2",
+                "407cd872-130e-4513-847a-9a84ed0d03cd",
+                "1260abca-bca9-44da-90f9-72fa9bd3a106",
+                "bd88ac96-8751-4c2d-ba0c-fe18551a3f99"
+            ],
+            "position": [
+                -0.234,
+                2.3,
+                0.44
+            ],
+            "rotation": [
+                -1.49254e-8,
+                4,
+                -2
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {},
+            "resource_id": "cc422ecf-8b02-481c-95c1-1a558c1c854f",
+            "name": "CHRONICLE_MILESTONE_05"
+        },
+        "110cf765-245f-4664-bdbc-cf9ca5de81d2": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "cc422ecf-8b02-481c-95c1-1a558c1c854f",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313613868,
+                    "materialAssets": [
+                        313507273,
+                        313507275
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": true,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "resource_id": "110cf765-245f-4664-bdbc-cf9ca5de81d2",
+            "name": "CHRONICLE_MILESTONE_05_STONE"
+        },
+        "407cd872-130e-4513-847a-9a84ed0d03cd": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "cc422ecf-8b02-481c-95c1-1a558c1c854f",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313613869,
+                    "materialAssets": [
+                        313552980
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": true,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "resource_id": "407cd872-130e-4513-847a-9a84ed0d03cd",
+            "name": "CHRONICLE_MILESTONE_05_RECESSED_AMBER"
+        },
+        "1260abca-bca9-44da-90f9-72fa9bd3a106": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "cc422ecf-8b02-481c-95c1-1a558c1c854f",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0.145
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {},
+            "resource_id": "1260abca-bca9-44da-90f9-72fa9bd3a106",
+            "name": "CHRONICLE_MILESTONE_05_ATTACHMENT"
+        },
+        "bd88ac96-8751-4c2d-ba0c-fe18551a3f99": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "cc422ecf-8b02-481c-95c1-1a558c1c854f",
+            "children": [],
+            "position": [
+                0,
+                0.08,
+                0.17
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {},
+            "resource_id": "bd88ac96-8751-4c2d-ba0c-fe18551a3f99",
+            "name": "CHRONICLE_MILESTONE_05_CONTENT_ANCHOR"
+        },
+        "79d79751-e423-4dda-9564-88d64192fe1a": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "4068929a-6bb8-454c-820d-2ab0ad31f043",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313613870,
+                    "materialAssets": [
+                        313507273,
+                        313507275
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": true,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "resource_id": "79d79751-e423-4dda-9564-88d64192fe1a",
+            "name": "CHRONICLE_FRACTURED_FOOTING"
+        },
+        "f8683798-53fc-4c92-bdc9-241725bae326": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "bc39b4b6-faaa-48a4-9dcc-c5167834a2ef",
+            "children": [
+                "e201ad24-2a93-4079-a5f3-c098adcaef26",
+                "80a40057-055c-4772-8ff1-21f1c24f42f7",
+                "dcf5b0fd-10e2-4184-aad3-3c194522c0c2",
+                "d30602f0-2b06-4e93-bf25-84c7996e766e",
+                "22c87472-09d1-4130-9f21-b4f332e44142",
+                "0e6a3150-29e3-4d94-beeb-39af6bdf3a02"
+            ],
+            "position": [
+                0,
+                -0.32,
+                -0.25
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "script": {
+                    "enabled": true,
+                    "order": [
+                        "miVaultDisplay"
+                    ],
+                    "scripts": {
+                        "miVaultDisplay": {
+                            "enabled": true,
+                            "attributes": {
+                                "rigAsset": 313653391
+                            }
+                        }
+                    }
+                }
+            },
+            "resource_id": "f8683798-53fc-4c92-bdc9-241725bae326",
+            "name": "MI_05_VAULT_DISPLAY"
+        },
+        "e201ad24-2a93-4079-a5f3-c098adcaef26": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "f8683798-53fc-4c92-bdc9-241725bae326",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313646824,
+                    "materialAssets": [
+                        313507273,
+                        313507275
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": true,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "resource_id": "e201ad24-2a93-4079-a5f3-c098adcaef26",
+            "name": "VAULT_ARCHITECTURAL_STONE"
+        },
+        "80a40057-055c-4772-8ff1-21f1c24f42f7": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "f8683798-53fc-4c92-bdc9-241725bae326",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313646825,
+                    "materialAssets": [
+                        313646813
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": true,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "resource_id": "80a40057-055c-4772-8ff1-21f1c24f42f7",
+            "name": "VAULT_RECESSED_CENTRAL_SEAM"
+        },
+        "dcf5b0fd-10e2-4184-aad3-3c194522c0c2": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "f8683798-53fc-4c92-bdc9-241725bae326",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313613873,
+                    "materialAssets": [
+                        313507275
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": true,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "resource_id": "dcf5b0fd-10e2-4184-aad3-3c194522c0c2",
+            "name": "VAULT_DEEP_BACK_WALL"
+        },
+        "d30602f0-2b06-4e93-bf25-84c7996e766e": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "f8683798-53fc-4c92-bdc9-241725bae326",
+            "children": [
+                "a6356f6f-06ba-4d51-99af-de5c7822dbc0",
+                "305fb4a3-399c-404c-acc8-7c356fca9e7e",
+                "8c2d5368-aa8b-4b4f-9393-f6e0df602002",
+                "aa43388c-7f7f-4b0d-9144-efc1fd607309"
+            ],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {},
+            "resource_id": "d30602f0-2b06-4e93-bf25-84c7996e766e",
+            "name": "VAULT_COMPARTMENTS"
+        },
+        "a6356f6f-06ba-4d51-99af-de5c7822dbc0": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "d30602f0-2b06-4e93-bf25-84c7996e766e",
+            "children": [
+                "58d2ab3a-27fe-4f04-a689-e58738be9532",
+                "5dae16b7-a384-4ceb-87a1-3cd6f141ed3f",
+                "fbc5f8ed-6b71-491b-a4b5-3955647a0753",
+                "eb6266c4-01e3-4281-8b26-d61d204ef92f"
+            ],
+            "position": [
+                -1.28,
+                1.08,
+                0
+            ],
+            "rotation": [
+                -1.21093e-9,
+                -1.3,
+                -0.5
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {},
+            "resource_id": "a6356f6f-06ba-4d51-99af-de5c7822dbc0",
+            "name": "VAULT_COMPARTMENT_01"
+        },
+        "58d2ab3a-27fe-4f04-a689-e58738be9532": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "a6356f6f-06ba-4d51-99af-de5c7822dbc0",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313646816,
+                    "materialAssets": [
+                        313507273,
+                        313507275
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": true,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "resource_id": "58d2ab3a-27fe-4f04-a689-e58738be9532",
+            "name": "VAULT_COMPARTMENT_01_STONE_BORDER"
+        },
+        "5dae16b7-a384-4ceb-87a1-3cd6f141ed3f": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "a6356f6f-06ba-4d51-99af-de5c7822dbc0",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313613875,
+                    "materialAssets": [
+                        313499103
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": true,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "resource_id": "5dae16b7-a384-4ceb-87a1-3cd6f141ed3f",
+            "name": "VAULT_COMPARTMENT_01_RECESSED_PRESENTATION"
+        },
+        "fbc5f8ed-6b71-491b-a4b5-3955647a0753": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "a6356f6f-06ba-4d51-99af-de5c7822dbc0",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313646817,
+                    "materialAssets": [
+                        313646813
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": true,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "resource_id": "fbc5f8ed-6b71-491b-a4b5-3955647a0753",
+            "name": "VAULT_COMPARTMENT_01_INTERNAL_HEAT"
+        },
+        "eb6266c4-01e3-4281-8b26-d61d204ef92f": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "a6356f6f-06ba-4d51-99af-de5c7822dbc0",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0.308
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {},
+            "resource_id": "eb6266c4-01e3-4281-8b26-d61d204ef92f",
+            "name": "VAULT_COMPARTMENT_01_CONTENT_ANCHOR"
+        },
+        "305fb4a3-399c-404c-acc8-7c356fca9e7e": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "d30602f0-2b06-4e93-bf25-84c7996e766e",
+            "children": [
+                "fa9a0c49-e735-4cd0-b035-078a4eedd118",
+                "7ca14273-40b4-49ad-9c94-ac38a9df70fa",
+                "7eedd74a-f169-43bf-8696-160ac5df4512",
+                "e2b1127c-b4c8-455b-ae2b-f7a15328a711"
+            ],
+            "position": [
+                1.3,
+                1.06,
+                0
+            ],
+            "rotation": [
+                -1.21093e-9,
+                1.3,
+                0.5
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {},
+            "resource_id": "305fb4a3-399c-404c-acc8-7c356fca9e7e",
+            "name": "VAULT_COMPARTMENT_02"
+        },
+        "fa9a0c49-e735-4cd0-b035-078a4eedd118": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "305fb4a3-399c-404c-acc8-7c356fca9e7e",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313646819,
+                    "materialAssets": [
+                        313507273,
+                        313507275
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": true,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "resource_id": "fa9a0c49-e735-4cd0-b035-078a4eedd118",
+            "name": "VAULT_COMPARTMENT_02_STONE_BORDER"
+        },
+        "7ca14273-40b4-49ad-9c94-ac38a9df70fa": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "305fb4a3-399c-404c-acc8-7c356fca9e7e",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313613878,
+                    "materialAssets": [
+                        313499103
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": true,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "resource_id": "7ca14273-40b4-49ad-9c94-ac38a9df70fa",
+            "name": "VAULT_COMPARTMENT_02_RECESSED_PRESENTATION"
+        },
+        "7eedd74a-f169-43bf-8696-160ac5df4512": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "305fb4a3-399c-404c-acc8-7c356fca9e7e",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313646818,
+                    "materialAssets": [
+                        313646813
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": true,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "resource_id": "7eedd74a-f169-43bf-8696-160ac5df4512",
+            "name": "VAULT_COMPARTMENT_02_INTERNAL_HEAT"
+        },
+        "e2b1127c-b4c8-455b-ae2b-f7a15328a711": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "305fb4a3-399c-404c-acc8-7c356fca9e7e",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0.273
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {},
+            "resource_id": "e2b1127c-b4c8-455b-ae2b-f7a15328a711",
+            "name": "VAULT_COMPARTMENT_02_CONTENT_ANCHOR"
+        },
+        "8c2d5368-aa8b-4b4f-9393-f6e0df602002": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "d30602f0-2b06-4e93-bf25-84c7996e766e",
+            "children": [
+                "fb44cc0e-42b9-460e-98a7-0d93dcd96f1d",
+                "54bc0766-8606-4cf4-924f-8540abbfcddf",
+                "d11ee3c5-040f-44bd-9eed-4d947c1d4110",
+                "d3a26c92-d244-47d5-a6fa-de39197c8ded"
+            ],
+            "position": [
+                -1.25,
+                -1.08,
+                0
+            ],
+            "rotation": [
+                -1.21093e-9,
+                -1.3,
+                -0.5
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {},
+            "resource_id": "8c2d5368-aa8b-4b4f-9393-f6e0df602002",
+            "name": "VAULT_COMPARTMENT_03"
+        },
+        "fb44cc0e-42b9-460e-98a7-0d93dcd96f1d": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "8c2d5368-aa8b-4b4f-9393-f6e0df602002",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313646820,
+                    "materialAssets": [
+                        313507273,
+                        313507275
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": true,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "resource_id": "fb44cc0e-42b9-460e-98a7-0d93dcd96f1d",
+            "name": "VAULT_COMPARTMENT_03_STONE_BORDER"
+        },
+        "54bc0766-8606-4cf4-924f-8540abbfcddf": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "8c2d5368-aa8b-4b4f-9393-f6e0df602002",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313613881,
+                    "materialAssets": [
+                        313499103
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": true,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "resource_id": "54bc0766-8606-4cf4-924f-8540abbfcddf",
+            "name": "VAULT_COMPARTMENT_03_RECESSED_PRESENTATION"
+        },
+        "d11ee3c5-040f-44bd-9eed-4d947c1d4110": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "8c2d5368-aa8b-4b4f-9393-f6e0df602002",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313646821,
+                    "materialAssets": [
+                        313646813
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": true,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "resource_id": "d11ee3c5-040f-44bd-9eed-4d947c1d4110",
+            "name": "VAULT_COMPARTMENT_03_INTERNAL_HEAT"
+        },
+        "d3a26c92-d244-47d5-a6fa-de39197c8ded": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "8c2d5368-aa8b-4b4f-9393-f6e0df602002",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0.238
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {},
+            "resource_id": "d3a26c92-d244-47d5-a6fa-de39197c8ded",
+            "name": "VAULT_COMPARTMENT_03_CONTENT_ANCHOR"
+        },
+        "aa43388c-7f7f-4b0d-9144-efc1fd607309": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "d30602f0-2b06-4e93-bf25-84c7996e766e",
+            "children": [
+                "69ba9836-bc9e-41d1-8ecd-4544c63fe1f7",
+                "8c2569e5-796d-41b1-8865-fab22c82d3e2",
+                "087ad28e-75f7-4466-9c39-b16b81a2bb88",
+                "1586cd32-a6bf-4682-877b-0701d09997e0"
+            ],
+            "position": [
+                1.32,
+                -1.05,
+                0
+            ],
+            "rotation": [
+                -1.21093e-9,
+                1.3,
+                0.5
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {},
+            "resource_id": "aa43388c-7f7f-4b0d-9144-efc1fd607309",
+            "name": "VAULT_COMPARTMENT_04"
+        },
+        "69ba9836-bc9e-41d1-8ecd-4544c63fe1f7": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "aa43388c-7f7f-4b0d-9144-efc1fd607309",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313646822,
+                    "materialAssets": [
+                        313507273,
+                        313507275
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": true,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "resource_id": "69ba9836-bc9e-41d1-8ecd-4544c63fe1f7",
+            "name": "VAULT_COMPARTMENT_04_STONE_BORDER"
+        },
+        "8c2569e5-796d-41b1-8865-fab22c82d3e2": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "aa43388c-7f7f-4b0d-9144-efc1fd607309",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313613884,
+                    "materialAssets": [
+                        313499103
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": true,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "resource_id": "8c2569e5-796d-41b1-8865-fab22c82d3e2",
+            "name": "VAULT_COMPARTMENT_04_RECESSED_PRESENTATION"
+        },
+        "087ad28e-75f7-4466-9c39-b16b81a2bb88": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "aa43388c-7f7f-4b0d-9144-efc1fd607309",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313646823,
+                    "materialAssets": [
+                        313646813
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": true,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "resource_id": "087ad28e-75f7-4466-9c39-b16b81a2bb88",
+            "name": "VAULT_COMPARTMENT_04_INTERNAL_HEAT"
+        },
+        "1586cd32-a6bf-4682-877b-0701d09997e0": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "aa43388c-7f7f-4b0d-9144-efc1fd607309",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0.308
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {},
+            "resource_id": "1586cd32-a6bf-4682-877b-0701d09997e0",
+            "name": "VAULT_COMPARTMENT_04_CONTENT_ANCHOR"
+        },
+        "22c87472-09d1-4130-9f21-b4f332e44142": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "f8683798-53fc-4c92-bdc9-241725bae326",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313646826,
+                    "materialAssets": [
+                        313507273,
+                        313507275
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": true,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "resource_id": "22c87472-09d1-4130-9f21-b4f332e44142",
+            "name": "VAULT_HEWN_FOUNDATION"
+        },
+        "66959749-bf5b-4f86-9783-84cd0a9b1321": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "bc39b4b6-faaa-48a4-9dcc-c5167834a2ef",
+            "children": [
+                "09cfaa5b-4bd2-41ac-9903-098cccd7487c",
+                "9efbff1e-1e1d-45ba-8db2-6a63c42d69ff",
+                "f87fcb16-9aa6-4562-8d26-1c434c1908c2",
+                "58f21f83-db17-4bf2-a526-b65576c01cdb"
+            ],
+            "position": [
+                7.5,
+                -0.86,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "script": {
+                    "enabled": true,
+                    "order": [
+                        "miNexusReassembly"
+                    ],
+                    "scripts": {
+                        "miNexusReassembly": {
+                            "enabled": true,
+                            "attributes": {
+                                "rigAsset": 313653391
+                            }
+                        }
+                    }
+                }
+            },
+            "resource_id": "66959749-bf5b-4f86-9783-84cd0a9b1321",
+            "name": "MI_05_NEXUS_REASSEMBLY"
+        },
+        "09cfaa5b-4bd2-41ac-9903-098cccd7487c": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "66959749-bf5b-4f86-9783-84cd0a9b1321",
+            "children": [
+                "94161716-8a08-4282-9299-403543dda3f5",
+                "093e3af5-0fd8-48fd-92c7-9da08e34bc76",
+                "d26f16c1-be3e-411c-9380-ff542753c066",
+                "66b9968d-8605-4271-aa8c-1ad68ce83871",
+                "8744556d-87b5-4dd7-a3a4-9c46a2ea8eb2",
+                "93b91e0e-5164-474d-9f32-eb2ab4bf3647",
+                "deaf8c7b-188a-4d75-8934-d41303ed1822",
+                "5f8d7ddd-4860-4db4-a395-760291c01fcd"
+            ],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {},
+            "resource_id": "09cfaa5b-4bd2-41ac-9903-098cccd7487c",
+            "name": "NEXUS_FRAGMENTS"
+        },
+        "94161716-8a08-4282-9299-403543dda3f5": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "09cfaa5b-4bd2-41ac-9903-098cccd7487c",
+            "children": [
+                "f013ccfc-addf-4415-9a0a-37981bebc592"
+            ],
+            "position": [
+                -0.7736666666666666,
+                -1.419344266611457,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {},
+            "resource_id": "94161716-8a08-4282-9299-403543dda3f5",
+            "name": "NEXUS_FRAGMENT_01"
+        },
+        "f013ccfc-addf-4415-9a0a-37981bebc592": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "94161716-8a08-4282-9299-403543dda3f5",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313646827,
+                    "materialAssets": [
+                        313507273,
+                        313507275,
+                        313646813
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": true,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "resource_id": "f013ccfc-addf-4415-9a0a-37981bebc592",
+            "name": "NEXUS_FRAGMENT_01_OBSIDIAN"
+        },
+        "093e3af5-0fd8-48fd-92c7-9da08e34bc76": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "09cfaa5b-4bd2-41ac-9903-098cccd7487c",
+            "children": [
+                "ac082b27-6158-480a-9b9b-3ffe5d523649"
+            ],
+            "position": [
+                0.7443333333333333,
+                -1.4163476071738117,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {},
+            "resource_id": "093e3af5-0fd8-48fd-92c7-9da08e34bc76",
+            "name": "NEXUS_FRAGMENT_02"
+        },
+        "ac082b27-6158-480a-9b9b-3ffe5d523649": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "093e3af5-0fd8-48fd-92c7-9da08e34bc76",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313646828,
+                    "materialAssets": [
+                        313507273,
+                        313507275,
+                        313646813
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": true,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "resource_id": "ac082b27-6158-480a-9b9b-3ffe5d523649",
+            "name": "NEXUS_FRAGMENT_02_OBSIDIAN"
+        },
+        "d26f16c1-be3e-411c-9380-ff542753c066": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "09cfaa5b-4bd2-41ac-9903-098cccd7487c",
+            "children": [
+                "538b2147-c2cc-46d9-b5f9-e77e046dd308",
+                "5da01903-9f4c-4a27-af7b-9355ed9972eb"
+            ],
+            "position": [
+                -0.7569999999999999,
+                -0.4602982509023888,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {},
+            "resource_id": "d26f16c1-be3e-411c-9380-ff542753c066",
+            "name": "NEXUS_FRAGMENT_03"
+        },
+        "538b2147-c2cc-46d9-b5f9-e77e046dd308": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "d26f16c1-be3e-411c-9380-ff542753c066",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313646829,
+                    "materialAssets": [
+                        313507273,
+                        313507275,
+                        313646813
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": true,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "resource_id": "538b2147-c2cc-46d9-b5f9-e77e046dd308",
+            "name": "NEXUS_FRAGMENT_03_OBSIDIAN"
+        },
+        "5da01903-9f4c-4a27-af7b-9355ed9972eb": {
+            "enabled": false,
+            "template": null,
+            "tags": [],
+            "parent": "d26f16c1-be3e-411c-9380-ff542753c066",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313613890,
+                    "materialAssets": [
+                        313552980
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": true,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "resource_id": "5da01903-9f4c-4a27-af7b-9355ed9972eb",
+            "name": "NEXUS_FRAGMENT_03_RECESSED_CHANNEL"
+        },
+        "66b9968d-8605-4271-aa8c-1ad68ce83871": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "09cfaa5b-4bd2-41ac-9903-098cccd7487c",
+            "children": [
+                "35747a06-f71f-4423-85a0-d5b13110e734"
+            ],
+            "position": [
+                0.761,
+                -0.44471959479344314,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {},
+            "resource_id": "66b9968d-8605-4271-aa8c-1ad68ce83871",
+            "name": "NEXUS_FRAGMENT_04"
+        },
+        "35747a06-f71f-4423-85a0-d5b13110e734": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "66b9968d-8605-4271-aa8c-1ad68ce83871",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313646830,
+                    "materialAssets": [
+                        313507273,
+                        313507275,
+                        313646813
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": true,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "resource_id": "35747a06-f71f-4423-85a0-d5b13110e734",
+            "name": "NEXUS_FRAGMENT_04_OBSIDIAN"
+        },
+        "8744556d-87b5-4dd7-a3a4-9c46a2ea8eb2": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "09cfaa5b-4bd2-41ac-9903-098cccd7487c",
+            "children": [
+                "ad3fc28f-fdf7-4691-9e22-0f4d95577dc5"
+            ],
+            "position": [
+                -0.7570000000000001,
+                0.5015508925449184,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {},
+            "resource_id": "8744556d-87b5-4dd7-a3a4-9c46a2ea8eb2",
+            "name": "NEXUS_FRAGMENT_05"
+        },
+        "ad3fc28f-fdf7-4691-9e22-0f4d95577dc5": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "8744556d-87b5-4dd7-a3a4-9c46a2ea8eb2",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313646831,
+                    "materialAssets": [
+                        313507273,
+                        313507275,
+                        313646813
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": true,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "resource_id": "ad3fc28f-fdf7-4691-9e22-0f4d95577dc5",
+            "name": "NEXUS_FRAGMENT_05_OBSIDIAN"
+        },
+        "93b91e0e-5164-474d-9f32-eb2ab4bf3647": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "09cfaa5b-4bd2-41ac-9903-098cccd7487c",
+            "children": [
+                "c5ac056c-3174-419b-98f9-eb3408894f64"
+            ],
+            "position": [
+                0.7609999999999999,
+                0.5300413223697924,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {},
+            "resource_id": "93b91e0e-5164-474d-9f32-eb2ab4bf3647",
+            "name": "NEXUS_FRAGMENT_06"
+        },
+        "c5ac056c-3174-419b-98f9-eb3408894f64": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "93b91e0e-5164-474d-9f32-eb2ab4bf3647",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313646832,
+                    "materialAssets": [
+                        313507273,
+                        313507275,
+                        313646813
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": true,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "resource_id": "c5ac056c-3174-419b-98f9-eb3408894f64",
+            "name": "NEXUS_FRAGMENT_06_OBSIDIAN"
+        },
+        "deaf8c7b-188a-4d75-8934-d41303ed1822": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "09cfaa5b-4bd2-41ac-9903-098cccd7487c",
+            "children": [
+                "245cf68a-5bc9-40a5-a5eb-b0a4621e973e",
+                "fa61c92c-5158-4c0c-acc3-779d05b9a1af"
+            ],
+            "position": [
+                -0.7436666666666666,
+                1.44250487683585,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {},
+            "resource_id": "deaf8c7b-188a-4d75-8934-d41303ed1822",
+            "name": "NEXUS_FRAGMENT_07"
+        },
+        "245cf68a-5bc9-40a5-a5eb-b0a4621e973e": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "deaf8c7b-188a-4d75-8934-d41303ed1822",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313646833,
+                    "materialAssets": [
+                        313507273,
+                        313507275,
+                        313646813
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": true,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "resource_id": "245cf68a-5bc9-40a5-a5eb-b0a4621e973e",
+            "name": "NEXUS_FRAGMENT_07_OBSIDIAN"
+        },
+        "fa61c92c-5158-4c0c-acc3-779d05b9a1af": {
+            "enabled": false,
+            "template": null,
+            "tags": [],
+            "parent": "deaf8c7b-188a-4d75-8934-d41303ed1822",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313613895,
+                    "materialAssets": [
+                        313552980
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": true,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "resource_id": "fa61c92c-5158-4c0c-acc3-779d05b9a1af",
+            "name": "NEXUS_FRAGMENT_07_RECESSED_CHANNEL"
+        },
+        "5f8d7ddd-4860-4db4-a395-760291c01fcd": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "09cfaa5b-4bd2-41ac-9903-098cccd7487c",
+            "children": [
+                "bcac21d0-2c33-4647-a455-626db6108e92"
+            ],
+            "position": [
+                0.7743333333333333,
+                1.4584133099894236,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {},
+            "resource_id": "5f8d7ddd-4860-4db4-a395-760291c01fcd",
+            "name": "NEXUS_FRAGMENT_08"
+        },
+        "bcac21d0-2c33-4647-a455-626db6108e92": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "5f8d7ddd-4860-4db4-a395-760291c01fcd",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313646834,
+                    "materialAssets": [
+                        313507273,
+                        313507275,
+                        313646813
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": true,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "resource_id": "bcac21d0-2c33-4647-a455-626db6108e92",
+            "name": "NEXUS_FRAGMENT_08_OBSIDIAN"
+        },
+        "9efbff1e-1e1d-45ba-8db2-6a63c42d69ff": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "66959749-bf5b-4f86-9783-84cd0a9b1321",
+            "children": [],
+            "position": [
+                -3.25,
+                0.1,
+                0.45
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {},
+            "resource_id": "9efbff1e-1e1d-45ba-8db2-6a63c42d69ff",
+            "name": "NEXUS_CONTACT_ANCHOR"
+        },
+        "f87fcb16-9aa6-4562-8d26-1c434c1908c2": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "66959749-bf5b-4f86-9783-84cd0a9b1321",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313613897,
+                    "materialAssets": [
+                        313507273,
+                        313507275
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": true,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "resource_id": "f87fcb16-9aa6-4562-8d26-1c434c1908c2",
+            "name": "NEXUS_FRACTURED_FOOTING"
+        },
+        "2d8ceefb-d9cd-4a95-b9ae-7450695ff105": {
+            "name": "LIGHT_ACCENTS_COOL_ASH_RIM",
+            "tags": [],
+            "enabled": true,
+            "resource_id": "2d8ceefb-d9cd-4a95-b9ae-7450695ff105",
+            "parent": "63a63d39-77ad-41f7-ad2c-7eeefe1f941f",
+            "children": [],
+            "position": [
+                0,
+                4,
+                -5
+            ],
+            "rotation": [
+                24,
+                190,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "components": {
+                "light": {
+                    "enabled": true,
+                    "type": "directional",
+                    "bake": false,
+                    "bakeArea": 0,
+                    "bakeNumSamples": 1,
+                    "bakeDir": true,
+                    "affectDynamic": true,
+                    "affectLightmapped": false,
+                    "affectSpecularity": true,
+                    "color": [
+                        0.81,
+                        0.8,
+                        0.77
+                    ],
+                    "intensity": 0.75,
+                    "castShadows": false,
+                    "shadowUpdateMode": 2,
+                    "shadowType": 0,
+                    "vsmBlurMode": 1,
+                    "vsmBlurSize": 11,
+                    "vsmBias": 0.01,
+                    "shadowDistance": 16,
+                    "shadowIntensity": 1,
+                    "shadowResolution": 1024,
+                    "numCascades": 1,
+                    "cascadeDistribution": 0.5,
+                    "shadowBias": 0.2,
+                    "normalOffsetBias": 0.05,
+                    "penumbraSize": 1,
+                    "penumbraFalloff": 1,
+                    "range": 8,
+                    "falloffMode": 0,
+                    "innerConeAngle": 40,
+                    "outerConeAngle": 45,
+                    "shape": 0,
+                    "cookieAsset": null,
+                    "cookie": null,
+                    "cookieIntensity": 1,
+                    "cookieFalloff": true,
+                    "cookieChannel": "rgb",
+                    "cookieAngle": 0,
+                    "cookieScale": [
+                        1,
+                        1
+                    ],
+                    "cookieOffset": [
+                        0,
+                        0
+                    ],
+                    "isStatic": false,
+                    "layers": [
+                        0
+                    ]
+                }
+            },
+            "template": null,
+            "template_id": null,
+            "template_ent_ids": null
+        },
+        "e8b75176-ac5e-4490-b30a-a0a0d9b9a2a3": {
+            "name": "MI_05_CHRONICLE_FAULT_LOCAL_HEAT",
+            "tags": [],
+            "enabled": true,
+            "resource_id": "e8b75176-ac5e-4490-b30a-a0a0d9b9a2a3",
+            "parent": "4068929a-6bb8-454c-820d-2ab0ad31f043",
+            "children": [],
+            "position": [
+                0,
+                -1,
+                1.3
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "components": {
+                "light": {
+                    "enabled": true,
+                    "type": "omni",
+                    "bake": false,
+                    "bakeArea": 0,
+                    "bakeNumSamples": 1,
+                    "bakeDir": true,
+                    "affectDynamic": true,
+                    "affectLightmapped": false,
+                    "affectSpecularity": false,
+                    "color": [
+                        1,
+                        0.23,
+                        0.04
+                    ],
+                    "intensity": 0.11,
+                    "castShadows": false,
+                    "shadowUpdateMode": 2,
+                    "shadowType": 0,
+                    "vsmBlurMode": 1,
+                    "vsmBlurSize": 11,
+                    "vsmBias": 0.01,
+                    "shadowDistance": 16,
+                    "shadowIntensity": 1,
+                    "shadowResolution": 1024,
+                    "numCascades": 1,
+                    "cascadeDistribution": 0.5,
+                    "shadowBias": 0.2,
+                    "normalOffsetBias": 0.05,
+                    "penumbraSize": 1,
+                    "penumbraFalloff": 1,
+                    "range": 3.4,
+                    "falloffMode": 1,
+                    "innerConeAngle": 40,
+                    "outerConeAngle": 45,
+                    "shape": 0,
+                    "cookieAsset": null,
+                    "cookie": null,
+                    "cookieIntensity": 1,
+                    "cookieFalloff": true,
+                    "cookieChannel": "rgb",
+                    "cookieAngle": 0,
+                    "cookieScale": [
+                        1,
+                        1
+                    ],
+                    "cookieOffset": [
+                        0,
+                        0
+                    ],
+                    "isStatic": false,
+                    "layers": [
+                        0
+                    ]
+                }
+            },
+            "template": null,
+            "template_id": null,
+            "template_ent_ids": null
+        },
+        "0e6a3150-29e3-4d94-beeb-39af6bdf3a02": {
+            "name": "MI_05_VAULT_DISPLAY_LOCAL_HEAT",
+            "tags": [],
+            "enabled": true,
+            "resource_id": "0e6a3150-29e3-4d94-beeb-39af6bdf3a02",
+            "parent": "f8683798-53fc-4c92-bdc9-241725bae326",
+            "children": [],
+            "position": [
+                -1.4,
+                2.2,
+                2.2
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "components": {
+                "light": {
+                    "enabled": true,
+                    "type": "omni",
+                    "bake": false,
+                    "bakeArea": 0,
+                    "bakeNumSamples": 1,
+                    "bakeDir": true,
+                    "affectDynamic": true,
+                    "affectLightmapped": false,
+                    "affectSpecularity": false,
+                    "color": [
+                        1,
+                        0.81,
+                        0.59
+                    ],
+                    "intensity": 0.6,
+                    "castShadows": false,
+                    "shadowUpdateMode": 2,
+                    "shadowType": 0,
+                    "vsmBlurMode": 1,
+                    "vsmBlurSize": 11,
+                    "vsmBias": 0.01,
+                    "shadowDistance": 16,
+                    "shadowIntensity": 1,
+                    "shadowResolution": 1024,
+                    "numCascades": 1,
+                    "cascadeDistribution": 0.5,
+                    "shadowBias": 0.2,
+                    "normalOffsetBias": 0.05,
+                    "penumbraSize": 1,
+                    "penumbraFalloff": 1,
+                    "range": 4,
+                    "falloffMode": 1,
+                    "innerConeAngle": 40,
+                    "outerConeAngle": 45,
+                    "shape": 0,
+                    "cookieAsset": null,
+                    "cookie": null,
+                    "cookieIntensity": 1,
+                    "cookieFalloff": true,
+                    "cookieChannel": "rgb",
+                    "cookieAngle": 0,
+                    "cookieScale": [
+                        1,
+                        1
+                    ],
+                    "cookieOffset": [
+                        0,
+                        0
+                    ],
+                    "isStatic": false,
+                    "layers": [
+                        0
+                    ]
+                }
+            },
+            "template": null,
+            "template_id": null,
+            "template_ent_ids": null
+        },
+        "58f21f83-db17-4bf2-a526-b65576c01cdb": {
+            "name": "MI_05_NEXUS_REASSEMBLY_LOCAL_HEAT",
+            "tags": [],
+            "enabled": true,
+            "resource_id": "58f21f83-db17-4bf2-a526-b65576c01cdb",
+            "parent": "66959749-bf5b-4f86-9783-84cd0a9b1321",
+            "children": [],
+            "position": [
+                -0.8,
+                1.9,
+                2.4
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "components": {
+                "light": {
+                    "enabled": true,
+                    "type": "omni",
+                    "bake": false,
+                    "bakeArea": 0,
+                    "bakeNumSamples": 1,
+                    "bakeDir": true,
+                    "affectDynamic": true,
+                    "affectLightmapped": false,
+                    "affectSpecularity": false,
+                    "color": [
+                        1,
+                        0.81,
+                        0.59
+                    ],
+                    "intensity": 0.55,
+                    "castShadows": false,
+                    "shadowUpdateMode": 2,
+                    "shadowType": 0,
+                    "vsmBlurMode": 1,
+                    "vsmBlurSize": 11,
+                    "vsmBias": 0.01,
+                    "shadowDistance": 16,
+                    "shadowIntensity": 1,
+                    "shadowResolution": 1024,
+                    "numCascades": 1,
+                    "cascadeDistribution": 0.5,
+                    "shadowBias": 0.2,
+                    "normalOffsetBias": 0.05,
+                    "penumbraSize": 1,
+                    "penumbraFalloff": 1,
+                    "range": 3.6,
+                    "falloffMode": 1,
+                    "innerConeAngle": 40,
+                    "outerConeAngle": 45,
+                    "shape": 0,
+                    "cookieAsset": null,
+                    "cookie": null,
+                    "cookieIntensity": 1,
+                    "cookieFalloff": true,
+                    "cookieChannel": "rgb",
+                    "cookieAngle": 0,
+                    "cookieScale": [
+                        1,
+                        1
+                    ],
+                    "cookieOffset": [
+                        0,
+                        0
+                    ],
+                    "isStatic": false,
+                    "layers": [
+                        0
+                    ]
+                }
+            },
+            "template": null,
+            "template_id": null,
+            "template_ent_ids": null
+        }
+    },
+    "created": "2026-10-29T14:04:50.725Z",
+    "checkpoint_id": "c16e0b5f-d465-4cf4-9499-cd6bf894f2e7",
+    "id": 2637190
+}

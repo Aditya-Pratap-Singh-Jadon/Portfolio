@@ -25,7 +25,7 @@ function ChamberAtmosphere() {
   </div>;
 }
 
-export default function GatewayExperience({profile,visibility,reduced,utilities}) {
+export default function GatewayExperience({profile,visibility,content,reduced,utilities}) {
   const chamber=useRef(null),hub=useRef(null),latest=useRef({target:0,actual:0,mode:'loading'}),pendingFocus=useRef(null);
   const journey=useRef(null);
   const sectionActive=useRef(false);
@@ -112,5 +112,5 @@ export default function GatewayExperience({profile,visibility,reduced,utilities}
       <ChamberAtmosphere />
       <CommandCenter profile={profile} visibility={visibility} reduced={reduced} utilities={utilities} preload={preload} onRuntime={attachHub} onOpen={openSection} />
     </div>
-  </Hero><SectionJourney ref={journey} reduced={reduced} visibility={visibility} canStart={canEnter} onProgress={sectionProgress} onVisiting={visitingSection}/></>;
+  </Hero><SectionJourney ref={journey} reduced={reduced} visibility={visibility} content={content} canStart={canEnter} onProgress={sectionProgress} onVisiting={visitingSection}/></>;
 }

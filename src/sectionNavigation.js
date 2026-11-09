@@ -1,12 +1,12 @@
 export const destinations = Object.freeze({
   about: {title:'Origin',scene:null},
   projects: {title:'Forge',scene:'MI_03_PROJECT_FORGE'},
-  experience: {title:'Chronicle',scene:'MI_05_CHRONICLE_FAULT',pending:true},
+  experience: {title:'Chronicle',scene:'MI_05_CHRONICLE_FAULT'},
   skills: {title:'Skills',scene:'MI_04_NEURAL_CORE'},
   github: {title:'GitHub',scene:null},
   linkedin: {title:'Signal',scene:null},
-  achievements: {title:'Vault',scene:'MI_05_VAULT_DISPLAY',pending:true},
-  contact: {title:'Nexus',scene:'MI_05_NEXUS_REASSEMBLY',pending:true},
+  achievements: {title:'Vault',scene:'MI_05_VAULT_DISPLAY'},
+  contact: {title:'Nexus',scene:'MI_05_NEXUS_REASSEMBLY'},
 });
 
 // The view owns loading/resources; tokens prevent cancelled loads completing a newer visit.

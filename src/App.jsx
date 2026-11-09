@@ -53,7 +53,7 @@ export function PortfolioView({
         <QuickView content={content} />
       ) : (
         <main id="main">
-          <GatewayExperience visibility={s} profile={content.profile} reduced={reduced} utilities={!preview && (
+          <GatewayExperience visibility={s} profile={content.profile} content={content} reduced={reduced} utilities={!preview && (
             <ExperiencePreferences reduced={reduced} systemReduced={systemReduced} onToggle={() => {
               savePreference('portfolio-motion', manualReduced ? 'full' : 'reduced');
               setManualReduced(!manualReduced);

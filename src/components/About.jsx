@@ -1,8 +1,8 @@
 import { SectionHeading } from "./UI";
-export default function About({ profile, education }) {
+export default function About({ profile, education, embedded=false }) {
   return (
-    <section id="about" className="section about-section">
-      <SectionHeading section="about" />
+    <section id={embedded?undefined:'about'} className="section about-section">
+      {!embedded&&<SectionHeading section="about" />}
       <div className="about-layout">
         <div>
           <p className="about-lead">{profile.punchline || 'The perspective behind the work.'}</p>

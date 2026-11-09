@@ -1,8 +1,8 @@
 import { SectionHeading, ExternalLink } from "./UI";
-export function Updates({ posts, profile }) {
+export function Updates({ posts, profile, embedded=false }) {
   return (
-    <section id="updates" className="section">
-      <SectionHeading section="updates" />
+    <section id={embedded?undefined:'updates'} className="section">
+      {!embedded&&<SectionHeading section="updates" />}
       {posts.length ? (
         <div className="updates-list">
           {posts.map((p) => (

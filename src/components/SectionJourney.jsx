@@ -2,14 +2,16 @@ import {forwardRef,useEffect,useImperativeHandle,useRef,useState} from 'react';
 import {createPortal} from 'react-dom';
 import {SectionNavigation,destinations} from '../sectionNavigation.js';
 import {scrollToChamber} from '../chamberNavigation.js';
+import {runtimeDestinations} from '../playcanvas/sectionScenes.js';
+import SectionContent from './SectionContent.jsx';
 import './sectionJourney.css';
 
-function Destination({id,token,reduced,interactive,hasContent,onReady,onError,onRetry,onFallback}) {
+function Destination({id,token,reduced,interactive,hasContent,content,onReady,onError,onRetry,onFallback}) {
   const canvas=useRef(null),mount=useRef(null),runtime=useRef(null);
   const [status,setStatus]=useState('loading');
   const callbacks=useRef({onReady,onError});callbacks.current={onReady,onError};
   const currentReduced=useRef(reduced);currentReduced.current=reduced;
-  const spatial=id==='projects'||id==='skills',destination=destinations[id];
+  const spatial=Object.hasOwn(runtimeDestinations,id),destination=destinations[id];
   useEffect(()=>{
     if(!spatial){callbacks.current.onReady(token);return;}
     const abort=new AbortController();let instance,cancelled=false;
@@ -36,12 +38,7 @@ function Destination({id,token,reduced,interactive,hasContent,onReady,onError,on
         <p>{status==='error'?'The 3D scene could not be opened. Return, retry, or use the accessible section.':'Preparing the inner space. You can return at any time.'}</p>
         {status==='error'&&<><button onClick={onRetry}>Retry 3D scene</button>{hasContent&&<button onClick={()=>onFallback(id)}>Read accessible section</button>}</>}
       </div>}
-    </>:<div className="space-content">
-      <h2>{destination.title}</h2>
-      <p className="content-note">Provisional overview</p>
-      <p>{destination.pending?'This space is being prepared. You can return to the Command Center or explore the existing portfolio content.':id==='github'?'Explore the existing portfolio projects. Live account activity is not connected.':id==='linkedin'?'Professional updates and notes will appear here.':'Background, approach and direction. Continue to the existing introduction.'}</p>
-      {hasContent&&<button onClick={()=>onFallback(id)}>Read {destination.title} content</button>}
-    </div>}
+    </>:<div className="space-content"><SectionContent id={id} content={content}/></div>}
   </>;
 }
 
@@ -50,7 +47,7 @@ const fromHash=()=>{
   return match&&Object.hasOwn(destinations,match[1])?match[1]:null;
 };
 
-export default forwardRef(function SectionJourney({reduced,visibility,canStart,onProgress,onVisiting},ref) {
+export default forwardRef(function SectionJourney({reduced,visibility,content,canStart,onProgress,onVisiting},ref) {
   const nav=useRef(new SectionNavigation()),loaded=useRef(null),focus=useRef(null),fallback=useRef(null),backButton=useRef(null);
   const [state,setState]=useState(()=>({...nav.current.state}));
   const callbacks=useRef({canStart,onProgress,onVisiting});callbacks.current={canStart,onProgress,onVisiting};
@@ -113,10 +110,10 @@ export default forwardRef(function SectionJourney({reduced,visibility,canStart,o
       if(event.shiftKey&&document.activeElement===first){event.preventDefault();last?.focus();}
       else if(!event.shiftKey&&document.activeElement===last){event.preventDefault();first?.focus();}
     }}>
-    <header className="space-header"><div><span>MONOLITH // INFERNO</span><h2 id="space-title">{destinations[state.destination].title}</h2></div>
+    <header className="space-header"><h2 id="space-title">{destinations[state.destination].title}</h2>
       <button ref={backButton} className="space-back" onClick={back}>← Command Center</button></header>
     <div className="space-destination">
-      <Destination key={state.token} id={state.destination} token={state.token} reduced={reduced} interactive={state.phase==='active'}
+      <Destination key={state.token} id={state.destination} token={state.token} reduced={reduced} content={content} interactive={state.phase==='active'}
         hasContent={Boolean(visibility[state.destination==='github'?'projects':state.destination==='linkedin'?'updates':state.destination])}
         onReady={token=>{loaded.current=token;}} onError={token=>{if(token!==nav.current.state.token)return;backButton.current?.focus({preventScroll:true});loaded.current=null;nav.current.fail(token);publish();}}
         onRetry={()=>{backButton.current?.focus({preventScroll:true});loaded.current=null;nav.current.retry();publish();}}

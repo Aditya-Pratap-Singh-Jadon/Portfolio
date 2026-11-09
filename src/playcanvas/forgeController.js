@@ -34,7 +34,7 @@ export class MiForgeNavigation {
   }
   required(name){const e=this.app.root.findByName(name);if(!e)throw new Error('MI_03 missing '+name);return e;}
   listen(target,event,callback){target.addEventListener(event,callback);this.listeners.push(()=>target.removeEventListener(event,callback));}
-  controls(){createSectionControls(this,'forge');}
+  controls(){createSectionControls(this,'forge',{presentation:this.presentation||'immersive'});}
   layout(){
     const inverse=new Mat4().invert(this.camera.getWorldTransform());
     for(const slot of this.slots)slot.restCamera=inverse.transformPoint(slot.e.parent.getWorldTransform().transformPoint(slot.p)).toArray();
@@ -80,7 +80,7 @@ export class MiForgeNavigation {
     });
     this.preview.style.display=selected!==null&&settled?'block':'none';
     if(selected!==null&&settled){this.previewTitle.textContent=`PROJECT ${String(selected+1).padStart(2,'0')} / PREVIEW`;this.place(this.preview,this.screenBounds(this.slots[selected],.46));}
-    const mark=this.keyboardFocus??this.hover;this.focusMark.style.display=mark===null?'none':'block';if(mark!==null)this.place(this.focusMark,this.screenBounds(this.slots[mark],.05));
+    const mark=this.keyboardFocus;this.focusMark.style.display=mark===null?'none':'block';if(mark!==null)this.place(this.focusMark,this.screenBounds(this.slots[mark],.05));
     this.acknowledge();
   }
   update(dt){this.motion.update(dt);this.apply(dt);}

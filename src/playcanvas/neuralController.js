@@ -87,7 +87,7 @@ export class MiNeuralNavigation {
     instance.mesh=mesh;instance.skinInstance=flow.skin;instance.morphInstance=flow.morph;instance.material=material;
     flow.metrics={vertices:positions.length/3,lockedVertices:prepared.lockedVertices,maxPolish:prepared.maxPolish,maxMorph:prepared.maxMorph};
   }
-  controls(){createSectionControls(this,'neural');}
+  controls(){createSectionControls(this,'neural',{presentation:this.presentation||'immersive'});}
   externalSelect(payload){
     const name=typeof payload==='string'?payload:payload?.nodeId;
     if(name===null){this.select(null);return;}
@@ -150,7 +150,7 @@ export class MiNeuralNavigation {
     const label=selected===null?(motion.exactRest?'Exact rest · idle paused':'Crimson Synapse · suspended idle'):`Node ${String(selected+1).padStart(2,'0')} · Cluster ${this.nodes[selected].cluster+1} · ${neighbors.length} direct demonstration relationships · No verified skill mapped`;
     if(this.status.textContent!==label)this.status.textContent=label;
     this.buttons.forEach((b,i)=>b.setAttribute('aria-pressed',String(selected===i)));this.reducedButton.setAttribute('aria-pressed',String(reduced));
-    const mark=this.keyboardFocus??this.hover;this.focusMark.style.display=mark===null?'none':'block';
+    const mark=this.keyboardFocus;this.focusMark.style.display=mark===null?'none':'block';
     if(mark!==null){
       const node=this.nodes[mark],points=[];
       for(const x of [-1,1])for(const y of [-1,1])for(const z of [-1,1])points.push(this.camera.camera.worldToScreen(node.e.getWorldTransform().transformPoint(new Vec3(x*node.size[0]/2,y*node.size[1]/2,z*node.size[2]/2))));

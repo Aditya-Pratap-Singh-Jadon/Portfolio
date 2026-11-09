@@ -3,17 +3,17 @@ import {
   RenderComponentSystem,CameraComponentSystem,LightComponentSystem,ScriptComponentSystem,
   RenderHandler,MaterialHandler,TextureHandler,JsonHandler,SceneHandler,
   HierarchyHandler,ContainerHandler,BinaryHandler,CubemapHandler,
-  FILLMODE_NONE,RESOLUTION_AUTO,Vec3,Mat4,
+  FILLMODE_NONE,RESOLUTION_AUTO,Vec3,Mat4,Quat,
 } from 'playcanvas';
 import {fetchJson,callbackPromise,configureOpening} from './openingRuntime.js';
-import {sectionCameraDistance} from './sectionCamera.js';
+import {sectionCameraFrame} from './sectionCamera.js';
+import {runtimeDestinations,prepareSectionScene,sectionAssetIds} from './sectionScenes.js';
 
 export const sectionResources={created:0,disposed:0,live:0};
 
-export async function createSectionRuntime(canvas,{destination,mount,signal,reduced=false,onError}) {
-  const forge=destination==='projects';
-  if(!forge&&destination!=='skills')throw new RangeError('No runtime for this destination');
-  const folder=forge?'mi03':'mi04',name=forge?'MI_03_PROJECT_FORGE':'MI_04_NEURAL_CORE';
+export async function createSectionRuntime(canvas,{destination,mount,signal,reduced=false,presentation='immersive',onError}) {
+  if(!Object.hasOwn(runtimeDestinations,destination))throw new RangeError('No runtime for this destination');
+  const definition=runtimeDestinations[destination],{folder,scene:name,root,kind,rig}=definition,forge=kind==='forge';
   let app,device,controller,observer,disposed=false,counted=false,dirty=true,active=true;
   const removers=[],check=()=>{if(signal.aborted)throw new DOMException('Section load cancelled','AbortError');};
   const listen=(node,type,fn)=>{node.addEventListener(type,fn);removers.push(()=>node.removeEventListener(type,fn));};
@@ -28,60 +28,65 @@ export async function createSectionRuntime(canvas,{destination,mount,signal,redu
   try {
     const [config,source,module]=await Promise.all([
       fetchJson(`/playcanvas/${folder}/config.json`,signal),fetchJson(`/playcanvas/${folder}/scene.json`,signal),
-      forge?import('./forgeController.js'):import('./neuralController.js'),
+      forge?import('./forgeController.js'):kind==='neural'?import('./neuralController.js'):import('./accentsController.js'),
     ]);check();
+    const view=prepareSectionScene(source,definition),needed=sectionAssetIds(view,config.assets,rig);
+    const runtimeConfig={...config,assets:Object.fromEntries(Object.entries(config.assets).filter(([id])=>needed.has(id)))};
     device=await createGraphicsDevice(canvas,{deviceTypes:['webgl2'],alpha:false,antialias:true,powerPreference:'high-performance'});check();
     app=new AppBase(canvas);const options=new AppOptions();
     Object.assign(options,{graphicsDevice:device,batchManager:BatchManager,
       componentSystems:[RenderComponentSystem,CameraComponentSystem,LightComponentSystem,ScriptComponentSystem],
       resourceHandlers:[RenderHandler,MaterialHandler,TextureHandler,JsonHandler,SceneHandler,HierarchyHandler,ContainerHandler,BinaryHandler,CubemapHandler]});
-    app.init(options);await configureOpening(app,config,signal);check();
+    app.init(options);await configureOpening(app,runtimeConfig,signal);check();
     const errors=[];app.assets.on('error',error=>errors.push(String(error)));
     await callbackPromise(done=>app.preload(()=>done(null)),signal);check();
     if(errors.length)throw new Error('Required section assets failed to load');
-    const item=app.scenes.find(name);item.data=structuredClone(source);
-    for(const entity of Object.values(item.data.entities)){
-      delete entity.components.script;
-      if(entity.components.camera)delete entity.components.camera.offscreen;
-    }
+    const item=app.scenes.find(name);item.data=view;
     await callbackPromise(done=>app.scenes.changeScene(item,done),signal);check();
     const camera=app.root.findComponents('camera').find(c=>c.enabled)?.entity;
     if(!camera)throw new Error('Section camera missing');
     const rest=camera.getLocalPosition().clone();
     const inverse=new Mat4().invert(camera.getWorldTransform()),points=[];
-    const objects=Object.values(source.entities).filter(e=>forge?/^PROJECT_SLOT_\d\d$/.test(e.name):/^NODE_SLOT_\d\d$/.test(e.name)||e.name==='NEURAL_CUBOID_CORE');
-    for(const object of objects)for(const render of app.root.findByName(object.name).findComponents('render'))for(const mesh of render.meshInstances){
+    const objects=Object.values(view.entities).filter(e=>forge?/^PROJECT_SLOT_\d\d$/.test(e.name):kind==='neural'?/^NODE_SLOT_\d\d$/.test(e.name)||e.name==='NEURAL_CUBOID_CORE':e.name===root);
+    const captureBounds=()=>{for(const object of objects)for(const render of app.root.findByName(object.name).findComponents('render'))for(const mesh of render.meshInstances){
       const {center,halfExtents:half}=mesh.aabb;
       for(const x of [-1,1])for(const y of [-1,1])for(const z of [-1,1])points.push(inverse.transformPoint(new Vec3(center.x+x*half.x,center.y+y*half.y,center.z+z*half.z)).toArray());
+    }};captureBounds();
+    const args={app,entity:app.root.findByName(root),mount,initialReduced:reduced,presentation,rigAsset:rig?app.assets.get(rig):undefined};
+    if(folder!=='mi05'){
+      controller=new (forge?module.MiForgeNavigation:module.MiNeuralNavigation)(args);
+      Object.assign(controller,{mount,initialReduced:reduced,presentation,rigAsset:args.rigAsset});
     }
-    controller=new (forge?module.MiForgeNavigation:module.MiNeuralNavigation)({app,entity:app.root.findByName(forge?'MI_PROJECT_FORGE':'MI_CRIMSON_SYNAPSE')});
-    controller.mount=mount;controller.initialReduced=reduced;
-    if(!forge)controller.rigAsset=app.assets.get(313590840);
     const resize=()=>{
       if(disposed)return;
-      canvas.parentElement.style.top=(mount.closest('.space-shell').querySelector('.space-header').offsetHeight+8)+'px';
-      canvas.parentElement.style.bottom=((controller.ui?.offsetHeight||180)+28)+'px';
       const {clientWidth:width,clientHeight:height}=canvas.parentElement,aspect=width/Math.max(1,height);
       device.maxPixelRatio=Math.min(devicePixelRatio||1,width<700?1.25:1.6);
       app.setCanvasFillMode(FILLMODE_NONE,Math.max(1,width),Math.max(1,height));
       app.setCanvasResolution(RESOLUTION_AUTO,Math.max(1,width),Math.max(1,height));app.resizeCanvas(Math.max(1,width),Math.max(1,height));
-      const distance=sectionCameraDistance(points,aspect,camera.camera.fov,camera.camera.horizontalFov);
-      camera.setLocalPosition(rest.clone().add(camera.forward.clone().mulScalar(-distance)));
-      if(controller.motion&&forge)controller.layout();dirty=true;
+      const header=mount.closest('.space-shell').querySelector('.space-header').offsetHeight;
+      const frame=sectionCameraFrame(points,aspect,camera.camera.fov,camera.camera.horizontalFov,(header+12)/Math.max(1,height));
+      camera.setLocalPosition(rest.clone().add(camera.right.clone().mulScalar(frame.x)).add(camera.up.clone().mulScalar(frame.y)).add(camera.forward.clone().mulScalar(-frame.distance)));
+      if(controller?.cameraRest)controller.cameraRest.p.copy(camera.getLocalPosition());
+      if(controller?.motion&&forge)controller.layout();dirty=true;
     };
-    resize();controller.initialize();
-    for(const method of ['select','setReduced','resumeIdle'])if(controller[method]){
+    resize();
+    if(folder==='mi05')controller=new module.AccentsController(args,kind);else controller.initialize();
+    if(controller.error)throw new Error(controller.error);
+    if(kind==='nexus')captureBounds();
+    for(const method of ['select','setReduced','resumeIdle','assemble','separate','reset','pause'])if(controller[method]){
       const original=controller[method].bind(controller);controller[method]=(...args)=>{original(...args);dirty=true;};
     }
-    observer=new ResizeObserver(resize);observer.observe(canvas.parentElement);observer.observe(controller.ui);resize();
+    observer=new ResizeObserver(resize);observer.observe(canvas.parentElement);resize();
     for(const event of ['pointermove','pointerleave'])listen(canvas,event,()=>{dirty=true;});
     for(const event of ['focusin','focusout'])listen(mount,event,()=>{dirty=true;});
+    listen(canvas,'pointermove',event=>{if(folder==='mi05')canvas.style.cursor=controller.pick(event.clientX,event.clientY)===null?'':'pointer';});
     listen(canvas,'webglcontextlost',event=>{event.preventDefault();dispose();onError?.();});
     listen(document,'visibilitychange',()=>{dirty=true;if(document.hidden)app.renderNextFrame=false;});
     app.autoRender=false;
     app.on('update',dt=>{
       if(disposed||!active||document.hidden)return;
-      if(controller.motion.reduced&&!dirty&&controller.motion.settled)return;
+      const settled=controller.motion.settled??['assembled','separated'].includes(controller.motion.state);
+      if(controller.motion.reduced&&!dirty&&settled)return;
       controller.update(Math.min(dt,.1));dirty=false;app.renderNextFrame=true;
     });
     app.start();app.renderNextFrame=true;counted=true;sectionResources.created++;sectionResources.live++;
@@ -91,12 +96,13 @@ export async function createSectionRuntime(canvas,{destination,mount,signal,redu
       setReduced(value){reduced=Boolean(value);controller&&(controller.initialReduced=reduced,controller.setReduced(reduced));dirty=true;},
       select(index){controller?.select(index);},
       getState(){
-        const entries=controller?.[forge?'slots':'nodes']||[];
-        return {destination,disposed,active,reduced:controller?.motion.reduced??reduced,selected:controller?.motion.selected,settled:controller?.motion.settled,
-          resources:{...sectionResources},entities:Object.keys(source.entities).length,
-          exactRest:!!controller&&(forge?controller.motion.progress===0:controller.motion.exactRest)&&entries.every(e=>e.e.getLocalPosition().equals(e.p)&&e.e.getLocalRotation().equals(e.q)&&e.e.getLocalScale().equals(e.s)),
+        const entries=controller?.slots||controller?.nodes||controller?.items||[],poses=controller?.poses||entries;
+        const motion=controller?.motion,atRest=forge?motion?.progress===0:kind==='neural'?motion?.exactRest:kind==='nexus'?motion?.progress===0:motion?.selected===null&&motion?.settled;
+        return {destination,kind,disposed,active,reduced:motion?.reduced??reduced,selected:motion?.selected,settled:motion?.settled??['assembled','separated'].includes(motion?.state),state:controller?.state?.(),
+          resources:{...sectionResources},entities:Object.keys(view.entities).length,sourceEntities:Object.keys(source.entities).length,
+          exactRest:!!controller&&!!atRest&&(kind==='nexus'?entries.every(e=>e.e.getLocalPosition().equals(new Vec3(...e.data.separated.position))&&e.e.getLocalRotation().equals(new Quat().setFromEulerAngles(...e.data.separated.rotation))&&e.e.getLocalScale().equals(new Vec3(...e.data.separated.scale))):poses.every(e=>e.e.getLocalPosition().equals(e.p)&&e.e.getLocalRotation().equals(e.q)&&e.e.getLocalScale().equals(e.s))),
           pulses:controller?.flows?.map((_,i)=>controller.motion.pulse(i)),
-          items:entries.map(e=>({name:e.e.name,position:e.e.getLocalPosition().toArray(),rest:e.p.toArray()}))};
+          items:entries.map(e=>({name:e.e.name,position:e.e.getLocalPosition().toArray(),rest:kind==='nexus'?e.data.separated.position:(e.p||e.movable?.[0]?.p)?.toArray()}))};
       },
     };
   }catch(error){dispose();throw error;}
