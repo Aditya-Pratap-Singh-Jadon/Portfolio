@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { signalLinks, hubCopy } from '../../shared/signals.js';
+import { scrollChamberTargetIntoView } from '../chamberNavigation.js';
 import './commandCenter.css';
 
 export default function CommandCenter({visibility,profile,reduced,utilities,preload=true,onRuntime,onOpen}) {
@@ -40,7 +41,7 @@ export default function CommandCenter({visibility,profile,reduced,utilities,prel
     const target=tablet?section.current.querySelector('.hub-focus'):canvas.current.parentElement;
     const rect=target.getBoundingClientRect();
     if(innerWidth<=760||rect.top<24||rect.bottom>innerHeight-24)
-      target.scrollIntoView({block:innerWidth<=1100?'start':'center',behavior:reducedRef.current?'instant':'smooth'});
+      scrollChamberTargetIntoView(target,{block:innerWidth<=1100?'start':'center',behavior:reducedRef.current?'instant':'smooth'});
   },[selected]);
   const overview=()=>{const previous=selected;runtime.current?.select(null);controls.current[previous]?.focus({preventScroll:true});};
   const navigate=event=>{
