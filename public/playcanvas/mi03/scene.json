@@ -1,0 +1,4554 @@
+{
+    "branch_id": "767b4fee-49c1-494d-8a2a-452446444db8",
+    "name": "MI_03_PROJECT_FORGE",
+    "settings": {
+        "physics": {
+            "gravity": [
+                0,
+                -9.8,
+                0
+            ]
+        },
+        "render": {
+            "lightmapFilterRange": 10,
+            "fog_end": 1000,
+            "lightmapFilterEnabled": false,
+            "ambientBake": false,
+            "tonemapping": 3,
+            "lightingAreaLightsEnabled": false,
+            "lightingShadowType": 0,
+            "ambientBakeOcclusionContrast": 0,
+            "skybox": null,
+            "lightingCookieAtlasResolution": 2048,
+            "fog_density": 0.017,
+            "lightmapFilterSmoothness": 0.2,
+            "gamma_correction": 1,
+            "exposure": 1.13,
+            "lightingShadowsEnabled": true,
+            "fog_start": 1,
+            "skyboxIntensity": 1,
+            "global_ambient": [
+                0.065,
+                0.059,
+                0.052
+            ],
+            "ambientBakeNumSamples": 1,
+            "fog_color": [
+                0.0314,
+                0.0314,
+                0.0314
+            ],
+            "lightingCells": [
+                10,
+                3,
+                10
+            ],
+            "lightmapMode": 1,
+            "lightingCookiesEnabled": false,
+            "clusteredLightingEnabled": true,
+            "ambientBakeSpherePart": 0.4,
+            "fog": "exp2",
+            "ambientBakeOcclusionBrightness": 0,
+            "lightmapMaxResolution": 2048,
+            "lightingMaxLightsPerCell": 255,
+            "lightingShadowAtlasResolution": 2048,
+            "skyboxMip": 0,
+            "lightmapSizeMultiplier": 16,
+            "skyboxRotation": [
+                0,
+                0,
+                0
+            ],
+            "skyType": "infinite",
+            "skyMeshPosition": [
+                0,
+                0,
+                0
+            ],
+            "skyMeshRotation": [
+                0,
+                0,
+                0
+            ],
+            "skyMeshScale": [
+                100,
+                100,
+                100
+            ],
+            "skyCenter": [
+                0,
+                0.1,
+                0
+            ],
+            "skyDepthWrite": false,
+            "lightingMaxLights": 255,
+            "gsplatRadialSorting": false,
+            "gsplatLodUpdateDistance": 1,
+            "gsplatLodUpdateAngle": 90,
+            "gsplatLodBehindPenalty": 1.5,
+            "gsplatLodUnderfillLimit": 0,
+            "gsplatSplatBudget": 1000000,
+            "gsplatSplatBudgetMode": "target",
+            "gsplatAlphaClip": 0.3,
+            "gsplatAlphaClipForward": 0.00392156862745098,
+            "gsplatMinPixelSize": 2,
+            "gsplatMinContribution": 3,
+            "gsplatFoveationStrength": 0,
+            "gsplatFoveationCenter": 0.3,
+            "gsplatAntiAlias": false,
+            "gsplatUseFog": true,
+            "gsplatColorUpdateAngle": 10,
+            "gsplatCooldownTicks": 100,
+            "gsplatDataFormat": "compact",
+            "gsplatEnableIds": false,
+            "gsplatLodMode": "distance",
+            "gsplatUseTonemap": true
+        },
+        "priority_scripts": null
+    },
+    "entities": {
+        "dd1caafb-041a-447a-bbf2-4da3d1530041": {
+            "name": "Root",
+            "parent": null,
+            "resource_id": "dd1caafb-041a-447a-bbf2-4da3d1530041",
+            "tags": [],
+            "enabled": true,
+            "template": null,
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {},
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "children": [
+                "571a9b44-ace2-44b6-a741-80087c68e8d0",
+                "05d2fdff-89b9-4e71-a73b-9a8bea52db72",
+                "aa81141d-43b4-443b-a082-810da5f15b92",
+                "63ac521f-17ca-4ab2-ace5-11d7125841aa",
+                "e2ae0e01-34b7-4b69-b525-4f20d1c6a71f",
+                "3418d6dc-7963-4b15-b1c4-f04b234eab81",
+                "3826343c-c019-48ed-8fc7-641f17056f99",
+                "e1a53df0-e71a-4b50-a8b9-4c858a149bab",
+                "79bdeb04-8169-4eb7-90dd-9029ee62ad66",
+                "26544c4c-4010-44ad-8e17-3448999eb27c",
+                "00a3aa85-a0f1-41a9-abbb-e501f9fc2173"
+            ]
+        },
+        "05d2fdff-89b9-4e71-a73b-9a8bea52db72": {
+            "name": "CAMERA_FORGE",
+            "parent": "dd1caafb-041a-447a-bbf2-4da3d1530041",
+            "resource_id": "05d2fdff-89b9-4e71-a73b-9a8bea52db72",
+            "tags": [],
+            "enabled": true,
+            "template": null,
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "camera": {
+                    "fov": 43,
+                    "projection": 0,
+                    "clearColor": [
+                        0.0314,
+                        0.0314,
+                        0.0314,
+                        1
+                    ],
+                    "clearColorBuffer": true,
+                    "clearDepthBuffer": true,
+                    "renderSceneDepthMap": false,
+                    "renderSceneColorMap": false,
+                    "frustumCulling": true,
+                    "enabled": true,
+                    "orthoHeight": 4,
+                    "farClip": 1000,
+                    "nearClip": 0.1,
+                    "priority": 0,
+                    "rect": [
+                        0,
+                        0,
+                        1,
+                        1
+                    ],
+                    "offscreen": null,
+                    "layers": [
+                        0,
+                        1,
+                        2,
+                        3,
+                        4
+                    ],
+                    "toneMapping": 0,
+                    "gammaCorrection": 1
+                }
+            },
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "position": [
+                3.265292011411046,
+                4.2772374559439506,
+                17.934494939221164
+            ],
+            "rotation": [
+                -7.3900014762466375,
+                7.5999969969170875,
+                0
+            ],
+            "children": []
+        },
+        "aa81141d-43b4-443b-a082-810da5f15b92": {
+            "name": "LIGHT_FORGE_KEY_ASH",
+            "parent": "dd1caafb-041a-447a-bbf2-4da3d1530041",
+            "resource_id": "aa81141d-43b4-443b-a082-810da5f15b92",
+            "tags": [],
+            "enabled": true,
+            "template": null,
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "light": {
+                    "enabled": true,
+                    "bake": false,
+                    "bakeNumSamples": 1,
+                    "bakeArea": 0,
+                    "bakeDir": true,
+                    "affectDynamic": true,
+                    "affectLightmapped": false,
+                    "affectSpecularity": true,
+                    "isStatic": false,
+                    "color": [
+                        0.91,
+                        0.85,
+                        0.75
+                    ],
+                    "intensity": 2.15,
+                    "type": "directional",
+                    "shadowDistance": 16,
+                    "numCascades": 1,
+                    "cascadeDistribution": 0.5,
+                    "range": 8,
+                    "innerConeAngle": 40,
+                    "outerConeAngle": 45,
+                    "penumbraSize": 1,
+                    "penumbraFalloff": 1,
+                    "shape": 0,
+                    "falloffMode": 0,
+                    "castShadows": true,
+                    "shadowIntensity": 1,
+                    "shadowUpdateMode": 2,
+                    "shadowType": 0,
+                    "shadowResolution": 2048,
+                    "shadowBias": 0.08,
+                    "normalOffsetBias": 0.025,
+                    "vsmBlurMode": 1,
+                    "vsmBlurSize": 11,
+                    "vsmBias": 0.01,
+                    "cookieAsset": null,
+                    "cookie": null,
+                    "cookieIntensity": 1,
+                    "cookieFalloff": true,
+                    "cookieChannel": "rgb",
+                    "cookieAngle": 0,
+                    "cookieScale": [
+                        1,
+                        1
+                    ],
+                    "cookieOffset": [
+                        0,
+                        0
+                    ],
+                    "layers": [
+                        0
+                    ]
+                }
+            },
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "position": [
+                2,
+                2,
+                -2
+            ],
+            "rotation": [
+                -35,
+                25,
+                0
+            ],
+            "children": []
+        },
+        "63ac521f-17ca-4ab2-ace5-11d7125841aa": {
+            "name": "Box",
+            "parent": "dd1caafb-041a-447a-bbf2-4da3d1530041",
+            "resource_id": "63ac521f-17ca-4ab2-ace5-11d7125841aa",
+            "tags": [],
+            "enabled": false,
+            "template": null,
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "box",
+                    "asset": null,
+                    "materialAssets": [
+                        null
+                    ],
+                    "castShadows": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "castShadowsLightmap": true,
+                    "rootBone": null,
+                    "isStatic": false,
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "position": [
+                0,
+                0.5,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "children": []
+        },
+        "e2ae0e01-34b7-4b69-b525-4f20d1c6a71f": {
+            "name": "Plane",
+            "parent": "dd1caafb-041a-447a-bbf2-4da3d1530041",
+            "resource_id": "e2ae0e01-34b7-4b69-b525-4f20d1c6a71f",
+            "tags": [],
+            "enabled": false,
+            "template": null,
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "plane",
+                    "asset": null,
+                    "materialAssets": [
+                        null
+                    ],
+                    "castShadows": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "castShadowsLightmap": true,
+                    "rootBone": null,
+                    "isStatic": false,
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "scale": [
+                8,
+                1,
+                8
+            ],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "children": []
+        },
+        "571a9b44-ace2-44b6-a741-80087c68e8d0": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "dd1caafb-041a-447a-bbf2-4da3d1530041",
+            "children": [
+                "7b6a23e1-a3ae-4dbb-87f4-17375f27b5a2",
+                "f0a072af-394b-4d0f-b5c6-d675a38b8ff9",
+                "b60303a5-eacf-4f2e-ab67-f8f4ab67de06",
+                "53db8e90-6dab-4611-bc56-e583a7ea0a47",
+                "b65ea615-54b0-45a4-9868-97742f20b947",
+                "1f9769b9-ac43-4676-9a32-5fcbcf3f8521",
+                "fc1ba33e-c510-43bc-85e6-4a01afd577a9"
+            ],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": 313499178,
+            "template_ent_ids": {
+                "571a9b44-ace2-44b6-a741-80087c68e8d0": "43f864de-80cd-481b-a663-ee67ac21200d",
+                "7b6a23e1-a3ae-4dbb-87f4-17375f27b5a2": "d5f7e922-bd7f-49cf-bb97-3a4fe6beadae",
+                "fe229cbf-1f61-4e88-ae3a-77f094281722": "b0630d0c-88d5-430c-81c0-828cd5a7a162",
+                "1f8dc847-2b98-4689-a58a-9f9fa757f9cd": "e40e8a02-9c72-4db5-982f-10db20ab9237",
+                "3b4f370e-8932-48db-b1b8-d9e9e1ad9c13": "8e14482a-28a7-4b01-a825-59278f1f76ed",
+                "ff45ddeb-ce6a-4492-b180-a8ae0674bd5f": "1a680173-da98-4785-aaf4-3d5c30c281be",
+                "ea525f99-1b8c-4b52-91a3-c1e0d4f79d34": "e7e7b78a-3670-4f03-8185-6ed727c80d07",
+                "eddfa570-e68e-4e05-827e-921fe45d25b0": "b9b2ac72-793d-4565-99f3-33923f1e7207",
+                "1b60d9e1-6c32-4a16-9f72-14b12cdbfac7": "6ac3fd40-b37e-4be6-9e42-d78246a0c59b",
+                "482d77a5-5917-464b-b478-be873bad737a": "c788d392-d75d-4329-a94d-10c8a4ffe694",
+                "783cec31-9a35-4b48-bb7e-9ba30fe54d9e": "e031c1c0-e237-4cb1-a996-3059f8d41e2d",
+                "70fb4854-d919-4aa1-82a5-b27c028df545": "8d6d5697-3fb2-4e34-9da7-270b03eb7a2a",
+                "f0a072af-394b-4d0f-b5c6-d675a38b8ff9": "6a4be982-891b-458d-9ea4-cfcfab729997",
+                "671e61e4-08e5-47b5-bf65-7b1c4dd361e4": "3c71145c-5cf3-4de6-865e-b4db9e769ce7",
+                "d5aa6691-1ec1-4024-b9cf-d5d9f3ca01d4": "d3631757-223c-4bc3-9346-ef0730f8b6aa",
+                "8190ad84-e36c-4762-81a2-a87662ecf1f7": "a274ff2b-3bf6-443f-b694-68c8775c97b3",
+                "c6327d1a-7097-48d3-af42-4d9ed4f1d253": "5abaf2d2-a46b-41bf-9c39-2f58d4bf7477",
+                "acf20879-0a87-4c7a-ab11-e42e14e9199a": "5cb0d00c-afd0-4163-b0ac-ea95161de1a4",
+                "0d329365-5783-48aa-855f-096136f1edf9": "84920e67-d65c-4caf-a009-23b213572c76",
+                "f44db555-c5d1-410e-bf7e-37fb203c7271": "406d1b3d-ecf6-4f87-b116-f079d8a1ff18",
+                "d40ac565-17e6-4e9e-8583-e292e671b2ab": "2a78840c-d133-491f-bfd3-db80ec78a0c6",
+                "afc86c4a-b226-4790-b23f-242941978af1": "313f5e9c-82e3-4dbe-bb9c-5b7465055a50",
+                "6f3f3c91-3371-4442-b913-1cb8225e8d79": "9f60659e-60b4-4167-8a5f-56249d324575",
+                "b60303a5-eacf-4f2e-ab67-f8f4ab67de06": "68595652-3f8c-4a0c-bb4d-08f0841d9be1",
+                "22687244-bc3b-4830-98f7-d7a7430ef89f": "933f8c03-6a57-4046-a0d0-4cd83c4d54a7",
+                "7180887b-3cb0-4f07-8539-b8766d870a5d": "fdf84943-1b31-4b30-afa6-d797af328bac",
+                "fa8b8463-dfd9-495b-9260-7e34db0e7bfa": "772fa722-9258-4d57-94ab-a22adab0ad5c",
+                "9c916465-4cff-45e7-b7d4-0a8d28568f5d": "0845033a-1cc6-4458-8e4b-43eb38591b2f",
+                "0009bd25-d122-4359-88ea-33fd5368194f": "8a001ad9-b4d1-4433-ac9d-739d677cf21a",
+                "fd859683-0fc0-4da3-9229-154964d64875": "02b8d4db-f17a-4758-a971-0772c5b2dd40",
+                "9f3e14ad-437e-47b9-8aa3-bb6ac1eb9366": "666c182e-875d-4f97-9f39-4a17d92910fe",
+                "82f691d5-8319-4654-8f57-72568a3baefd": "789bd68f-8a95-44c8-a075-021ca0011359",
+                "604ad28b-f170-4e24-8ce1-32fbdf458f48": "05776161-82c2-4fd6-b593-3a6eb7869a2f",
+                "80390a46-2ee1-47a0-845f-e74cf17e102f": "6c341553-f3b9-4cca-bd43-9260ff0e711c",
+                "53db8e90-6dab-4611-bc56-e583a7ea0a47": "ef9ea583-a0a6-4c26-80fe-0c196192eaaa",
+                "9aeac86c-c061-4b0b-a851-3602f0240e66": "c467f52b-2942-46ab-914c-2991066f6ea1",
+                "11fddadb-6b0a-4dc4-a191-50308bef8ee5": "0d1dd89d-22a9-45da-84f7-5be5c0331898",
+                "09b2631e-249b-420c-9e04-77fd90c40008": "d6c70cba-4382-4249-aa39-07c3af62787d",
+                "dfcec1be-0b1a-4dde-a39f-06c46156c66c": "c31bdd7d-c0f0-4b9d-83dc-fc71234a711a",
+                "53a6e955-fc6d-41ee-abcb-9fce054219f4": "c5380b86-a875-4a3f-bc59-a910c40c88f9",
+                "cb6f7a67-92f9-4b26-afb8-5a876645531b": "621d402b-3715-487b-b32c-a26b4d931158",
+                "561ea761-0468-4bc8-ad83-e6ed3332279b": "5c2cd6ed-46ea-4e29-84db-c4e3f2f9e424",
+                "9c55e00e-298d-4045-bdf7-3c7a2b765187": "a843d70f-25b1-421c-b483-44c3bec1e4c0",
+                "fbcb7efd-59a4-4ee4-8319-7f7580a1be87": "c83d8bd3-59a5-4578-ab80-a4e33c23af41",
+                "1dbe08b3-0df6-4e58-a08d-6f17d19180a2": "0856cf27-c7d9-4f78-8287-f165dfb0bac0",
+                "b65ea615-54b0-45a4-9868-97742f20b947": "97719a5f-fe9c-4e9d-8d06-1e59d76c9054",
+                "77125896-9ed6-4299-943a-2e0030b6457c": "3d10356a-8259-4a95-9b82-cd20e3dd6785",
+                "03e0bb17-576f-476a-a2f3-f0e717cf8917": "0778b0ac-706b-4446-a2e3-da90ec3a4489",
+                "5f199445-0a18-41b7-a09b-e3c670999857": "ee9d15e2-a6e3-4ab6-8f41-a59620042760",
+                "2a7700ca-9432-4513-b1df-523e0675af5f": "83dc6cbc-d72a-48b2-b3f1-ac10a03420d5",
+                "9b33f27f-46d7-4640-843a-a566cd3cd854": "f447c113-3822-4e91-91c4-3644df879b29",
+                "ed1752cf-6178-4f71-832a-75e37ba9e5b0": "f062a0f5-880a-47bc-bb54-58ca7e72f570",
+                "8043492e-10cd-4e48-9c14-da096c0958f0": "5988f9e6-f376-450f-9d22-97f81b724a4e",
+                "75c1f879-7b03-45f9-ba93-ae123252030e": "fbce6944-1db6-494a-8651-e632644784c0",
+                "e5214983-d9a0-491b-99f3-03df13b36b80": "de92327a-470e-4187-89ab-51a2cca8bdcc",
+                "8cfaf104-5b17-4097-90f3-1fa952bc7348": "a880d39d-b70b-4a6c-b167-7b4257f2ae9e",
+                "1f9769b9-ac43-4676-9a32-5fcbcf3f8521": "d13a0745-6e1d-4978-ae28-9b66cda9e289",
+                "fd97e830-8e8b-4462-8a47-1d1ef4c3341c": "c47a7e93-547c-4d26-a297-49ef2cdf6bae",
+                "3324bfbd-6482-41b5-8872-629462ffa66b": "c513e746-7105-411b-9308-0b9d4f9afb34",
+                "b971935d-26a1-41f6-b71e-72c0fc62f8b5": "6acaaf97-024c-4ced-bf25-cbb809fed3b0",
+                "e9989232-b754-49ea-9d0e-c9499b2f669f": "d23f6d19-897e-4cad-ad8d-62a5fd046bdb",
+                "149838f3-04d8-4ba8-8330-24679342e581": "cea78e72-58c7-4286-92ca-eed39eb7d44a",
+                "1a55f6f2-c25c-4751-a8b8-d571a7f0b9f0": "18657855-2778-4c95-9b04-3074cb2e0135",
+                "db53bbb5-5997-4a15-8f54-95aac77c7b6d": "25b37aa8-5986-4573-96e2-0e431a475af0",
+                "b5cbaa47-2e7b-48bb-9dfa-6c15cbdd19b2": "e590846d-daf3-443f-9518-b6e343b77cf2",
+                "20715353-1e48-42b1-b687-b15911b0b177": "f5b1c1ec-0a6b-43bd-884c-f0fcd3317114",
+                "7b96450c-c92d-4976-bd55-3e00e87c8685": "55e01e93-417c-4dbe-887a-8564d8da55b0",
+                "fc1ba33e-c510-43bc-85e6-4a01afd577a9": "7faf06ef-36cf-466b-859c-b1cca6ef747f",
+                "c229145a-86f3-4c67-b9e7-8bdb47286783": "420cd881-8a60-4072-a921-17b3b2d9313a",
+                "a3a6b8aa-b224-425c-ad3a-66071c528cfb": "fca11b9d-59f2-4595-b82b-627c96fbf094",
+                "53cf4f41-cc20-4f29-88b0-bb03ba7185a4": "ece8c215-e8a0-4a7a-ac0c-107ed98005ee",
+                "5cd81b6e-a2d0-42c6-9241-a197aa3bd4e5": "b8656f10-973b-4909-a704-eadea5f4fd96"
+            },
+            "components": {
+                "script": {
+                    "enabled": true,
+                    "order": [
+                        "miForgeNavigation"
+                    ],
+                    "scripts": {
+                        "miForgeNavigation": {
+                            "enabled": true,
+                            "attributes": {}
+                        }
+                    }
+                }
+            },
+            "resource_id": "571a9b44-ace2-44b6-a741-80087c68e8d0",
+            "name": "MI_PROJECT_FORGE"
+        },
+        "7b6a23e1-a3ae-4dbb-87f4-17375f27b5a2": {
+            "enabled": true,
+            "template": null,
+            "tags": [
+                "project-slot",
+                "PROJECT_SLOT_01",
+                "P3-A"
+            ],
+            "parent": "571a9b44-ace2-44b6-a741-80087c68e8d0",
+            "children": [
+                "fe229cbf-1f61-4e88-ae3a-77f094281722",
+                "1f8dc847-2b98-4689-a58a-9f9fa757f9cd",
+                "3b4f370e-8932-48db-b1b8-d9e9e1ad9c13",
+                "ff45ddeb-ce6a-4492-b180-a8ae0674bd5f",
+                "ea525f99-1b8c-4b52-91a3-c1e0d4f79d34",
+                "eddfa570-e68e-4e05-827e-921fe45d25b0",
+                "1b60d9e1-6c32-4a16-9f72-14b12cdbfac7",
+                "482d77a5-5917-464b-b478-be873bad737a",
+                "783cec31-9a35-4b48-bb7e-9ba30fe54d9e",
+                "70fb4854-d919-4aa1-82a5-b27c028df545"
+            ],
+            "position": [
+                -4.55,
+                2.65,
+                0.4
+            ],
+            "rotation": [
+                4,
+                19,
+                -6
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {},
+            "resource_id": "7b6a23e1-a3ae-4dbb-87f4-17375f27b5a2",
+            "name": "PROJECT_SLOT_01"
+        },
+        "fe229cbf-1f61-4e88-ae3a-77f094281722": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "7b6a23e1-a3ae-4dbb-87f4-17375f27b5a2",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313507284,
+                    "materialAssets": [
+                        313507273
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": true,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "resource_id": "fe229cbf-1f61-4e88-ae3a-77f094281722",
+            "name": "PROJECT_SLOT_01_STONE_SHELL"
+        },
+        "1f8dc847-2b98-4689-a58a-9f9fa757f9cd": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "7b6a23e1-a3ae-4dbb-87f4-17375f27b5a2",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313499114,
+                    "materialAssets": [
+                        313507275
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": true,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "resource_id": "1f8dc847-2b98-4689-a58a-9f9fa757f9cd",
+            "name": "PROJECT_SLOT_01_REAR_MASS"
+        },
+        "3b4f370e-8932-48db-b1b8-d9e9e1ad9c13": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "7b6a23e1-a3ae-4dbb-87f4-17375f27b5a2",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313507286,
+                    "materialAssets": [
+                        313507274
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": true,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "resource_id": "3b4f370e-8932-48db-b1b8-d9e9e1ad9c13",
+            "name": "PROJECT_SLOT_01_RECESSED_HEAT"
+        },
+        "ff45ddeb-ce6a-4492-b180-a8ae0674bd5f": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "7b6a23e1-a3ae-4dbb-87f4-17375f27b5a2",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313499117,
+                    "materialAssets": [
+                        313507282
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": true,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "resource_id": "ff45ddeb-ce6a-4492-b180-a8ae0674bd5f",
+            "name": "PROJECT_SLOT_01_THERMAL_POCKET"
+        },
+        "ea525f99-1b8c-4b52-91a3-c1e0d4f79d34": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "7b6a23e1-a3ae-4dbb-87f4-17375f27b5a2",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313499118,
+                    "materialAssets": [
+                        313499109
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": true,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "resource_id": "ea525f99-1b8c-4b52-91a3-c1e0d4f79d34",
+            "name": "PROJECT_SLOT_01_PRESENTATION"
+        },
+        "eddfa570-e68e-4e05-827e-921fe45d25b0": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "7b6a23e1-a3ae-4dbb-87f4-17375f27b5a2",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313499119,
+                    "materialAssets": [
+                        313507275
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": true,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "resource_id": "eddfa570-e68e-4e05-827e-921fe45d25b0",
+            "name": "PROJECT_SLOT_01_INNER_REVEAL"
+        },
+        "1b60d9e1-6c32-4a16-9f72-14b12cdbfac7": {
+            "enabled": false,
+            "template": null,
+            "tags": [],
+            "parent": "7b6a23e1-a3ae-4dbb-87f4-17375f27b5a2",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313499120,
+                    "materialAssets": [
+                        313499106
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": true,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "resource_id": "1b60d9e1-6c32-4a16-9f72-14b12cdbfac7",
+            "name": "PROJECT_SLOT_01_IRON_CLASPS"
+        },
+        "482d77a5-5917-464b-b478-be873bad737a": {
+            "enabled": false,
+            "template": null,
+            "tags": [],
+            "parent": "7b6a23e1-a3ae-4dbb-87f4-17375f27b5a2",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313499121,
+                    "materialAssets": [
+                        313499110
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": true,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "resource_id": "482d77a5-5917-464b-b478-be873bad737a",
+            "name": "PROJECT_SLOT_01_EMBER_NOTCH"
+        },
+        "783cec31-9a35-4b48-bb7e-9ba30fe54d9e": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "7b6a23e1-a3ae-4dbb-87f4-17375f27b5a2",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313499122,
+                    "materialAssets": [
+                        313499108
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": true,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "resource_id": "783cec31-9a35-4b48-bb7e-9ba30fe54d9e",
+            "name": "PROJECT_SLOT_01_SERIAL"
+        },
+        "70fb4854-d919-4aa1-82a5-b27c028df545": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "7b6a23e1-a3ae-4dbb-87f4-17375f27b5a2",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313499123,
+                    "materialAssets": [
+                        313507275
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": true,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "resource_id": "70fb4854-d919-4aa1-82a5-b27c028df545",
+            "name": "PROJECT_SLOT_01_REAR_SPINE"
+        },
+        "f0a072af-394b-4d0f-b5c6-d675a38b8ff9": {
+            "enabled": true,
+            "template": null,
+            "tags": [
+                "project-slot",
+                "PROJECT_SLOT_02",
+                "P3-A"
+            ],
+            "parent": "571a9b44-ace2-44b6-a741-80087c68e8d0",
+            "children": [
+                "671e61e4-08e5-47b5-bf65-7b1c4dd361e4",
+                "d5aa6691-1ec1-4024-b9cf-d5d9f3ca01d4",
+                "8190ad84-e36c-4762-81a2-a87662ecf1f7",
+                "c6327d1a-7097-48d3-af42-4d9ed4f1d253",
+                "acf20879-0a87-4c7a-ab11-e42e14e9199a",
+                "0d329365-5783-48aa-855f-096136f1edf9",
+                "f44db555-c5d1-410e-bf7e-37fb203c7271",
+                "d40ac565-17e6-4e9e-8583-e292e671b2ab",
+                "afc86c4a-b226-4790-b23f-242941978af1",
+                "6f3f3c91-3371-4442-b913-1cb8225e8d79"
+            ],
+            "position": [
+                -0.35,
+                4.5,
+                -2.6
+            ],
+            "rotation": [
+                -7,
+                5,
+                4
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {},
+            "resource_id": "f0a072af-394b-4d0f-b5c6-d675a38b8ff9",
+            "name": "PROJECT_SLOT_02"
+        },
+        "671e61e4-08e5-47b5-bf65-7b1c4dd361e4": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "f0a072af-394b-4d0f-b5c6-d675a38b8ff9",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313507294,
+                    "materialAssets": [
+                        313507273
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": true,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "resource_id": "671e61e4-08e5-47b5-bf65-7b1c4dd361e4",
+            "name": "PROJECT_SLOT_02_STONE_SHELL"
+        },
+        "d5aa6691-1ec1-4024-b9cf-d5d9f3ca01d4": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "f0a072af-394b-4d0f-b5c6-d675a38b8ff9",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313499125,
+                    "materialAssets": [
+                        313507275
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": true,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "resource_id": "d5aa6691-1ec1-4024-b9cf-d5d9f3ca01d4",
+            "name": "PROJECT_SLOT_02_REAR_MASS"
+        },
+        "8190ad84-e36c-4762-81a2-a87662ecf1f7": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "f0a072af-394b-4d0f-b5c6-d675a38b8ff9",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313507296,
+                    "materialAssets": [
+                        313507274
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": true,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "resource_id": "8190ad84-e36c-4762-81a2-a87662ecf1f7",
+            "name": "PROJECT_SLOT_02_RECESSED_HEAT"
+        },
+        "c6327d1a-7097-48d3-af42-4d9ed4f1d253": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "f0a072af-394b-4d0f-b5c6-d675a38b8ff9",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313499127,
+                    "materialAssets": [
+                        313507282
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": true,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "resource_id": "c6327d1a-7097-48d3-af42-4d9ed4f1d253",
+            "name": "PROJECT_SLOT_02_THERMAL_POCKET"
+        },
+        "acf20879-0a87-4c7a-ab11-e42e14e9199a": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "f0a072af-394b-4d0f-b5c6-d675a38b8ff9",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313499128,
+                    "materialAssets": [
+                        313499109
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": true,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "resource_id": "acf20879-0a87-4c7a-ab11-e42e14e9199a",
+            "name": "PROJECT_SLOT_02_PRESENTATION"
+        },
+        "0d329365-5783-48aa-855f-096136f1edf9": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "f0a072af-394b-4d0f-b5c6-d675a38b8ff9",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313499129,
+                    "materialAssets": [
+                        313507275
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": true,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "resource_id": "0d329365-5783-48aa-855f-096136f1edf9",
+            "name": "PROJECT_SLOT_02_INNER_REVEAL"
+        },
+        "f44db555-c5d1-410e-bf7e-37fb203c7271": {
+            "enabled": false,
+            "template": null,
+            "tags": [],
+            "parent": "f0a072af-394b-4d0f-b5c6-d675a38b8ff9",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313499130,
+                    "materialAssets": [
+                        313499106
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": true,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "resource_id": "f44db555-c5d1-410e-bf7e-37fb203c7271",
+            "name": "PROJECT_SLOT_02_IRON_CLASPS"
+        },
+        "d40ac565-17e6-4e9e-8583-e292e671b2ab": {
+            "enabled": false,
+            "template": null,
+            "tags": [],
+            "parent": "f0a072af-394b-4d0f-b5c6-d675a38b8ff9",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313499131,
+                    "materialAssets": [
+                        313499110
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": true,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "resource_id": "d40ac565-17e6-4e9e-8583-e292e671b2ab",
+            "name": "PROJECT_SLOT_02_EMBER_NOTCH"
+        },
+        "afc86c4a-b226-4790-b23f-242941978af1": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "f0a072af-394b-4d0f-b5c6-d675a38b8ff9",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313499132,
+                    "materialAssets": [
+                        313499108
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": true,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "resource_id": "afc86c4a-b226-4790-b23f-242941978af1",
+            "name": "PROJECT_SLOT_02_SERIAL"
+        },
+        "6f3f3c91-3371-4442-b913-1cb8225e8d79": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "f0a072af-394b-4d0f-b5c6-d675a38b8ff9",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313499133,
+                    "materialAssets": [
+                        313507275
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": true,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "resource_id": "6f3f3c91-3371-4442-b913-1cb8225e8d79",
+            "name": "PROJECT_SLOT_02_REAR_SPINE"
+        },
+        "b60303a5-eacf-4f2e-ab67-f8f4ab67de06": {
+            "enabled": true,
+            "template": null,
+            "tags": [
+                "project-slot",
+                "PROJECT_SLOT_03",
+                "P3-A"
+            ],
+            "parent": "571a9b44-ace2-44b6-a741-80087c68e8d0",
+            "children": [
+                "22687244-bc3b-4830-98f7-d7a7430ef89f",
+                "7180887b-3cb0-4f07-8539-b8766d870a5d",
+                "fa8b8463-dfd9-495b-9260-7e34db0e7bfa",
+                "9c916465-4cff-45e7-b7d4-0a8d28568f5d",
+                "0009bd25-d122-4359-88ea-33fd5368194f",
+                "fd859683-0fc0-4da3-9229-154964d64875",
+                "9f3e14ad-437e-47b9-8aa3-bb6ac1eb9366",
+                "82f691d5-8319-4654-8f57-72568a3baefd",
+                "604ad28b-f170-4e24-8ce1-32fbdf458f48",
+                "80390a46-2ee1-47a0-845f-e74cf17e102f"
+            ],
+            "position": [
+                4.25,
+                3,
+                -0.9
+            ],
+            "rotation": [
+                3,
+                -22,
+                7
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {},
+            "resource_id": "b60303a5-eacf-4f2e-ab67-f8f4ab67de06",
+            "name": "PROJECT_SLOT_03"
+        },
+        "22687244-bc3b-4830-98f7-d7a7430ef89f": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "b60303a5-eacf-4f2e-ab67-f8f4ab67de06",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313507304,
+                    "materialAssets": [
+                        313507273
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": true,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "resource_id": "22687244-bc3b-4830-98f7-d7a7430ef89f",
+            "name": "PROJECT_SLOT_03_STONE_SHELL"
+        },
+        "7180887b-3cb0-4f07-8539-b8766d870a5d": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "b60303a5-eacf-4f2e-ab67-f8f4ab67de06",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313499135,
+                    "materialAssets": [
+                        313507275
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": true,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "resource_id": "7180887b-3cb0-4f07-8539-b8766d870a5d",
+            "name": "PROJECT_SLOT_03_REAR_MASS"
+        },
+        "fa8b8463-dfd9-495b-9260-7e34db0e7bfa": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "b60303a5-eacf-4f2e-ab67-f8f4ab67de06",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313507306,
+                    "materialAssets": [
+                        313507274
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": true,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "resource_id": "fa8b8463-dfd9-495b-9260-7e34db0e7bfa",
+            "name": "PROJECT_SLOT_03_RECESSED_HEAT"
+        },
+        "9c916465-4cff-45e7-b7d4-0a8d28568f5d": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "b60303a5-eacf-4f2e-ab67-f8f4ab67de06",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313499137,
+                    "materialAssets": [
+                        313507282
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": true,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "resource_id": "9c916465-4cff-45e7-b7d4-0a8d28568f5d",
+            "name": "PROJECT_SLOT_03_THERMAL_POCKET"
+        },
+        "0009bd25-d122-4359-88ea-33fd5368194f": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "b60303a5-eacf-4f2e-ab67-f8f4ab67de06",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313499138,
+                    "materialAssets": [
+                        313499109
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": true,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "resource_id": "0009bd25-d122-4359-88ea-33fd5368194f",
+            "name": "PROJECT_SLOT_03_PRESENTATION"
+        },
+        "fd859683-0fc0-4da3-9229-154964d64875": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "b60303a5-eacf-4f2e-ab67-f8f4ab67de06",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313499139,
+                    "materialAssets": [
+                        313507275
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": true,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "resource_id": "fd859683-0fc0-4da3-9229-154964d64875",
+            "name": "PROJECT_SLOT_03_INNER_REVEAL"
+        },
+        "9f3e14ad-437e-47b9-8aa3-bb6ac1eb9366": {
+            "enabled": false,
+            "template": null,
+            "tags": [],
+            "parent": "b60303a5-eacf-4f2e-ab67-f8f4ab67de06",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313499140,
+                    "materialAssets": [
+                        313499106
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": true,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "resource_id": "9f3e14ad-437e-47b9-8aa3-bb6ac1eb9366",
+            "name": "PROJECT_SLOT_03_IRON_CLASPS"
+        },
+        "82f691d5-8319-4654-8f57-72568a3baefd": {
+            "enabled": false,
+            "template": null,
+            "tags": [],
+            "parent": "b60303a5-eacf-4f2e-ab67-f8f4ab67de06",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313499141,
+                    "materialAssets": [
+                        313499110
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": true,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "resource_id": "82f691d5-8319-4654-8f57-72568a3baefd",
+            "name": "PROJECT_SLOT_03_EMBER_NOTCH"
+        },
+        "604ad28b-f170-4e24-8ce1-32fbdf458f48": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "b60303a5-eacf-4f2e-ab67-f8f4ab67de06",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313499142,
+                    "materialAssets": [
+                        313499108
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": true,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "resource_id": "604ad28b-f170-4e24-8ce1-32fbdf458f48",
+            "name": "PROJECT_SLOT_03_SERIAL"
+        },
+        "80390a46-2ee1-47a0-845f-e74cf17e102f": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "b60303a5-eacf-4f2e-ab67-f8f4ab67de06",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313499143,
+                    "materialAssets": [
+                        313507275
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": true,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "resource_id": "80390a46-2ee1-47a0-845f-e74cf17e102f",
+            "name": "PROJECT_SLOT_03_REAR_SPINE"
+        },
+        "53db8e90-6dab-4611-bc56-e583a7ea0a47": {
+            "enabled": true,
+            "template": null,
+            "tags": [
+                "project-slot",
+                "PROJECT_SLOT_04",
+                "P3-A"
+            ],
+            "parent": "571a9b44-ace2-44b6-a741-80087c68e8d0",
+            "children": [
+                "9aeac86c-c061-4b0b-a851-3602f0240e66",
+                "11fddadb-6b0a-4dc4-a191-50308bef8ee5",
+                "09b2631e-249b-420c-9e04-77fd90c40008",
+                "dfcec1be-0b1a-4dde-a39f-06c46156c66c",
+                "53a6e955-fc6d-41ee-abcb-9fce054219f4",
+                "cb6f7a67-92f9-4b26-afb8-5a876645531b",
+                "561ea761-0468-4bc8-ad83-e6ed3332279b",
+                "9c55e00e-298d-4045-bdf7-3c7a2b765187",
+                "fbcb7efd-59a4-4ee4-8319-7f7580a1be87",
+                "1dbe08b3-0df6-4e58-a08d-6f17d19180a2"
+            ],
+            "position": [
+                -4,
+                -0.85,
+                2.1
+            ],
+            "rotation": [
+                -8,
+                15,
+                4
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {},
+            "resource_id": "53db8e90-6dab-4611-bc56-e583a7ea0a47",
+            "name": "PROJECT_SLOT_04"
+        },
+        "9aeac86c-c061-4b0b-a851-3602f0240e66": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "53db8e90-6dab-4611-bc56-e583a7ea0a47",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313507314,
+                    "materialAssets": [
+                        313507273
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": true,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "resource_id": "9aeac86c-c061-4b0b-a851-3602f0240e66",
+            "name": "PROJECT_SLOT_04_STONE_SHELL"
+        },
+        "11fddadb-6b0a-4dc4-a191-50308bef8ee5": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "53db8e90-6dab-4611-bc56-e583a7ea0a47",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313499145,
+                    "materialAssets": [
+                        313507275
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": true,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "resource_id": "11fddadb-6b0a-4dc4-a191-50308bef8ee5",
+            "name": "PROJECT_SLOT_04_REAR_MASS"
+        },
+        "09b2631e-249b-420c-9e04-77fd90c40008": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "53db8e90-6dab-4611-bc56-e583a7ea0a47",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313507316,
+                    "materialAssets": [
+                        313507274
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": true,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "resource_id": "09b2631e-249b-420c-9e04-77fd90c40008",
+            "name": "PROJECT_SLOT_04_RECESSED_HEAT"
+        },
+        "dfcec1be-0b1a-4dde-a39f-06c46156c66c": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "53db8e90-6dab-4611-bc56-e583a7ea0a47",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313499147,
+                    "materialAssets": [
+                        313507282
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": true,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "resource_id": "dfcec1be-0b1a-4dde-a39f-06c46156c66c",
+            "name": "PROJECT_SLOT_04_THERMAL_POCKET"
+        },
+        "53a6e955-fc6d-41ee-abcb-9fce054219f4": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "53db8e90-6dab-4611-bc56-e583a7ea0a47",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313499148,
+                    "materialAssets": [
+                        313499109
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": true,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "resource_id": "53a6e955-fc6d-41ee-abcb-9fce054219f4",
+            "name": "PROJECT_SLOT_04_PRESENTATION"
+        },
+        "cb6f7a67-92f9-4b26-afb8-5a876645531b": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "53db8e90-6dab-4611-bc56-e583a7ea0a47",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313499149,
+                    "materialAssets": [
+                        313507275
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": true,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "resource_id": "cb6f7a67-92f9-4b26-afb8-5a876645531b",
+            "name": "PROJECT_SLOT_04_INNER_REVEAL"
+        },
+        "561ea761-0468-4bc8-ad83-e6ed3332279b": {
+            "enabled": false,
+            "template": null,
+            "tags": [],
+            "parent": "53db8e90-6dab-4611-bc56-e583a7ea0a47",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313499150,
+                    "materialAssets": [
+                        313499106
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": true,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "resource_id": "561ea761-0468-4bc8-ad83-e6ed3332279b",
+            "name": "PROJECT_SLOT_04_IRON_CLASPS"
+        },
+        "9c55e00e-298d-4045-bdf7-3c7a2b765187": {
+            "enabled": false,
+            "template": null,
+            "tags": [],
+            "parent": "53db8e90-6dab-4611-bc56-e583a7ea0a47",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313499151,
+                    "materialAssets": [
+                        313499110
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": true,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "resource_id": "9c55e00e-298d-4045-bdf7-3c7a2b765187",
+            "name": "PROJECT_SLOT_04_EMBER_NOTCH"
+        },
+        "fbcb7efd-59a4-4ee4-8319-7f7580a1be87": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "53db8e90-6dab-4611-bc56-e583a7ea0a47",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313499152,
+                    "materialAssets": [
+                        313499108
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": true,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "resource_id": "fbcb7efd-59a4-4ee4-8319-7f7580a1be87",
+            "name": "PROJECT_SLOT_04_SERIAL"
+        },
+        "1dbe08b3-0df6-4e58-a08d-6f17d19180a2": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "53db8e90-6dab-4611-bc56-e583a7ea0a47",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313499153,
+                    "materialAssets": [
+                        313507275
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": true,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "resource_id": "1dbe08b3-0df6-4e58-a08d-6f17d19180a2",
+            "name": "PROJECT_SLOT_04_REAR_SPINE"
+        },
+        "b65ea615-54b0-45a4-9868-97742f20b947": {
+            "enabled": true,
+            "template": null,
+            "tags": [
+                "project-slot",
+                "PROJECT_SLOT_05",
+                "P3-A"
+            ],
+            "parent": "571a9b44-ace2-44b6-a741-80087c68e8d0",
+            "children": [
+                "77125896-9ed6-4299-943a-2e0030b6457c",
+                "03e0bb17-576f-476a-a2f3-f0e717cf8917",
+                "5f199445-0a18-41b7-a09b-e3c670999857",
+                "2a7700ca-9432-4513-b1df-523e0675af5f",
+                "9b33f27f-46d7-4640-843a-a566cd3cd854",
+                "ed1752cf-6178-4f71-832a-75e37ba9e5b0",
+                "8043492e-10cd-4e48-9c14-da096c0958f0",
+                "75c1f879-7b03-45f9-ba93-ae123252030e",
+                "e5214983-d9a0-491b-99f3-03df13b36b80",
+                "8cfaf104-5b17-4097-90f3-1fa952bc7348",
+                "831f6874-b2ca-4700-9a8e-56e82e16f584"
+            ],
+            "position": [
+                0.1,
+                0.05,
+                1.1
+            ],
+            "rotation": [
+                6,
+                -8,
+                -3
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {},
+            "resource_id": "b65ea615-54b0-45a4-9868-97742f20b947",
+            "name": "PROJECT_SLOT_05"
+        },
+        "77125896-9ed6-4299-943a-2e0030b6457c": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "b65ea615-54b0-45a4-9868-97742f20b947",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313507324,
+                    "materialAssets": [
+                        313507273
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": true,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "resource_id": "77125896-9ed6-4299-943a-2e0030b6457c",
+            "name": "PROJECT_SLOT_05_STONE_SHELL"
+        },
+        "03e0bb17-576f-476a-a2f3-f0e717cf8917": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "b65ea615-54b0-45a4-9868-97742f20b947",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313499155,
+                    "materialAssets": [
+                        313507275
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": true,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "resource_id": "03e0bb17-576f-476a-a2f3-f0e717cf8917",
+            "name": "PROJECT_SLOT_05_REAR_MASS"
+        },
+        "5f199445-0a18-41b7-a09b-e3c670999857": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "b65ea615-54b0-45a4-9868-97742f20b947",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313507326,
+                    "materialAssets": [
+                        313507274
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": true,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "resource_id": "5f199445-0a18-41b7-a09b-e3c670999857",
+            "name": "PROJECT_SLOT_05_RECESSED_HEAT"
+        },
+        "2a7700ca-9432-4513-b1df-523e0675af5f": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "b65ea615-54b0-45a4-9868-97742f20b947",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313499157,
+                    "materialAssets": [
+                        313507282
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": true,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "resource_id": "2a7700ca-9432-4513-b1df-523e0675af5f",
+            "name": "PROJECT_SLOT_05_THERMAL_POCKET"
+        },
+        "9b33f27f-46d7-4640-843a-a566cd3cd854": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "b65ea615-54b0-45a4-9868-97742f20b947",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313499158,
+                    "materialAssets": [
+                        313499109
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": true,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "resource_id": "9b33f27f-46d7-4640-843a-a566cd3cd854",
+            "name": "PROJECT_SLOT_05_PRESENTATION"
+        },
+        "ed1752cf-6178-4f71-832a-75e37ba9e5b0": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "b65ea615-54b0-45a4-9868-97742f20b947",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313499159,
+                    "materialAssets": [
+                        313507275
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": true,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "resource_id": "ed1752cf-6178-4f71-832a-75e37ba9e5b0",
+            "name": "PROJECT_SLOT_05_INNER_REVEAL"
+        },
+        "8043492e-10cd-4e48-9c14-da096c0958f0": {
+            "enabled": false,
+            "template": null,
+            "tags": [],
+            "parent": "b65ea615-54b0-45a4-9868-97742f20b947",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313499160,
+                    "materialAssets": [
+                        313499106
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": true,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "resource_id": "8043492e-10cd-4e48-9c14-da096c0958f0",
+            "name": "PROJECT_SLOT_05_IRON_CLASPS"
+        },
+        "75c1f879-7b03-45f9-ba93-ae123252030e": {
+            "enabled": false,
+            "template": null,
+            "tags": [],
+            "parent": "b65ea615-54b0-45a4-9868-97742f20b947",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313499161,
+                    "materialAssets": [
+                        313499110
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": true,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "resource_id": "75c1f879-7b03-45f9-ba93-ae123252030e",
+            "name": "PROJECT_SLOT_05_EMBER_NOTCH"
+        },
+        "e5214983-d9a0-491b-99f3-03df13b36b80": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "b65ea615-54b0-45a4-9868-97742f20b947",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313499162,
+                    "materialAssets": [
+                        313499108
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": true,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "resource_id": "e5214983-d9a0-491b-99f3-03df13b36b80",
+            "name": "PROJECT_SLOT_05_SERIAL"
+        },
+        "8cfaf104-5b17-4097-90f3-1fa952bc7348": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "b65ea615-54b0-45a4-9868-97742f20b947",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313499163,
+                    "materialAssets": [
+                        313507275
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": true,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "resource_id": "8cfaf104-5b17-4097-90f3-1fa952bc7348",
+            "name": "PROJECT_SLOT_05_REAR_SPINE"
+        },
+        "1f9769b9-ac43-4676-9a32-5fcbcf3f8521": {
+            "enabled": true,
+            "template": null,
+            "tags": [
+                "project-slot",
+                "PROJECT_SLOT_06",
+                "P3-A"
+            ],
+            "parent": "571a9b44-ace2-44b6-a741-80087c68e8d0",
+            "children": [
+                "fd97e830-8e8b-4462-8a47-1d1ef4c3341c",
+                "3324bfbd-6482-41b5-8872-629462ffa66b",
+                "b971935d-26a1-41f6-b71e-72c0fc62f8b5",
+                "e9989232-b754-49ea-9d0e-c9499b2f669f",
+                "149838f3-04d8-4ba8-8330-24679342e581",
+                "1a55f6f2-c25c-4751-a8b8-d571a7f0b9f0",
+                "db53bbb5-5997-4a15-8f54-95aac77c7b6d",
+                "b5cbaa47-2e7b-48bb-9dfa-6c15cbdd19b2",
+                "20715353-1e48-42b1-b687-b15911b0b177",
+                "7b96450c-c92d-4976-bd55-3e00e87c8685"
+            ],
+            "position": [
+                4.5,
+                -0.75,
+                -2.7
+            ],
+            "rotation": [
+                -5,
+                -25,
+                -5
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {},
+            "resource_id": "1f9769b9-ac43-4676-9a32-5fcbcf3f8521",
+            "name": "PROJECT_SLOT_06"
+        },
+        "fd97e830-8e8b-4462-8a47-1d1ef4c3341c": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "1f9769b9-ac43-4676-9a32-5fcbcf3f8521",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313507334,
+                    "materialAssets": [
+                        313507273
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": true,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "resource_id": "fd97e830-8e8b-4462-8a47-1d1ef4c3341c",
+            "name": "PROJECT_SLOT_06_STONE_SHELL"
+        },
+        "3324bfbd-6482-41b5-8872-629462ffa66b": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "1f9769b9-ac43-4676-9a32-5fcbcf3f8521",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313499165,
+                    "materialAssets": [
+                        313507275
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": true,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "resource_id": "3324bfbd-6482-41b5-8872-629462ffa66b",
+            "name": "PROJECT_SLOT_06_REAR_MASS"
+        },
+        "b971935d-26a1-41f6-b71e-72c0fc62f8b5": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "1f9769b9-ac43-4676-9a32-5fcbcf3f8521",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313507336,
+                    "materialAssets": [
+                        313507274
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": true,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "resource_id": "b971935d-26a1-41f6-b71e-72c0fc62f8b5",
+            "name": "PROJECT_SLOT_06_RECESSED_HEAT"
+        },
+        "e9989232-b754-49ea-9d0e-c9499b2f669f": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "1f9769b9-ac43-4676-9a32-5fcbcf3f8521",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313499166,
+                    "materialAssets": [
+                        313507282
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": true,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "resource_id": "e9989232-b754-49ea-9d0e-c9499b2f669f",
+            "name": "PROJECT_SLOT_06_THERMAL_POCKET"
+        },
+        "149838f3-04d8-4ba8-8330-24679342e581": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "1f9769b9-ac43-4676-9a32-5fcbcf3f8521",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313499168,
+                    "materialAssets": [
+                        313499109
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": true,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "resource_id": "149838f3-04d8-4ba8-8330-24679342e581",
+            "name": "PROJECT_SLOT_06_PRESENTATION"
+        },
+        "1a55f6f2-c25c-4751-a8b8-d571a7f0b9f0": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "1f9769b9-ac43-4676-9a32-5fcbcf3f8521",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313499169,
+                    "materialAssets": [
+                        313507275
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": true,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "resource_id": "1a55f6f2-c25c-4751-a8b8-d571a7f0b9f0",
+            "name": "PROJECT_SLOT_06_INNER_REVEAL"
+        },
+        "db53bbb5-5997-4a15-8f54-95aac77c7b6d": {
+            "enabled": false,
+            "template": null,
+            "tags": [],
+            "parent": "1f9769b9-ac43-4676-9a32-5fcbcf3f8521",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313499170,
+                    "materialAssets": [
+                        313499106
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": true,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "resource_id": "db53bbb5-5997-4a15-8f54-95aac77c7b6d",
+            "name": "PROJECT_SLOT_06_IRON_CLASPS"
+        },
+        "b5cbaa47-2e7b-48bb-9dfa-6c15cbdd19b2": {
+            "enabled": false,
+            "template": null,
+            "tags": [],
+            "parent": "1f9769b9-ac43-4676-9a32-5fcbcf3f8521",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313499171,
+                    "materialAssets": [
+                        313499110
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": true,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "resource_id": "b5cbaa47-2e7b-48bb-9dfa-6c15cbdd19b2",
+            "name": "PROJECT_SLOT_06_EMBER_NOTCH"
+        },
+        "20715353-1e48-42b1-b687-b15911b0b177": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "1f9769b9-ac43-4676-9a32-5fcbcf3f8521",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313499172,
+                    "materialAssets": [
+                        313499108
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": true,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "resource_id": "20715353-1e48-42b1-b687-b15911b0b177",
+            "name": "PROJECT_SLOT_06_SERIAL"
+        },
+        "7b96450c-c92d-4976-bd55-3e00e87c8685": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "1f9769b9-ac43-4676-9a32-5fcbcf3f8521",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313499173,
+                    "materialAssets": [
+                        313507275
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": true,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "resource_id": "7b96450c-c92d-4976-bd55-3e00e87c8685",
+            "name": "PROJECT_SLOT_06_REAR_SPINE"
+        },
+        "fc1ba33e-c510-43bc-85e6-4a01afd577a9": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "571a9b44-ace2-44b6-a741-80087c68e8d0",
+            "children": [
+                "c229145a-86f3-4c67-b9e7-8bdb47286783",
+                "a3a6b8aa-b224-425c-ad3a-66071c528cfb",
+                "53cf4f41-cc20-4f29-88b0-bb03ba7185a4",
+                "5cd81b6e-a2d0-42c6-9241-a197aa3bd4e5"
+            ],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {},
+            "resource_id": "fc1ba33e-c510-43bc-85e6-4a01afd577a9",
+            "name": "FORGE_ARCHITECTURE"
+        },
+        "c229145a-86f3-4c67-b9e7-8bdb47286783": {
+            "enabled": false,
+            "template": null,
+            "tags": [],
+            "parent": "fc1ba33e-c510-43bc-85e6-4a01afd577a9",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313499174,
+                    "materialAssets": [
+                        313499112
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": true,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "resource_id": "c229145a-86f3-4c67-b9e7-8bdb47286783",
+            "name": "FORGE_FRACTURED_WORKBED"
+        },
+        "a3a6b8aa-b224-425c-ad3a-66071c528cfb": {
+            "enabled": false,
+            "template": null,
+            "tags": [],
+            "parent": "fc1ba33e-c510-43bc-85e6-4a01afd577a9",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313499175,
+                    "materialAssets": [
+                        313499112
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": true,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "resource_id": "a3a6b8aa-b224-425c-ad3a-66071c528cfb",
+            "name": "FORGE_LOW_FOUNDATION"
+        },
+        "53cf4f41-cc20-4f29-88b0-bb03ba7185a4": {
+            "enabled": true,
+            "template": null,
+            "tags": [],
+            "parent": "fc1ba33e-c510-43bc-85e6-4a01afd577a9",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313499176,
+                    "materialAssets": [
+                        313499112
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": true,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "resource_id": "53cf4f41-cc20-4f29-88b0-bb03ba7185a4",
+            "name": "FORGE_DISTANT_BUTTRESSES"
+        },
+        "5cd81b6e-a2d0-42c6-9241-a197aa3bd4e5": {
+            "enabled": false,
+            "template": null,
+            "tags": [],
+            "parent": "fc1ba33e-c510-43bc-85e6-4a01afd577a9",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "template_id": null,
+            "template_ent_ids": null,
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313499177,
+                    "materialAssets": [
+                        313499105
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": true,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "resource_id": "5cd81b6e-a2d0-42c6-9241-a197aa3bd4e5",
+            "name": "FORGE_FOUNDATION_HEAT"
+        },
+        "3418d6dc-7963-4b15-b1c4-f04b234eab81": {
+            "name": "LIGHT_FORGE_RIM_NEUTRAL",
+            "tags": [],
+            "enabled": true,
+            "resource_id": "3418d6dc-7963-4b15-b1c4-f04b234eab81",
+            "parent": "dd1caafb-041a-447a-bbf2-4da3d1530041",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                -15,
+                165,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "components": {
+                "light": {
+                    "enabled": true,
+                    "type": "directional",
+                    "bake": false,
+                    "bakeArea": 0,
+                    "bakeNumSamples": 1,
+                    "bakeDir": true,
+                    "affectDynamic": true,
+                    "affectLightmapped": false,
+                    "affectSpecularity": true,
+                    "color": [
+                        0.88,
+                        0.86,
+                        0.81
+                    ],
+                    "intensity": 1.45,
+                    "castShadows": false,
+                    "shadowUpdateMode": 2,
+                    "shadowType": 0,
+                    "vsmBlurMode": 1,
+                    "vsmBlurSize": 11,
+                    "vsmBias": 0.01,
+                    "shadowDistance": 16,
+                    "shadowIntensity": 1,
+                    "shadowResolution": 1024,
+                    "numCascades": 1,
+                    "cascadeDistribution": 0.5,
+                    "shadowBias": 0.2,
+                    "normalOffsetBias": 0.05,
+                    "penumbraSize": 1,
+                    "penumbraFalloff": 1,
+                    "range": 8,
+                    "falloffMode": 0,
+                    "innerConeAngle": 40,
+                    "outerConeAngle": 45,
+                    "shape": 0,
+                    "cookieAsset": null,
+                    "cookie": null,
+                    "cookieIntensity": 1,
+                    "cookieFalloff": true,
+                    "cookieChannel": "rgb",
+                    "cookieAngle": 0,
+                    "cookieScale": [
+                        1,
+                        1
+                    ],
+                    "cookieOffset": [
+                        0,
+                        0
+                    ],
+                    "isStatic": false,
+                    "layers": [
+                        0
+                    ]
+                }
+            },
+            "template": null,
+            "template_id": null,
+            "template_ent_ids": null
+        },
+        "3826343c-c019-48ed-8fc7-641f17056f99": {
+            "name": "LIGHT_FORGE_FILL_ASH",
+            "tags": [],
+            "enabled": true,
+            "resource_id": "3826343c-c019-48ed-8fc7-641f17056f99",
+            "parent": "dd1caafb-041a-447a-bbf2-4da3d1530041",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                12,
+                -38,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "components": {
+                "light": {
+                    "enabled": true,
+                    "type": "directional",
+                    "bake": false,
+                    "bakeArea": 0,
+                    "bakeNumSamples": 1,
+                    "bakeDir": true,
+                    "affectDynamic": true,
+                    "affectLightmapped": false,
+                    "affectSpecularity": true,
+                    "color": [
+                        0.76,
+                        0.74,
+                        0.7
+                    ],
+                    "intensity": 0.65,
+                    "castShadows": false,
+                    "shadowUpdateMode": 2,
+                    "shadowType": 0,
+                    "vsmBlurMode": 1,
+                    "vsmBlurSize": 11,
+                    "vsmBias": 0.01,
+                    "shadowDistance": 16,
+                    "shadowIntensity": 1,
+                    "shadowResolution": 1024,
+                    "numCascades": 1,
+                    "cascadeDistribution": 0.5,
+                    "shadowBias": 0.2,
+                    "normalOffsetBias": 0.05,
+                    "penumbraSize": 1,
+                    "penumbraFalloff": 1,
+                    "range": 8,
+                    "falloffMode": 0,
+                    "innerConeAngle": 40,
+                    "outerConeAngle": 45,
+                    "shape": 0,
+                    "cookieAsset": null,
+                    "cookie": null,
+                    "cookieIntensity": 1,
+                    "cookieFalloff": true,
+                    "cookieChannel": "rgb",
+                    "cookieAngle": 0,
+                    "cookieScale": [
+                        1,
+                        1
+                    ],
+                    "cookieOffset": [
+                        0,
+                        0
+                    ],
+                    "isStatic": false,
+                    "layers": [
+                        0
+                    ]
+                }
+            },
+            "template": null,
+            "template_id": null,
+            "template_ent_ids": null
+        },
+        "e1a53df0-e71a-4b50-a8b9-4c858a149bab": {
+            "name": "LIGHT_FORGE_EMBER_SPILL",
+            "tags": [],
+            "enabled": true,
+            "resource_id": "e1a53df0-e71a-4b50-a8b9-4c858a149bab",
+            "parent": "dd1caafb-041a-447a-bbf2-4da3d1530041",
+            "children": [],
+            "position": [
+                -6.1,
+                3,
+                0.45
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "components": {
+                "light": {
+                    "enabled": true,
+                    "type": "omni",
+                    "bake": false,
+                    "bakeArea": 0,
+                    "bakeNumSamples": 1,
+                    "bakeDir": true,
+                    "affectDynamic": true,
+                    "affectLightmapped": false,
+                    "affectSpecularity": false,
+                    "color": [
+                        1,
+                        0.3,
+                        0.065
+                    ],
+                    "intensity": 0.25,
+                    "castShadows": false,
+                    "shadowUpdateMode": 2,
+                    "shadowType": 0,
+                    "vsmBlurMode": 1,
+                    "vsmBlurSize": 11,
+                    "vsmBias": 0.01,
+                    "shadowDistance": 16,
+                    "shadowIntensity": 1,
+                    "shadowResolution": 1024,
+                    "numCascades": 1,
+                    "cascadeDistribution": 0.5,
+                    "shadowBias": 0.2,
+                    "normalOffsetBias": 0.05,
+                    "penumbraSize": 1,
+                    "penumbraFalloff": 1,
+                    "range": 3.4,
+                    "falloffMode": 1,
+                    "innerConeAngle": 40,
+                    "outerConeAngle": 45,
+                    "shape": 0,
+                    "cookieAsset": null,
+                    "cookie": null,
+                    "cookieIntensity": 1,
+                    "cookieFalloff": true,
+                    "cookieChannel": "rgb",
+                    "cookieAngle": 0,
+                    "cookieScale": [
+                        1,
+                        1
+                    ],
+                    "cookieOffset": [
+                        0,
+                        0
+                    ],
+                    "isStatic": false,
+                    "layers": [
+                        0
+                    ]
+                }
+            },
+            "template": null,
+            "template_id": null,
+            "template_ent_ids": null
+        },
+        "79bdeb04-8169-4eb7-90dd-9029ee62ad66": {
+            "name": "LIGHT_FORGE_LOW_CRIMSON",
+            "tags": [],
+            "enabled": true,
+            "resource_id": "79bdeb04-8169-4eb7-90dd-9029ee62ad66",
+            "parent": "dd1caafb-041a-447a-bbf2-4da3d1530041",
+            "children": [],
+            "position": [
+                -0.6,
+                -1.5,
+                0.8
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "components": {
+                "light": {
+                    "enabled": true,
+                    "type": "omni",
+                    "bake": false,
+                    "bakeArea": 0,
+                    "bakeNumSamples": 1,
+                    "bakeDir": true,
+                    "affectDynamic": true,
+                    "affectLightmapped": false,
+                    "affectSpecularity": false,
+                    "color": [
+                        1,
+                        0.22,
+                        0.04
+                    ],
+                    "intensity": 0.6,
+                    "castShadows": false,
+                    "shadowUpdateMode": 2,
+                    "shadowType": 0,
+                    "vsmBlurMode": 1,
+                    "vsmBlurSize": 11,
+                    "vsmBias": 0.01,
+                    "shadowDistance": 16,
+                    "shadowIntensity": 1,
+                    "shadowResolution": 1024,
+                    "numCascades": 1,
+                    "cascadeDistribution": 0.5,
+                    "shadowBias": 0.2,
+                    "normalOffsetBias": 0.05,
+                    "penumbraSize": 1,
+                    "penumbraFalloff": 1,
+                    "range": 4.8,
+                    "falloffMode": 1,
+                    "innerConeAngle": 40,
+                    "outerConeAngle": 45,
+                    "shape": 0,
+                    "cookieAsset": null,
+                    "cookie": null,
+                    "cookieIntensity": 1,
+                    "cookieFalloff": true,
+                    "cookieChannel": "rgb",
+                    "cookieAngle": 0,
+                    "cookieScale": [
+                        1,
+                        1
+                    ],
+                    "cookieOffset": [
+                        0,
+                        0
+                    ],
+                    "isStatic": false,
+                    "layers": [
+                        0
+                    ]
+                }
+            },
+            "template": null,
+            "template_id": null,
+            "template_ent_ids": null
+        },
+        "26544c4c-4010-44ad-8e17-3448999eb27c": {
+            "name": "FORGE_BASALT_HEARTH",
+            "tags": [],
+            "enabled": true,
+            "resource_id": "26544c4c-4010-44ad-8e17-3448999eb27c",
+            "parent": "dd1caafb-041a-447a-bbf2-4da3d1530041",
+            "children": [],
+            "position": [
+                0,
+                1.08,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                0.8,
+                1,
+                0.8
+            ],
+            "components": {
+                "render": {
+                    "enabled": true,
+                    "type": "asset",
+                    "asset": 313043285,
+                    "materialAssets": [
+                        313043282
+                    ],
+                    "layers": [
+                        0
+                    ],
+                    "batchGroupId": null,
+                    "castShadows": false,
+                    "castShadowsLightmap": true,
+                    "receiveShadows": true,
+                    "lightmapped": false,
+                    "lightmapSizeMultiplier": 1,
+                    "isStatic": false,
+                    "rootBone": null,
+                    "aabbCenter": null,
+                    "aabbHalfExtents": null,
+                    "shadowCascadeMask": 255
+                }
+            },
+            "template": null,
+            "template_id": null,
+            "template_ent_ids": null
+        },
+        "831f6874-b2ca-4700-9a8e-56e82e16f584": {
+            "name": "LIGHT_FORGE_EMBEDDED_HEAT_05",
+            "tags": [],
+            "enabled": true,
+            "resource_id": "831f6874-b2ca-4700-9a8e-56e82e16f584",
+            "parent": "b65ea615-54b0-45a4-9868-97742f20b947",
+            "children": [],
+            "position": [
+                -0.76,
+                1.19,
+                0.43
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "components": {
+                "light": {
+                    "enabled": true,
+                    "type": "omni",
+                    "bake": false,
+                    "bakeArea": 0,
+                    "bakeNumSamples": 1,
+                    "bakeDir": true,
+                    "affectDynamic": true,
+                    "affectLightmapped": false,
+                    "affectSpecularity": false,
+                    "color": [
+                        1,
+                        0.27,
+                        0.055
+                    ],
+                    "intensity": 0.13,
+                    "castShadows": false,
+                    "shadowUpdateMode": 2,
+                    "shadowType": 0,
+                    "vsmBlurMode": 1,
+                    "vsmBlurSize": 11,
+                    "vsmBias": 0.01,
+                    "shadowDistance": 16,
+                    "shadowIntensity": 1,
+                    "shadowResolution": 1024,
+                    "numCascades": 1,
+                    "cascadeDistribution": 0.5,
+                    "shadowBias": 0.2,
+                    "normalOffsetBias": 0.05,
+                    "penumbraSize": 1,
+                    "penumbraFalloff": 1,
+                    "range": 0.75,
+                    "falloffMode": 1,
+                    "innerConeAngle": 40,
+                    "outerConeAngle": 45,
+                    "shape": 0,
+                    "cookieAsset": null,
+                    "cookie": null,
+                    "cookieIntensity": 1,
+                    "cookieFalloff": true,
+                    "cookieChannel": "rgb",
+                    "cookieAngle": 0,
+                    "cookieScale": [
+                        1,
+                        1
+                    ],
+                    "cookieOffset": [
+                        0,
+                        0
+                    ],
+                    "isStatic": false,
+                    "layers": [
+                        0
+                    ]
+                }
+            },
+            "template": null,
+            "template_id": null,
+            "template_ent_ids": null
+        },
+        "00a3aa85-a0f1-41a9-abbb-e501f9fc2173": {
+            "name": "LIGHT_FORGE_WARM_GRAZE",
+            "tags": [],
+            "enabled": true,
+            "resource_id": "00a3aa85-a0f1-41a9-abbb-e501f9fc2173",
+            "parent": "dd1caafb-041a-447a-bbf2-4da3d1530041",
+            "children": [],
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                -12,
+                -68,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "components": {
+                "light": {
+                    "enabled": true,
+                    "type": "directional",
+                    "bake": false,
+                    "bakeArea": 0,
+                    "bakeNumSamples": 1,
+                    "bakeDir": true,
+                    "affectDynamic": true,
+                    "affectLightmapped": false,
+                    "affectSpecularity": false,
+                    "color": [
+                        1,
+                        0.52,
+                        0.25
+                    ],
+                    "intensity": 0.48,
+                    "castShadows": false,
+                    "shadowUpdateMode": 2,
+                    "shadowType": 0,
+                    "vsmBlurMode": 1,
+                    "vsmBlurSize": 11,
+                    "vsmBias": 0.01,
+                    "shadowDistance": 16,
+                    "shadowIntensity": 1,
+                    "shadowResolution": 1024,
+                    "numCascades": 1,
+                    "cascadeDistribution": 0.5,
+                    "shadowBias": 0.2,
+                    "normalOffsetBias": 0.05,
+                    "penumbraSize": 1,
+                    "penumbraFalloff": 1,
+                    "range": 8,
+                    "falloffMode": 0,
+                    "innerConeAngle": 40,
+                    "outerConeAngle": 45,
+                    "shape": 0,
+                    "cookieAsset": null,
+                    "cookie": null,
+                    "cookieIntensity": 1,
+                    "cookieFalloff": true,
+                    "cookieChannel": "rgb",
+                    "cookieAngle": 0,
+                    "cookieScale": [
+                        1,
+                        1
+                    ],
+                    "cookieOffset": [
+                        0,
+                        0
+                    ],
+                    "isStatic": false,
+                    "layers": [
+                        0
+                    ]
+                }
+            },
+            "template": null,
+            "template_id": null,
+            "template_ent_ids": null
+        }
+    },
+    "created": "2026-10-28T18:17:26.347Z",
+    "checkpoint_id": "c16e0b5f-d465-4cf4-9499-cd6bf894f2e7",
+    "id": 2636413
+}

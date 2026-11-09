@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { signalLinks, hubCopy } from '../../shared/signals.js';
 import './commandCenter.css';
 
-export default function CommandCenter({visibility,profile,reduced,utilities,preload=true,onRuntime}) {
+export default function CommandCenter({visibility,profile,reduced,utilities,preload=true,onRuntime,onOpen}) {
   const section=useRef(null),canvas=useRef(null),runtime=useRef(null),reducedRef=useRef(reduced),controls=useRef([]),openLink=useRef(null);
   const [entered,setEntered]=useState(false),[attempt,retry]=useState(0),[state,setState]=useState('loading'),[selected,setSelected]=useState(null);
   reducedRef.current=reduced;
@@ -44,6 +44,10 @@ export default function CommandCenter({visibility,profile,reduced,utilities,prel
   },[selected]);
   const overview=()=>{const previous=selected;runtime.current?.select(null);controls.current[previous]?.focus({preventScroll:true});};
   const navigate=event=>{
+    if(onOpen&&!event.metaKey&&!event.ctrlKey&&!event.shiftKey&&!event.altKey){
+      const id=event.currentTarget.dataset.destination;
+      if(id){event.preventDefault();onOpen(id);return;}
+    }
     const href=event.currentTarget.getAttribute('href');
     if(!href?.startsWith('#')||event.metaKey||event.ctrlKey||event.shiftKey||event.altKey)return;
     const target=document.getElementById(href.slice(1));
@@ -71,19 +75,19 @@ export default function CommandCenter({visibility,profile,reduced,utilities,prel
     <div className={`hub-focus ${current?'has-focus':''}`} aria-label={current?`${current.title} selected`:'Signal overview'}>
       {current?<>
         <h3>{current.title}</h3><p className="hub-section-kind">{current.subtitle}</p><p>{current.summary}</p>
-        <div className="hub-focus-actions"><a ref={openLink} className="hub-open" href={current.href} onClick={navigate}>Open {current.title} <span aria-hidden="true">↗</span></a>
+        <div className="hub-focus-actions"><a ref={openLink} className="hub-open" href={`#space-${current.id}`} data-destination={current.id} onClick={navigate}>Open {current.title} <span aria-hidden="true">↗</span></a>
         <button onClick={overview}>Overview <span aria-hidden="true">↶</span></button></div>
       </>:<>
         <h3>Choose a signal.</h3>
         <p>{reduced?'A still view. Every section is one link away.':'Bring a glass panel into focus, then open its section.'}</p>
-        {visibility.about&&<a className="hub-browse" href="#about" onClick={navigate}>Or start with Origin ↓</a>}
+        {visibility.about&&<a className="hub-browse" href="#space-about" data-destination="about" onClick={navigate}>Or start with Origin ↓</a>}
       </>}
     </div>
     <div className="hub-index">
     <p className="hub-status" role="status">{current?`${current.title} in focus · Esc for overview`:reduced?'Still view · direct navigation':state==='ready'?'Command index · select a panel':'Command index · direct navigation'}</p>
     <nav className="hub-controls" aria-label="Command Center panels">
       {choices.map((p,i)=>p.enabled&&<div key={p.id}>
-        {state==='ready'&&!reduced?<button ref={e=>controls.current[i]=e} aria-pressed={selected===i} onPointerEnter={()=>runtime.current?.hover(i)} onPointerLeave={()=>runtime.current?.hover(null)} onFocus={()=>runtime.current?.hover(i)} onBlur={()=>runtime.current?.hover(null)} onClick={()=>runtime.current?.select(i)}><kbd aria-hidden="true">{i+1}</kbd>{p.title}</button>:<a href={p.href} onClick={navigate}>{p.title}<span aria-hidden="true">↗</span></a>}
+        {state==='ready'&&!reduced?<button ref={e=>controls.current[i]=e} aria-pressed={selected===i} onPointerEnter={()=>runtime.current?.hover(i)} onPointerLeave={()=>runtime.current?.hover(null)} onFocus={()=>runtime.current?.hover(i)} onBlur={()=>runtime.current?.hover(null)} onClick={()=>runtime.current?.select(i)}><kbd aria-hidden="true">{i+1}</kbd>{p.title}</button>:<a href={`#space-${p.id}`} data-destination={p.id} onClick={navigate}>{p.title}<span aria-hidden="true">↗</span></a>}
       </div>)}
     </nav>
     {!reduced&&state==='ready'&&<p className="hub-key-hint">Keys 1–8 to focus · Enter to open · Esc to return</p>}

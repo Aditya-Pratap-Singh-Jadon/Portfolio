@@ -10,7 +10,7 @@ import { HubController } from './hubController.js';
 import { createHubLabels } from './hubLabels.js';
 
 export async function createHubRuntime(canvas,{signal,reduced=false,onSelect,onError,enabled}) {
-  let app,device,hub,labels,emergence=1,disposed=false,ready=false,active=false,dirty=true,resizeObserver,observer;
+  let app,device,hub,labels,emergence=1,suspended=false,disposed=false,ready=false,active=false,dirty=true,resizeObserver,observer;
   const removers=[];
   const listen=(target,type,callback)=>{target.addEventListener(type,callback);removers.push(()=>target.removeEventListener(type,callback));};
   const check=()=>{if(signal.aborted)throw new DOMException('Hub load cancelled','AbortError');};
@@ -60,7 +60,7 @@ export async function createHubRuntime(canvas,{signal,reduced=false,onSelect,onE
       hub.resize(Math.max(1,width),Math.max(1,height));dirty=true;
     };
     app.on('update',dt=>{
-      if(!ready||disposed||document.hidden||!active||emergence===0)return;
+      if(!ready||disposed||suspended||document.hidden||!active||emergence===0)return;
       const moving=[...hub.motion.velocities,...hub.hoverMotion.velocities].some(v=>v!==0);
       if(!dirty&&!moving)return;
       hub.update(Math.min(dt,.1));dirty=false;app.renderNextFrame=true;
@@ -78,6 +78,7 @@ export async function createHubRuntime(canvas,{signal,reduced=false,onSelect,onE
     ready=true;app.start();resize();hub.update(0);app.renderNextFrame=true;
     return {
       app,canvas,select,dispose,
+      setSuspended(value){suspended=Boolean(value);dirty=true;if(suspended)app.renderNextFrame=false;},
       setEmergence(value){
         if(disposed)return;
         const next=Math.max(0,Math.min(1,Number.isFinite(value)?value:0));
@@ -88,7 +89,7 @@ export async function createHubRuntime(canvas,{signal,reduced=false,onSelect,onE
       },
       hover(index){if(!disposed){hub.hover(index);dirty=true;}},
       setReduced(value){if(!disposed){reduced=Boolean(value);hub.setReduced(reduced);dirty=true;}},
-      getState(){return {ready,disposed,active,reduced,emergence,camera:hub?.camera.getLocalPosition().toArray(),selected:hub?.motion.selected,panels:hub?.panels.map(p=>({id:p.e.name,position:p.e.getLocalPosition().toArray(),rotation:p.e.getLocalRotation().toArray(),rest:p.p.toArray()}))};},
+      getState(){return {ready,disposed,active,suspended,reduced,emergence,settled:hub?.motion.values.every((v,i)=>v===(i===hub.motion.selected?1:0)),camera:hub?.camera.getLocalPosition().toArray(),selected:hub?.motion.selected,panels:hub?.panels.map(p=>({id:p.e.name,position:p.e.getLocalPosition().toArray(),rotation:p.e.getLocalRotation().toArray(),rest:p.p.toArray()}))};},
     };
   } catch(error){dispose();throw error;}
 }

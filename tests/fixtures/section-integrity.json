@@ -1,0 +1,84 @@
+[
+  {
+    "folder": "mi03",
+    "scene": 2636413,
+    "sceneSha256": "d884ec0a3594cb355f05af2e693ec56068b3721e3e9fb9251fe5fdcf577ac9d0",
+    "entities": 84,
+    "files": [
+      {
+        "id": "313507279",
+        "name": "MI_FORGE_GEOLOGICAL.glb",
+        "md5": "ce8c3d78db024a236fcc5dab5e4fab22",
+        "bytes": 7844772
+      },
+      {
+        "id": "313512180",
+        "name": "MI_FORGE_GRAIN.png",
+        "md5": "3a52239c4d38c7414225bc187ca0941c",
+        "bytes": 81706
+      },
+      {
+        "id": "313034834",
+        "name": "MI_R1_TEX_MICRO_NORMAL.png",
+        "md5": "40cb8825841741e94477452cad646667",
+        "bytes": 362745
+      },
+      {
+        "id": "313499107",
+        "name": "MI_PROJECT_FORGE.glb",
+        "md5": "ba2c31b8f1e93dd568a818cdd7d94b7f",
+        "bytes": 817524
+      },
+      {
+        "id": "313499113",
+        "name": "MI_FORGE_SERIALS.png",
+        "md5": "918c392f1d80e2a6dad2db1dc27cd690",
+        "bytes": 16858
+      },
+      {
+        "id": "313043280",
+        "name": "MI_ASHEN_VOID.glb",
+        "md5": "b8395dca54c79af6f3cd3b14bae234b0",
+        "bytes": 504884
+      }
+    ]
+  },
+  {
+    "folder": "mi04",
+    "scene": 2636834,
+    "sceneSha256": "9d2b56708d11f198df278211f2918c84dbccd5e4d1ee587f948cfd2cac402351",
+    "entities": 174,
+    "files": [
+      {
+        "id": "313590840",
+        "name": "MI_NEURAL_RIG.json",
+        "md5": "8599450078796fb7558b5bf99f2ee17e",
+        "bytes": 150222
+      },
+      {
+        "id": "313552981",
+        "name": "MI_CRIMSON_SYNAPSE.glb",
+        "md5": "27815ebbdbe6f2b5a9a2bea1d3a11d1c",
+        "bytes": 2946856
+      },
+      {
+        "id": "313034834",
+        "name": "MI_R1_TEX_MICRO_NORMAL.png",
+        "md5": "40cb8825841741e94477452cad646667",
+        "bytes": 362745
+      },
+      {
+        "id": "313574119",
+        "name": "MI_CONTINUOUS_SYNAPSE.glb",
+        "md5": "5b61ebfca331b4fc42139e80eb2dfec5",
+        "bytes": 1175604
+      },
+      {
+        "id": "313043280",
+        "name": "MI_ASHEN_VOID.glb",
+        "md5": "b8395dca54c79af6f3cd3b14bae234b0",
+        "bytes": 504884
+      }
+    ]
+  }
+]

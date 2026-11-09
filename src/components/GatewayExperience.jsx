@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react';
 import Hero from './Hero.jsx';
 import CommandCenter from './CommandCenter.jsx';
+import SectionJourney from './SectionJourney.jsx';
 import { sampleChamber } from '../playcanvas/chamberTimeline.js';
 import { scrollToChamber } from '../chamberNavigation.js';
 import './gatewayExperience.css';
@@ -26,6 +27,12 @@ function ChamberAtmosphere() {
 
 export default function GatewayExperience({profile,visibility,reduced,utilities}) {
   const chamber=useRef(null),hub=useRef(null),latest=useRef({target:0,actual:0,mode:'loading'}),pendingFocus=useRef(null);
+  const journey=useRef(null);
+  const sectionActive=useRef(false);
+  const openSection=useCallback(id=>journey.current?.open(id),[]);
+  const sectionProgress=useCallback(value=>chamber.current?.style.setProperty('--section-progress',value),[]);
+  const visitingSection=useCallback(value=>{sectionActive.current=value;hub.current?.setSuspended(value);},[]);
+  const canEnter=useCallback(()=>!hub.current||hub.current.getState().disposed||hub.current.getState().settled,[]);
   const [preload,setPreload]=useState(reduced),[fallback,setFallback]=useState(false);
   const still=useRef(reduced);still.current=reduced||fallback;
   const previousStill=useRef(still.current);
@@ -42,6 +49,7 @@ export default function GatewayExperience({profile,visibility,reduced,utilities}
   const apply=useCallback(progress=>{
     const el=chamber.current;if(!el)return;
     const s=sampleChamber(progress,still.current);
+    journey.current?.setChamber(s.interactive);
     const shell=el.closest('.awakening-shell'),opening=shell.querySelector('.opening-screen');
     el.style.setProperty('--chamber-reveal',s.reveal);
     el.style.setProperty('--chamber-depth',s.depth);
@@ -63,6 +71,7 @@ export default function GatewayExperience({profile,visibility,reduced,utilities}
   },[]);
   const attachHub=useCallback(value=>{
     hub.current=value;
+    value?.setSuspended(sectionActive.current);
     apply(latest.current.mode==='ready'?latest.current.actual:latest.current.target);
   },[apply]);
   const onTarget=useCallback(value=>{
@@ -98,10 +107,10 @@ export default function GatewayExperience({profile,visibility,reduced,utilities}
     document.addEventListener('click',navigate);
     return()=>{observer.disconnect();removeEventListener('resize',resize);document.removeEventListener('click',navigate);};
   },[apply]);
-  return <Hero profile={profile} reduced={reduced} onFrame={onFrame} onTarget={onTarget} onMode={onMode}>
+  return <><Hero profile={profile} reduced={reduced} onFrame={onFrame} onTarget={onTarget} onMode={onMode}>
     <div ref={chamber} id="awakening-boundary" className="inner-chamber" data-phase="gateway">
       <ChamberAtmosphere />
-      <CommandCenter profile={profile} visibility={visibility} reduced={reduced} utilities={utilities} preload={preload} onRuntime={attachHub} />
+      <CommandCenter profile={profile} visibility={visibility} reduced={reduced} utilities={utilities} preload={preload} onRuntime={attachHub} onOpen={openSection} />
     </div>
-  </Hero>;
+  </Hero><SectionJourney ref={journey} reduced={reduced} visibility={visibility} canStart={canEnter} onProgress={sectionProgress} onVisiting={visitingSection}/></>;
 }
