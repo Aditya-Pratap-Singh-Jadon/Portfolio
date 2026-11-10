@@ -106,9 +106,9 @@ test('replacement resume remains private until publication', async () => {
     content.resume = { name: 'new.pdf', data: 'data:application/pdf;base64,JVBERi0xLjQKJSVFT0YK' }
     assert.equal((await post('/api/admin/save', { content, revision: 0 })).status, 200)
     const before = await request('/api/resume')
-    assert.equal(before.status, 404)
-    assert.deepEqual(await before.json(), { error: 'Resume is not available.' })
-    assert.equal((await (await request('/api/content')).json()).content.resumeAvailable, false)
+    assert.equal(before.status, 302)
+    assert.equal(before.headers.get('location'), portfolio.resume.url)
+    assert.equal((await (await request('/api/content')).json()).content.resumeUrl, portfolio.resume.url)
     assert.equal((await post('/api/admin/publish', { revision: 1 })).status, 200)
     const after = await request('/api/resume')
     assert.equal(after.status, 200)
@@ -127,6 +127,27 @@ test('an unpublished resume is unavailable even when a local original exists', a
   assert.equal(response.status, 404)
   assert.deepEqual(await response.json(), { error: 'Resume is not available.' })
   assert.equal(response.headers.get('cache-control'), 'no-store')
+})
+
+test('external resume changes remain private until publication and PDF uploads take precedence', async () => {
+  await fixture(async ({ store, post, request }) => {
+    const content = store.read().draft
+    content.resume = { name: 'Resume.pdf', data: '', url: 'https://drive.google.com/file/d/example/view' }
+    const before = (await request('/api/resume')).headers.get('location')
+    assert.equal((await post('/api/admin/save', { content, revision: 0 })).status, 200)
+    assert.equal((await request('/api/resume')).headers.get('location'), before)
+    assert.equal((await post('/api/admin/publish', { revision: 1 })).status, 200)
+    const response = await request('/api/resume')
+    assert.equal(response.status, 302)
+    assert.equal(response.headers.get('location'), 'https://drive.google.com/file/d/example/view')
+    assert.equal(response.headers.get('cache-control'), 'no-store')
+    content.resume.data = 'data:application/pdf;base64,JVBERi0xLjQKJSVFT0YK'
+    await post('/api/admin/save', { content, revision: 2 })
+    await post('/api/admin/publish', { revision: 3 })
+    const uploaded = await request('/api/resume')
+    assert.equal(uploaded.headers.get('content-type'), 'application/pdf')
+    assert.equal((await (await request('/api/content')).json()).content.resumeUrl, '')
+  })
 })
 test('pin refresh preserves last good data on failure and never imports private repositories', async () => {
   let fail = false

@@ -20,8 +20,8 @@ export default function QuickView({ content }) {
           <p>{p.summary}</p>
           <p>{p.availability}</p>
         </div>
-        {content.resumeAvailable ? <a className="button primary" href="/api/resume" download>
-          Download résumé ↓
+        {content.resumeAvailable ? <a className="button primary" href={content.resumeUrl || '/api/resume'} download={content.resumeUrl ? undefined : true} target={content.resumeUrl ? '_blank' : undefined} rel={content.resumeUrl ? 'noopener noreferrer' : undefined}>
+          {content.resumeUrl ? 'View résumé ↗' : 'Download résumé ↓'}
         </a> : <p>Résumé unavailable.</p>}
       </div>
       <div className="quick-grid">

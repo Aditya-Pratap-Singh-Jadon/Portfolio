@@ -197,7 +197,7 @@ export const portfolio = {
     },
   ],
   posts: [],
-  resume: { name: "Aditya_Pratap_Singh_Jadon_Resume.pdf", data: "" },
+  resume: { name: "Aditya_Pratap_Singh_Jadon_Resume.pdf", data: "", url: "/Aditya_Pratap_Singh_Jadon_Resume.pdf" },
   sections: {
     about: true,
     projects: true,

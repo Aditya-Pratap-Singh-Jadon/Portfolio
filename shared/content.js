@@ -3,6 +3,10 @@ export function safeUrl(value) {
   try { const u = new URL(value); return u.protocol === 'https:' && !u.username && !u.password } catch { return false }
 }
 
+export function safeResumeUrl(value) {
+  return safeUrl(value) || /^\/[a-z0-9_-]+\.pdf$/i.test(value)
+}
+
 export function mergeProjects(manual, pins = []) {
   const merged = []
   for (const pin of pins) {
@@ -48,7 +52,8 @@ export function validateContent(input) {
   const sections = Object.fromEntries(['about','projects','experience','skills','updates','achievements','contact'].map(k => [k, boolean(input.sections?.[k])]))
   const intervalHours = input.sync?.intervalHours
   if (!Number.isInteger(intervalHours) || intervalHours < 1 || intervalHours > 168) throw new Error('Sync interval must be 1–168 hours')
-  const resume = { name: text(input.resume?.name || 'Resume.pdf', 120), data: text(input.resume?.data || '', 5600000) }
+  const resume = { name: text(input.resume?.name || 'Resume.pdf', 120), data: text(input.resume?.data || '', 5600000), url: text(input.resume?.url || '', 2000) }
+  if (!safeResumeUrl(resume.url)) throw new Error('Resume links must use HTTPS or a root-relative PDF filename')
   if (resume.data && !/^data:application\/pdf;base64,JVBERi0[A-Za-z0-9+/=]+$/.test(resume.data)) throw new Error('Resume must be a PDF upload')
   return {
     profile, resume, education: strings(input.education, ['institution','degree','specialization','graduation','grade']), projects, skills, posts, sections,
@@ -64,7 +69,8 @@ export function publicContent(content, pins = []) {
   const projects = s.projects ? mergeProjects(content.projects, pins) : []
   return {
     ...rest,
-    resumeAvailable: Boolean(resume?.data),
+    resumeAvailable: Boolean(resume?.data || resume?.url),
+    resumeUrl: resume?.data ? '' : resume?.url || '',
     profile: { ...rest.profile, ...(!s.about ? { about: '', punchline: '' } : {}), ...(!s.contact ? { email: '', github: '', linkedin: '' } : {}) },
     education: s.achievements || s.about ? rest.education : {},
     projects, experience: s.experience ? rest.experience : [],

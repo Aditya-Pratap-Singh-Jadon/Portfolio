@@ -29,6 +29,22 @@ test('resume imports reject non-PDF data and stay out of public JSON', () => {
   assert.equal(result.resume, undefined)
   assert.equal(result.resumeAvailable, true)
 })
+test('approved external resume links are validated and exposed without PDF data', () => {
+  const source = structuredClone(portfolio)
+  source.resume = { name: 'Resume.pdf', data: '', url: 'https://drive.google.com/file/d/example/view' }
+  const result = content.publicContent(content.validateContent(source))
+  assert.equal(result.resumeAvailable, true)
+  assert.equal(result.resumeUrl, 'https://drive.google.com/file/d/example/view')
+  assert.equal(result.resume, undefined)
+  source.resume.url = '/Approved_Resume.pdf'
+  assert.equal(content.publicContent(content.validateContent(source)).resumeUrl, '/Approved_Resume.pdf')
+  for (const invalid of ['//example.com/resume.pdf', '/../resume.pdf', '/private/resume.pdf', 'http://example.com/resume.pdf']) {
+    source.resume.url = invalid
+    assert.throws(() => content.validateContent(source), /HTTPS/)
+  }
+  source.resume.url = 'javascript:alert(1)'
+  assert.throws(() => content.validateContent(source), /HTTPS/)
+})
 test('imports reject missing IDs and impossible LinkedIn dates', () => {
   const source = structuredClone(portfolio)
   delete source.projects[0].id

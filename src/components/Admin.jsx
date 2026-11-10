@@ -446,6 +446,13 @@ export default function Admin() {
               </p>
               <p>Current draft: {draft.resume?.data ? draft.resume.name : "No PDF uploaded"}</p>
               <label className="admin-field">
+                Résumé link (HTTPS or /filename.pdf; used when no PDF is uploaded)
+                <input type="text" value={draft.resume?.url || ''} onChange={e => {
+                  setDraft({...draft, resume: {...draft.resume, url: e.target.value}});
+                  setDirty(true);
+                }}/>
+              </label>
+              <label className="admin-field">
                 Upload replacement PDF (up to 4 MB)
                 <input
                   type="file"

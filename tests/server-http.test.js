@@ -5,6 +5,7 @@ import { join, resolve, sep } from 'node:path'
 import { createServer } from 'node:net'
 import { spawn } from 'node:child_process'
 import { once } from 'node:events'
+import { portfolio } from '../src/data/portfolio.js'
 
 test('production HTTP serves root, routes and assets while keeping private files outside dist', async () => {
   const tempRoot = resolve('tmp')
@@ -61,7 +62,9 @@ test('production HTTP serves root, routes and assets while keeping private files
     assert.equal((await request('/%2e%2e%2fsecret.txt')).status, 404)
     assert.equal((await request('/', { method: 'POST' })).status, 405)
     assert.equal((await request('/api/content')).status, 200)
-    assert.equal((await request('/api/resume')).status, 404)
+    const resume = await request('/api/resume', { redirect: 'manual' })
+    assert.equal(resume.status, 302)
+    assert.equal(resume.headers.get('location'), portfolio.resume.url)
   } finally {
     if (child && child.exitCode === null) {
       const exited = once(child, 'exit')

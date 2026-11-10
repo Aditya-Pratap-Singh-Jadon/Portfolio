@@ -1,5 +1,5 @@
 import { randomBytes, timingSafeEqual } from "node:crypto";
-import { publicContent, safeUrl } from "../shared/content.js";
+import { publicContent, safeUrl, safeResumeUrl } from "../shared/content.js";
 
 const random = () => randomBytes(32).toString("hex");
 const equal = (a, b) =>
@@ -152,6 +152,7 @@ export function createApp({ store, env, fetcher = fetch }) {
         });
       if (path === "/api/resume" && request.method === "GET") {
         const resume = store.readPublished().published.resume;
+        if (!resume?.data && resume?.url && safeResumeUrl(resume.url)) return redirect(resume.url);
         if (!resume?.data) return json({ error: "Resume is not available." }, 404);
         const pdf = Buffer.from(resume.data.split(",")[1], "base64");
         return new Response(pdf, {
