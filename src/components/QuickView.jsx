@@ -1,5 +1,6 @@
 import { ExternalLink } from "./UI";
 import { sectionById } from "../../shared/signals.js";
+import {groupQuickViewSkills} from './quickViewSkills.js';
 export default function QuickView({ content }) {
   const {
     profile: p,
@@ -72,13 +73,13 @@ export default function QuickView({ content }) {
             <section id="skills">
               <h2>{sectionById.skills.title}</h2>
               <p className="section-subtitle">{sectionById.skills.subtitle}</p>
-              {skills.map((skill) => (
-                <p key={skill.id}>
-                  <strong>{skill.name}</strong> · {skill.status}
-                  <br />
-                  {skill.technologies}
-                </p>
-              ))}
+              <div className="quick-skill-groups">
+                {groupQuickViewSkills(skills).map(group=><div className="quick-skill-group" key={group.name}>
+                  <h3>{group.name}</h3>
+                  <p className="quick-skill-status">{group.status}</p>
+                  <p className="quick-skill-technologies">{group.technologies.join(' · ')}</p>
+                </div>)}
+              </div>
             </section>
           )}
           {s.achievements && (
