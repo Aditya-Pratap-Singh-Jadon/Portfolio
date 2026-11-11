@@ -11,7 +11,7 @@ const restore=r=>{r.e.setLocalPosition(r.p);r.e.setLocalRotation(r.q);r.e.setLoc
 // Each instance owns only its component's runtime transforms, material clones and listeners.
 export class AccentsController {
  constructor(script,kind){
-  this.script=script;this.mount=script.mount;this.initialReduced=script.initialReduced;this.app=script.app;this.entity=script.entity;this.kind=kind;this.listeners=[];this.materials=[];this.meshes=[];this.poses=[];this.items=[];this.time=0;this.stopped=false;
+  this.script=script;this.mount=script.mount;this.contentLabels=script.contentLabels;this.initialReduced=script.initialReduced;this.app=script.app;this.entity=script.entity;this.kind=kind;this.listeners=[];this.materials=[];this.meshes=[];this.poses=[];this.items=[];this.time=0;this.stopped=false;
   try{this.start();}catch(error){this.cleanup();this.error=error.message;this.app.fire(`mi:${kind}:error`,{state:'fallback',error:this.error});console.error('MI_ACCENTS_INIT',kind,error);}
  }
  required(name){const e=this.entity.findByName(name);if(!e)throw new Error('Missing approved entity: '+name);return e;}
@@ -64,6 +64,7 @@ export class AccentsController {
  }
  controls(){createSectionControls(this,this.kind,{presentation:this.script.presentation||'immersive'});}
  key(e){
+  if(e.target?.closest?.('.space-detail'))return;
   if(e.defaultPrevented||e.repeat||e.altKey||e.ctrlKey||e.metaKey||e.target?.isContentEditable||['INPUT','TEXTAREA','SELECT'].includes(e.target?.tagName))return;
   const k=e.key.toLowerCase();
   if(k==='escape'){e.preventDefault();this.reset();}
@@ -99,7 +100,7 @@ export class AccentsController {
    const p=m.progress,pulse=p===1&&m.target&&m.awakening>0&&m.awakening<1?m.awakening:null;
    this.items.forEach((item,i)=>{const pose=nexusPose(item.data,p,i);item.e.setLocalPosition(...pose.position);item.e.setLocalEulerAngles(...pose.rotation);item.e.setLocalScale(...pose.scale);const alignment=p>.97?Math.min(1,(p-.97)/.03):0;this.illuminate(item.records,alignment*.24,1,pulse);});
    this.light.intensity=this.lightRest+(pulse===null?0:.22*Math.sin(Math.PI*pulse));
-   this.status.textContent=m.contactReady?'Restored · contact content may appear':m.state==='separated'?'Suspended · ready to assemble':m.state;
+   this.status.textContent=m.contactReady?'Contact details ready':m.state==='separated'?'Activate the structure to open contact details':m.state;
    this.pauseButton.setAttribute('aria-pressed',String(m.paused));
   }else{
    const totalFocus=m.focus.values.reduce((a,b)=>a+b,0);
@@ -112,7 +113,7 @@ export class AccentsController {
     const pulse=m.pulse===null?null:m.pulse*projectPath([0,this.items[m.selected].data.position[1]],this.rig.chroniclePath),idle=m.exactRest||m.reduced?0:(Math.sin(m.time*.61)+Math.sin(m.time*.973+1.7))*.016;
     this.illuminate(this.fault,idle,1,pulse);this.light.intensity=this.lightRest+(m.selected===null?0:.10*m.focus.values[m.selected]);
    }else this.light.intensity=this.lightRest+(m.selected===null?0:.12*m.focus.values[m.selected]);
-   const label=m.selected===null?(m.settled?'No selection':'Returning to rest'):`${this.kind==='chronicle'?'Milestone':'Chamber'} ${m.selected+1} · content not yet supplied`;if(this.status.textContent!==label)this.status.textContent=label;
+   const label=m.selected===null?(m.settled?'No selection':'Returning to rest'):(this.contentLabels?.[m.selected]||'No published entry');if(this.status.textContent!==label)this.status.textContent=label;
    this.selectButtons.forEach((b,i)=>b.setAttribute('aria-pressed',String(m.selected===i)));
   }
   this.reducedButton.setAttribute('aria-pressed',String(m.reduced));

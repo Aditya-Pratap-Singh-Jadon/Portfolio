@@ -36,16 +36,16 @@ export function validateContent(input) {
     if (!Number.isInteger(p.order) || p.order < 0 || p.order > 999) throw new Error('Project order must be 0–999')
     const image = text(p.image, 3000000)
     if (image && !/^data:image\/(png|jpeg|webp);base64,[a-zA-Z0-9+/=]+$/.test(image)) throw new Error('Project images must be PNG, JPEG or WebP uploads')
-    return { ...strings(p, ['title', 'category', 'year', 'status', 'description', 'contribution', 'challenge', 'outcome', 'credit']), id: id(p.id), repo: url(p.repo), live: url(p.live), tags: list(p.tags, v => text(v, 80), 20), image, featured: boolean(p.featured), hidden: boolean(p.hidden), order: p.order }
+    return { ...strings(p, ['title', 'category', 'year', 'status', 'description', 'contribution', 'challenge', 'outcome', 'credit']), decisions: text(p.decisions ?? ''), id: id(p.id), repo: url(p.repo), live: url(p.live), tags: list(p.tags, v => text(v, 80), 20), image, featured: boolean(p.featured), hidden: boolean(p.hidden), order: p.order }
   }))
   const posts = unique(list(input.posts, p => {
     const source = url(p.url)
-    if (!source || !/(^|\.)linkedin\.com$/.test(new URL(source).hostname)) throw new Error('Posts need a LinkedIn source URL')
-    if (!/^\d{4}-\d{2}-\d{2}$/.test(p.date) || Number.isNaN(Date.parse(p.date)) || new Date(p.date).toISOString().slice(0,10) !== p.date) throw new Error('Posts need a valid date')
+    if (!source || !(/(^|\.)linkedin\.com$/.test(new URL(source).hostname)||new URL(source).hostname==='lnkd.in')) throw new Error('Posts need a LinkedIn source URL')
+    if (p.date!==''&&(!/^\d{4}-\d{2}-\d{2}$/.test(p.date) || Number.isNaN(Date.parse(p.date)) || new Date(p.date).toISOString().slice(0,10) !== p.date)) throw new Error('Posts need a valid date')
     return { id: id(p.id), ...strings(p, ['title', 'text', 'summary', 'date']), url: source, published: boolean(p.published) }
   }))
   if (new Set(posts.map(p => p.url.replace(/\/$/, '').split('?')[0])).size !== posts.length) throw new Error('This LinkedIn post is already included')
-  const experience = unique(list(input.experience, e => ({ id: id(e.id), ...strings(e, ['organization','role','dates','description','details']), url: url(e.url) })))
+  const experience = unique(list(input.experience, e => ({ id: id(e.id), ...strings(e, ['organization','role','dates','description','details']), type: text(e.type ?? ''), url: url(e.url) })))
   const skills = unique(list(input.skills, s => ({ id: id(s.id), ...strings(s, ['name', 'status', 'technologies', 'evidence']), projects: list(s.projects, id, 100), experience: list(s.experience || [], id, 100) })))
   if (skills.some(s => s.projects.some(p => !projects.some(project => project.id === p)))) throw new Error('Skill evidence must reference an existing project')
   if (skills.some(s => s.experience.some(id => !experience.some(e => e.id === id)))) throw new Error('Skill evidence must reference existing experience')
@@ -56,7 +56,7 @@ export function validateContent(input) {
   if (!safeResumeUrl(resume.url)) throw new Error('Resume links must use HTTPS or a root-relative PDF filename')
   if (resume.data && !/^data:application\/pdf;base64,JVBERi0[A-Za-z0-9+/=]+$/.test(resume.data)) throw new Error('Resume must be a PDF upload')
   return {
-    profile, resume, education: strings(input.education, ['institution','degree','specialization','graduation','grade']), projects, skills, posts, sections,
+    profile, resume, education: {...strings(input.education, ['institution','degree','specialization','graduation','grade']), semester:text(input.education.semester??'')}, projects, skills, posts, sections,
     experience,
     achievements: unique(list(input.achievements, a => ({ id: id(a.id), ...strings(a, ['title','detail']), url: url(a.url) }))),
     sync: { enabled: boolean(input.sync?.enabled), intervalHours },
@@ -66,7 +66,8 @@ export function validateContent(input) {
 export function publicContent(content, pins = []) {
   const { sync, resume, ...rest } = content
   const s = content.sections
-  const projects = s.projects ? mergeProjects(content.projects, pins) : []
+  // Fetched pins stay review metadata; only saved editorial projects are public.
+  const projects = s.projects ? mergeProjects(content.projects) : []
   return {
     ...rest,
     resumeAvailable: Boolean(resume?.data || resume?.url),

@@ -56,7 +56,7 @@ export default function QuickView({ content }) {
                 <article key={x.id}>
                   <h3>{x.role}</h3>
                   <p>
-                    {x.organization} · {x.dates}
+                    {x.organization} · {x.dates}{x.type?' · '+x.type:''}
                   </p>
                   <p>{x.description}</p>
                   <ul>
@@ -92,6 +92,7 @@ export default function QuickView({ content }) {
                 <br />
                 Graduating {e.graduation}
                 <br />
+                {e.semester&&<>{e.semester}<br/></>}
                 CGPA {e.grade}
               </p>
               {achievements.map((a) => (

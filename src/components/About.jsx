@@ -20,6 +20,8 @@ export default function About({ profile, education, embedded=false }) {
               Specialization in {education.specialization}
             </span>
             <span>Graduating {education.graduation}</span>
+            {education.semester&&<span>{education.semester}</span>}
+            <span>CGPA {education.grade}</span>
           </div>
         </div>
       </div>

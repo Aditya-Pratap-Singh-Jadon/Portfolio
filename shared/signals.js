@@ -15,8 +15,8 @@ export const signals = [
 export const sectionById = Object.fromEntries(signals.map(s => [s.section || s.id, s]));
 export const hubCopy = {
   title: 'Command Center',
-  introduction: 'Eight signals. Explore the work, the thinking, and the direction ahead.',
-  note: 'Provisional introduction',
+  introduction: 'Explore my projects, foundations, experience, and the work ahead.',
+  note: '',
 };
 
 export function signalLinks(visibility, profile) {

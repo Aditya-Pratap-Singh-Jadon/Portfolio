@@ -21,7 +21,8 @@ export function createSectionControls(c,kind,{presentation='immersive'}={}) {
   help.textContent=kind==='nexus'?'Activate the structure to assemble or separate it. Escape restores separation. Keyboard controls follow.':'Select an object to focus it. Escape resets the view. Tab or arrow keys reach the object controls; Enter or Space activates them.';
   c.ui.append(help);c.mount.setAttribute('aria-describedby',help.id);c.buttons=[];
   for(const def of defs){
-    const b=document.createElement('button');b.type='button';b.className='space-access-control';b.textContent=def.label;b.setAttribute('aria-label',def.label);
+    const label=def.action==='select'&&c.contentLabels?.[def.index]?`${def.label} · ${c.contentLabels[def.index]}`:def.label;
+    const b=document.createElement('button');b.type='button';b.className='space-access-control';b.textContent=label;b.setAttribute('aria-label',label);
     b.dataset.action=def.action;if(def.index!==undefined)b.dataset.index=def.index;
     c.listen(b,'click',()=>{
       if(def.action==='select')c.select(c.motion.selected===def.index?null:def.index);

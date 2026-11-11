@@ -4,22 +4,31 @@ import {SectionNavigation,destinations} from '../sectionNavigation.js';
 import {scrollToChamber} from '../chamberNavigation.js';
 import {runtimeDestinations} from '../playcanvas/sectionScenes.js';
 import SectionContent from './SectionContent.jsx';
+import SceneContent from './SceneContent.jsx';
+import {sceneEntry,sceneBindings} from '../../shared/sceneContent.js';
 import './sectionJourney.css';
 
 function Destination({id,token,reduced,interactive,hasContent,content,onReady,onError,onRetry,onFallback}) {
   const canvas=useRef(null),mount=useRef(null),runtime=useRef(null);
   const [status,setStatus]=useState('loading');
+  const [selected,setSelected]=useState(null);
   const callbacks=useRef({onReady,onError});callbacks.current={onReady,onError};
   const currentReduced=useRef(reduced);currentReduced.current=reduced;
   const spatial=Object.hasOwn(runtimeDestinations,id),destination=destinations[id];
   useEffect(()=>{
     if(!spatial){callbacks.current.onReady(token);return;}
     const abort=new AbortController();let instance,cancelled=false;
-    setStatus('loading');
-    const fail=()=>{if(!cancelled){setStatus('error');callbacks.current.onError(token);}};
+    setStatus('loading');setSelected(null);
+    const fail=()=>{if(!cancelled){setSelected(null);setStatus('error');callbacks.current.onError(token);}};
     const timeout=setTimeout(()=>{fail();abort.abort();instance?.dispose();},30000);
     import('../playcanvas/sectionRuntime.js').then(({createSectionRuntime})=>createSectionRuntime(canvas.current,{
       destination:id,mount:mount.current,signal:abort.signal,reduced:currentReduced.current,onError:fail,
+      contentLabels:sceneBindings[id]?.map((_,index)=>sceneEntry(content,id,index).title),
+      contentStatuses:sceneBindings[id]?.map((_,index)=>sceneEntry(content,id,index).record?.status||''),
+      onSelection:index=>{if(!cancelled){
+        if(index===null&&document.activeElement?.closest('.space-detail'))mount.current?.closest('.space-shell').querySelector('.space-back')?.focus({preventScroll:true});
+        setSelected(index);
+      }},
     })).then(value=>{
       instance=value;
       if(cancelled||abort.signal.aborted){value.dispose();return;}
@@ -29,10 +38,14 @@ function Destination({id,token,reduced,interactive,hasContent,content,onReady,on
     return()=>{cancelled=true;clearTimeout(timeout);abort.abort();instance?.dispose();if(runtime.current===instance)runtime.current=null;if(window.__MI_SECTION__===instance)delete window.__MI_SECTION__;};
   },[id,token,spatial]);
   useEffect(()=>{runtime.current?.setReduced(reduced);},[reduced]);
+  const entry=sceneEntry(content,id,selected);
+  const close=()=>runtime.current?.reset();
   return <>
     {spatial?<>
       <div className="space-visual"><canvas ref={canvas} aria-hidden="true"/></div>
       <div ref={mount} className="space-interaction" inert={interactive?undefined:''}/>
+      <span className="space-assistive" role="status">{entry?.title||''}</span>
+      {status==='ready'&&interactive&&<SceneContent entry={entry} content={content} onClose={close}/>}
       {status!=='ready'&&<div className="space-load" role="status">
         <h3>{status==='error'?`${destination.title} is unavailable`:`Opening ${destination.title}`}</h3>
         <p>{status==='error'?'The 3D scene could not be opened. Return, retry, or use the accessible section.':'Preparing the inner space. You can return at any time.'}</p>
@@ -105,7 +118,7 @@ export default forwardRef(function SectionJourney({reduced,visibility,content,ca
   return createPortal(<section className="space-shell" role="dialog" aria-modal="true" aria-labelledby="space-title" data-phase={state.phase} data-destination={state.destination}
     style={{'--space-progress':p}} onKeyDown={event=>{
       if(event.key!=='Tab')return;
-      const controls=[...event.currentTarget.querySelectorAll('button,a[href]')].filter(e=>!e.disabled&&!e.closest('[inert]')&&e.getClientRects().length);
+      const controls=[...event.currentTarget.querySelectorAll('button,a[href],[tabindex="0"]')].filter(e=>!e.disabled&&!e.closest('[inert]')&&e.getClientRects().length);
       const first=controls[0],last=controls.at(-1);
       if(event.shiftKey&&document.activeElement===first){event.preventDefault();last?.focus();}
       else if(!event.shiftKey&&document.activeElement===last){event.preventDefault();first?.focus();}

@@ -46,6 +46,7 @@ export class MiForgeNavigation {
   select(index){this.motion.select(index);this.acknowledge();this.apply(0);this.app.fire('mi:forge:selection',{slotId:index===null?null:this.slots[index].name});}
   setReduced(value){this.motion.setReduced(this.initialReduced||value);this.acknowledge();this.apply(0);}
   key(e){
+    if(e.target?.closest?.('.space-detail'))return;
     if(e.defaultPrevented||e.repeat||e.altKey||e.ctrlKey||e.metaKey||e.target?.isContentEditable||['INPUT','TEXTAREA','SELECT'].includes(e.target?.tagName))return;
     if(/^[1-6]$/.test(e.key)){e.preventDefault();const index=Number(e.key)-1;this.buttons[index].focus();this.select(index);}
     else if(e.key==='Escape'){e.preventDefault();this.overviewButton.focus();this.select(null);}
@@ -53,7 +54,7 @@ export class MiForgeNavigation {
   }
   acknowledge(){
     const {selected,active,settled}=this.motion;
-    const text=selected===null?(settled?'Project Forge · Overview':'Project Forge · Reassembling'):`Project ${String(selected+1).padStart(2,'0')} selected · ${settled?'Settled · placeholder preview':active===selected?'Moving into focus':'Returning previous slab'}`;
+    const text=selected===null?(settled?'Project Forge · Overview':'Project Forge · Reassembling'):`${this.contentLabels?.[selected]||'Project '+(selected+1)} · ${settled?'In focus':'Moving into focus'}`;
     if(text!==this.status.textContent)this.status.textContent=text;
     this.buttons.forEach((b,i)=>b.setAttribute('aria-pressed',String(i===selected)));this.reducedButton.setAttribute('aria-pressed',String(this.motion.reduced));
   }

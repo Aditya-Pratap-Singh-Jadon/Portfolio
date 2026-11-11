@@ -43,6 +43,10 @@ Forge preserves six project placeholders; Skills preserves fifteen demonstration
 
 The existing content model is ready for the next content pass; provide only reviewed facts. Old content without a punchline still loads, and the optional field is editable in the content studio. Saving remains a draft operation; publication retains its existing explicit action.
 
+P6-D.2 connects approved editorial content to existing scene objects through `shared/sceneContent.js`. Forge has three project bindings, Chronicle one club-role binding, and Vault two achievement bindings; unused objects remain unassigned. Fifteen Neural nodes use approved individual/grouped skills with explicit learning levels and evidence where supplied. Scene connections are visual cues, not verified technological dependencies. Nexus reveals approved contact actions after assembly. Selecting an object opens a compact, keyboard-scrollable detail surface alongside the geometry; Escape/Close resets selection and restores usable focus. Scene geometry and motion assets are unchanged.
+
+Public projects come only from published editorial records, never directly from a fetched pin cache. The initial synchronization setting is off. Manual Signal posts may omit an unknown publication date. The approved résumé link remains available in Quick View and Nexus. Existing saved content stores are preserved: changing the seed does not overwrite them; back up and explicitly review/publish any store update. This integration awaits final content and visual review; no deployment or final polish is included.
+
 | Content | Field |
 | --- | --- |
 | Introduction | `profile.introduction` |
@@ -109,7 +113,7 @@ The initial approved public content is in `src/data/portfolio.js`. It seeds a ne
 4. Select **Approve this post for publication** when satisfied.
 5. Save, preview, then publish.
 
-The source text is kept private; visitors see the approved summary, date and source link. Duplicate source links are rejected. No AI or scraping is used. There is no Fetch from LinkedIn button: personal-post reading requires restricted LinkedIn application approval, which has not been granted or configured. The manually entered workflow is the approved launch behavior.
+The source text is kept private; visitors see the approved summary and source link, with a publication date only when known. An empty date is supported; event dates must not be substituted. LinkedIn and its `lnkd.in` short links are accepted. Duplicate source links are rejected. No scraping is used. There is no Fetch from LinkedIn button: personal-post reading requires restricted LinkedIn application approval, which has not been granted or configured. The manually entered workflow is the approved launch behavior.
 
 ## GitHub pinned projects
 
@@ -117,10 +121,10 @@ Set `GITHUB_USERNAME` and a server-only `GITHUB_TOKEN` that can query public Git
 
 The API queries GitHub's official GraphQL `pinnedItems(first:6, types:REPOSITORY)`, caches results locally, and refreshes on the saved interval while the server is running. It checks due work once a minute. It also provides an authenticated manual refresh.
 
-- GitHub pin order is retained unless a manual project order overrides it.
-- An editorial entry with a matching repository URL overrides imported title, description, images and case-study data.
+- Automatic refresh starts disabled. Fetched pins remain private review metadata and never add or modify public project entries.
+- Add reviewed information to an editorial project, preview and publish it explicitly. Public ordering follows editorial order.
 - Hide projects in the editor to keep them out of both public views.
-- Select **Keep featured independently of GitHub pins** to retain a project even after unpinning it. The four approved projects start with this selected.
+- Select **Keep featured independently of GitHub pins** to include an approved editorial project. The three approved projects start with this selected.
 - Unpinning never deletes the editorial entry.
 - Failed requests retain the last successful snapshot and report the error in admin. Visitors see the last success date and a stale indicator.
 - Private repositories are excluded even if a token could read them.

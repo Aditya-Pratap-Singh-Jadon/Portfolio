@@ -8,8 +8,8 @@ export default function SectionContent({id,content}) {
   if(id==='linkedin')return <Updates posts={sections.updates?content.posts:[]} profile={profile} embedded/>;
   const projects=sections.projects?content.projects:[];
   return <section aria-label="GitHub projects and activity">
-    <p>Portfolio projects. Live GitHub activity is not connected.</p>
+    <p>Selected projects and source links. Repository updates appear only after review.</p>
     {profile.github&&<ExternalLink href={profile.github}>GitHub profile ↗</ExternalLink>}
-    {projects.length?projects.map(project=><article key={project.id}><h3>{project.title}</h3><p>{project.description}</p>{project.repo&&<ExternalLink href={project.repo}>View repository ↗</ExternalLink>}</article>):<p>No projects are published yet.</p>}
+    {projects.length?projects.map(project=><article key={project.id}><h3>{project.title}</h3><p>{project.description}</p>{project.repo&&<ExternalLink href={project.repo}>View repository ↗</ExternalLink>}{project.live&&<ExternalLink href={project.live}>Live site</ExternalLink>}</article>):<p>No projects are published yet.</p>}
   </section>;
 }

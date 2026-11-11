@@ -67,7 +67,7 @@ export default function CommandCenter({visibility,profile,reduced,utilities,prel
     <header className="hub-intro">
       <h2 id="explore-title" tabIndex="-1">{hubCopy.title}</h2>
       <p>{hubCopy.introduction}</p>
-      <span className="content-note">{hubCopy.note}</span>
+      {hubCopy.note&&<span className="content-note">{hubCopy.note}</span>}
     </header>
     <div className={`hub-stage ${state==='ready'?'is-ready':''}`}>
       <canvas key={attempt} ref={canvas} aria-hidden="true" />

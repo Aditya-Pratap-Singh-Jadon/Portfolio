@@ -111,6 +111,7 @@ export default function Projects({ projects, sync }) {
           <p>{selected.description}</p>
           {[
             ["My contribution", selected.contribution],
+            ["Technical decisions", selected.decisions],
             ["The challenge", selected.challenge],
             ["Outcome & status", selected.outcome],
           ].map(

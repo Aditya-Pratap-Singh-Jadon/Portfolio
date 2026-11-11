@@ -426,7 +426,7 @@ export default function Admin() {
               <p>Last successful sync: {state.sync.lastSuccess || "Never"}</p>
               <p>
                 {state.sync.error ||
-                  "Manual descriptions and hidden projects are preserved."}
+                  "Fetched pins remain private review metadata. Only published editorial projects appear publicly."}
               </p>
               <button disabled={busy} onClick={() => action("sync")}>
                 Refresh GitHub pins

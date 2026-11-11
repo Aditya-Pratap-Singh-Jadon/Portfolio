@@ -140,10 +140,9 @@ export default function Hero({ profile, reduced, children, onFrame, onTarget, on
               )}
               <span className="orange">.</span>
             </h1>
-            <p className="awakening-intro">Professional introduction</p>
+            <p className="awakening-intro">{profile.title}</p>
             <p className="awakening-placeholder">
-              Temporary content · Introduction, headline and supporting
-              statement await approval.
+              {profile.introduction}<br/>{profile.summary}
             </p>
             <div className="awakening-actions">
               <button

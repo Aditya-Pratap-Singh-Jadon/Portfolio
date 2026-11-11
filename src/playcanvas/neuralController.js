@@ -97,6 +97,7 @@ export class MiNeuralNavigation {
   resumeIdle(){this.motion.resumeIdle();this.apply();}
   setReduced(value){this.motion.setReduced(this.initialReduced||value);this.apply();}
   key(e){
+    if(e.target?.closest?.('.space-detail'))return;
     if(e.defaultPrevented||e.repeat||e.altKey||e.ctrlKey||e.metaKey||e.target?.isContentEditable||['INPUT','TEXTAREA','SELECT'].includes(e.target?.tagName))return;
     let target;
     if(e.key==='ArrowRight'||e.key==='ArrowDown')target=this.keyboardFocus===null?0:(this.keyboardFocus+1)%15;
@@ -147,7 +148,7 @@ export class MiNeuralNavigation {
     });
     this.light.light.intensity=selected===null?0:.09;
     if(selected!==null){const node=this.nodes[selected];this.light.setPosition(node.e.getWorldTransform().transformPoint(new Vec3(0,.15,node.size[2]/2+.12)));}
-    const label=selected===null?(motion.exactRest?'Exact rest · idle paused':'Crimson Synapse · suspended idle'):`Node ${String(selected+1).padStart(2,'0')} · Cluster ${this.nodes[selected].cluster+1} · ${neighbors.length} direct demonstration relationships · No verified skill mapped`;
+    const label=selected===null?(motion.exactRest?'Exact rest · idle paused':'Crimson Synapse · suspended idle'):`${this.contentLabels?.[selected]||'Skill node '+(selected+1)} · ${this.contentStatuses?.[selected]||'No published entry'}`;
     if(this.status.textContent!==label)this.status.textContent=label;
     this.buttons.forEach((b,i)=>b.setAttribute('aria-pressed',String(selected===i)));this.reducedButton.setAttribute('aria-pressed',String(reduced));
     const mark=this.keyboardFocus;this.focusMark.style.display=mark===null?'none':'block';

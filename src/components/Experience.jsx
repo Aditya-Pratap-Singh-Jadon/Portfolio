@@ -12,7 +12,7 @@ export default function Experience({ experience }) {
             </div>
             <div>
               <h3>{e.role}</h3>
-              <p className="organization">{e.organization}</p>
+              <p className="organization">{e.organization}{e.type?' · '+e.type:''}</p>
               <p>{e.description}</p>
               <ul>
                 {e.details

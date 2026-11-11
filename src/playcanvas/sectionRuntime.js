@@ -11,11 +11,16 @@ import {runtimeDestinations,prepareSectionScene,sectionAssetIds} from './section
 
 export const sectionResources={created:0,disposed:0,live:0};
 
-export async function createSectionRuntime(canvas,{destination,mount,signal,reduced=false,presentation='immersive',onError}) {
+export async function createSectionRuntime(canvas,{destination,mount,signal,reduced=false,presentation='immersive',contentLabels,contentStatuses,onSelection,onError}) {
   if(!Object.hasOwn(runtimeDestinations,destination))throw new RangeError('No runtime for this destination');
   const definition=runtimeDestinations[destination],{folder,scene:name,root,kind,rig}=definition,forge=kind==='forge';
   let app,device,controller,observer,disposed=false,counted=false,dirty=true,active=true;
   const removers=[],check=()=>{if(signal.aborted)throw new DOMException('Section load cancelled','AbortError');};
+  let lastSelection;
+  const notify=()=>{
+    const selected=kind==='nexus'?(controller.motion.contactReady?0:null):controller.motion.selected;
+    if(selected!==lastSelection){lastSelection=selected;onSelection?.(selected);}
+  };
   const listen=(node,type,fn)=>{node.addEventListener(type,fn);removers.push(()=>node.removeEventListener(type,fn));};
   const dispose=()=>{
     if(disposed)return;disposed=true;observer?.disconnect();removers.splice(0).forEach(fn=>fn());
@@ -52,10 +57,10 @@ export async function createSectionRuntime(canvas,{destination,mount,signal,redu
       const {center,halfExtents:half}=mesh.aabb;
       for(const x of [-1,1])for(const y of [-1,1])for(const z of [-1,1])points.push(inverse.transformPoint(new Vec3(center.x+x*half.x,center.y+y*half.y,center.z+z*half.z)).toArray());
     }};captureBounds();
-    const args={app,entity:app.root.findByName(root),mount,initialReduced:reduced,presentation,rigAsset:rig?app.assets.get(rig):undefined};
+    const args={app,entity:app.root.findByName(root),mount,initialReduced:reduced,presentation,contentLabels,contentStatuses,rigAsset:rig?app.assets.get(rig):undefined};
     if(folder!=='mi05'){
       controller=new (forge?module.MiForgeNavigation:module.MiNeuralNavigation)(args);
-      Object.assign(controller,{mount,initialReduced:reduced,presentation,rigAsset:args.rigAsset});
+      Object.assign(controller,{mount,initialReduced:reduced,presentation,contentLabels,contentStatuses,rigAsset:args.rigAsset});
     }
     const resize=()=>{
       if(disposed)return;
@@ -74,7 +79,7 @@ export async function createSectionRuntime(canvas,{destination,mount,signal,redu
     if(controller.error)throw new Error(controller.error);
     if(kind==='nexus')captureBounds();
     for(const method of ['select','setReduced','resumeIdle','assemble','separate','reset','pause'])if(controller[method]){
-      const original=controller[method].bind(controller);controller[method]=(...args)=>{original(...args);dirty=true;};
+      const original=controller[method].bind(controller);controller[method]=(...args)=>{original(...args);dirty=true;notify();};
     }
     observer=new ResizeObserver(resize);observer.observe(canvas.parentElement);resize();
     for(const event of ['pointermove','pointerleave'])listen(canvas,event,()=>{dirty=true;});
@@ -87,7 +92,7 @@ export async function createSectionRuntime(canvas,{destination,mount,signal,redu
       if(disposed||!active||document.hidden)return;
       const settled=controller.motion.settled??['assembled','separated'].includes(controller.motion.state);
       if(controller.motion.reduced&&!dirty&&settled)return;
-      controller.update(Math.min(dt,.1));dirty=false;app.renderNextFrame=true;
+      controller.update(Math.min(dt,.1));notify();dirty=false;app.renderNextFrame=true;
     });
     app.start();app.renderNextFrame=true;counted=true;sectionResources.created++;sectionResources.live++;
     return {
@@ -95,6 +100,7 @@ export async function createSectionRuntime(canvas,{destination,mount,signal,redu
       setActive(value){active=Boolean(value);dirty=true;if(!active)app.renderNextFrame=false;},
       setReduced(value){reduced=Boolean(value);controller&&(controller.initialReduced=reduced,controller.setReduced(reduced));dirty=true;},
       select(index){controller?.select(index);},
+      reset(){if(kind==='nexus')controller?.reset();else controller?.select(null);},
       getState(){
         const entries=controller?.slots||controller?.nodes||controller?.items||[],poses=controller?.poses||entries;
         const motion=controller?.motion,atRest=forge?motion?.progress===0:kind==='neural'?motion?.exactRest:kind==='nexus'?motion?.progress===0:motion?.selected===null&&motion?.settled;

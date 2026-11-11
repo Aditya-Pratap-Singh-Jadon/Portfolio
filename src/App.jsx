@@ -90,7 +90,7 @@ export function PortfolioView({
         <span>
           © {new Date().getFullYear()} {content.profile.name}
         </span>
-        <span>Thoughtfully built. Always learning.</span>
+        <span>{content.profile.introduction}</span>
         <a href="#main">Back to top ↑</a>
       </footer>
       {!quick && !preview && (

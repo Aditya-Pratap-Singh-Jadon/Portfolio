@@ -7,13 +7,13 @@ export function Updates({ posts, profile, embedded=false }) {
         <div className="updates-list">
           {posts.map((p) => (
             <article key={p.id}>
-              <time dateTime={p.date}>
+              {p.date&&<time dateTime={p.date}>
                 {new Date(p.date + "T12:00:00").toLocaleDateString(undefined, {
                   month: "long",
                   day: "numeric",
                   year: "numeric",
                 })}
-              </time>
+              </time>}
               <h3>{p.title}</h3>
               <p>{p.summary}</p>
               <ExternalLink href={p.url}>
