@@ -100,7 +100,7 @@ export class AccentsController {
    const p=m.progress,pulse=p===1&&m.target&&m.awakening>0&&m.awakening<1?m.awakening:null;
    this.items.forEach((item,i)=>{const pose=nexusPose(item.data,p,i);item.e.setLocalPosition(...pose.position);item.e.setLocalEulerAngles(...pose.rotation);item.e.setLocalScale(...pose.scale);const alignment=p>.97?Math.min(1,(p-.97)/.03):0;this.illuminate(item.records,alignment*.24,1,pulse);});
    this.light.intensity=this.lightRest+(pulse===null?0:.22*Math.sin(Math.PI*pulse));
-   this.status.textContent=m.contactReady?'Contact details ready':m.state==='separated'?'Activate the structure to open contact details':m.state;
+   this.status.textContent=`Nexus structure · ${m.state}`;
    this.pauseButton.setAttribute('aria-pressed',String(m.paused));
   }else{
    const totalFocus=m.focus.values.reduce((a,b)=>a+b,0);

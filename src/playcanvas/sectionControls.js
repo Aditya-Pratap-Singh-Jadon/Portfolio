@@ -18,7 +18,7 @@ export function createSectionControls(c,kind,{presentation='immersive'}={}) {
   c.ui.setAttribute('aria-label',`${kind==='neural'?'Skills':kind} object controls`);
   c.status=document.createElement('p');c.status.className='space-assistive';c.status.setAttribute('role','status');c.ui.append(c.status);
   const help=document.createElement('p');help.className='space-assistive';help.id=`space-${kind}-instructions`;
-  help.textContent=kind==='nexus'?'Activate the structure to assemble or separate it. Escape restores separation. Keyboard controls follow.':'Select an object to focus it. Escape resets the view. Tab or arrow keys reach the object controls; Enter or Space activates them.';
+  help.textContent=kind==='nexus'?'Contact details are available alongside the structure. Optionally activate the structure to assemble or separate it. Escape restores separation. Keyboard controls follow.':'Select an object to focus it. Escape resets the view. Tab or arrow keys reach the object controls; Enter or Space activates them.';
   c.ui.append(help);c.mount.setAttribute('aria-describedby',help.id);c.buttons=[];
   for(const def of defs){
     const label=def.action==='select'&&c.contentLabels?.[def.index]?`${def.label} · ${c.contentLabels[def.index]}`:def.label;

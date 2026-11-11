@@ -13,7 +13,6 @@ const interactionHints={
   skills:'Select a node to explore my skills.',
   experience:'Select a milestone to explore my journey.',
   achievements:'Select a chamber to view an achievement.',
-  contact:'Select the fragments to reveal contact details.',
 };
 
 function Destination({id,token,reduced,interactive,hasContent,content,onReady,onError,onRetry,onFallback}) {
@@ -51,11 +50,11 @@ function Destination({id,token,reduced,interactive,hasContent,content,onReady,on
   return <>
     {spatial?<>
       <div className="space-visual"><canvas ref={canvas} aria-hidden="true"/>
-        {status==='ready'&&interactive&&selected===null&&<p className="space-hint">{interactionHints[id]}</p>}
+        {interactionHints[id]&&status==='ready'&&interactive&&selected===null&&<p className="space-hint">{interactionHints[id]}</p>}
       </div>
       <div ref={mount} className="space-interaction" inert={interactive?undefined:''}/>
       <span className="space-assistive" role="status">{entry?.title||''}</span>
-      {status==='ready'&&interactive&&<SceneContent entry={entry} content={content} onClose={close}/>}
+      {(id==='contact'||status==='ready'&&interactive)&&<SceneContent entry={entry} content={content} onClose={id==='contact'?undefined:close}/>}
       {status!=='ready'&&<div className="space-load" role="status">
         <h3>{status==='error'?`${destination.title} is unavailable`:`Opening ${destination.title}`}</h3>
         <p>{status==='error'?'The 3D scene could not be opened. Return, retry, or use the accessible section.':'Preparing the inner space. You can return at any time.'}</p>

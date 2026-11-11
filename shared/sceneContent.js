@@ -6,8 +6,8 @@ export const sceneBindings=Object.freeze({
 });
 
 export function sceneEntry(content,destination,index){
-  if(index===null||index===undefined)return null;
   if(destination==='contact')return content.sections.contact?{type:'contact',title:content.profile.closing,record:content.profile}:null;
+  if(index===null||index===undefined)return null;
   const id=sceneBindings[destination]?.[index];
   const record=id&&content[destination]?.find(item=>item.id===id);
   return record?{type:destination,title:record.title||record.name||record.role,record}:{type:'empty',title:'No published entry',record:null};

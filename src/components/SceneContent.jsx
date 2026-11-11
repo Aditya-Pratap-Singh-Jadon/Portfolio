@@ -5,9 +5,9 @@ export default function SceneContent({entry,content,onClose}){
   const {record:r,type,title}=entry;
   const field=(name,value)=>value&&<div><h4>{name}</h4><p>{value}</p></div>;
   return <aside className="space-detail" aria-labelledby="space-detail-title" onKeyDown={event=>{
-    if(event.key==='Escape'){event.preventDefault();event.stopPropagation();onClose();}
+    if(onClose&&event.key==='Escape'){event.preventDefault();event.stopPropagation();onClose();}
   }}>
-    <div className="space-detail-heading"><h3 id="space-detail-title">{title}</h3><button onClick={onClose} aria-label="Close selected content">×</button></div>
+    <div className="space-detail-heading"><h3 id="space-detail-title">{title}</h3>{onClose&&<button onClick={onClose} aria-label="Close selected content">×</button>}</div>
     <div className="space-detail-body" tabIndex="0" role="region" aria-label="Selected content details">
       {type==='empty'?<p>This object has no published content.</p>:type==='projects'?<>
         <p className="space-detail-meta">{r.status}</p><p>{r.description}</p>

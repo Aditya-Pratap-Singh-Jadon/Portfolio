@@ -18,7 +18,8 @@ export async function createSectionRuntime(canvas,{destination,mount,signal,redu
   const removers=[],check=()=>{if(signal.aborted)throw new DOMException('Section load cancelled','AbortError');};
   let lastSelection;
   const notify=()=>{
-    const selected=kind==='nexus'?(controller.motion.contactReady?0:null):controller.motion.selected;
+    if(kind==='nexus')return;
+    const selected=controller.motion.selected;
     if(selected!==lastSelection){lastSelection=selected;onSelection?.(selected);}
   };
   const listen=(node,type,fn)=>{node.addEventListener(type,fn);removers.push(()=>node.removeEventListener(type,fn));};

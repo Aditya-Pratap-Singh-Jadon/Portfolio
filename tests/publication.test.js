@@ -6,6 +6,39 @@ const bindings=await import('../shared/sceneContent.js').catch(()=>({}));
 import {MiNeuralNavigation} from '../src/playcanvas/neuralController.js';
 import {MiForgeNavigation} from '../src/playcanvas/forgeController.js';
 import {AccentsController} from '../src/playcanvas/accentsController.js';
+import {readFileSync} from 'node:fs';
+import {NeuralMotion} from '../src/playcanvas/approved/mi-neural-motion.mjs';
+
+test('all fifteen approved node identities resolve stable skill records and proficiency after reorder and reload',()=>{
+  const rig=JSON.parse(readFileSync(new URL('../public/playcanvas/mi04/assets/MI_NEURAL_RIG.json',import.meta.url)));
+  const scene=JSON.parse(readFileSync(new URL('../public/playcanvas/mi04/scene.json',import.meta.url)));
+  const ids=['javascript','react','nextjs','typescript','html-css','ui-tooling','node-express','mongodb','rest','oauth','nodemailer','drive','foundations','dsa','tools'];
+  const original=publicContent(validateContent(portfolio));
+  for(let cycle=0;cycle<2;cycle++){
+    const content=structuredClone(original);content.skills.reverse();
+    const controller=new MiNeuralNavigation({app:{fire(event,payload){
+      assert.equal(event,'mi:neural:selection');
+      const index=rig.nodes.findIndex(n=>n.name===payload.nodeId),entry=bindings.sceneEntry(content,'skills',index);
+      assert.equal(entry.record.id,ids[index]);assert.deepEqual(entry.record,original.skills.find(s=>s.id===ids[index]));
+    }},entity:null});
+    controller.nodes=rig.nodes;controller.motion=new NeuralMotion(rig.routes);controller.apply=()=>{};
+    for(let i=0;i<15;i++){
+      const name=`NODE_SLOT_${String(i+1).padStart(2,'0')}`;
+      assert.equal(rig.nodes[i].name,name);assert.equal(Object.values(scene.entities).filter(e=>e.name===name).length,1);
+      controller.externalSelect({nodeId:name});assert.equal(controller.motion.selected,i);
+    }
+  }
+});
+
+test('published Nexus contact is independent of selection and assembly readiness, and respects publication permissions',()=>{
+  const content=publicContent(validateContent(portfolio));
+  for(const selection of [undefined,null,0]){
+    const entry=bindings.sceneEntry(content,'contact',selection);
+    assert.equal(entry.type,'contact');assert.equal(entry.record,content.profile);assert.equal(entry.title,content.profile.closing);
+  }
+  const hidden=structuredClone(portfolio);hidden.sections.contact=false;
+  assert.equal(bindings.sceneEntry(publicContent(validateContent(hidden)),'contact',null),null);
+});
 
 test('approved publication removes excluded projects, restricted details and automatic pin publication',()=>{
   const content=publicContent(validateContent(portfolio),[{id:'unapproved',title:'Unreviewed',repo:'https://github.com/example/unreviewed',featured:true}]);
