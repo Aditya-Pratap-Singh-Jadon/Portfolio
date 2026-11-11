@@ -8,6 +8,14 @@ import SceneContent from './SceneContent.jsx';
 import {sceneEntry,sceneBindings} from '../../shared/sceneContent.js';
 import './sectionJourney.css';
 
+const interactionHints={
+  projects:'Select a project slab to explore my work.',
+  skills:'Select a node to explore my skills.',
+  experience:'Select a milestone to explore my journey.',
+  achievements:'Select a chamber to view an achievement.',
+  contact:'Select the fragments to reveal contact details.',
+};
+
 function Destination({id,token,reduced,interactive,hasContent,content,onReady,onError,onRetry,onFallback}) {
   const canvas=useRef(null),mount=useRef(null),runtime=useRef(null);
   const [status,setStatus]=useState('loading');
@@ -42,7 +50,9 @@ function Destination({id,token,reduced,interactive,hasContent,content,onReady,on
   const close=()=>runtime.current?.reset();
   return <>
     {spatial?<>
-      <div className="space-visual"><canvas ref={canvas} aria-hidden="true"/></div>
+      <div className="space-visual"><canvas ref={canvas} aria-hidden="true"/>
+        {status==='ready'&&interactive&&selected===null&&<p className="space-hint">{interactionHints[id]}</p>}
+      </div>
       <div ref={mount} className="space-interaction" inert={interactive?undefined:''}/>
       <span className="space-assistive" role="status">{entry?.title||''}</span>
       {status==='ready'&&interactive&&<SceneContent entry={entry} content={content} onClose={close}/>}

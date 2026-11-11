@@ -7,6 +7,9 @@
 .space-shell button[aria-pressed=true]{border-color:#d78a43;background:#352317}
 .space-destination,.space-visual,.space-interaction{position:absolute;inset:0}.space-visual{opacity:var(--space-progress);transform:scale(calc(.92 + var(--space-progress)*.08));transform-origin:65% 45%}
 .space-visual canvas{width:100%;height:100%;display:block;touch-action:manipulation}.space-interaction{pointer-events:none;opacity:var(--space-progress)}
+.space-hint{position:absolute;left:max(clamp(18px,4vw,60px),env(safe-area-inset-left));bottom:max(22px,env(safe-area-inset-bottom));max-width:calc(100% - 40px);margin:0;padding:6px 0;color:#c6bfb4;background:#080706b3;box-shadow:0 0 18px 8px #08070680;font-size:13px;line-height:1.5;letter-spacing:.015em;pointer-events:none}
+.space-shell:has(.space-access-control:focus-visible) .space-hint{visibility:hidden}
+@media(max-width:760px){.space-hint{left:max(16px,env(safe-area-inset-left));bottom:max(18px,env(safe-area-inset-bottom));font-size:12px;max-width:calc(100% - 32px)}}
 .space-controls[data-presentation=immersive]{position:absolute;inset:0;pointer-events:none}
 .space-assistive,.space-controls[data-presentation=immersive] .space-access-control{position:absolute;width:1px;height:1px;padding:0;margin:-1px;border:0;overflow:hidden;clip-path:inset(50%);white-space:nowrap;pointer-events:none}
 .space-controls[data-presentation=immersive] .space-access-control:focus-visible{position:fixed;left:24px;bottom:24px;width:auto;height:auto;max-width:calc(100vw - 48px);padding:10px 16px;margin:0;border:1px solid #b88755;clip-path:none;white-space:normal;overflow:visible;pointer-events:auto;z-index:10;background:#100d0af2}
