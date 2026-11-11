@@ -1,5 +1,6 @@
 // Website adapter of the approved controller: scoped UI/lifecycle, unchanged geometry and motion math.
 import { createSectionControls } from './sectionControls.js';
+import {createForgeLabels} from './forgeLabels.js';
 import { Entity, Vec3, Quat, Mat4 } from 'playcanvas';
 import { ForgeMotion, sampleForgePose } from './approved/mi-forge-motion.mjs';
 
@@ -22,6 +23,7 @@ export class MiForgeNavigation {
       if(!light){light=new Entity('FORGE_RUNTIME_HEAT_'+(i+1));light.addComponent('light',{type:'omni',color:[1,.27,.055],intensity:.05,range:.85,falloffMode:1,castShadows:false,affectSpecularity:false});light.setLocalPosition(-size[0]*.22+i*.035,size[1]/2-.11,size[2]/2+.02);e.addChild(light);created=true;}
       return {e,name,size,p:e.getLocalPosition().clone(),q:e.getLocalRotation().clone(),s:e.getLocalScale().clone(),restCamera:inverseCamera.transformPoint(e.getPosition()).toArray(),materials,light,created,lightIntensity:light.light.intensity,heat:.12};
     });
+    this.labels=createForgeLabels(this.app.graphicsDevice,this.slots,this.contentLabels);
     this.motion.setReduced(this.initialReduced);
     this.controls();
     this.listen(this.mount.closest('.space-shell'),'keydown',e=>this.key(e));this.listen(window,'resize',()=>this.layout());
@@ -86,7 +88,7 @@ export class MiForgeNavigation {
   }
   update(dt){this.motion.update(dt);this.apply(dt);}
   cleanup(){
-    if(this.destroyed)return;this.destroyed=true;for(const remove of this.listeners||[])remove();this.ui?.remove();this.preview?.remove();this.focusMark?.remove();if(this.canvas)this.canvas.style.cursor='';
+    if(this.destroyed)return;this.destroyed=true;for(const remove of this.listeners||[])remove();this.labels?.dispose();this.ui?.remove();this.preview?.remove();this.focusMark?.remove();if(this.canvas)this.canvas.style.cursor='';
     for(const s of this.slots||[]){s.e.setLocalPosition(s.p);s.e.setLocalRotation(s.q);s.e.setLocalScale(s.s);const clones=new Set();for(const m of s.materials){m.instance.material=m.original;clones.add(m.clone);}for(const clone of clones)clone.destroy();if(s.created)s.light.destroy();else s.light.light.intensity=s.lightIntensity;}
   }
 }
