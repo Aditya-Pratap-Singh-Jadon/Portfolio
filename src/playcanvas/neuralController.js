@@ -151,7 +151,7 @@ export class MiNeuralNavigation {
     const label=selected===null?(motion.exactRest?'Exact rest · idle paused':'Crimson Synapse · suspended idle'):`${this.contentLabels?.[selected]||'Skill node '+(selected+1)} · ${this.contentStatuses?.[selected]||'No published entry'}`;
     if(this.status.textContent!==label)this.status.textContent=label;
     this.buttons.forEach((b,i)=>b.setAttribute('aria-pressed',String(selected===i)));this.reducedButton.setAttribute('aria-pressed',String(reduced));
-    const mark=this.keyboardFocus;this.focusMark.style.display=mark===null?'none':'block';
+    const mark=this.keyboardFocus??selected;this.focusMark.style.display=mark===null?'none':'block';
     if(mark!==null){
       const node=this.nodes[mark],points=[];
       for(const x of [-1,1])for(const y of [-1,1])for(const z of [-1,1])points.push(this.camera.camera.worldToScreen(node.e.getWorldTransform().transformPoint(new Vec3(x*node.size[0]/2,y*node.size[1]/2,z*node.size[2]/2))));

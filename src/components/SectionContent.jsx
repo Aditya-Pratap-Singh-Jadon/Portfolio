@@ -7,9 +7,9 @@ export default function SectionContent({id,content}) {
   if(id==='about')return sections.about?<About profile={profile} education={content.education} embedded/>:<p>No introduction is published yet.</p>;
   if(id==='linkedin')return <Updates posts={sections.updates?content.posts:[]} profile={profile} embedded/>;
   const projects=sections.projects?content.projects:[];
-  return <section aria-label="GitHub projects and activity">
-    <p>Selected projects and source links. Repository updates appear only after review.</p>
+  return <section className="editorial-sources" aria-label="GitHub projects and activity">
+    <p className="editorial-intro">Selected projects and source links. Repository updates appear only after review.</p>
     {profile.github&&<ExternalLink href={profile.github}>GitHub profile ↗</ExternalLink>}
-    {projects.length?projects.map(project=><article key={project.id}><h3>{project.title}</h3><p>{project.description}</p>{project.repo&&<ExternalLink href={project.repo}>View repository ↗</ExternalLink>}{project.live&&<ExternalLink href={project.live}>Live site</ExternalLink>}</article>):<p>No projects are published yet.</p>}
+    <div className="editorial-projects">{projects.length?projects.map(project=><article key={project.id}><h3>{project.title}</h3><p>{project.description}</p>{project.repo&&<ExternalLink href={project.repo}>View repository ↗</ExternalLink>}{project.live&&<ExternalLink href={project.live}>Live site</ExternalLink>}</article>):<p>No projects are published yet.</p>}</div>
   </section>;
 }

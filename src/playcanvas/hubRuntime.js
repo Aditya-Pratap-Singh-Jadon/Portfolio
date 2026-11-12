@@ -8,6 +8,7 @@ import {
 import { fetchJson, callbackPromise, configureOpening } from './openingRuntime.js';
 import { HubController } from './hubController.js';
 import { createHubLabels } from './hubLabels.js';
+import {refineSceneLighting} from './sceneLighting.js';
 
 export async function createHubRuntime(canvas,{signal,reduced=false,onSelect,onError,enabled}) {
   let app,device,hub,labels,emergence=1,suspended=false,disposed=false,ready=false,active=false,dirty=true,resizeObserver,observer;
@@ -45,6 +46,7 @@ export async function createHubRuntime(canvas,{signal,reduced=false,onSelect,onE
     item.data=structuredClone(source);
     for(const entity of Object.values(item.data.entities))if(entity.components.camera)delete entity.components.camera.offscreen;
     await callbackPromise(done=>app.scenes.changeScene(item,done),signal);check();
+    refineSceneLighting(app);
     hub=new HubController(app);hub.setReduced(reduced);
     hub.camera.camera.clearColor.set(0,0,0,0);
     labels=createHubLabels(device);hub.setLabelTexture(labels);

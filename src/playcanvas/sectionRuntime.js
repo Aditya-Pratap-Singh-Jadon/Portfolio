@@ -8,6 +8,7 @@ import {
 import {fetchJson,callbackPromise,configureOpening} from './openingRuntime.js';
 import {sectionCameraFrame} from './sectionCamera.js';
 import {runtimeDestinations,prepareSectionScene,sectionAssetIds} from './sectionScenes.js';
+import {refineSceneLighting} from './sceneLighting.js';
 
 export const sectionResources={created:0,disposed:0,live:0};
 
@@ -49,6 +50,7 @@ export async function createSectionRuntime(canvas,{destination,mount,signal,redu
     if(errors.length)throw new Error('Required section assets failed to load');
     const item=app.scenes.find(name);item.data=view;
     await callbackPromise(done=>app.scenes.changeScene(item,done),signal);check();
+    refineSceneLighting(app);
     const camera=app.root.findComponents('camera').find(c=>c.enabled)?.entity;
     if(!camera)throw new Error('Section camera missing');
     const rest=camera.getLocalPosition().clone();

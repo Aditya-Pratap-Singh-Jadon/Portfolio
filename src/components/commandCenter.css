@@ -1,29 +1,29 @@
 #explore.command-section{padding:24px var(--gutter) 0;background:#080706;max-width:1600px}
-.hub-composition{display:grid;grid-template-columns:minmax(260px,.72fr) minmax(0,1.8fr);grid-template-areas:"intro scene" "focus scene" "index index" "utilities utilities";column-gap:32px;align-items:start}
+.hub-composition{display:grid;grid-template-columns:minmax(260px,.72fr) minmax(0,1.8fr);grid-template-areas:"intro scene" "focus scene" "index index" "utilities utilities";column-gap:44px;align-items:start}
 .hub-intro{grid-area:intro;padding-top:20px;max-width:330px}
-.hub-intro h2{font-size:clamp(44px,4.6vw,68px);line-height:.98;letter-spacing:-.065em;max-width:300px}
-.hub-intro>p{font-size:17px;line-height:1.6;color:#c5bcb0;margin-top:24px;max-width:28ch}
+.hub-intro h2{font-size:clamp(44px,4.4vw,64px);line-height:1.04;letter-spacing:-.055em;max-width:300px}
+.hub-intro>p{font-size:16px;line-height:1.6;color:#c5bcb0;margin-top:24px;max-width:28ch}
 .content-note{display:block;font-size:11px;line-height:1.5;color:#908579;margin-top:13px}
-.hub-stage{grid-area:scene;position:relative;height:clamp(440px,43vw,640px);background:#080706;isolation:isolate;overflow:hidden;min-width:0}
+.hub-stage{grid-area:scene;position:relative;height:clamp(440px,40vw,600px);background:#080706;isolation:isolate;overflow:hidden;min-width:0}
 .hub-stage canvas{width:100%;height:100%;display:block;opacity:0;transition:opacity .6s;touch-action:pan-y}
 .hub-stage.is-ready canvas{opacity:1}
 .hub-message{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:30px;text-align:center;font-size:14px;color:#c7bcae;gap:16px}
 .hub-message p{max-width:30ch}.hub-message button{padding:12px 20px;background:#302319;color:#f0ddca;min-height:44px}
-.hub-focus{grid-area:focus;align-self:end;min-height:190px;max-width:330px;padding:24px 0 20px;display:flex;flex-direction:column;gap:12px}
+.hub-focus{grid-area:focus;align-self:end;min-height:160px;max-width:330px;padding:20px 0;display:flex;flex-direction:column;gap:12px}
 .hub-focus h3{font-size:27px;line-height:1.1}.hub-focus>p{font-size:14px;color:#b7aa9b;line-height:1.65;max-width:32ch}
 .hub-focus .hub-section-kind{font-size:12px;color:#c6966a}
 .hub-focus.has-focus h3{font-size:38px;color:#eee3d5}
 .hub-focus-actions{display:flex;gap:24px;align-items:center;margin-top:8px;flex-wrap:wrap}
 .hub-open{display:inline-flex;align-items:center;gap:24px;background:#bd7138;color:#110e0a;font-size:13px;padding:11px 16px;min-height:44px;font-weight:600}
 .hub-open:hover{background:#d88c4f;color:#110e0a}.hub-focus button,.hub-browse{font-size:12px;min-height:44px;display:inline-flex;align-items:center;gap:12px;color:#cfc2b1;padding:0}
-.hub-index{grid-area:index;padding:18px 24px 16px;background:#17130f;display:grid;grid-template-columns:210px 1fr;gap:0 24px;align-items:center}
+.hub-index{grid-area:index;padding:18px 0;background:transparent;border-top:1px solid #aa84563d;border-bottom:1px solid #aa845623;display:grid;grid-template-columns:180px 1fr;gap:0 24px;align-items:center}
 .hub-status{font-size:12px;color:#b4a18b;max-width:26ch;line-height:1.7}
 .hub-controls{display:flex;flex-wrap:wrap;gap:0 28px;justify-content:space-between}
 .hub-controls>div{flex:0 0 auto}.hub-controls button,.hub-controls a{display:inline-flex;align-items:center;gap:10px;min-height:44px;font-size:15px;padding:6px 0;color:#cfc4b5;position:relative}
-.hub-controls kbd{font-family:inherit;font-size:10px;color:#8f7d68;font-weight:400;min-width:9px}.hub-controls a>span{font-size:12px;color:#ad8a68}
+.hub-controls kbd{font-family:inherit;font-size:10px;color:#a7947d;font-weight:400;min-width:9px}.hub-controls a>span{font-size:12px;color:#ad8a68}
 .hub-controls button:hover,.hub-controls a:hover,.hub-controls button[aria-pressed=true]{color:#ffc48c}
 .hub-controls button[aria-pressed=true]:after{content:'';position:absolute;bottom:0;left:18px;right:0;height:2px;background:#c57c43}
-.hub-key-hint{grid-column:2;font-size:10px;color:#8f8171;margin-top:3px}
+.hub-key-hint{grid-column:2;font-size:10px;color:#a49683;margin-top:3px}
 .hub-utilities{grid-area:utilities;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:14px 0 24px}
 .hub-utility-links{display:flex;gap:26px;align-items:center;font-size:12px;color:#b7aa9b}.hub-utility-links a{display:inline-flex;align-items:center;min-height:44px}
 .experience-preferences{display:flex;align-items:center;gap:20px;flex-wrap:wrap;scroll-margin-top:24px}
@@ -54,7 +54,7 @@
  #explore.command-section{padding-top:16px}.hub-composition{grid-template-columns:minmax(0,1fr);grid-template-areas:"intro" "scene" "focus" "index" "utilities";gap:0}
  .hub-intro{max-width:none;padding-top:0;display:grid;grid-template-columns:1fr auto;gap:12px 20px}.hub-intro h2{font-size:38px;max-width:280px;grid-column:1/-1}.hub-intro>p{font-size:14px;margin:0;max-width:36ch}.hub-intro .content-note{font-size:10px;max-width:12ch;margin:0;align-self:end;text-align:right}
  .hub-stage{height:clamp(240px,65vw,360px);margin:8px -10px 0}
- .hub-focus{max-width:none;min-height:145px;padding:14px 0 24px;gap:8px}.hub-focus h3{font-size:23px}.hub-focus.has-focus h3{font-size:30px}.hub-focus>p{font-size:13px;max-width:45ch}.hub-focus .hub-section-kind{font-size:11px}.hub-focus-actions{gap:24px;margin-top:3px}
+ .hub-focus{max-width:none;min-height:120px;padding:14px 0 20px;gap:8px}.hub-focus h3{font-size:23px}.hub-focus.has-focus h3{font-size:30px}.hub-focus>p{font-size:13px;max-width:45ch}.hub-focus .hub-section-kind{font-size:11px}.hub-focus-actions{gap:24px;margin-top:3px}
  .hub-index{display:block;padding:16px 18px;margin:0 -6px}.hub-status{max-width:none;font-size:11px;margin-bottom:8px}.hub-controls{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:4px 12px;justify-content:start}.hub-controls button,.hub-controls a{font-size:12px;gap:5px;min-height:44px}.hub-controls kbd{font-size:9px}.hub-key-hint{display:none}
  .hub-utilities{display:block;padding:14px 0 20px}.hub-utility-links{justify-content:space-between;gap:20px}.experience-preferences{justify-content:space-between;gap:8px 20px}.experience-preferences .motion-control,.experience-preferences .sound-control button{font-size:11px}
  .portfolio-details>.section{padding:36px 0 42px}.portfolio-details .section-heading{align-items:start;gap:14px;margin-bottom:24px}.portfolio-details .section-heading h2{font-size:28px}.portfolio-details .section-subtitle{font-size:11px;max-width:30ch}.portfolio-details .back-hub{font-size:10px;line-height:1.5;padding-top:4px}
