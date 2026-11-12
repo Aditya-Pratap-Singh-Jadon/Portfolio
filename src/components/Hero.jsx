@@ -125,6 +125,7 @@ export default function Hero({ profile, reduced, children, onFrame, onTarget, on
           </div>
           <div className="awakening-shade" />
           <div className="awakening-copy" ref={copy}>
+            <div className="awakening-description">
             <p className="awakening-wordmark">
               MONOLITH <span>//</span> INFERNO
             </p>
@@ -144,6 +145,7 @@ export default function Hero({ profile, reduced, children, onFrame, onTarget, on
             <p className="awakening-placeholder">
               {profile.introduction}<br/>{profile.summary}
             </p>
+            </div>
             <div className="awakening-actions">
               <button
                 className="button primary"
