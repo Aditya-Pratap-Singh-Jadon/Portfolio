@@ -93,9 +93,14 @@ export default function GatewayExperience({profile,visibility,content,reduced,ut
     apply(latest.current.mode==='ready'?latest.current.actual:latest.current.target);
   },[reduced,fallback,apply]);
   useEffect(()=>{
-    const el=chamber.current,shell=el.closest('.awakening-shell');
-    const resize=()=>shell.style.setProperty('--chamber-height',Math.max(innerHeight,el.offsetHeight)+'px');
-    const observer=new ResizeObserver(resize);observer.observe(el);addEventListener('resize',resize);resize();
+    const el=chamber.current,shell=el.closest('.awakening-shell'),opening=shell.querySelector('.opening-screen');
+    const resize=()=>{
+      // A tall introduction scrolls with the document before the cinematic stage pins.
+      const overflow=Math.max(0,opening.offsetHeight-innerHeight);
+      shell.style.setProperty('--opening-overflow',overflow+'px');
+      shell.style.setProperty('--chamber-height',Math.max(innerHeight,opening.offsetHeight,el.offsetHeight+overflow)+'px');
+    };
+    const observer=new ResizeObserver(resize);observer.observe(el);observer.observe(opening);addEventListener('resize',resize);resize();
     const navigate=event=>{
       if(event.defaultPrevented||event.button!==0||event.metaKey||event.ctrlKey||event.shiftKey||event.altKey)return;
       const anchor=event.target.closest?.('a[href]');if(!anchor)return;
