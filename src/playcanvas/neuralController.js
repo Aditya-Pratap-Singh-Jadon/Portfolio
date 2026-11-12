@@ -4,6 +4,12 @@ import {Entity,Vec3,Quat,Mat4,Mesh,Skin,SkinInstance,MorphTarget,Morph,MorphInst
 import {NeuralMotion,nodeName} from './approved/mi-neural-motion.mjs';
 import {prepareLiquid} from './approved/mi-neural-liquid.mjs';
 
+export function nearestTouchNode(x,y,points){
+  let selected=null,distance=22*22;
+  points.forEach((p,i)=>{if(!p)return;const d=(p.x-x)**2+(p.y-y)**2;if(d<=22*22&&(selected===null||d<distance)){selected=i;distance=d;}});
+  return selected;
+}
+
 export class MiNeuralNavigation {
   constructor({app,entity}){this.app=app;this.entity=entity;}
   static scriptName='miNeuralNavigation';
@@ -38,7 +44,7 @@ export class MiNeuralNavigation {
       this.listen(this.canvas,'pointerleave',()=>{this.hover=null;this.canvas.style.cursor='';});
       this.listen(this.canvas,'pointerdown',e=>{if(e.isPrimary&&e.button===0)this.down={x:e.clientX,y:e.clientY,id:e.pointerId};});
       this.listen(this.canvas,'pointercancel',()=>{this.down=null;});
-      this.listen(this.canvas,'pointerup',e=>{const down=this.down;this.down=null;if(down?.id!==e.pointerId||Math.hypot(e.clientX-down.x,e.clientY-down.y)>10)return;const index=this.pick(e.clientX,e.clientY);this.select(index===this.motion.selected?null:index);});
+      this.listen(this.canvas,'pointerup',e=>{const down=this.down;this.down=null;if(down?.id!==e.pointerId||Math.hypot(e.clientX-down.x,e.clientY-down.y)>10)return;const index=this.pick(e.clientX,e.clientY,e.pointerType==='touch');this.select(index===this.motion.selected?null:index);});
       this.events={MI_SKILL_SELECT:payload=>this.externalSelect(payload),MI_NEURAL_RESET:()=>this.select(null),MI_SET_REDUCED_MOTION:value=>{if(typeof value==='boolean')this.setReduced(value);}};
       for(const [event,callback]of Object.entries(this.events))this.app.on(event,callback,this);
       this.ready=true;this.apply();
@@ -109,7 +115,7 @@ export class MiNeuralNavigation {
     else if(e.key.toLowerCase()==='m'){e.preventDefault();this.setReduced(!this.motion.reduced);}
     else if(e.key.toLowerCase()==='i'){e.preventDefault();this.resumeIdle();}
   }
-  pick(clientX,clientY){
+  pick(clientX,clientY,touch=false){
     const rect=this.canvas.getBoundingClientRect(),x=(clientX-rect.left)*this.canvas.offsetWidth/rect.width,y=(clientY-rect.top)*this.canvas.offsetHeight/rect.height,cam=this.camera.camera;
     const near=cam.screenToWorld(x,y,cam.nearClip),far=cam.screenToWorld(x,y,cam.farClip);let selected=null,distance=Infinity;
     this.nodes.forEach((node,index)=>{
@@ -120,7 +126,15 @@ export class MiNeuralNavigation {
         const t1=(-half-a[axis])/delta,t2=(half-a[axis])/delta;lo=Math.max(lo,Math.min(t1,t2));hi=Math.min(hi,Math.max(t1,t2));if(lo>hi)return;
       }
       if(lo<distance){distance=lo;selected=index;}
-    });return selected;
+    });
+    if(selected===null&&touch){
+      const points=this.nodes.map(node=>{
+        const p=cam.worldToScreen(node.e.getPosition()),x=rect.left+p.x*rect.width/this.canvas.offsetWidth,y=rect.top+p.y*rect.height/this.canvas.offsetHeight;
+        return p.z>0&&x>=rect.left&&x<=rect.right&&y>=rect.top&&y<=rect.bottom?{x,y}:null;
+      });
+      return nearestTouchNode(clientX,clientY,points);
+    }
+    return selected;
   }
   illuminate(records,heat,emphasis){
     for(const m of records){

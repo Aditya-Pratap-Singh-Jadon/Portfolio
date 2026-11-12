@@ -45,7 +45,12 @@ export class SectionNavigation {
     this.state={...this.state,phase:'entering',progress:0,ready:false,error:false,token:++this.sequence};
     return this.state.token;
   }
-  back(){this.queued=null;if(this.state.destination)this.state.phase='returning';}
+  back(){
+    const accepted=Boolean(this.state.destination)&&(this.state.phase!=='returning'||this.queued!==null);
+    this.queued=null;
+    if(this.state.destination){this.state.phase='returning';this.state.error=false;}
+    return accepted;
+  }
   update(dt){
     if(!Number.isFinite(dt)||dt<0)throw new RangeError('Invalid navigation delta');
     const s=this.state,step=this.reduced?1:Math.min(dt,.1)/.8;

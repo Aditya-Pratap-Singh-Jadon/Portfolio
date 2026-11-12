@@ -5,6 +5,7 @@ import {scrollToChamber} from '../chamberNavigation.js';
 import {runtimeDestinations} from '../playcanvas/sectionScenes.js';
 import SectionContent from './SectionContent.jsx';
 import SceneContent from './SceneContent.jsx';
+import SceneDetails from './SceneDetails.jsx';
 import {sceneEntry,sceneBindings} from '../../shared/sceneContent.js';
 import './sectionJourney.css';
 
@@ -19,22 +20,23 @@ function Destination({id,token,reduced,interactive,hasContent,content,onReady,on
   const canvas=useRef(null),mount=useRef(null),runtime=useRef(null);
   const [status,setStatus]=useState('loading');
   const [selected,setSelected]=useState(null);
+  const [selectionReady,setSelectionReady]=useState(false),selection=useRef(null);
   const callbacks=useRef({onReady,onError});callbacks.current={onReady,onError};
   const currentReduced=useRef(reduced);currentReduced.current=reduced;
   const spatial=Object.hasOwn(runtimeDestinations,id),destination=destinations[id];
   useEffect(()=>{
     if(!spatial){callbacks.current.onReady(token);return;}
     const abort=new AbortController();let instance,cancelled=false;
-    setStatus('loading');setSelected(null);
+    setStatus('loading');setSelected(null);setSelectionReady(false);selection.current=null;
     const fail=()=>{if(!cancelled){setSelected(null);setStatus('error');callbacks.current.onError(token);}};
     const timeout=setTimeout(()=>{fail();abort.abort();instance?.dispose();},30000);
     import('../playcanvas/sectionRuntime.js').then(({createSectionRuntime})=>createSectionRuntime(canvas.current,{
       destination:id,mount:mount.current,signal:abort.signal,reduced:currentReduced.current,onError:fail,
       contentLabels:sceneBindings[id]?.map((_,index)=>sceneEntry(content,id,index).title),
       contentStatuses:sceneBindings[id]?.map((_,index)=>sceneEntry(content,id,index).record?.status||''),
-      onSelection:index=>{if(!cancelled){
-        if(index===null&&document.activeElement?.closest('.space-detail'))mount.current?.closest('.space-shell').querySelector('.space-back')?.focus({preventScroll:true});
-        setSelected(index);
+      onSelection:(index,{ready=true}={})=>{if(!cancelled){
+        if((index===null||index!==selection.current||!ready)&&document.activeElement?.closest('.space-detail'))mount.current?.closest('.space-shell').querySelector('.space-back')?.focus({preventScroll:true});
+        selection.current=index;setSelected(index);setSelectionReady(ready);
       }},
     })).then(value=>{
       instance=value;
@@ -53,14 +55,14 @@ function Destination({id,token,reduced,interactive,hasContent,content,onReady,on
         {interactionHints[id]&&status==='ready'&&interactive&&selected===null&&<p className="space-hint">{interactionHints[id]}</p>}
       </div>
       <div ref={mount} className="space-interaction" inert={interactive?undefined:''}/>
-      <span className="space-assistive" role="status">{entry?.title||''}</span>
-      {(id==='contact'||status==='ready'&&interactive)&&<SceneContent entry={entry} content={content} onClose={id==='contact'?undefined:close}/>}
+      <span className="space-assistive" role="status">{id==='contact'||selectionReady?entry?.title||'':''}</span>
+      {id==='contact'?<SceneContent entry={entry} content={content}/>:status==='ready'&&<SceneDetails entry={entry} selectionKey={selected} ready={selectionReady} reduced={reduced} interactive={interactive} content={content} onClose={close}/>}
       {status!=='ready'&&<div className="space-load" role="status">
         <h3>{status==='error'?`${destination.title} is unavailable`:`Opening ${destination.title}`}</h3>
         <p>{status==='error'?'The 3D scene could not be opened. Return, retry, or use the accessible section.':'Preparing the inner space. You can return at any time.'}</p>
         {status==='error'&&<><button onClick={onRetry}>Retry 3D scene</button>{hasContent&&<button onClick={()=>onFallback(id)}>Read accessible section</button>}</>}
       </div>}
-    </>:<div className="space-content"><SectionContent id={id} content={content}/></div>}
+    </>:<div className="space-content" inert={interactive?undefined:''}><SectionContent id={id} content={content}/></div>}
   </>;
 }
 
@@ -82,7 +84,7 @@ export default forwardRef(function SectionJourney({reduced,visibility,content,ca
   };
   const back=()=>{
     backButton.current?.focus({preventScroll:true});
-    nav.current.back();publish();
+    if(!nav.current.back())return;publish();
     if(history.state?.miSection)history.back();else history.replaceState(null,'','#explore');
   };
   useImperativeHandle(ref,()=>({open,setChamber:value=>nav.current.setChamber(value)}));

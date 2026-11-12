@@ -9,6 +9,7 @@ import {fetchJson,callbackPromise,configureOpening} from './openingRuntime.js';
 import {sectionCameraFrame} from './sectionCamera.js';
 import {runtimeDestinations,prepareSectionScene,sectionAssetIds} from './sectionScenes.js';
 import {refineSceneLighting} from './sceneLighting.js';
+import {selectionReady} from './selectionPresentation.js';
 
 export const sectionResources={created:0,disposed:0,live:0};
 
@@ -17,11 +18,11 @@ export async function createSectionRuntime(canvas,{destination,mount,signal,redu
   const definition=runtimeDestinations[destination],{folder,scene:name,root,kind,rig}=definition,forge=kind==='forge';
   let app,device,controller,observer,disposed=false,counted=false,dirty=true,active=true;
   const removers=[],check=()=>{if(signal.aborted)throw new DOMException('Section load cancelled','AbortError');};
-  let lastSelection;
+  let lastSelection,lastReady;
   const notify=()=>{
     if(kind==='nexus')return;
-    const selected=controller.motion.selected;
-    if(selected!==lastSelection){lastSelection=selected;onSelection?.(selected);}
+    const selected=controller.motion.selected,ready=selectionReady(kind,controller.motion);
+    if(selected!==lastSelection||ready!==lastReady){lastSelection=selected;lastReady=ready;onSelection?.(selected,{ready});}
   };
   const listen=(node,type,fn)=>{node.addEventListener(type,fn);removers.push(()=>node.removeEventListener(type,fn));};
   const dispose=()=>{
