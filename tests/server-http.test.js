@@ -6,6 +6,7 @@ import { createServer } from 'node:net'
 import { spawn } from 'node:child_process'
 import { once } from 'node:events'
 import { portfolio } from '../src/data/portfolio.js'
+import { compressDist } from '../scripts/compress-dist.js'
 
 test('production HTTP serves root, routes and assets while keeping private files outside dist', async () => {
   const tempRoot = resolve('tmp')
@@ -21,9 +22,11 @@ test('production HTTP serves root, routes and assets while keeping private files
     await mkdir(join(fixture, 'dist/assets'), { recursive: true })
     await writeFile(join(fixture, 'package.json'), '{"type":"module"}')
     await writeFile(join(fixture, 'dist/index.html'), '<h1>Fixture portfolio</h1>')
-    await writeFile(join(fixture, 'dist/assets/app.js'), 'console.log("fixture")')
+    const script='console.log("fixture");'.repeat(100)
+    await writeFile(join(fixture, 'dist/assets/app.js'), script)
     await mkdir(join(fixture,'dist/playcanvas/mi05/assets'),{recursive:true})
     await writeFile(join(fixture,'dist/playcanvas/mi05/assets/shared.glb'),'fixture runtime')
+    await compressDist(join(fixture,'dist'))
     await writeFile(join(fixture, 'secret.txt'), 'Must stay private')
     const reservation = createServer()
     reservation.listen(0, '127.0.0.1')
@@ -56,6 +59,13 @@ test('production HTTP serves root, routes and assets while keeping private files
     const asset = await request('/assets/app.js')
     assert.equal(asset.status, 200)
     assert.equal(asset.headers.get('content-type'), 'text/javascript')
+    assert.equal(asset.headers.get('content-encoding'),'gzip')
+    assert.equal(asset.headers.get('vary'),'Accept-Encoding')
+    assert.equal(await asset.text(),script)
+    const cached=await request('/assets/app.js',{headers:{'if-none-match':asset.headers.get('etag')}})
+    assert.equal(cached.status,304)
+    assert.equal(await cached.text(),'')
+    assert.equal((await request('/',{headers:{'if-none-match':head.headers.get('etag')}})).status,304)
     const shared=await request('/playcanvas/mi05/assets/shared.glb?t=0123456789abcdef0123456789abcdef')
     assert.equal(shared.headers.get('cache-control'),'public, max-age=31536000, immutable')
     assert.equal((await request('/playcanvas/mi05/assets/shared.glb')).headers.get('cache-control'),'no-cache')

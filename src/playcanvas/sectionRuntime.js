@@ -1,15 +1,17 @@
 import {
-  AppBase,AppOptions,BatchManager,createGraphicsDevice,
+  AppBase,AppOptions,BatchManager,
   RenderComponentSystem,CameraComponentSystem,LightComponentSystem,ScriptComponentSystem,
   RenderHandler,MaterialHandler,TextureHandler,JsonHandler,SceneHandler,
   HierarchyHandler,ContainerHandler,BinaryHandler,CubemapHandler,
   FILLMODE_NONE,RESOLUTION_AUTO,Vec3,Mat4,Quat,
 } from 'playcanvas';
+import {createWebglDevice as createGraphicsDevice} from './graphicsDevice.js';
 import {fetchJson,callbackPromise,configureOpening} from './openingRuntime.js';
 import {sectionCameraFrame} from './sectionCamera.js';
 import {runtimeDestinations,prepareSectionScene,sectionAssetIds} from './sectionScenes.js';
 import {refineSceneLighting} from './sceneLighting.js';
 import {selectionReady} from './selectionPresentation.js';
+import {sectionNeedsFrame} from './sectionRenderPolicy.js';
 
 export const sectionResources={created:0,disposed:0,live:0};
 
@@ -94,8 +96,7 @@ export async function createSectionRuntime(canvas,{destination,mount,signal,redu
     app.autoRender=false;
     app.on('update',dt=>{
       if(disposed||!active||document.hidden)return;
-      const settled=controller.motion.settled??['assembled','separated'].includes(controller.motion.state);
-      if(controller.motion.reduced&&!dirty&&settled)return;
+      if(!dirty&&!sectionNeedsFrame(kind,controller))return;
       controller.update(Math.min(dt,.1));notify();dirty=false;app.renderNextFrame=true;
     });
     app.start();app.renderNextFrame=true;counted=true;sectionResources.created++;sectionResources.live++;

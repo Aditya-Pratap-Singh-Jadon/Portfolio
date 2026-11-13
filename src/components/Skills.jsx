@@ -1,9 +1,17 @@
-import { lazy, Suspense, useState } from "react";
+import { lazy, Suspense, useEffect, useRef, useState } from "react";
 const SkillGraph = lazy(() => import("./SkillGraph"));
 import { SectionHeading, SceneBoundary } from "./UI";
 import { useMedia } from "../hooks/usePreferences";
 export default function Skills({ skills, projects, experience, reduced }) {
   const mobile = useMedia("(max-width: 760px)");
+  const graph=useRef(null),[nearGraph,setNearGraph]=useState(false);
+  useEffect(()=>{
+    if(mobile||nearGraph||!graph.current)return;
+    const observer=new IntersectionObserver(([entry])=>{
+      if(entry.isIntersecting){setNearGraph(true);observer.disconnect();}
+    },{rootMargin:'300px'});
+    observer.observe(graph.current);return()=>observer.disconnect();
+  },[mobile,nearGraph]);
   const [selected, setSelected] = useState(skills[0]?.id),
     [query, setQuery] = useState("");
   const filtered = skills.filter((s) =>
@@ -15,7 +23,8 @@ export default function Skills({ skills, projects, experience, reduced }) {
       <SectionHeading section="skills" />
       <div className="skills-layout">
         {!mobile && (
-          <div className="skill-map">
+          <div className="skill-map" ref={graph}>
+            {nearGraph&&
             <SceneBoundary>
               <Suspense
                 fallback={
@@ -35,6 +44,7 @@ export default function Skills({ skills, projects, experience, reduced }) {
                 />
               </Suspense>
             </SceneBoundary>
+            }
           </div>
         )}
         <div className="skill-details">

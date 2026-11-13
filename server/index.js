@@ -1,5 +1,5 @@
 import { createServer } from 'node:http'
-import { readFile } from 'node:fs/promises'
+import { readStatic } from './static.js'
 import { resolve, extname, sep } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { createStore } from './store.js'
@@ -26,12 +26,13 @@ const server = createServer(async (req, res) => {
     let file = resolve(dist, `.${decodeURIComponent(path)}`)
     if (file !== dist && !file.startsWith(dist + sep)) { res.writeHead(404); res.end(); return }
     if (!extname(file)) file = resolve(dist, 'index.html')
-    const data = await readFile(file)
-    res.writeHead(200, {
+    const response = await readStatic(file, req.headers, req.method)
+    res.writeHead(response.status, {
+      ...response.headers,
       'Content-Type': types[extname(file)] || 'application/octet-stream', 'X-Content-Type-Options': 'nosniff', 'X-Frame-Options': 'DENY', 'Referrer-Policy': 'strict-origin-when-cross-origin',
       'Content-Security-Policy': "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; media-src 'self' blob:; frame-ancestors 'none'; base-uri 'self'; form-action 'self'",
       'Cache-Control': path.startsWith('/assets/') || /^\/playcanvas\/mi\d+\/assets\//.test(path) && /^[a-f0-9]{32}$/.test(url.searchParams.get('t') || '') ? 'public, max-age=31536000, immutable' : 'no-cache',
-    }); res.end(req.method === 'HEAD' ? undefined : data)
+    }); res.end(response.data)
   } catch { res.writeHead(404); res.end('Not found. Run npm run build before serving the production site.') }
 })
 server.listen(Number(process.env.PORT || 5174), '127.0.0.1', () => console.log(`Portfolio API: http://localhost:${process.env.PORT || 5174}`))

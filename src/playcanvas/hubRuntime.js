@@ -1,10 +1,11 @@
 import {
-  AppBase, AppOptions, BatchManager, createGraphicsDevice,
+  AppBase, AppOptions, BatchManager,
   RenderComponentSystem, CameraComponentSystem, LightComponentSystem, ScriptComponentSystem,
   RenderHandler, MaterialHandler, TextureHandler, JsonHandler, SceneHandler,
   HierarchyHandler, ContainerHandler, BinaryHandler, CubemapHandler,
   FILLMODE_NONE, RESOLUTION_AUTO,
 } from 'playcanvas';
+import {createWebglDevice as createGraphicsDevice} from './graphicsDevice.js';
 import { fetchJson, callbackPromise, configureOpening } from './openingRuntime.js';
 import { HubController } from './hubController.js';
 import { createHubLabels } from './hubLabels.js';

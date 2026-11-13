@@ -2,7 +2,6 @@ import {
   AppBase,
   AppOptions,
   BatchManager,
-  createGraphicsDevice,
   registerScript,
   RenderComponentSystem,
   CameraComponentSystem,
@@ -21,6 +20,7 @@ import {
   FILLMODE_NONE,
   RESOLUTION_AUTO,
 } from "playcanvas";
+import {createWebglDevice as createGraphicsDevice} from './graphicsDevice.js';
 import {
   WebAwakening,
   WebAshenVoid,
